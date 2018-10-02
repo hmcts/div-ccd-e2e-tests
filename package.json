@@ -1,0 +1,16 @@
+{
+  "name": "div-cdd",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    // "test-e2e": "NODE_PATH=. codeceptjs run  -c test/end2end --steps "
+  },
+  "dependencies": {
+    "cross-env": "^5.1.3"
+  },
+  "devDependencies": {
+    "codeceptjs": "^1.3.0",
+    "mochawesome": "^3.0.2",
+    "puppeteer": "^1.5.0"
+  }
+}

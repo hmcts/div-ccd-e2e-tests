@@ -1,0 +1,7 @@
+.idea
+.DS_Store
+node_modules
+dist/
+mochawesome-report/
+.vscode/
+yarn-error.log
