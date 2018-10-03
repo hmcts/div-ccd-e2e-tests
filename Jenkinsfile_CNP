@@ -4,11 +4,6 @@ properties([
         pipelineTriggers([[$class: 'GitHubPushTrigger']])
 ])
 
-@Library("Reform")
-
-def product = "div-ccd"
-def component = "e2e"
-
 node {
     ws('workspace/div-ccd-e2e-tests') {
         stage('Checkout') {
