@@ -4,12 +4,12 @@ properties([
         pipelineTriggers([[$class: 'GitHubPushTrigger']])
 ])
 
-@Library("Infrastructure")
+@Library("Reform")
 
 def product = "div-ccd"
 def component = "e2e"
 
-withPipeline("nodejs", product, component) {
+node {
     ws('workspace/div-ccd-e2e-tests') {
         stage('Checkout') {
             deleteDir()
