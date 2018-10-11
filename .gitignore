@@ -5,3 +5,5 @@ dist/
 mochawesome-report/
 .vscode/
 yarn-error.log
+output
+steps.d.ts
