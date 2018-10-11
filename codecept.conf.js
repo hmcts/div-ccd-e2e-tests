@@ -30,5 +30,5 @@ exports.config = {
   },
   bootstrap: false,
   mocha: {},
-  name: "div-ccd-acceptance-test"
+  name: "div-ccd-e2e-test"
 }
