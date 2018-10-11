@@ -26,5 +26,5 @@ $ yarn install
 ### Running the tests
 
  ```bash
-$ yarn test-e2e
+$ yarn test
  ```
