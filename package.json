@@ -4,8 +4,9 @@
   "private": true,
   "description": "",
   "scripts": {
+    "pretest": "npm run create:type-definitions",
     "test": "codeceptjs run --steps",
-    "create:defs": "codeceptjs def"
+    "create:type-definitions": "codeceptjs def"
   },
   "keywords": [],
   "author": "",

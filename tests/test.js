@@ -24,5 +24,5 @@ Scenario('test login', (I) => {
     I.clickTab('Solicitor');
     I.clickTab('History');
     I.click('Sign Out');
-    I.wait(8);
+    I.wait(2);
 });
