@@ -4,7 +4,7 @@ properties([
         pipelineTriggers([[$class: 'GitHubPushTrigger']])
 ])
 
-@Library("Reform")
+@Library("Infrastructure")
 
 def product = "div-ccd"
 def component = "e2e"
@@ -19,7 +19,7 @@ node {
         stage('Journey Tests') {
             try {
                 sh 'yarn install'
-                // sh 'yarn test-e2e'
+                sh 'yarn test'
             }
             catch (Exception err) {
                 currentBuild.result = 'UNSTABLE'
@@ -27,7 +27,7 @@ node {
             } finally {
                 sh 'ls -lart'
                 sh 'ls -lrt ./functional-output'
-                archiveArtifacts 'functional-output/*'
+               // archiveArtifacts 'functional-output/*'
 
             }
 

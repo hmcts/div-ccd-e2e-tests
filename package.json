@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    // "test-e2e": "NODE_PATH=. codeceptjs run  -c test/end2end --steps "
+    "test": "NODE_PATH=.  "
   },
   "dependencies": {
     "cross-env": "^5.1.3"
