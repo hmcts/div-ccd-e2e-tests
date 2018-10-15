@@ -25,10 +25,7 @@ node {
                 currentBuild.result = 'UNSTABLE'
                 echo "RESULT: ${currentBuild.result}"
             } finally {
-                sh 'ls -lart'
-                sh 'ls -lrt ./functional-output'
                // archiveArtifacts 'functional-output/*'
-
             }
 
         }
