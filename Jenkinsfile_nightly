@@ -1,0 +1,39 @@
+#!groovy
+
+properties([
+        parameters([
+                string(name: 'URL_TO_TEST', defaultValue: 'https://github.com/hmcts/div-ccd-e2e-tests.git', description: 'The URL you want to run these tests against'),
+        ])
+])
+
+@Library("Infrastructure")
+
+def product = "div-ccd"
+def component = "e2e"
+
+withNightlyPipeline("nodejs", product, component) {
+    stage('Checkout') {
+            deleteDir()
+            checkout scm
+        }
+    stage('Journey Tests') {
+            try {
+                sh 'yarn install'
+                // sh 'yarn test-e2e'
+            }
+            catch (Exception err) {
+                currentBuild.result = 'UNSTABLE'
+                echo "RESULT: ${currentBuild.result}"
+            } finally {
+                sh 'ls -lart'
+                sh 'ls -lrt ./functional-output'
+                archiveArtifacts 'functional-output/*'
+
+            }
+
+     }
+    stage('After run') {
+            echo "finished"
+            deleteDir()
+        }
+}
