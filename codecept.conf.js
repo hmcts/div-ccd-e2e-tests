@@ -1,10 +1,15 @@
+const { getBaseUrl } = require('./helpers/utils');
+
+const testEnv = getBaseUrl();
+const baseUrl = `https://${testEnv}`;
+
 exports.config = {
   tests: "tests/**/*.js",
   timeout: 10000,
   output: "./output",
   helpers: {
     Puppeteer: {
-      url: "https://www-ccd.nonprod.platform.hmcts.net/list/case?jurisdiction=DIVORCE&case-type=DIVORCE&case-state=Submitted",
+      url: baseUrl,
       show: true,
       restart: false,
       keepCookies: false,
