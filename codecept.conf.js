@@ -20,9 +20,8 @@ exports.config = {
       chrome: {
         ignoreHTTPSErrors: true,
         args: [
-          '--start-fullscreen',
-          `--proxy-server=${process.env.E2E_PROXY_SERVER || ''}`,
-          `--proxy-bypass-list=${process.env.E2E_PROXY_BYPASS || ''}`
+            '--no-sandbox',
+            '--proxy-server=proxyout.reform.hmcts.net:8080'
         ]
       }
     }
