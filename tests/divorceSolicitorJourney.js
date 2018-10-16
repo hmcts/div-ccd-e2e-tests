@@ -4,9 +4,9 @@ const { getTestUserLoginDetails } = require('../helpers/utils');
 
 const { username, password } = getTestUserLoginDetails();
 
-Feature('automate ccd');
+Feature('divorce ccd journeys ');
 
-Scenario('test login', (I) => {
+Scenario('solicitor login journey', (I) => {
     I.resizeWindow(1920, 1080);
     I.amOnHomePage();
     I.login(username, password);

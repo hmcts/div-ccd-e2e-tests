@@ -6,7 +6,7 @@ const baseUrl = `https://${testEnv}`;
 exports.config = {
   tests: "tests/**/*.js",
   timeout: 10000,
-  output: "./output",
+  output: process.cwd() + '/functional-output',
   helpers: {
     Puppeteer: {
       url: baseUrl,
@@ -33,6 +33,12 @@ exports.config = {
     CaseDetailsPage: "./pages/CaseDetailsPage.js"
   },
   bootstrap: false,
-  mocha: {},
+    mocha: {
+        reporterOptions: {
+            reportDir: process.env.E2E_OUTPUT_DIR || './functional-output',
+            reportName: 'Divorce CCD E2E Tests',
+            inlineAssets: true
+        }
+    },
   name: "div-ccd-e2e-test"
 }
