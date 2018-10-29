@@ -19,7 +19,7 @@ module.exports = {
     I.fillField(this.fields.firmDxAddress, '100 Reede Road, RM10 8DU');
     I.fillField(this.fields.yourReferenceNumber, 'AWS11234');
     I.fillField(this.fields.phoneNumber, '07712345679');
-    I.fillField(this.fields.email, 'ccdsolicitorcase@pettyfrance.com');
+    I.fillField(this.fields.email, 'ccdsolicitorcreatecase@pettyfrance.com');
     I.click(this.fields.solicitorAgree);
     I.wait(5)
     I.click(this.fields.submit);

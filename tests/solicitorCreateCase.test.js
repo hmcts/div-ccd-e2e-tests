@@ -38,6 +38,6 @@ Scenario('Solicitor create case and case worker views case', async (I) => {
     I.caseCheckYourAnswersPageFormAndSubmit();
     I.solAwaitingPaymentConfPageFormAndSubmit();
     I.wait(4);
-    // I.click('Sign Out');
-    // I.login(caseWorker.username, caseWorker.password);
+    
+    
 });

@@ -26,7 +26,6 @@ module.exports = {
     I.fillField(this.fields.petitionerHomeAddress, '300 Central London, W2 3MU');
     I.fillField(this.fields.petitionerPhoneNumber, '01789029090');
     I.fillField(this.fields.petitionerEmailAddress, 'JamesStPatrick@power.com');
-    I.fillField(this.fields.petitionerEmailAddress, 'JamesStPatrick@power.com');
     I.selectOption(this.fields.keepPetitionerContactDetails, 'share');
     I.click(this.fields.submit);
   }

@@ -146,7 +146,7 @@ module.exports = function () {
     },
 
     solAwaitingPaymentConfPageFormAndSubmit: function() {
-      SolAwaitingPaymentConfirmationPage.fillFormAndSubmit();
+      SolAwaitingPaymentConfirmationPage.checkPageAndSignOut();
     }
   });
 }
