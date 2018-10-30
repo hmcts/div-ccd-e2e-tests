@@ -1,10 +1,9 @@
 /// <reference path="../steps.d.ts" />
 
-const { getSolicitorLoginDetails, getCaseWorkerLoginDetails } = require('../helpers/utils');
+const { getSolicitorLoginDetails  } = require('../helpers/utils');
 
 
 const solicitor = getSolicitorLoginDetails();
-const caseWorker = getCaseWorkerLoginDetails();
 
 Feature('Solicitor create case');
 
