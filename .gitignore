@@ -7,3 +7,4 @@ mochawesome-report/
 yarn-error.log
 output
 steps.d.ts
+functional-output

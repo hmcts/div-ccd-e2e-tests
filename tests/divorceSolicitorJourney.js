@@ -1,15 +1,17 @@
 /// <reference path="../steps.d.ts" />
 
-const { getTestUserLoginDetails } = require('../helpers/utils');
+const { getSolicitorLoginDetails } = require('../helpers/utils');
 
-const { username, password } = getTestUserLoginDetails();
+
+const solicitor = getSolicitorLoginDetails();
 
 Feature('divorce ccd journeys ');
 
 Scenario('solicitor login journey', (I) => {
     I.resizeWindow(1920, 1080);
     I.amOnHomePage();
-    I.login(username, password);
+    I.wait(8);
+    I.login(solicitor.username, solicitor.password);
     I.shouldBeOnCaseListPage();
     I.selectACaseFromList();
     I.shouldBeOnCaseDetailsPage();

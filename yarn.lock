@@ -155,7 +155,7 @@ code-point-at@^1.0.0:
   resolved "https://registry.yarnpkg.com/code-point-at/-/code-point-at-1.1.0.tgz#0d070b4d043a5bea33a2f1a40e2edb3d9a4ccf77"
   integrity sha1-DQcLTQQ6W+ozovGkDi7bPZpMz3c=
 
-codeceptjs@^1.4.2:
+codeceptjs@^1.4.3:
   version "1.4.3"
   resolved "https://registry.yarnpkg.com/codeceptjs/-/codeceptjs-1.4.3.tgz#ddc3bd40e56e6ad79f374155ff7b30706dc8511c"
   integrity sha512-X2o5coEfHUCd+DEQKwjSjmSflGcuERrX3tGtXbIDJ8VSOBab606PTsUyKBh0y/Uij3Uv7u8D7XZ7M4QBUMQi7w==
@@ -957,7 +957,7 @@ pseudomap@^1.0.2:
   resolved "https://registry.yarnpkg.com/pseudomap/-/pseudomap-1.0.2.tgz#f052a28da70e618917ef0a8ac34c1ae5a68286b3"
   integrity sha1-8FKijacOYYkX7wqKw0wa5aaChrM=
 
-puppeteer@^1.6.0:
+puppeteer@1.9.0:
   version "1.9.0"
   resolved "https://registry.yarnpkg.com/puppeteer/-/puppeteer-1.9.0.tgz#56dba79e7ea4faac807877bee3b23d63291fc59e"
   integrity sha512-GH4PmhJf9wBRAPvtJkEJLAvdNNOofZortmBZSj8cGWYni98GUFqsf66blOEfJbo5B8l0KG5HR2d/W2MejnUrzg==

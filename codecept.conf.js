@@ -15,7 +15,7 @@ exports.config = {
       keepCookies: false,
       keepBrowserState: false,
       waitForTimeout: 10000,
-      waitForAction: 500,
+      waitForAction: 1000,
       waitForNavigation: "networkidle0",
       chrome: {
         ignoreHTTPSErrors: true,
@@ -28,9 +28,30 @@ exports.config = {
   },
   include: {
     I: "./steps_definitions.js",
-    LoginPage: "./pages/LoginPage.js",
+    AboutSolicitorPage: "./pages/AboutSolicitorPage.js",
+    AboutThePetitionerPage: "./pages/AboutThePetitionerPage.js",
+    AboutTheRespondentPage: "./pages/AboutTheRespondentPage.js",
+    CaseDetailsPage: "./pages/CaseDetailsPage.js",
     CaseListPage: "./pages/CaseListPage.js",
-    CaseDetailsPage: "./pages/CaseDetailsPage.js"
+    CaseSubmissionAppCompletePage: "./pages/CaseSubmissionAppCompletePage.js",
+    CaseSubmissionOrderSummaryPage: "./pages/CaseSubmissionOrderSummaryPage.js",
+    ClaimForCostsPage: "./pages/ClaimForCostsPage.js",
+    CreateCasePage: "./pages/CreateCasePage.js",
+    FinancialOrdersPage: "./pages/FinancialOrdersPage.js",
+    JurisdictionPage: "./pages/JurisdictionPage.js",
+    LoginPage: "./pages/LoginPage.js",
+    MarriageCertificateDetailsPage: "./pages/MarriageCertificateDetailsPage.js",
+    OtherLegalProceedingsPage: "./pages/OtherLegalProceedingsPage.js",
+    PaymentCaseSubmissionPage: "./pages/PaymentCaseSubmissionPage.js",
+    ReasonForTheDivorcePage: "./pages/ReasonForTheDivorcePage.js",
+    SolCaseCreatedPage: "./pages/SolCaseCreatedPage.js",
+    SolCreateCheckYourAnswersPage: "./pages/SolCreateCheckYourAnswersPage.js",
+    StatementOfCaseAdulteryPage: "./pages/StatementOfCaseAdulteryPage.js",
+    StatementOfCaseAdulterySecPage: "./pages/StatementOfCaseAdulterySecPage.js",
+    StatementOfTruthAndRecPage: "./pages/StatementOfTruthAndRecPage.js",
+    UploadMarriageCertificatePage: "./pages/UploadMarriageCertificatePage.js",
+    CaseSubmissionCheckYourAnswersPage: "./pages/CaseSubmissionCheckYourAnswersPage.js",
+    SolAwaitingPaymentConfirmationPage: "./pages/SolAwaitingPaymentConfirmationPage.js",
   },
   bootstrap: false,
     mocha: {
@@ -42,3 +63,5 @@ exports.config = {
     },
   name: "div-ccd-e2e-test"
 }
+
+

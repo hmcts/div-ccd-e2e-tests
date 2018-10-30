@@ -27,14 +27,14 @@ module.exports = {
     ],
 
     shouldDisplayTabs() {
-        I.waitForElement(this.selectors.tabsList, 15);
+        I.waitForElement(this.selectors.tabsList, 20);
         within({ frame: this.selectors.tabs }, () => {
             this.listOfTabs.forEach(item => I.see(item));
         });
     },
 
     clickTab(tab) {
-        I.waitForElement(this.selectors.tabsList, 15);
+        I.waitForElement(this.selectors.tabsList, 25);
         I.click(tab);
     }
 }
