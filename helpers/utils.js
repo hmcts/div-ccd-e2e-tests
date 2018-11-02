@@ -1,4 +1,5 @@
 const request = require('request-promise-native');
+const fs = require('fs');
 
 const getSolicitorLoginDetails = () => {
     if (!process.env.CCD_E2E_PASSWORD) {
@@ -10,7 +11,7 @@ const getSolicitorLoginDetails = () => {
     };
 }
 
-async function createCaseInCcd () {
+async function createCaseInCcd (dataLocation = 'data/ccd-basic-data.json') {
     // Setup Details
     const username = process.env.CCD_E2E_EMAIL;
     const password = process.env.CCD_E2E_PASSWORD;
@@ -29,6 +30,7 @@ async function createCaseInCcd () {
         'Content-Type': 'application/x-www-form-urlencoded'
       }
     });
+
     const code = JSON.parse(codeResponse).code;
 
     const idamAuthPath = `/oauth2/token?grant_type=authorization_code&client_id=divorce&client_secret=${idamClientSecret}&redirect_uri=${redirectUri}&code=${code}`;
@@ -83,10 +85,37 @@ async function createCaseInCcd () {
       }
     };
 
-    const startCaseResponse = await request.get(startCaseOptions);
+    const startCaseResponse = await request(startCaseOptions);
 
-    console.log("Should get case response");
-    console.log(startCaseResponse);
+    const eventToken = JSON.parse(startCaseResponse).token;
+
+    var data = fs.readFileSync(dataLocation);
+    var saveBody = {
+      data: JSON.parse(data),
+      event: {
+        id: 'hwfCreate',
+        summary: 'Creating Case',
+        description: 'For CCD E2E Test'
+      },
+      'event_token': eventToken
+    };
+
+    const saveCaseOptions = {
+      method: 'POST',
+      uri: ccdApiUrl + ccdSaveCasePath,
+      headers: {
+        'Authorization': `Bearer ${authToken}`,
+        'ServiceAuthorization': `Bearer ${serviceToken}`,
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(saveBody)
+    };
+
+    const saveCaseResponse = await request(saveCaseOptions);
+
+    const caseId = JSON.parse(saveCaseResponse).id;
+
+    console.log(`Created case with CaseId: ${caseId}`);
 }
 
 const getBaseUrl = () => {
