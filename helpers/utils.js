@@ -13,8 +13,8 @@ const getSolicitorLoginDetails = () => {
 
 async function createCaseInCcd (dataLocation = 'data/ccd-basic-data.json') {
     // Setup Details
-    const username = process.env.CCD_E2E_EMAIL;
-    const password = process.env.CCD_E2E_PASSWORD;
+    const username = process.env.CCD_CASEWOKER_E2E_EMAIL;
+    const password = process.env.CCD_CASWORKER_E2E_PASSWORD;
     const redirectUri = 'https://div-pfe-aat.service.core-compute-aat.internal/authenticated';
     const idamClientSecret = process.env.IDAM_CLIENT_SECRET;
     const serviceSecret = process.env.SERVICE_SECRET;
