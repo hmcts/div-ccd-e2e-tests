@@ -1,9 +1,8 @@
 /// <reference path="../steps.d.ts" />
 
-const { getSolicitorLoginDetails, createCaseInCcd } = require('../helpers/utils');
+const { getSolicitorLoginDetails } = require('../helpers/utils');
 
 const solicitor = getSolicitorLoginDetails();
-createCaseInCcd();
 
 Feature('divorce ccd journeys ');
 

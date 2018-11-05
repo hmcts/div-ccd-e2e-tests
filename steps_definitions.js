@@ -27,7 +27,6 @@ const CaseSubmissionAppCompletePage = require('./pages/CaseSubmissionAppComplete
 const CaseSubmissionCheckYourAnswersPage = require('./pages/CaseSubmissionCheckYourAnswersPage');
 const SolAwaitingPaymentConfirmationPage = require('./pages/SolAwaitingPaymentConfirmationPage');
 
-
 module.exports = function () {
   return actor({
 
