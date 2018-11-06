@@ -82,12 +82,18 @@ async function getServiceToken() {
 }
 
 async function createCaseInCcd(dataLocation = 'data/ccd-basic-data.json') {
-  
+
+    console.log("Getting userToken");
     const authToken = await getUserToken();
+    console.log(authToken);
 
+    console.log("Getting userId");
     const userId = await getUserId(authToken);
+    console.log(userId);
 
+    console.log("Getting serviceToken");
     const serviceToken = await getServiceToken();
+    console.log(serviceToken);
 
     const ccdApiUrl = 'http://ccd-data-store-api-aat.service.core-compute-aat.internal';
     const ccdStartCasePath = `/caseworkers/${userId}/jurisdictions/DIVORCE/case-types/DIVORCE/event-triggers/hwfCreate/token`;
@@ -103,7 +109,9 @@ async function createCaseInCcd(dataLocation = 'data/ccd-basic-data.json') {
       }
     };
 
+    console.log("Getting startCaseResponse");
     const startCaseResponse = await request(startCaseOptions);
+    console.log(startCaseResponse);
 
     const eventToken = JSON.parse(startCaseResponse).token;
 
