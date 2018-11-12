@@ -17,10 +17,12 @@ exports.config = {
       waitForTimeout: 10000,
       waitForAction: 1000,
       waitForNavigation: "networkidle0",
+      windowSize: '1920x1080',
       chrome: {
         ignoreHTTPSErrors: true,
         args: [
             '--no-sandbox',
+            '--start-fullscreen',
             '--proxy-server=proxyout.reform.hmcts.net:8080'
         ]
       }
