@@ -1,4 +1,5 @@
-const request = require('request-promise-native');
+const requestModule = require('request-promise-native');
+const request = requestModule.defaults({ 'proxy': 'http://proxyout.reform.hmcts.net:8080' });
 const fs = require('fs');
 
 const getSolicitorLoginDetails = () => {
@@ -8,6 +9,16 @@ const getSolicitorLoginDetails = () => {
     return {
         username: process.env.CCD_E2E_EMAIL,
         password: process.env.CCD_E2E_PASSWORD
+    };
+}
+
+const getCaseWorkerLoginDetails = () => {
+    if (!process.env.CCD_E2E_PASSWORD) {
+        throw new Error('You need to set CCD_E2E_EMAIL and CCD_E2E_PASSWORD env variables');
+    }
+    return {
+        username: process.env.CCD_CASEWORKER_E2E_EMAIL,
+        password: process.env.CCD_CASEWORKER_E2E_PASSWORD
     };
 }
 
@@ -28,6 +39,8 @@ async function getUserToken() {
       Authorization: 'Basic ' + Buffer.from(`${username}:${password}`).toString('base64'),
       'Content-Type': 'application/x-www-form-urlencoded'
     }
+  }).catch(error => {
+      console.log(error);
   });
 
   const code = JSON.parse(codeResponse).code;
@@ -205,6 +218,7 @@ const getBaseUrl = () => {
 
 module.exports = {
     getSolicitorLoginDetails,
+    getCaseWorkerLoginDetails,
     createCaseInCcd,
     updateCaseInCcd,
     getBaseUrl

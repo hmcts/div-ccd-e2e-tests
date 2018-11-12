@@ -10,7 +10,7 @@ exports.config = {
   helpers: {
     Puppeteer: {
       url: baseUrl,
-      show: true,
+      show: false,
       restart: false,
       keepCookies: false,
       keepBrowserState: false,
@@ -52,6 +52,14 @@ exports.config = {
     UploadMarriageCertificatePage: "./pages/UploadMarriageCertificatePage.js",
     CaseSubmissionCheckYourAnswersPage: "./pages/CaseSubmissionCheckYourAnswersPage.js",
     SolAwaitingPaymentConfirmationPage: "./pages/SolAwaitingPaymentConfirmationPage.js",
+    CcdCaseCreatedLandingPage:"./pages/CcdCaseCreatedLandingPage.js",
+    IssuePage:"./pages/IssuePage.js",
+    IssueCheckYourAnswersPage:"./pages/IssueCheckYourAnswersPage.js",
+    CcdCaseCreatedPetitionIssuedLandingPage:"./pages/CcdCaseCreatedPetitionIssuedLandingPage.js",
+    AosPackIssueTestPage:"./pages/AosPackIssueTestPage.js",
+    AosPackIssueTestCheckYourAnswersPage:"./pages/AosPackIssueTestCheckYourAnswersPage.js",
+    AosPackIssueTestLandingPage:"./pages/AosPackIssueTestLandingPage.js",
+    AosAwaitingTestPage:"./pages/AosAwaitingTestPage.js",
   },
   bootstrap: false,
     mocha: {
