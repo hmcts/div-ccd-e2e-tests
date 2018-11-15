@@ -1,0 +1,41 @@
+#!groovy
+properties([
+        [$class: 'GithubProjectProperty', projectUrlStr: 'https://github.com/hmcts/div-ccd-e2e-tests.git'],
+        parameters([
+                string(name: 'CCD_E2E_PASSWORD', defaultValue: '', description: 'Password')
+        ])
+])
+
+@Library("Infrastructure")
+
+def product = "div-ccd"
+def component = "e2e"
+
+node {
+    ws('workspace/div-ccd-e2e-tests') {
+        stage('Checkout') {
+            deleteDir()
+            checkout scm
+        }
+
+        stage('Journey Tests') {
+            try {
+                sh 'yarn install'
+                sh 'yarn test'
+            }
+            catch (Exception err) {
+                currentBuild.result = 'UNSTABLE'
+                echo "RESULT: ${currentBuild.result}"
+            } finally {
+                archiveArtifacts 'functional-output/*'
+            }
+
+        }
+
+        stage('After run') {
+            echo "finished"
+        }
+
+    }
+    deleteDir()
+}
