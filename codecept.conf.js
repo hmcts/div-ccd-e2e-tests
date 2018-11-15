@@ -14,8 +14,8 @@ exports.config = {
       restart: true,
       keepCookies: false,
       keepBrowserState: false,
-      waitForTimeout: 15000,
-      waitForAction: 1500,
+      waitForTimeout: 25000,
+      waitForAction: 2500,
       waitForNavigation: "networkidle0",
       windowSize: '1920x1080',
       chrome: {
