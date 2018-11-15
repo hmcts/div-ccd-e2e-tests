@@ -2,9 +2,9 @@
 properties([
         [$class: 'GithubProjectProperty', projectUrlStr: 'https://github.com/hmcts/div-ccd-e2e-tests.git'],
         parameters([
-                string(name: 'CCD_E2E_EMAIL', defaultValue: 'michael.osinloye@hmcts.net', description: 'Solicitor Email'),
+                string(name: 'CCD_E2E_EMAIL', defaultValue: '', description: 'Solicitor Email'),
                 string(name: 'CCD_E2E_PASSWORD', defaultValue: '', description: 'Solicitor Password'),
-                string(name: 'CCD_CASEWORKER_E2E_EMAIL', defaultValue: 'robreallywantsccdaccess@mailinator.com', description: 'Caseworker Email'),
+                string(name: 'CCD_CASEWORKER_E2E_EMAIL', defaultValue: '', description: 'Caseworker Email'),
                 string(name: 'CCD_CASEWORKER_E2E_PASSWORD', defaultValue: '', description: 'Caseworker Password'),
                 string(name: 'IDAM_CLIENT_SECRET', defaultValue: '', description: 'IDAM Divorce Secret'),
                 string(name: 'SERVICE_SECRET', defaultValue: '', description: 'IDAM Divorce Frontend Service Secret')
@@ -13,14 +13,39 @@ properties([
 
 @Library("Infrastructure")
 
-def product = "div-ccd"
-def component = "e2e"
+def product = "div"
+def component = "ccd-e2e"
 
 node {
     ws('workspace/div-ccd-e2e-tests') {
         stage('Checkout') {
             deleteDir()
             checkout scm
+        }
+
+        stage('Env Setup') {
+            withSubscription('nonprod') {
+                def az = { cmd -> return sh(script: "env AZURE_CONFIG_DIR=/opt/jenkins/.azure-${env.SUBSCRIPTION_NAME} az ${cmd}", returnStdout: true).trim() }
+                
+                if (env.CCD_E2E_EMAIL == '') {
+                    env.CCD_E2E_EMAIL =  az('keyvault secret show --vault-name div-aat --name ccd-e2e-solicitor-email --query value -o tsv').trim()
+                }
+                if (env.CCD_E2E_PASSWORD == '') {
+                    env.CCD_E2E_PASSWORD =  az('keyvault secret show --vault-name div-aat --name ccd-e2e-solicitor-password --query value -o tsv').trim()
+                }
+                if (env.CCD_CASEWORKER_E2E_EMAIL == '') {
+                    env.CCD_CASEWORKER_E2E_EMAIL =  az('keyvault secret show --vault-name div-aat --name ccd-e2e-caseworker-email --query value -o tsv').trim()
+                }
+                if (env.CCD_CASEWORKER_E2E_PASSWORD == '') {
+                    env.CCD_CASEWORKER_E2E_PASSWORD =  az('keyvault secret show --vault-name div-aat --name ccd-e2e-caseworker-password --query value -o tsv').trim()
+                }
+                if (env.IDAM_CLIENT_SECRET == '') {
+                    env.IDAM_CLIENT_SECRET =  az('keyvault secret show --vault-name div-aat --name idam-secret --query value -o tsv').trim()
+                }
+                if (env.SERVICE_SECRET == '') {
+                    env.SERVICE_SECRET =  az('keyvault secret show --vault-name div-aat --name frontend-secret --query value -o tsv').trim()
+                }
+            }
         }
 
         stage('Journey Tests') {
@@ -38,9 +63,8 @@ node {
         }
 
         stage('After run') {
-            echo "finished"
+            echo "Finished Tests"
         }
-
     }
     deleteDir()
 }
