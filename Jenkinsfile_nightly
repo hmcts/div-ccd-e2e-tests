@@ -24,7 +24,7 @@ node {
                 env.CCD_CASEWORKER_E2E_EMAIL =  az('keyvault secret show --vault-name div-aat --name ccd-e2e-caseworker-email --query value -o tsv').trim()
                 env.CCD_CASEWORKER_E2E_PASSWORD =  az('keyvault secret show --vault-name div-aat --name ccd-e2e-caseworker-password --query value -o tsv').trim()
                 env.IDAM_CLIENT_SECRET =  az('keyvault secret show --vault-name div-aat --name idam-secret --query value -o tsv').trim()
-                env.SERVICE_SECRET =  az('keyvault secret show --vault-name div-aat --name frontend-secret --query value -o tsv').trim()
+                env.SERVICE_SECRET =  az('keyvault secret show --vault-name div-aat --name ccd-submission-s2s-auth-secret --query value -o tsv').trim()
             }
         }
 

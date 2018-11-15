@@ -43,7 +43,7 @@ node {
                     env.IDAM_CLIENT_SECRET =  az('keyvault secret show --vault-name div-aat --name idam-secret --query value -o tsv').trim()
                 }
                 if (env.SERVICE_SECRET == '') {
-                    env.SERVICE_SECRET =  az('keyvault secret show --vault-name div-aat --name frontend-secret --query value -o tsv').trim()
+                    env.SERVICE_SECRET =  az('keyvault secret show --vault-name div-aat --name ccd-submission-s2s-auth-secret --query value -o tsv').trim()
                 }
             }
         }
