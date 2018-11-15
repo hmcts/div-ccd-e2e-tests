@@ -2,11 +2,11 @@
 properties([
         [$class: 'GithubProjectProperty', projectUrlStr: 'https://github.com/hmcts/div-ccd-e2e-tests.git'],
         parameters([
-                string(name: 'CCD_E2E_EMAIL', defaultValue: 'michael.osinloye@hmcts.net', description: 'Solicitor Email')
-                string(name: 'CCD_E2E_PASSWORD', defaultValue: '', description: 'Solicitor Password')
-                string(name: 'CCD_CASEWORKER_E2E_EMAIL', defaultValue: 'robreallywantsccdaccess@mailinator.com', description: 'Caseworker Email')
-                string(name: 'CCD_CASEWORKER_E2E_PASSWORD', defaultValue: '', description: 'Caseworker Password')
-                string(name: 'IDAM_CLIENT_SECRET', defaultValue: '', description: 'IDAM Divorce Secret')
+                string(name: 'CCD_E2E_EMAIL', defaultValue: 'michael.osinloye@hmcts.net', description: 'Solicitor Email'),
+                string(name: 'CCD_E2E_PASSWORD', defaultValue: '', description: 'Solicitor Password'),
+                string(name: 'CCD_CASEWORKER_E2E_EMAIL', defaultValue: 'robreallywantsccdaccess@mailinator.com', description: 'Caseworker Email'),
+                string(name: 'CCD_CASEWORKER_E2E_PASSWORD', defaultValue: '', description: 'Caseworker Password'),
+                string(name: 'IDAM_CLIENT_SECRET', defaultValue: '', description: 'IDAM Divorce Secret'),
                 string(name: 'SERVICE_SECRET', defaultValue: '', description: 'IDAM Divorce Frontend Service Secret')
         ])
 ])
