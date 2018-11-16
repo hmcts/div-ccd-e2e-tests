@@ -14,7 +14,7 @@ module.exports = {
     I.click(this.fields.addNewButton);
     I.wait(2);
     I.attachFile('input[id="D8DocumentsUploaded_0_DocumentLink"]', 'data/fileupload.txt'); 
-    I.waitForVisible(this.fields.submit, 10);
+    I.waitForVisible(this.fields.submit, 20);
     I.click(this.fields.submit);
     I.wait(3)
   }

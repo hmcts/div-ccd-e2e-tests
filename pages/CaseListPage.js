@@ -17,8 +17,8 @@ module.exports = {
   },
 
   assertOnPage() {
-    I.waitForElement(this.selectors.jurisdictionSelsct, 10);
-    I.waitForElement(this.selectors.caseTypeSelect, 10);
+    I.waitForElement(this.selectors.jurisdictionSelsct, 20);
+    I.waitForElement(this.selectors.caseTypeSelect, 20);
     I.waitForElement(this.selectors.caseStateSelect, 7);
     I.waitForElement(this.selectors.rdcSelect, 15);
     I.waitForElement(this.selectors.solicitorPaymentMethodSelect, 5);
