@@ -5,17 +5,17 @@ const baseUrl = `https://${testEnv}`;
 
 exports.config = {
   tests: "tests/**/*.js",
-  timeout: 10000,
+  timeout: 30000,
   output: process.cwd() + '/functional-output',
   helpers: {
     Puppeteer: {
       url: baseUrl,
       show: false,
-      restart: false,
+      restart: true,
       keepCookies: false,
       keepBrowserState: false,
-      waitForTimeout: 10000,
-      waitForAction: 1000,
+      waitForTimeout: 30000,
+      waitForAction: 3000,
       waitForNavigation: "networkidle0",
       windowSize: '1920x1080',
       chrome: {

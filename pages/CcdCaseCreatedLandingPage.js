@@ -8,7 +8,11 @@ module.exports = {
   },
 
   fillFormAndSubmit() {
+<<<<<<< HEAD
     I.waitForElement(this.fields.selectActionDropDown, 10);  
+=======
+    I.waitForElement(this.fields.selectActionDropDown, 20);  
+>>>>>>> 023d652706abccc2e2af65b759a29a0b031ad487
     I.see('Petition submitted');
     I.selectOption(this.fields.selectActionDropDown, 'Issue');
     I.wait(3);

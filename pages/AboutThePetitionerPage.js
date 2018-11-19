@@ -17,7 +17,7 @@ module.exports = {
   },
 
   fillFormAndSubmit() {
-    I.waitForElement(this.fields.firstName, 10);
+    I.waitForElement(this.fields.firstName, 20);
     I.fillField(this.fields.firstName, 'James');
     I.fillField(this.fields.lastName, 'St Patrick');
     I.click(this.fields.petitionerChangedName);

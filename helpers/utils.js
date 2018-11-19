@@ -1,6 +1,9 @@
+const { Logger } = require('@hmcts/nodejs-logging');
 const requestModule = require('request-promise-native');
 const request = requestModule.defaults({ 'proxy': 'http://proxyout.reform.hmcts.net:8080' });
 const fs = require('fs');
+
+const logger = Logger.getLogger('helpers/utils.js');
 
 const getSolicitorLoginDetails = () => {
     if (!process.env.CCD_E2E_PASSWORD) {
@@ -23,6 +26,8 @@ const getCaseWorkerLoginDetails = () => {
 }
 
 async function getUserToken() {
+  logger.info('Getting User Token');
+
   // Setup Details
   const username = process.env.CCD_CASEWORKER_E2E_EMAIL;
   const password = process.env.CCD_CASEWORKER_E2E_PASSWORD;
@@ -53,10 +58,14 @@ async function getUserToken() {
     }
   });
 
+  logger.debug(JSON.parse(authTokenResponse)['access_token']);
+
   return JSON.parse(authTokenResponse)['access_token'];
 }
 
 async function getUserId(authToken) {
+  logger.info('Getting User Id');
+
   const idamBaseUrl = 'https://preprod-idamapi.reform.hmcts.net:3511';
 
   const idamDetailsPath = '/details';
@@ -67,10 +76,14 @@ async function getUserId(authToken) {
     }
   });
 
+  logger.debug(JSON.parse(userDetails).id);
+
   return JSON.parse(userDetails).id;
 }
 
 async function getServiceToken() {
+  logger.info('Getting Service Token');
+
   const serviceSecret = process.env.SERVICE_SECRET;
 
   const s2sBaseUrl = 'http://rpe-service-auth-provider-aat.service.core-compute-aat.internal';
@@ -91,22 +104,20 @@ async function getServiceToken() {
     })
   });
 
+  logger.debug(serviceToken);
+
   return serviceToken;
 }
 
 async function createCaseInCcd(dataLocation = 'data/ccd-basic-data.json') {
 
-    console.log("Getting userToken");
     const authToken = await getUserToken();
-    console.log(authToken);
 
-    console.log("Getting userId");
     const userId = await getUserId(authToken);
-    console.log(userId);
 
-    console.log("Getting serviceToken");
     const serviceToken = await getServiceToken();
-    console.log(serviceToken);
+
+    logger.info('Creating Case');
 
     const ccdApiUrl = 'http://ccd-data-store-api-aat.service.core-compute-aat.internal';
     const ccdStartCasePath = `/caseworkers/${userId}/jurisdictions/DIVORCE/case-types/DIVORCE/event-triggers/hwfCreate/token`;
@@ -122,9 +133,7 @@ async function createCaseInCcd(dataLocation = 'data/ccd-basic-data.json') {
       }
     };
 
-    console.log("Getting startCaseResponse");
     const startCaseResponse = await request(startCaseOptions);
-    console.log(startCaseResponse);
 
     const eventToken = JSON.parse(startCaseResponse).token;
 
@@ -154,7 +163,7 @@ async function createCaseInCcd(dataLocation = 'data/ccd-basic-data.json') {
 
     const caseId = JSON.parse(saveCaseResponse).id;
 
-    console.log(`Created case with CaseId: ${caseId}`);
+    logger.info('Created case with id %s', caseId);
 
     return caseId;
 }
@@ -166,6 +175,8 @@ async function updateCaseInCcd(caseId, eventId, dataLocation = 'data/ccd-update-
   const userId = await getUserId(authToken);
 
   const serviceToken = await getServiceToken();
+
+  logger.info('Updating case with id %s and event %s', caseId, eventId);
 
   const ccdApiUrl = 'http://ccd-data-store-api-aat.service.core-compute-aat.internal';
   const ccdStartEventPath = `/caseworkers/${userId}/jurisdictions/DIVORCE/case-types/DIVORCE/cases/${caseId}/event-triggers/${eventId}/token`;
@@ -211,7 +222,6 @@ async function updateCaseInCcd(caseId, eventId, dataLocation = 'data/ccd-update-
 
   return saveEventResponse;
 }
-
 const getBaseUrl = () => {
     return 'www-ccd.nonprod.platform.hmcts.net';
 }
