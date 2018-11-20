@@ -9,7 +9,6 @@ const CreateCasePage = require('./pages/CreateCasePage');
 const AboutSolicitorPage = require('./pages/AboutSolicitorPage');
 const AboutThePetitionerPage = require('./pages/AboutThePetitionerPage');
 const AboutTheRespondentPage = require('./pages/AboutTheRespondentPage');
-const MarriageCertificateDetailsPage = require('./pages/MarriageCertificateDetailsPage');
 const JurisdictionPage = require('./pages/JurisdictionPage');
 const ReasonForTheDivorcePage = require('./pages/ReasonForTheDivorcePage');
 const StatementOfCaseAdulteryPage = require('./pages/StatementOfCaseAdulteryPage');
@@ -34,6 +33,7 @@ const AosPackIssueTestPage = require('./pages/AosPackIssueTestPage');
 const AosPackIssueTestCheckYourAnswersPage = require('./pages/AosPackIssueTestCheckYourAnswersPage');
 const AosPackIssueTestLandingPage = require('./pages/AosPackIssueTestLandingPage');
 const AosAwaitingTestPage = require('./pages/AosAwaitingTestPage');
+const MarriageCertificateDetailsPage = require('./pages/MarriageCertificateDetailsPage');
 
 module.exports = function () {
   return actor({
