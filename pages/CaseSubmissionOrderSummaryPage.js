@@ -7,7 +7,6 @@ module.exports = {
   },
 
   fillFormAndSubmit() {
-    I.seeInCurrentUrl('solicitorStatementOfTruthPaySubmitSolPaymentSummary');
     I.see('Case submission');
     I.see('Order Summary');
     I.see('Your fee account reference: Next case submitted');

@@ -9,7 +9,6 @@ const CreateCasePage = require('./pages/CreateCasePage');
 const AboutSolicitorPage = require('./pages/AboutSolicitorPage');
 const AboutThePetitionerPage = require('./pages/AboutThePetitionerPage');
 const AboutTheRespondentPage = require('./pages/AboutTheRespondentPage');
-const MarriageCertificateDetailsPage = require('./pages/MarriageCertificateDetailsPage');
 const JurisdictionPage = require('./pages/JurisdictionPage');
 const ReasonForTheDivorcePage = require('./pages/ReasonForTheDivorcePage');
 const StatementOfCaseAdulteryPage = require('./pages/StatementOfCaseAdulteryPage');
@@ -26,7 +25,15 @@ const CaseSubmissionOrderSummaryPage = require('./pages/CaseSubmissionOrderSumma
 const CaseSubmissionAppCompletePage = require('./pages/CaseSubmissionAppCompletePage');
 const CaseSubmissionCheckYourAnswersPage = require('./pages/CaseSubmissionCheckYourAnswersPage');
 const SolAwaitingPaymentConfirmationPage = require('./pages/SolAwaitingPaymentConfirmationPage');
-
+const CcdCaseCreatedLandingPage = require('./pages/CcdCaseCreatedLandingPage');
+const IssuePage = require('./pages/IssuePage');
+const IssueCheckYourAnswersPage = require('./pages/IssueCheckYourAnswersPage');
+const CcdCaseCreatedPetitionIssuedLandingPage = require('./pages/CcdCaseCreatedPetitionIssuedLandingPage');
+const AosPackIssueTestPage = require('./pages/AosPackIssueTestPage');
+const AosPackIssueTestCheckYourAnswersPage = require('./pages/AosPackIssueTestCheckYourAnswersPage');
+const AosPackIssueTestLandingPage = require('./pages/AosPackIssueTestLandingPage');
+const AosAwaitingTestPage = require('./pages/AosAwaitingTestPage');
+const MarriageCertificateDetailsPage = require('./pages/MarriageCertificateDetailsPage');
 
 module.exports = function () {
   return actor({
@@ -147,6 +154,38 @@ module.exports = function () {
 
     solAwaitingPaymentConfPageFormAndSubmit: function() {
       SolAwaitingPaymentConfirmationPage.checkPageAndSignOut();
+    },
+
+    ccdCaseCreatedFromJsonLandingPageFormAndSubmit: function() {
+      CcdCaseCreatedLandingPage.fillFormAndSubmit();
+    },
+
+    issueFromSubmittedPageFormAndSubmit: function() {
+      IssuePage.fillFormAndSubmit();
+    },
+
+    issueCheckYourAnswersPageFormAndSubmit: function() {
+      IssueCheckYourAnswersPage.fillFormAndSubmit();
+    },
+
+    petitionIssuedPageAndAosPackSelectPageFormAndSubmit: function() {
+      CcdCaseCreatedPetitionIssuedLandingPage.fillFormAndSubmit();
+    },
+
+    aosPackIssueTestPageFormAndSubmit: function() {
+      AosPackIssueTestPage.fillFormAndSubmit();
+    },
+
+    aosPackIssueTestCheckYourAnswersPageFormAndSubmit: function() {
+      AosPackIssueTestCheckYourAnswersPage.fillFormAndSubmit();
+    },
+
+    aosPackIssueTestLandingPageFormAndSubmit: function() {
+      AosPackIssueTestLandingPage.fillFormAndSubmit();
+    },
+
+    aosAwaitingTestPageFormAndSubmit: function() {
+      AosAwaitingTestPage.fillFormAndSubmit();
     }
   });
 }

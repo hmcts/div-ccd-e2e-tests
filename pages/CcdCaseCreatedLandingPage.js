@@ -4,18 +4,17 @@ module.exports = {
 
   fields: {
     selectActionDropDown: 'select[id="next-step"]',
-    caseNumberDisplay: 'ccd-case-header .heading-medium',
     submit: 'button[type="submit"]'
   },
 
-  async fillFormAndSubmit() {
+  fillFormAndSubmit() {
     I.waitForElement(this.fields.selectActionDropDown, 20);  
-    I.selectOption(this.fields.selectActionDropDown, 'Case submission');
-    const display = await I.grabTextFrom(this.fields.caseNumberDisplay)
+    I.see('Petition submitted');
+    I.selectOption(this.fields.selectActionDropDown, 'Issue');
+    I.wait(3);
     I.waitForVisible(this.fields.submit);
     I.click(this.fields.submit);
     I.wait(2);
-    return display;
   }
 
 }

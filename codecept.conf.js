@@ -5,22 +5,24 @@ const baseUrl = `https://${testEnv}`;
 
 exports.config = {
   tests: "tests/**/*.js",
-  timeout: 10000,
+  timeout: 30000,
   output: process.cwd() + '/functional-output',
   helpers: {
     Puppeteer: {
       url: baseUrl,
       show: false,
-      restart: false,
+      restart: true,
       keepCookies: false,
       keepBrowserState: false,
-      waitForTimeout: 10000,
-      waitForAction: 1000,
+      waitForTimeout: 30000,
+      waitForAction: 3000,
       waitForNavigation: "networkidle0",
+      windowSize: '1920x1080',
       chrome: {
         ignoreHTTPSErrors: true,
         args: [
             '--no-sandbox',
+            '--start-fullscreen',
             '--proxy-server=proxyout.reform.hmcts.net:8080'
         ]
       }
@@ -52,6 +54,14 @@ exports.config = {
     UploadMarriageCertificatePage: "./pages/UploadMarriageCertificatePage.js",
     CaseSubmissionCheckYourAnswersPage: "./pages/CaseSubmissionCheckYourAnswersPage.js",
     SolAwaitingPaymentConfirmationPage: "./pages/SolAwaitingPaymentConfirmationPage.js",
+    CcdCaseCreatedLandingPage:"./pages/CcdCaseCreatedLandingPage.js",
+    IssuePage:"./pages/IssuePage.js",
+    IssueCheckYourAnswersPage:"./pages/IssueCheckYourAnswersPage.js",
+    CcdCaseCreatedPetitionIssuedLandingPage:"./pages/CcdCaseCreatedPetitionIssuedLandingPage.js",
+    AosPackIssueTestPage:"./pages/AosPackIssueTestPage.js",
+    AosPackIssueTestCheckYourAnswersPage:"./pages/AosPackIssueTestCheckYourAnswersPage.js",
+    AosPackIssueTestLandingPage:"./pages/AosPackIssueTestLandingPage.js",
+    AosAwaitingTestPage:"./pages/AosAwaitingTestPage.js",
   },
   bootstrap: false,
     mocha: {

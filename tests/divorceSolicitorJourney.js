@@ -2,7 +2,6 @@
 
 const { getSolicitorLoginDetails } = require('../helpers/utils');
 
-
 const solicitor = getSolicitorLoginDetails();
 
 Feature('divorce ccd journeys ');

@@ -8,3 +8,4 @@ yarn-error.log
 output
 steps.d.ts
 functional-output
+package-lock.json
