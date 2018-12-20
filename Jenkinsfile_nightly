@@ -1,6 +1,9 @@
 #!groovy
 properties([
-        [$class: 'GithubProjectProperty', projectUrlStr: 'https://github.com/hmcts/div-ccd-e2e-tests.git']
+        [$class: 'GithubProjectProperty', projectUrlStr: 'https://github.com/hmcts/div-ccd-e2e-tests.git'],
+        parameters([
+                string(name: 'RUNNING_ENV', defaultValue: 'aat', description: 'CNP Environment to Run Tests in')
+        ])
 ])
 
 @Library("Infrastructure")

@@ -29,11 +29,15 @@ const CcdCaseCreatedLandingPage = require('./pages/CcdCaseCreatedLandingPage');
 const IssuePage = require('./pages/IssuePage');
 const IssueCheckYourAnswersPage = require('./pages/IssueCheckYourAnswersPage');
 const CcdCaseCreatedPetitionIssuedLandingPage = require('./pages/CcdCaseCreatedPetitionIssuedLandingPage');
-const AosPackIssueTestPage = require('./pages/AosPackIssueTestPage');
-const AosPackIssueTestCheckYourAnswersPage = require('./pages/AosPackIssueTestCheckYourAnswersPage');
-const AosPackIssueTestLandingPage = require('./pages/AosPackIssueTestLandingPage');
-const AosAwaitingTestPage = require('./pages/AosAwaitingTestPage');
+// const AosPackIssueTestPage = require('./pages/AosPackIssueTestPage');
+const IssueAosPackToRespondentCheckYourAnswersPage = require('./pages/IssueAosPackToRespondentCheckYourAnswersPage');
+const IssueAosPackToRespondentLandingPage = require('./pages/IssueAosPackToRespondentLandingPage');
+const AosStartedPage = require('./pages/AosStartedPage');
+const AosStartedCheckYourAnswersPage = require('./pages/AosStartedCheckYourAnswersPage');
 const MarriageCertificateDetailsPage = require('./pages/MarriageCertificateDetailsPage');
+const TransferCaseToADifferentRDCsPage = require('./pages/TransferCaseToADifferentRDCsPage');
+const TransferBetweenRDCsPage = require('./pages/TransferBetweenRDCsPage');
+const TransferToRDCLandingPage = require('./pages/TransferToRDCLandingPage');
 
 module.exports = function () {
   return actor({
@@ -172,20 +176,36 @@ module.exports = function () {
       CcdCaseCreatedPetitionIssuedLandingPage.fillFormAndSubmit();
     },
 
-    aosPackIssueTestPageFormAndSubmit: function() {
-      AosPackIssueTestPage.fillFormAndSubmit();
-    },
+    // aosPackIssueTestPageFormAndSubmit: function() {
+    //   AosPackIssueTestPage.fillFormAndSubmit();
+    // },
 
     aosPackIssueTestCheckYourAnswersPageFormAndSubmit: function() {
-      AosPackIssueTestCheckYourAnswersPage.fillFormAndSubmit();
+      IssueAosPackToRespondentCheckYourAnswersPage.fillFormAndSubmit();
     },
 
-    aosPackIssueTestLandingPageFormAndSubmit: function() {
-      AosPackIssueTestLandingPage.fillFormAndSubmit();
+    aosPackToRespondentLandingPageFormAndSubmit: function() {
+      IssueAosPackToRespondentLandingPage.fillFormAndSubmit();
     },
 
-    aosAwaitingTestPageFormAndSubmit: function() {
-      AosAwaitingTestPage.fillFormAndSubmit();
+    aosStartedPageFormAndSubmit: function() {
+      AosStartedPage.fillFormAndSubmit();
+    },
+
+    aosStartedCheckYourAnswersPageFormAndSubmit: function() {
+      AosStartedCheckYourAnswersPage.fillFormAndSubmit();
+    },
+
+    changeToCourtsAndTribunalsServiceCentrePageFormAndSubmit: function() {
+      TransferCaseToADifferentRDCsPage.fillFormAndSubmit();
+    },
+
+    enterRDCChangeSummaryAndDescriptionPageFormAndSubmit: function() {
+      TransferBetweenRDCsPage.fillFormAndSubmit();
+    },
+
+    caseCreatedCTSCServiceCentrePageFormAndSubmit: function() {
+      TransferToRDCLandingPage.fillFormAndSubmit();
     }
   });
 }

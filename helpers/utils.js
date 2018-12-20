@@ -5,6 +5,8 @@ const fs = require('fs');
 
 const logger = Logger.getLogger('helpers/utils.js');
 
+const env = process.env.RUNNING_ENV || 'aat';
+
 const getSolicitorLoginDetails = () => {
     if (!process.env.CCD_E2E_PASSWORD) {
         throw new Error('You need to set CCD_E2E_EMAIL and CCD_E2E_PASSWORD env variables');
@@ -31,7 +33,7 @@ async function getUserToken() {
   // Setup Details
   const username = process.env.CCD_CASEWORKER_E2E_EMAIL;
   const password = process.env.CCD_CASEWORKER_E2E_PASSWORD;
-  const redirectUri = 'https://div-pfe-aat.service.core-compute-aat.internal/authenticated';
+  const redirectUri = `https://div-pfe-${env}.service.core-compute-${env}.internal/authenticated`;
   const idamClientSecret = process.env.IDAM_CLIENT_SECRET;
 
   const idamBaseUrl = 'https://preprod-idamapi.reform.hmcts.net:3511';
@@ -86,7 +88,7 @@ async function getServiceToken() {
 
   const serviceSecret = process.env.SERVICE_SECRET;
 
-  const s2sBaseUrl = 'http://rpe-service-auth-provider-aat.service.core-compute-aat.internal';
+  const s2sBaseUrl = `http://rpe-service-auth-provider-${env}.service.core-compute-${env}.internal`;
   const s2sAuthPath = '/lease';
   const oneTimePassword = require('otp')({
     secret: serviceSecret
@@ -119,7 +121,7 @@ async function createCaseInCcd(dataLocation = 'data/ccd-basic-data.json') {
 
     logger.info('Creating Case');
 
-    const ccdApiUrl = 'http://ccd-data-store-api-aat.service.core-compute-aat.internal';
+    const ccdApiUrl = `http://ccd-data-store-api-${env}.service.core-compute-${env}.internal`;
     const ccdStartCasePath = `/caseworkers/${userId}/jurisdictions/DIVORCE/case-types/DIVORCE/event-triggers/hwfCreate/token`;
     const ccdSaveCasePath = `/caseworkers/${userId}/jurisdictions/DIVORCE/case-types/DIVORCE/cases`;
 
@@ -134,6 +136,7 @@ async function createCaseInCcd(dataLocation = 'data/ccd-basic-data.json') {
     };
 
     const startCaseResponse = await request(startCaseOptions);
+    console.log(startCaseResponse);
 
     const eventToken = JSON.parse(startCaseResponse).token;
 
@@ -159,7 +162,10 @@ async function createCaseInCcd(dataLocation = 'data/ccd-basic-data.json') {
       body: JSON.stringify(saveBody)
     };
 
-    const saveCaseResponse = await request(saveCaseOptions);
+    const saveCaseResponse = await request(saveCaseOptions).catch(error => {
+    console.log(error);
+    });
+    // console.log(saveCaseResponse);
 
     const caseId = JSON.parse(saveCaseResponse).id;
 
@@ -178,7 +184,7 @@ async function updateCaseInCcd(caseId, eventId, dataLocation = 'data/ccd-update-
 
   logger.info('Updating case with id %s and event %s', caseId, eventId);
 
-  const ccdApiUrl = 'http://ccd-data-store-api-aat.service.core-compute-aat.internal';
+  const ccdApiUrl = `http://ccd-data-store-api-${env}.service.core-compute-${env}.internal`;
   const ccdStartEventPath = `/caseworkers/${userId}/jurisdictions/DIVORCE/case-types/DIVORCE/cases/${caseId}/event-triggers/${eventId}/token`;
   const ccdSaveEventPath = `/caseworkers/${userId}/jurisdictions/DIVORCE/case-types/DIVORCE/cases/${caseId}/events`;
 
@@ -223,7 +229,7 @@ async function updateCaseInCcd(caseId, eventId, dataLocation = 'data/ccd-update-
   return saveEventResponse;
 }
 const getBaseUrl = () => {
-    return 'www-ccd.nonprod.platform.hmcts.net';
+    return env === 'demo' ? 'www.ccd.demo.platform.hmcts.net' : 'www-ccd.nonprod.platform.hmcts.net';
 }
 
 module.exports = {

@@ -12,18 +12,16 @@ module.exports = {
         "Search", 
         "History", 
         "Solicitor",
+        "Corespondance",
         "Petitioner", 
         "Respondent", 
-        "Marriage certificate", 
         "Reason for divorce", 
         "Jurisdiction", 
-        "Other legal proceedings", 
-        "Prayer", 
+        "Other legal proceedings",  
         "Payment", 
         "Documents", 
-        "Admin check", 
-        "AOS", 
-        "Payment history"
+        "Marriage Certificate", 
+        "Notes" 
     ],
 
     shouldDisplayTabs() {

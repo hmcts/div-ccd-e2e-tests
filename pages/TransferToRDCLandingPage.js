@@ -9,14 +9,11 @@ module.exports = {
 
   fillFormAndSubmit() {
     I.waitForElement(this.fields.selectActionDropDown, 20);  
-    I.see('Aos pack issue test');
-    I.click("//a[contains(.,'Documents')]");
+    I.see('Petition submitted');
+    I.click("//a[contains(.,'Petitioner')]");
     I.wait(3);
-    I.see('Documents generated 1');
-    I.see('Documents generated 2');
-    I.wait(4);
-    I.waitForElement(this.fields.selectActionDropDown, 20); 
-    I.selectOption(this.fields.selectActionDropDown, 'AOS Awaiting Test');
+    I.see('Courts and Tribunals Service Centre');
+    I.selectOption(this.fields.selectActionDropDown, 'Issue');
     I.wait(3);
     I.waitForVisible(this.fields.submit);
     I.click(this.fields.submit);

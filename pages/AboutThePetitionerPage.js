@@ -6,6 +6,7 @@ module.exports = {
     firstName: '#D8PetitionerFirstName',
     lastName: '#D8PetitionerLastName',
     petitionerChangedName: '#D8PetitionerNameDifferentToMarriageCert-No',
+    whoIsPetitionerDivorcing: '#D8DivorceWho',
     petitionerGender: '#D8InferredPetitionerGender',
     petitionerRespondentSameSex: '#D8MarriageIsSameSexCouple-No',
     petitionerHomeAddress: '#D8DerivedPetitionerHomeAddress',
@@ -21,6 +22,7 @@ module.exports = {
     I.fillField(this.fields.firstName, 'James');
     I.fillField(this.fields.lastName, 'St Patrick');
     I.click(this.fields.petitionerChangedName);
+    I.selectOption(this.fields.whoIsPetitionerDivorcing, 'wife');
     I.selectOption(this.fields.petitionerGender, 'male');
     I.click(this.fields.petitionerRespondentSameSex);
     I.fillField(this.fields.petitionerHomeAddress, '300 Central London, W2 3MU');
