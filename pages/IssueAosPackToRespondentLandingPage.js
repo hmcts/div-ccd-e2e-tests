@@ -19,7 +19,7 @@ module.exports = {
     I.see('FamilyMan reference');
     I.see('First name(s)');
     I.see('Last name');
-    I.see('Petitioner phone number');
+    I.see('Petitioner\'s phone number');
     I.see('Place of marriage');
     I.see('Fact');
     I.wait(3);
