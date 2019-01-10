@@ -29,7 +29,7 @@ module.exports = {
     I.see('Respondent\'s Last name');
     I.see('What is the respondent\'s gender?');
     I.see('Fact');
-    I.see('Aos Letter Holder Id');
+    I.see('AOS Letter Holder ID');
     I.wait(3);
     I.click("//a[contains(.,'Reason for divorce')]");
     I.see('Fact');
