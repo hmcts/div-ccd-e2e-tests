@@ -10,10 +10,6 @@ module.exports = {
   fillFormAndSubmit() {
     I.waitForElement(this.fields.selectActionDropDown, 20);  
     I.see('AOS Awaiting');
-    I.click("//a[contains(.,'Solicitor')]");
-    I.wait(3);
-    I.click("//a[contains(.,'Corespondance')]");
-    I.see('Created Date');
     I.wait(3);
     I.click("//a[contains(.,'Petitioner')]");
     I.see('FamilyMan reference');
@@ -49,7 +45,6 @@ module.exports = {
     I.see('Did the marriage take place in the UK?');
     I.see('Marriage date');
     I.wait(4);
-    I.click("//a[contains(.,'Notes')]");
     I.waitForElement(this.fields.selectActionDropDown, 20); 
     I.selectOption(this.fields.selectActionDropDown, 'AOS started');
     I.wait(3);

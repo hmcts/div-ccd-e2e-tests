@@ -16,7 +16,7 @@ Scenario('solicitor login journey', (I) => {
     I.wait(5);
     I.shouldBeOnCaseDetailsPage();
     I.wait(13);
-    I.clickTab('Notes');
+    I.clickTab('Marriage Certificate');
     I.clickTab('Documents');
     I.clickTab('Payment');
     I.clickTab('Other legal proceedings');
@@ -24,7 +24,6 @@ Scenario('solicitor login journey', (I) => {
     I.clickTab('Reason for divorce');
     I.clickTab('Respondent');
     I.clickTab('Petitioner');
-    I.clickTab('Corespondance');
     I.clickTab('Solicitor');
     I.clickTab('History');
     I.click('Sign Out');
