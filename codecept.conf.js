@@ -22,8 +22,8 @@ exports.config = {
         ignoreHTTPSErrors: true,
         args: [
             '--no-sandbox',
-            '--start-fullscreen'
-            // '--proxy-server=proxyout.reform.hmcts.net:8080'
+            '--start-fullscreen',
+            '--proxy-server=proxyout.reform.hmcts.net:8080'
         ]
       }
     }
