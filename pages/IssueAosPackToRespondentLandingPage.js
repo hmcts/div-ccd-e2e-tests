@@ -32,7 +32,7 @@ module.exports = {
     I.see('Behaviour details');
     I.wait(3);
     I.click("//a[contains(.,'Jurisdiction')]");
-    I.click("//a[contains(.,'Other legal proceedings')]");
+    I.click("//a[contains(.,'Prayer / Other Legal Proceedings')]");
     I.click("//a[contains(.,'Payment')]");
     I.see('A history of payments associated with a the case');
     I.wait(2);
