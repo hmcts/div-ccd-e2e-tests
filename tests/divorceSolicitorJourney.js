@@ -19,7 +19,7 @@ Scenario('solicitor login journey', (I) => {
     I.clickTab('Marriage Certificate');
     I.clickTab('Documents');
     I.clickTab('Payment');
-    I.clickTab('Other legal proceedings');
+    I.clickTab('Prayer / Other Legal Proceedings');
     I.clickTab('Jurisdiction');
     I.clickTab('Reason for divorce');
     I.clickTab('Respondent');
