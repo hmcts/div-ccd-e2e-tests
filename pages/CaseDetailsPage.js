@@ -17,7 +17,7 @@ module.exports = {
         "Respondent", 
         "Reason for divorce", 
         "Jurisdiction", 
-        "Other legal proceedings",  
+        "Prayer / Other Legal Proceedings",  
         "Payment", 
         "Documents", 
         "Marriage Certificate", 
