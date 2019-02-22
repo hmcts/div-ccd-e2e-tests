@@ -230,7 +230,7 @@ async function updateCaseInCcd(caseId, eventId, dataLocation = 'data/ccd-update-
   return saveEventResponse;
 }
 const getBaseUrl = () => {
-    return env === 'demo' ? 'www.ccd.demo.platform.hmcts.net' : 'www-ccd.nonprod.platform.hmcts.net';
+    return env === 'demo' ? 'www.ccd.demo.platform.hmcts.net' : 'www-ccd.aat.platform.hmcts.net';
 }
 
 module.exports = {
