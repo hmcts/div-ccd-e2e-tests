@@ -8,7 +8,7 @@ module.exports = {
   },
 
   fillFormAndSubmit() {
-    I.waitForElement(this.fields.selectActionDropDown, 20);  
+    I.waitForElement(this.fields.selectActionDropDown, 20);
     I.see('AOS Awaiting');
     I.wait(3);
     I.click("//a[contains(.,'Petitioner')]");
@@ -34,10 +34,11 @@ module.exports = {
     I.click("//a[contains(.,'Jurisdiction')]");
     I.click("//a[contains(.,'Prayer / Other Legal Proceedings')]");
     I.click("//a[contains(.,'Payment')]");
-    I.see('A history of payments associated with a the case');
+    I.see('Online payments received');
     I.wait(2);
     I.click("//a[contains(.,'Documents')]");
     I.wait(3);
+    I.see('Documents uploaded 1');
     I.see('Documents generated 1');
     I.see('Documents generated 2');
     I.wait(4);
@@ -45,7 +46,7 @@ module.exports = {
     I.see('Did the marriage take place in the UK?');
     I.see('Marriage date');
     I.wait(4);
-    I.waitForElement(this.fields.selectActionDropDown, 20); 
+    I.waitForElement(this.fields.selectActionDropDown, 20);
     I.selectOption(this.fields.selectActionDropDown, 'AOS started');
     I.wait(3);
     I.waitForVisible(this.fields.submit);

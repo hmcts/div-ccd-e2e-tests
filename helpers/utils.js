@@ -37,7 +37,7 @@ async function getUserToken() {
   const redirectUri = `https://div-pfe-${env}.service.core-compute-${env}.internal/authenticated`;
   const idamClientSecret = process.env.IDAM_CLIENT_SECRET;
 
-  const idamBaseUrl = 'https://preprod-idamapi.reform.hmcts.net:3511';
+  const idamBaseUrl = 'https://idam-api.aat.platform.hmcts.net';
 
   const idamCodePath = `/oauth2/authorize?response_type=code&client_id=divorce&redirect_uri=${redirectUri}`;
 
@@ -69,7 +69,7 @@ async function getUserToken() {
 async function getUserId(authToken) {
   logger.info('Getting User Id');
 
-  const idamBaseUrl = 'https://preprod-idamapi.reform.hmcts.net:3511';
+  const idamBaseUrl = 'https://idam-api.aat.platform.hmcts.net';
 
   const idamDetailsPath = '/details';
   const userDetails = await request.get({
@@ -176,7 +176,7 @@ async function createCaseInCcd(dataLocation = 'data/ccd-basic-data.json') {
 }
 
 async function updateCaseInCcd(caseId, eventId, dataLocation = 'data/ccd-update-data.json') {
-  
+
   const authToken = await getUserToken();
 
   const userId = await getUserId(authToken);

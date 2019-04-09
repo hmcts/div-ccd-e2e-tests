@@ -65,13 +65,13 @@ module.exports = function () {
     },
 
     shouldBeOnCaseListPage: function () {
-      CaseListPage.assertOnPage();
+      CaseListPage.resetFilter();
     },
 
     clickCreateCase: function() {
       this.click('Create Case');
     },
-  
+
     clickCreateList: function() {
       this.click('Case List');
     },

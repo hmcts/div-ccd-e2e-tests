@@ -8,7 +8,7 @@ module.exports = {
 
   fillFormAndSubmit() {
     I.seeInCurrentUrl('solicitorStatementOfTruthPaySubmitSolSummary');
-    I.see('Application complete');
+    I.see('Before you submit');
     I.see('0300 303 0642');
     I.click(this.fields.submit);
     I.wait(5)
