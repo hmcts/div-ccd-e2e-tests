@@ -37,6 +37,4 @@ Scenario('Solicitor create case and make payment', async (I) => {
     I.caseCheckYourAnswersPageFormAndSubmit();
     I.solAwaitingPaymentConfPageFormAndSubmit();
     I.wait(4);
-    
-    
 });
