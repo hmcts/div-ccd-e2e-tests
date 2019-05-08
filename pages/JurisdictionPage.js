@@ -4,7 +4,7 @@ module.exports = {
 
   fields: {
     legalConnections: '#D8JurisdictionConnection-A',
-    submit: 'button[type="submit"]',
+    submit: 'button[type="submit"]'
   },
 
   selectLegalActionsAndSubmit() {
@@ -13,4 +13,4 @@ module.exports = {
     I.click(this.fields.submit);
     I.wait(3);
   }
-}
+};

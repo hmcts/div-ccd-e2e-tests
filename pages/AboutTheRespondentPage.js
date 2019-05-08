@@ -27,4 +27,4 @@ module.exports = {
     I.wait(5);
     I.click(this.fields.submit);
   }
-}
+};

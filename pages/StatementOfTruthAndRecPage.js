@@ -10,7 +10,7 @@ module.exports = {
     yourName: '#SolStatementOfReconciliationName',
     nameOfYourFirm: '#SolStatementOfReconciliationFirm',
     additionalComments: '#StatementOfReconciliationComments',
-    submit: 'button[type="submit"]',
+    submit: 'button[type="submit"]'
   },
 
   fillFormAndSubmit() {
@@ -27,4 +27,4 @@ module.exports = {
     I.click(this.fields.submit);
     I.wait(3);
   }
-}
+};

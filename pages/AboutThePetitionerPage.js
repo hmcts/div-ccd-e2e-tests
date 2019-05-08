@@ -31,4 +31,4 @@ module.exports = {
     I.selectOption(this.fields.keepPetitionerContactDetails, 'share');
     I.click(this.fields.submit);
   }
-}
+};

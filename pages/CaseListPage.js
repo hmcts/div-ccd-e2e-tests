@@ -23,7 +23,7 @@ module.exports = {
     I.selectOption(this.selectors.caseStateSelect, 'Any');
     I.waitForElement(this.selectors.rdcSelect, 40);
     I.waitForElement(this.selectors.solicitorPaymentMethodSelect, 40);
-    I.see('Create new case')
-    I.click('Apply')
+    I.see('Create new case');
+    I.click('Apply');
   }
-}
+};

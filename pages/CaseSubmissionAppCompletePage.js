@@ -3,7 +3,7 @@ const I = actor();
 module.exports = {
 
   fields: {
-    submit: 'button[type="submit"]',
+    submit: 'button[type="submit"]'
   },
 
   fillFormAndSubmit() {
@@ -11,6 +11,6 @@ module.exports = {
     I.see('Before you submit');
     I.see('0300 303 0642');
     I.click(this.fields.submit);
-    I.wait(5)
+    I.wait(5);
   }
-}
+};

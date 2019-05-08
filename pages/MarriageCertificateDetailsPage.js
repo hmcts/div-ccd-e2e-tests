@@ -24,4 +24,4 @@ module.exports = {
     I.wait(5);
     I.seeInCurrentUrl('solicitorCreateSolJurisdiction');
   }
-}
+};

@@ -3,7 +3,7 @@ const I = actor();
 module.exports = {
 
   fields: {
-    submit: 'button[type="submit"]',
+    submit: 'button[type="submit"]'
   },
 
   fillFormAndSubmit() {
@@ -13,4 +13,4 @@ module.exports = {
     I.waitForVisible(this.fields.submit, 20);
     I.click(this.fields.submit); 
   }
-}
+};

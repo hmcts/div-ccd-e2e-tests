@@ -6,7 +6,7 @@ module.exports = {
     howPaymentMade: 'select[id="SolPaymentHowToPay"]',  
     enterYourAccountNumber: '#SolicitorFeeAccountNumber', 
     enterYourPreference: '#FeeAccountReference', 
-    submit: 'button[type="submit"]',
+    submit: 'button[type="submit"]'
   },
 
   fillFormAndSubmit() {
@@ -20,4 +20,4 @@ module.exports = {
     I.click(this.fields.submit);
     I.wait(3);
   }
-}
+};

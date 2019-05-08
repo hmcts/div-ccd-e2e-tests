@@ -11,7 +11,7 @@ module.exports = {
     I.waitForElement(this.fields.selectActionDropDown, 20);
     I.see('AOS Awaiting');
     I.wait(3);
-    I.click("//a[contains(.,'Petitioner')]");
+    I.click('//a[contains(.,\'Petitioner\')]');
     I.see('FamilyMan reference');
     I.see('First name(s)');
     I.see('Last name');
@@ -19,7 +19,7 @@ module.exports = {
     I.see('Place of marriage');
     I.see('Fact');
     I.wait(3);
-    I.click("//a[contains(.,'Respondent')]");
+    I.click('//a[contains(.,\'Respondent\')]');
     I.see('FamilyMan reference');
     I.see('Respondent\'s First name(s)');
     I.see('Respondent\'s Last name');
@@ -27,22 +27,22 @@ module.exports = {
     I.see('Fact');
     I.see('AOS Letter Holder ID');
     I.wait(3);
-    I.click("//a[contains(.,'Reason for divorce')]");
+    I.click('//a[contains(.,\'Reason for divorce\')]');
     I.see('Fact');
     I.see('Behaviour details');
     I.wait(3);
-    I.click("//a[contains(.,'Jurisdiction')]");
-    I.click("//a[contains(.,'Prayer / Other Legal Proceedings')]");
-    I.click("//a[contains(.,'Payment')]");
+    I.click('//a[contains(.,\'Jurisdiction\')]');
+    I.click('//a[contains(.,\'Prayer / Other Legal Proceedings\')]');
+    I.click('//a[contains(.,\'Payment\')]');
     I.see('Online payments received');
     I.wait(2);
-    I.click("//a[contains(.,'Documents')]");
+    I.click('//a[contains(.,\'Documents\')]');
     I.wait(3);
     I.see('Documents uploaded 1');
     I.see('Documents generated 1');
     I.see('Documents generated 2');
     I.wait(4);
-    I.click("//a[contains(.,'Marriage Certificate')]");
+    I.click('//a[contains(.,\'Marriage Certificate\')]');
     I.see('Did the marriage take place in the UK?');
     I.see('Marriage date');
     I.wait(4);
@@ -54,4 +54,4 @@ module.exports = {
     I.wait(2);
   }
 
-}
+};

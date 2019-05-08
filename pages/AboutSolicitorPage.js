@@ -10,7 +10,7 @@ module.exports = {
     phoneNumber: '#PetitionerSolicitorPhone',
     email: '#PetitionerSolicitorEmail',
     solicitorAgree: '#SolicitorAgreeToReceiveEmails-Yes',
-    submit: 'button[type="submit"]',
+    submit: 'button[type="submit"]'
   },
 
   fillFormAndSubmit() {
@@ -21,7 +21,7 @@ module.exports = {
     I.fillField(this.fields.phoneNumber, '07712345679');
     I.fillField(this.fields.email, 'ccdsolicitorcreatecase@pettyfrance.com');
     I.click(this.fields.solicitorAgree);
-    I.wait(5)
+    I.wait(5);
     I.click(this.fields.submit);
   }
-}
+};
