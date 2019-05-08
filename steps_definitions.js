@@ -208,4 +208,4 @@ module.exports = function () {
       TransferToRDCLandingPage.fillFormAndSubmit();
     }
   });
-}
+};

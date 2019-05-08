@@ -19,4 +19,4 @@ module.exports = {
     I.click(this.fields.submit);
     I.wait(3);
   }
-}
+};

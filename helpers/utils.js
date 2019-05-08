@@ -9,24 +9,24 @@ const logger = Logger.getLogger('helpers/utils.js');
 const env = process.env.RUNNING_ENV || 'aat';
 
 const getSolicitorLoginDetails = () => {
-    if (!process.env.CCD_E2E_PASSWORD) {
-        throw new Error('You need to set CCD_E2E_EMAIL and CCD_E2E_PASSWORD env variables');
-    }
-    return {
-        username: process.env.CCD_E2E_EMAIL,
-        password: process.env.CCD_E2E_PASSWORD
-    };
-}
+  if (!process.env.CCD_E2E_PASSWORD) {
+    throw new Error('You need to set CCD_E2E_EMAIL and CCD_E2E_PASSWORD env variables');
+  }
+  return {
+    username: process.env.CCD_E2E_EMAIL,
+    password: process.env.CCD_E2E_PASSWORD
+  };
+};
 
 const getCaseWorkerLoginDetails = () => {
-    if (!process.env.CCD_E2E_PASSWORD) {
-        throw new Error('You need to set CCD_E2E_EMAIL and CCD_E2E_PASSWORD env variables');
-    }
-    return {
-        username: process.env.CCD_CASEWORKER_E2E_EMAIL,
-        password: process.env.CCD_CASEWORKER_E2E_PASSWORD
-    };
-}
+  if (!process.env.CCD_E2E_PASSWORD) {
+    throw new Error('You need to set CCD_E2E_EMAIL and CCD_E2E_PASSWORD env variables');
+  }
+  return {
+    username: process.env.CCD_CASEWORKER_E2E_EMAIL,
+    password: process.env.CCD_CASEWORKER_E2E_PASSWORD
+  };
+};
 
 async function getUserToken() {
   logger.info('Getting User Token');
@@ -48,7 +48,7 @@ async function getUserToken() {
       'Content-Type': 'application/x-www-form-urlencoded'
     }
   }).catch(error => {
-      console.log(error);
+    console.log(error);
   });
 
   const code = JSON.parse(codeResponse).code;
@@ -114,65 +114,65 @@ async function getServiceToken() {
 
 async function createCaseInCcd(dataLocation = 'data/ccd-basic-data.json') {
 
-    const authToken = await getUserToken();
+  const authToken = await getUserToken();
 
-    const userId = await getUserId(authToken);
+  const userId = await getUserId(authToken);
 
-    const serviceToken = await getServiceToken();
+  const serviceToken = await getServiceToken();
 
-    logger.info('Creating Case');
+  logger.info('Creating Case');
 
-    const ccdApiUrl = `http://ccd-data-store-api-${env}.service.core-compute-${env}.internal`;
-    const ccdStartCasePath = `/caseworkers/${userId}/jurisdictions/DIVORCE/case-types/DIVORCE/event-triggers/hwfCreate/token`;
-    const ccdSaveCasePath = `/caseworkers/${userId}/jurisdictions/DIVORCE/case-types/DIVORCE/cases`;
+  const ccdApiUrl = `http://ccd-data-store-api-${env}.service.core-compute-${env}.internal`;
+  const ccdStartCasePath = `/caseworkers/${userId}/jurisdictions/DIVORCE/case-types/DIVORCE/event-triggers/hwfCreate/token`;
+  const ccdSaveCasePath = `/caseworkers/${userId}/jurisdictions/DIVORCE/case-types/DIVORCE/cases`;
 
-    const startCaseOptions = {
-      method: 'GET',
-      uri: ccdApiUrl + ccdStartCasePath,
-      headers: {
-        'Authorization': `Bearer ${authToken}`,
-        'ServiceAuthorization': `Bearer ${serviceToken}`,
-        'Content-Type': 'application/json'
-      }
-    };
+  const startCaseOptions = {
+    method: 'GET',
+    uri: ccdApiUrl + ccdStartCasePath,
+    headers: {
+      'Authorization': `Bearer ${authToken}`,
+      'ServiceAuthorization': `Bearer ${serviceToken}`,
+      'Content-Type': 'application/json'
+    }
+  };
 
-    const startCaseResponse = await request(startCaseOptions);
-    console.log(startCaseResponse);
+  const startCaseResponse = await request(startCaseOptions);
+  console.log(startCaseResponse);
 
-    const eventToken = JSON.parse(startCaseResponse).token;
+  const eventToken = JSON.parse(startCaseResponse).token;
 
-    var data = fs.readFileSync(dataLocation);
-    var saveBody = {
-      data: JSON.parse(data),
-      event: {
-        id: 'hwfCreate',
-        summary: 'Creating Case',
-        description: 'For CCD E2E Test'
-      },
-      'event_token': eventToken
-    };
+  var data = fs.readFileSync(dataLocation);
+  var saveBody = {
+    data: JSON.parse(data),
+    event: {
+      id: 'hwfCreate',
+      summary: 'Creating Case',
+      description: 'For CCD E2E Test'
+    },
+    'event_token': eventToken
+  };
 
-    const saveCaseOptions = {
-      method: 'POST',
-      uri: ccdApiUrl + ccdSaveCasePath,
-      headers: {
-        'Authorization': `Bearer ${authToken}`,
-        'ServiceAuthorization': `Bearer ${serviceToken}`,
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(saveBody)
-    };
+  const saveCaseOptions = {
+    method: 'POST',
+    uri: ccdApiUrl + ccdSaveCasePath,
+    headers: {
+      'Authorization': `Bearer ${authToken}`,
+      'ServiceAuthorization': `Bearer ${serviceToken}`,
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(saveBody)
+  };
 
-    const saveCaseResponse = await request(saveCaseOptions).catch(error => {
+  const saveCaseResponse = await request(saveCaseOptions).catch(error => {
     console.log(error);
-    });
+  });
     // console.log(saveCaseResponse);
 
-    const caseId = JSON.parse(saveCaseResponse).id;
+  const caseId = JSON.parse(saveCaseResponse).id;
 
-    logger.info('Created case with id %s', caseId);
+  logger.info('Created case with id %s', caseId);
 
-    return caseId;
+  return caseId;
 }
 
 async function updateCaseInCcd(caseId, eventId, dataLocation = 'data/ccd-update-data.json') {
@@ -230,13 +230,13 @@ async function updateCaseInCcd(caseId, eventId, dataLocation = 'data/ccd-update-
   return saveEventResponse;
 }
 const getBaseUrl = () => {
-    return env === 'demo' ? 'www.ccd.demo.platform.hmcts.net' : 'www-ccd.aat.platform.hmcts.net';
-}
+  return env === 'demo' ? 'www.ccd.demo.platform.hmcts.net' : 'www-ccd.aat.platform.hmcts.net';
+};
 
 module.exports = {
-    getSolicitorLoginDetails,
-    getCaseWorkerLoginDetails,
-    createCaseInCcd,
-    updateCaseInCcd,
-    getBaseUrl
+  getSolicitorLoginDetails,
+  getCaseWorkerLoginDetails,
+  createCaseInCcd,
+  updateCaseInCcd,
+  getBaseUrl
 };

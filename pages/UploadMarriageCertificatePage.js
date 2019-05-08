@@ -5,7 +5,7 @@ module.exports = {
   fields: {
     addNewButton: 'button[type="button"]',
     chooseFile: '#D8DocumentsUploaded_0_DocumentLink', 
-    submit: 'button[type="submit"]',
+    submit: 'button[type="submit"]'
   },
 
   fillFormAndSubmit() {
@@ -16,6 +16,6 @@ module.exports = {
     I.attachFile('input[id="D8DocumentsUploaded_0_DocumentLink"]', 'data/fileupload.txt'); 
     I.waitForVisible(this.fields.submit, 20);
     I.click(this.fields.submit);
-    I.wait(3)
+    I.wait(3);
   }
-}
+};

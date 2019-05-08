@@ -13,4 +13,4 @@ module.exports = {
     I.fillField(this.fields.password, password);
     I.click(this.fields.submit);
   }
-}
+};
