@@ -28,6 +28,68 @@
   "paymentTab": {
     "name": "Payment"
   },
+  "prayerTab": {
+    "name": "Prayer / Other Legal Proceedings",
+    "otherCourtProceedings": "Are there any existing or previous court proceedings relating to the petitioner's marriage, property or children?",
+    "financialOrder": "Does the petitioner wish to apply for a financial order?",
+    "whoTheFinancialOrder": "Who is the financial order for?",
+    "applyForClaimCosts": "Does the petitioner want to claim costs?",
+    "claimCostsFrom": "Claim costs from",
+    "factsStated": "The petitioner believes that the facts stated in this application are true."
+  },
+  "jurisdictionTab": {
+    "name": "Jurisdiction",
+    "legalConnections": "Legal connections",
+    "livedTogether": "At what address did the petitioner and the respondent last live together?"
+  },
+  "reasonForDivorceTab": {
+    "name": "Reason for divorce",
+    "fact": "Fact",
+    "behaviourDetails": "Behaviour details"
+  },
+  "respondentTab": {
+    "name": "Respondent",
+    "familyManRefNumber": "FamilyMan reference",
+    "respondentFName": "Respondent's First name(s)",
+    "respondentLName": "Respondent's Last name",
+    "respondentHomeAdd": "The Respondent's home address",
+    "respondentSerAdd": "The Respondent's service address",
+    "respondentConsentEmailComm": "Respondent consented to email communications?",
+    "respondentGender": "What is the respondent's gender?"
+  },
+  "aosAnswers": {
+    "respConfirmedRead": "Respondent confirmed petition read",
+    "respAdmitted": "Respondent admitted to adultery or consented to 2-year separation",
+    "respAgreedClaimdJurisdiction": "Respondent agreed to claimed jurisdiction?",
+    "resplegalProceedings": "Do legal proceedings exist (respondent)?",
+    "respAgreeCosts": "Does respondent agree to costs?",
+    "respAgreeStatementOfTruth": "Respondent agreed to statement of truth?",
+    "respDigitalChannel": "Respondent is using digital channel?",
+    "respDueDate": "Due Date"
+  },
+  "petitionertab": {
+    "name": "Petitioner",
+    "rdc": "RDC",
+    "courtName": "Courts and Tribunals Service Centre",
+    "petitionerFName": "First name(s)",
+    "petitionerLName": "Last name",
+    "petionerGender": "What is the petitioner's gender?",
+    "petitionerChangedName": "Has the petitioner changed their name since they got married?",
+    "placeOfMarriage": "Place of marriage",
+    "WhoPetitionerDivorcing": "Who is petitioner divorcing?",
+    "sameSexCouple": "Were the petitioner and the respondent a same-sex couple when they got married?",
+    "petitionerFactsStated": "The petitioner believes that the facts stated in this application are true.",
+    "previousCourtProceedings": "Are there any existing or previous court proceedings relating to the petitioner's marriage, property or children?"
+  },
+  "dnAnswers": {
+    "continuewithDN": "Petitioner is continuing with their divorce and applying for a decree nisi?",
+    "dateOfDnSubmitted": "Date DN application submitted",
+    "isEverythingStatedDivPetition": "Petitioner confirmed petition is true at DN stage?",
+    "isBehaviourStillHapp": "Is the behaviour still happening?",
+    "petitionerCostAtDN": "Petitioner's cost order preference at DN stage",
+    "petitionerFactsDnStage": "The petitioner believes that the facts stated in the application for Decree Nisi are true",
+    "claimOriginalAmountText": "I still want to claim my costs and will let the court decide how much"
+  },
   "general":{
      "yes": "Yes",
      "no": "No"
