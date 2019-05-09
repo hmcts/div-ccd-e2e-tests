@@ -233,10 +233,15 @@ const getBaseUrl = () => {
   return env === 'demo' ? 'www.ccd.demo.platform.hmcts.net' : 'www-ccd.aat.platform.hmcts.net';
 };
 
+async function firstLetterToCaps(value){
+  return value.charAt(0).toUpperCase() + value.slice(1).toLowerCase();
+};
+
 module.exports = {
   getSolicitorLoginDetails,
   getCaseWorkerLoginDetails,
   createCaseInCcd,
   updateCaseInCcd,
-  getBaseUrl
+  getBaseUrl,
+  firstLetterToCaps
 };
