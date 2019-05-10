@@ -8,7 +8,6 @@ const solicitor = getSolicitorLoginDetails();
 Feature('Solicitor create case');
 
 Scenario('Solicitor create case and make payment', async (I) => {
-  I.resizeWindow(1920, 1080);
   I.amOnHomePage();
   I.login(solicitor.username, solicitor.password);
   I.shouldBeOnCaseListPage();
