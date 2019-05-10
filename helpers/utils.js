@@ -237,11 +237,21 @@ async function firstLetterToCaps(value){
   return value.charAt(0).toUpperCase() + value.slice(1).toLowerCase();
 };
 
+async function datechange(numberOfDaysToAdd){
+  const months = ['Jan', 'Feb', 'Mar','Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+  let currentDateTime = new Date();
+  let newDate = new Date();
+  newDate = new Date(newDate.setDate(currentDateTime.getDate()+numberOfDaysToAdd));
+  let formattedDate = newDate.getDate() + ' ' + months[newDate.getMonth()] + ' ' + newDate.getFullYear();
+  return formattedDate;
+};
+
 module.exports = {
   getSolicitorLoginDetails,
   getCaseWorkerLoginDetails,
   createCaseInCcd,
   updateCaseInCcd,
   getBaseUrl,
+  datechange,
   firstLetterToCaps
 };
