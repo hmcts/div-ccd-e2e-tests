@@ -1,6 +1,6 @@
 /// <reference path="../steps.d.ts" />
 
-const { createCaseInCcd, updateCaseInCcd, getCaseWorkerLoginDetails, firstLetterToCaps } = require('../helpers/utils');
+const { createCaseInCcd, updateCaseInCcd, getCaseWorkerLoginDetails, firstLetterToCaps, datechange } = require('../helpers/utils');
 const verifyContent = require('../data/ccdBehaviourUnDefendedCase.json');
 const verifyLableText = require('../data/ccdFieldTabLabelNames.json');
 const caseWorker = getCaseWorkerLoginDetails();
@@ -95,7 +95,7 @@ Scenario('Behaviour case Undefended', async function (I) {
   I.see(await firstLetterToCaps(verifyContent.RespContactMethodIsDigital));
   I.see(verifyLableText.general.yes);
   I.see(verifyLableText.aosAnswers.respDueDate);
-  // <todo write function for due date calculation>
+  I.see(await datechange(30));
 
   // Verify Reason For Divorce Tab
   I.clickTab(verifyLableText.reasonForDivorceTab.name);
@@ -127,6 +127,25 @@ Scenario('Behaviour case Undefended', async function (I) {
   I.see(verifyLableText.prayerTab.factsStated);
   I.see(verifyLableText.general.yes);
 
+  // Verify Documents Tab
+  I.clickTab(verifyLableText.documentsTab.name);
+  I.see(verifyLableText.documentsTab.documentsUploadedPFEStage);
+  I.see(verifyLableText.documentsTab.pfeUploadedDoc);
+  I.see(verifyLableText.documentsTab.documentsGenerated);
+  I.see(verifyLableText.documentsTab.d8petitionText+caseId+verifyLableText.documentsTab.documentgeneratedExtension);
+  I.see(verifyLableText.documentsTab.aosInvitationText+caseId+verifyLableText.documentsTab.documentgeneratedExtension);
+  // I.see(verifyLableText.documentsTab.respondentAnswersText);
+  I.see(verifyLableText.documentsTab.documentsUploadedDNStage);
+  I.see(verifyLableText.documentsTab.dnUploadedDoc);
+
+  // Verify Confidential Petitioner Tab
+  I.clickTab(verifyLableText.confidentialPetitionerTab.name);
+  I.see(verifyLableText.confidentialPetitionerTab.petitionerServiceAddress);
+  I.see(verifyContent.D8DerivedPetitionerCorrespondenceAddr);
+  I.see(verifyLableText.confidentialPetitionerTab.petitionerEmail);
+  I.see(verifyContent.D8PetitionerEmail);
+  I.see(verifyLableText.confidentialPetitionerTab.petitionerHomeAddress);
+  I.see(verifyContent.D8DerivedPetitionerHomeAddress);
 
   // Verify Marriage Certificate Tab
   I.clickTab(verifyLableText.marriageCertificateTab.name);
@@ -140,41 +159,6 @@ Scenario('Behaviour case Undefended', async function (I) {
   I.see(verifyLableText.general.yes);
   I.see(verifyLableText.marriageCertificateTab.placeOfMarriage);
   I.see(verifyContent.D8MarriagePlaceOfMarriage);
-
-  // Verify Confidential Petitioner Tab
-  I.clickTab(verifyLableText.confidentialPetitionerTab.name);
-  I.see(verifyLableText.confidentialPetitionerTab.petitionerServiceAddress);
-  I.see(verifyContent.D8DerivedPetitionerCorrespondenceAddr);
-  I.see(verifyLableText.confidentialPetitionerTab.petitionerEmail);
-  I.see(verifyContent.D8PetitionerEmail);
-  I.see(verifyLableText.confidentialPetitionerTab.petitionerHomeAddress);
-  I.see(verifyContent.D8DerivedPetitionerHomeAddress);
-
-  // Verify Documents Tab
-  I.clickTab(verifyLableText.documentsTab.name);
-  I.see(verifyLableText.documentsTab.documentsUploadedPFEStage);
-  I.see(verifyLableText.documentsTab.pfeUploadedDoc);
-  I.see(verifyLableText.documentsTab.documentsGenerated);
-  I.see(verifyLableText.documentsTab.d8petitionText+caseId+verifyLableText.documentsTab.documentgeneratedExtension);
-  I.see(verifyLableText.documentsTab.aosInvitationText+caseId+verifyLableText.documentsTab.documentgeneratedExtension);
-  // I.see(verifyLableText.documentsTab.respondentAnswersText);
-  I.see(verifyLableText.documentsTab.documentsUploadedDNStage);
-  I.see(verifyLableText.documentsTab.dnUploadedDoc);
-
-  // Verify Prayer Tab
-  I.clickTab(verifyLableText.prayerTab.name);
-  I.see(verifyLableText.prayerTab.otherCourtProceedings);
-  I.see(verifyLableText.general.no);
-  I.see(verifyLableText.prayerTab.financialOrder);
-  I.see(verifyLableText.general.yes);
-  I.see(verifyLableText.prayerTab.whoTheFinancialOrder);
-  I.see(verifyContent.D8FinancialOrderFor[0]);
-  I.see(verifyLableText.prayerTab.applyForClaimCosts);
-  I.see(verifyLableText.general.yes);
-  I.see(verifyLableText.prayerTab.claimCostsFrom);
-  I.see(await firstLetterToCaps(verifyContent.D8DivorceClaimFrom[0]));
-  I.see(verifyLableText.prayerTab.factsStated);
-  I.see(verifyLableText.general.yes);
 
   I.click('Sign Out');
 });
