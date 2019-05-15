@@ -1,0 +1,239 @@
+{
+"D8DerivedRespondentHomeAddress": "25 Southend Road\nLondon\nE6 2AL",
+"D8RespondentHomeAddress": {
+"County": null,
+"Country": null,
+"PostCode": "E6 2AL",
+"PostTown": null,
+"AddressLine1": null,
+"AddressLine2": null,
+"AddressLine3": null
+},
+"Payments": [
+],
+"CoRespLetterHolderId": "1f2c8560-55e6-4688-850a-0c3c998dacd9",
+"D8ScreenHasMarriageCert": "YES",
+"D8ScreenHasMarriageBroken": "YES",
+"D8InferredRespondentGender": "female",
+"D8ReasonForDivorceEnableAdultery": "YES",
+"D8LivingArrangementsLiveTogether": "NO",
+"D8ReasonForDivorceHasMarriage": "YES",
+"D8RespondentLastName": "Resp last",
+"D8PetitionerNameDifferentToMarriageCert": "NO",
+"D8ReasonForDivorceAdultery3rdAddress": {
+"County": null,
+"Country": null,
+"PostCode": "E6 2AL",
+"PostTown": null,
+"AddressLine1": null,
+"AddressLine2": null,
+"AddressLine3": null
+},
+"CoRespStatementOfTruth": "YES",
+"ReceivedAOSfromRespDate": "2019-04-09",
+"D8ReasonForDivorceShowTwoYearsSeparation": "YES",
+"D8StatementOfTruth": "YES",
+"D8ReasonForDivorceAdultery3rdPartyLName": "Coresp Last",
+"ReceivedAosFromCoResp": "Yes",
+"D8RespondentLivesAtLastAddress": "YES",
+"D8ReasonForDivorceLimitReasons": "NO",
+"D8ReasonForDivorceAdulteryAnyInfo2ndHand": "YES",
+"D8PetitionerEmail": "petcorespondentfirst@mailinator.com",
+"AosLetterHolderId": "e3383462-5eea-4419-b87c-b9188f5cc03b",
+"CoRespLinkedToCase": "Yes",
+"D8PetitionerConsent": "YES",
+"D8DerivedReasonForDivorceAdultery3dPtyNm": "Coresp first Coresp Last",
+"D8ReasonForDivorceShowDesertion": "YES",
+"D8DerivedRespondentCorrespondenceAddr": "25 Southend Road\nLondon\nE6 2AL",
+"D8MarriagePetitionerName": "Pet cert name",
+"D8Cohort": "onlineSubmissionPrivateBeta",
+"D8MarriageIsSameSexCouple": "NO",
+"D8FinancialOrder": "NO",
+"D8HelpWithFeesNeedHelp": "NO",
+"RespJurisdictionDisagreeReason": "The court has something personal against me",
+"D8DivorceWho": "wife",
+"RespAdmitOrConsentToFact": "No",
+"D8RespondentFirstName": "Resp first",
+"RespJurisdictionAgree": "No",
+"CoRespEmailAddress": "coresp-case-26@mailinator.com",
+"CoRespDefendsDivorce": "YES",
+"D8DerivedPetitionerCorrespondenceAddr": "23 Southend Road\nLondon\nE6 2AL",
+"IssueDate": "2019-04-09",
+"D8MarriedInUk": "YES",
+"D8ReasonForDivorceAdulteryKnowWhen": "YES",
+"D8ReasonForDivorceAdulteryKnowWhere": "YES",
+"D8PetitionerFirstName": "Pet first",
+"D8MarriageRespondentName": "Resp cert name",
+"createdDate": "2019-04-09",
+"D8JurisdictionPath": [
+"JurisdictionHabitualResidence",
+"JurisdictionInterstitial"
+],
+"D8MarriagePlaceOfMarriage": "London",
+"D8RespondentCorrespondenceAddress": {
+"County": null,
+"Country": null,
+"PostCode": "E6 2AL",
+"PostTown": null,
+"AddressLine1": null,
+"AddressLine2": null,
+"AddressLine3": null
+},
+"CoRespConfirmReadPetition": "YES",
+"RespWillDefendDivorce": "Yes",
+"RespondentContactDetailsConfidential": "share",
+"DueDateCoResp": "2019-04-30",
+"D8DerivedPetitionerHomeAddress": "23 Southend Road\nLondon\nE6 2AL",
+"dueDate": "2019-05-09",
+"D8ScreenHasRespondentAddress": "YES",
+"D8LivingArrangementsLastLivedTogethAddr": {
+"County": null,
+"Country": null,
+"PostCode": "E6 2AL",
+"PostTown": null,
+"AddressLine1": null,
+"AddressLine2": null,
+"AddressLine3": null
+},
+"D8DivorceCostsClaim": "NO",
+"RespContactMethodIsDigital": "YES",
+"D8PetitionerHomeAddress": {
+"County": null,
+"Country": null,
+"PostCode": "E6 2AL",
+"PostTown": null,
+"AddressLine1": null,
+"AddressLine2": null,
+"AddressLine3": null
+},
+"ReceivedAosFromCoRespDate": "2019-04-09",
+"ReceivedAnswerFromCoRespDate": "2019-04-29",
+"D8ReasonForDivorceShowAdultery": "YES",
+"D8DerivedStatementOfCase": "On Mars\nOn our 5th anniversary\nIt was disgusting",
+"D8ReasonForDivorceAdulteryWishToName": "YES",
+"D8JurisdictionConfidentLegal": "YES",
+"D8RespondentCorrespondenceUseHomeAddress": "Yes",
+"D8Connections": {
+"A": "The Petitioner and the Respondent are habitually resident in England and Wales",
+"B": null,
+"C": "The Respondent is habitually resident in England and Wales",
+"D": null,
+"E": null,
+"F": null,
+"G": null
+},
+"D8PetitionerCorrespondenceAddress": {
+"County": null,
+"Country": null,
+"PostCode": "E6 2AL",
+"PostTown": null,
+"AddressLine1": null,
+"AddressLine2": null,
+"AddressLine3": null
+},
+"D8JurisdictionConnection": [
+"A",
+"C"
+],
+"D8DerivedLivingArrangementsLastLivedAddr": "25 Southend Road\nLondon\nE6 2AL",
+"ReceivedAnswerFromCoResp": "Yes",
+"D8PetitionerLastName": "Pet last",
+"RespStatementOfTruth": "Yes",
+"D8PetitionerCorrespondenceUseHomeAddress": "YES",
+"D8DocumentsGenerated": [
+{
+"id": "e1a4484a-7d5f-45c9-975c-fb61d4daca93",
+"value": {
+"DocumentLink": {
+"document_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/6c3ab0cd-bec7-4c3e-93f3-42b19f8bf71e",
+"document_filename": "d8petition1554810422260612.pdf",
+"document_binary_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/6c3ab0cd-bec7-4c3e-93f3-42b19f8bf71e/binary"
+},
+"DocumentType": "petition",
+"DocumentComment": null,
+"DocumentFileName": "d8petition1554810422260612",
+"DocumentDateAdded": null,
+"DocumentEmailContent": null
+}
+},
+{
+"id": "ab491aae-a5c6-47dc-b8b0-27d5df23d32e",
+"value": {
+"DocumentLink": {
+"document_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/18e433a5-082c-47d6-9670-d03728035a63",
+"document_filename": "aosinvitation1554810422260612.pdf",
+"document_binary_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/18e433a5-082c-47d6-9670-d03728035a63/binary"
+},
+"DocumentType": "aos",
+"DocumentComment": null,
+"DocumentFileName": "aosinvitation1554810422260612",
+"DocumentDateAdded": null,
+"DocumentEmailContent": null
+}
+},
+{
+"id": "91ddb315-e144-4b22-86e7-2934e0d25d0a",
+"value": {
+"DocumentLink": {
+"document_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/30a4be7e-43c5-44c1-be87-9a925f33653e",
+"document_filename": "co-respondentaosinvitation1554810422260612.pdf",
+"document_binary_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/30a4be7e-43c5-44c1-be87-9a925f33653e/binary"
+},
+"DocumentType": "aoscr",
+"DocumentComment": null,
+"DocumentFileName": "co-respondentaosinvitation1554810422260612",
+"DocumentDateAdded": null,
+"DocumentEmailContent": null
+}
+}
+],
+"ReceivedAOSfromResp": "Yes",
+"CoRespAdmitAdultery": "NO",
+"RespConfirmReadPetition": "Yes",
+"D8DerivedRespondentCurrentName": "Resp first Resp last",
+"D8ReasonForDivorceAdultery3rdPartyFName": "Coresp first",
+"D8DivorceUnit": "serviceCentre",
+"CoRespContactMethodIsDigital": "YES",
+"D8ReasonForDivorceAdulteryWhenDetails": "On our 5th anniversary",
+"CoRespConsentToEmail": "YES",
+"D8ReasonForDivorceAdulteryDetails": "It was disgusting",
+"D8LivingArrangementsLastLivedTogether": "NO",
+"D8ReasonForDivorceShowFiveYearsSeparatio": "YES",
+"D8MarriageDate": "2010-10-20",
+"D8caseReference": "LV17D80000",
+"D8JurisdictionRespondentResidence": "YES",
+"D8MarriageCanDivorce": "YES",
+"CoRespLinkedToCaseDate": "2019-04-09",
+"D8ReasonForDivorceShowUnreasonableBehavi": "YES",
+"D8DocumentsUploaded": [
+{
+"id": "3a156470-6dbf-4f9a-b2b1-c4cbc469f05c",
+"value": {
+"DocumentLink": {
+"document_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/6b6b5935-10b3-4a32-aaac-cb26ed5f28ad",
+"document_filename": "Screenshot 2019-03-28 at 12.55.29.png",
+"document_binary_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/6b6b5935-10b3-4a32-aaac-cb26ed5f28ad/binary"
+},
+"DocumentType": "other",
+"DocumentComment": "",
+"DocumentFileName": "Screenshot 2019-03-28 at 12.55.29.png",
+"DocumentDateAdded": "2019-04-09",
+"DocumentEmailContent": ""
+}
+}
+],
+"D8JurisdictionPetitionerResidence": "YES",
+"RespPhoneNumber": "1324556789",
+"D8PetitionerContactDetailsConfidential": "share",
+"D8ReasonForDivorceAdultery2ndHandDetails": "The disgusting part",
+"D8ReasonForDivorceAdulteryWhereDetails": "On Mars",
+"D8DerivedReasonForDivorceAdultery3rdAddr": "27 Southend Road\nLondon\nE6 2AL",
+"D8LegalProceedings": "NO",
+"RespLegalProceedingsExist": "No",
+"D8ReasonForDivorce": "adultery",
+"RespJurisdictionRespCountryOfResidence": "Wales",
+"RespConsentToEmail": "Yes",
+"D8DerivedPetitionerCurrentFullName": "Pet first Pet last",
+"RespEmailAddress": "resp-case-26@mailinator.com",
+"D8InferredPetitionerGender": "male"
+}
