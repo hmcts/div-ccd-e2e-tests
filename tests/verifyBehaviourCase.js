@@ -115,17 +115,17 @@ Scenario('Behaviour case Undefended', async function (I) {
   // Verify Prayer Tab
   I.clickTab(verifyLableText.prayerTab.name);
   I.see(verifyLableText.prayerTab.otherCourtProceedings);
-  I.see(verifyLableText.general.no);
+  I.see(await firstLetterToCaps(verifyContent.D8LegalProceedings));
   I.see(verifyLableText.prayerTab.financialOrder);
-  I.see(verifyLableText.general.yes);
+  I.see(await firstLetterToCaps(verifyContent.D8FinancialOrder));
   I.see(verifyLableText.prayerTab.whoTheFinancialOrder);
   I.see(verifyContent.D8FinancialOrderFor[0]);
   I.see(verifyLableText.prayerTab.applyForClaimCosts);
-  I.see(verifyLableText.general.yes);
+  I.see(await firstLetterToCaps(verifyContent.D8DivorceCostsClaim));
   I.see(verifyLableText.prayerTab.claimCostsFrom);
   I.see('Respondent');
   I.see(verifyLableText.prayerTab.factsStated);
-  I.see(verifyLableText.general.yes);
+  I.see(await firstLetterToCaps(verifyContent.D8StatementOfTruth));
 
   // Verify Documents Tab
   I.clickTab(verifyLableText.documentsTab.name);
