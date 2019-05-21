@@ -12,7 +12,7 @@ Scenario('Solicitor create case and make payment', async (I) => {
   I.login(solicitor.username, solicitor.password);
   I.shouldBeOnCaseListPage();
   I.clickCreateCase();
-  I.wait(25);
+  I.wait(5);
   I.fillCreateCaseFormAndSubmit();
   I.fillAboutSolicitorFormAndSubmit();
   I.fillAboutThePetitionerFormAndSubmit();

@@ -39,6 +39,8 @@ const TransferCaseToADifferentRDCsPage = require('./pages/TransferCaseToADiffere
 const TransferBetweenRDCsPage = require('./pages/TransferBetweenRDCsPage');
 const TransferToRDCLandingPage = require('./pages/TransferToRDCLandingPage');
 
+const verifyTabData = require ('./tabs/verifyTabData');
+
 module.exports = function () {
   return actor({
 
@@ -206,6 +208,40 @@ module.exports = function () {
 
     caseCreatedCTSCServiceCentrePageFormAndSubmit: function() {
       TransferToRDCLandingPage.fillFormAndSubmit();
+    },
+    verifyPetitionerTab: function(reason,verifyContent) {
+      verifyTabData.verifyPetitionerTab(reason,verifyContent);
+    },
+    verifyCorespondentTab: function(reason,verifyContent) {
+      verifyTabData.verifyCorespondentTab(reason, verifyContent);
+    },
+
+    verifyRespondentTab: function(reason,verifyContent) {
+      verifyTabData.verifyRespondentTab(reason,verifyContent);
+    },
+    verifyReasonForDivorceTab: function(reason,verifyContent) {
+      verifyTabData.verifyReasonForDivorceTab(reason,verifyContent);
+    },
+    verifyJurisdictionTab: function(reason,verifyContent) {
+      verifyTabData.verifyJurisdictionTab(reason,verifyContent);
+    },
+    verifyPrayerTab: function(reason,verifyContent) {
+      verifyTabData.verifyPrayerTab(reason,verifyContent);
+    },
+    verifyDocumentsTab: function(reason,verifyContent,caseId) {
+      verifyTabData.verifyDocumentsTab(reason,verifyContent, caseId);
+    },
+    verifyMarriageCertificateTab: function(reason,verifyContent) {
+      verifyTabData.verifyMarriageCertificateTab(reason,verifyContent);
+    },
+    verifyAOSAnswersInTab: function(reason,verifyContent){
+      verifyTabData.verifyAOSAnswersInTab(reason,verifyContent);
+    },
+    verifyDNAnswersInTab: function(reason,verifyContent) {
+      verifyTabData.verifyDNAnswersInTab(reason,verifyContent);
+    },
+    verifyConfidentialPetitionerTab:function(reason,verifyContent) {
+      verifyTabData.verifyConfidentialPetitionerTab(reason,verifyContent);
     }
   });
 };

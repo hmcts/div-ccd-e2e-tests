@@ -233,11 +233,11 @@ const getBaseUrl = () => {
   return env === 'demo' ? 'www.ccd.demo.platform.hmcts.net' : 'www-ccd.aat.platform.hmcts.net';
 };
 
-async function firstLetterToCaps(value){
+function firstLetterToCaps(value){
   return value.charAt(0).toUpperCase() + value.slice(1).toLowerCase();
 };
 
-async function datechange(numberOfDaysToAdd){
+function datechange(numberOfDaysToAdd){
   const months = ['Jan', 'Feb', 'Mar','Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
   let currentDateTime = new Date();
   let newDate = new Date();
