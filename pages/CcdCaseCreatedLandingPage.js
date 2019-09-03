@@ -8,13 +8,13 @@ module.exports = {
   },
 
   fillFormAndSubmit() {
-    I.waitForElement(this.fields.selectActionDropDown, 20);  
+    I.waitForElement(this.fields.selectActionDropDown, 20);
     I.see('Petition submitted');
     I.selectOption(this.fields.selectActionDropDown, 'Transfer between RDCs');
     I.wait(3);
     I.waitForVisible(this.fields.submit);
     I.click(this.fields.submit);
-    I.wait(2);
+    I.wait(5);
   }
 
 };

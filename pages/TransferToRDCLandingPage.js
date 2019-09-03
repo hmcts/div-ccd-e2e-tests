@@ -8,9 +8,9 @@ module.exports = {
   },
 
   fillFormAndSubmit() {
-    I.waitForElement(this.fields.selectActionDropDown, 20);  
+    I.waitForElement(this.fields.selectActionDropDown, 20);
     I.see('Petition submitted');
-    I.click('//a[contains(.,\'Petitioner\')]');
+    I.click('//a[contains(.,\'Petition\')]');
     I.wait(3);
     I.see('Courts and Tribunals Service Centre');
     I.selectOption(this.fields.selectActionDropDown, 'Issue');
