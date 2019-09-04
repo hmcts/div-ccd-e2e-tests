@@ -16,7 +16,6 @@ Scenario('Adultery case defended by both Resp and Co Resp', async function (I) {
   const aosSubmittedCoRespoDefended = await updateCaseInCcd(caseId, 'co-RespAOSReceivedStarted');
   const aosSubmittedRespoDefended = await updateCaseInCcd(caseId, 'aosSubmittedDefended');
   const coRespAnswerReceivedForDefended = await updateCaseInCcd(caseId,'coRespAnswerReceivedAOS');
-  const coRespAnswerReceivedForDefended = await updateCaseInCcd(caseId, 'coRespAnswerReceivedAOS');
   const reason ='Adultery';
 
   I.amOnHomePage();
