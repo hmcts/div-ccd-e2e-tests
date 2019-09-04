@@ -1,6 +1,6 @@
 const I = actor();
 const { createCaseInCcd, updateCaseInCcd, getCaseWorkerLoginDetails, firstLetterToCaps, datechange } = require('../helpers/utils');
-const verifyLableText = require('../data/ccdFieldTabLabelNames.json');
+::const verifyLableText = require('../data/ccdFieldTabLabelNames.json');
 
 
 function verifyPetitionerTab(reason,verifyContent){
@@ -49,7 +49,7 @@ function verifyPetitionerTab(reason,verifyContent){
     I.see(verifyContent.D8DerivedPetitionerHomeAddress);
   }
 
-// prayer related data
+  // prayer related data
   I.see(verifyLableText.prayerTab.otherCourtProceedings);
   I.see( firstLetterToCaps(verifyContent.D8LegalProceedings));
   I.see(verifyLableText.prayerTab.financialOrder);
@@ -69,7 +69,7 @@ function verifyPetitionerTab(reason,verifyContent){
   I.see(verifyLableText.prayerTab.factsStated);
   I.see(firstLetterToCaps(verifyContent.D8StatementOfTruth));
 
-// Reason details
+  // Reason details
   I.see(verifyLableText.reasonForDivorceTab.fact);
   I.see(reason);
 
