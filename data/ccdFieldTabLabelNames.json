@@ -49,8 +49,7 @@
     "behaviourDetails": "Behaviour details",
     "adulteryDetails":  "Adultery details",
     "nameOfCoRespondent": "Name co-respondent?",
-    "adulteryInfoThirdParty": "Adultery case information from third party?",
-    "adulteryInfoThirdPartyDetails": "Adultery case information from third party info",
+    "adulteryInfoThirdPartyDetails": "Has any of the information about the adultery come from another person?",
     "adulteryPetitionerKnowsWhen": "Petitioner knows when adultery took place?",
     "detailsOfWhenAdulteryTookPlace": "When the adultery took place",
     "adulteryPetitionerKnowsWhere": "Petitioner know where adultery took place?",
@@ -58,7 +57,7 @@
 
   },
   "respondentTab": {
-    "name": "Respondent",
+    "name": "AOS",
     "familyManRefNumber": "FamilyMan reference",
     "respondentFName": "Respondent's First name(s)",
     "respondentLName": "Respondent's Last name",
@@ -68,20 +67,20 @@
     "respondentGender": "What is the respondent's gender?"
   },
   "aosAnswers": {
-    "respConfirmedRead": "Respondent confirmed petition read",
-    "respDefendDivorce":  "Is the respondent defending the divorce?",
+    "respConfirmedRead": "Has the respondent read the application for divorce?",
+    "respDefendDivorce":  "How does the respondent want to proceed?",
     "respAdmitted": "Respondent admitted to adultery or consented to 2-year separation",
     "respAgreedClaimdJurisdiction": "Respondent agreed to claimed jurisdiction?",
     "respReasonJurisdiction": "Reason respondent disagreed to claimed jurisdiction",
     "respJurisdictionCountry": "Respondent country of residence",
     "resplegalProceedings": "Do legal proceedings exist (respondent)?",
     "respAgreeCosts": "Does respondent agree to costs?",
-    "respAgreeStatementOfTruth": "Respondent agreed to statement of truth?",
+    "respAgreeStatementOfTruth": "The respondent believes that the facts stated in this response are true",
     "respDigitalChannel": "Respondent is using digital channel?",
     "respDueDate": "Due Date"
   },
   "petitionertab": {
-    "name": "Petitioner",
+    "name": "Petition",
     "rdc": "RDC",
     "courtName": "Courts and Tribunals Service Centre",
     "petitionerFName": "First name(s)",

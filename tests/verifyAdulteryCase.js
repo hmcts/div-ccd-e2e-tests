@@ -15,24 +15,20 @@ Scenario('Adultery case defended by both Resp and Co Resp', async function (I) {
   const startAOS = await updateCaseInCcd(caseId, 'startAos');
   const aosSubmittedCoRespoDefended = await updateCaseInCcd(caseId, 'co-RespAOSReceivedStarted');
   const aosSubmittedRespoDefended = await updateCaseInCcd(caseId, 'aosSubmittedDefended');
+  const coRespAnswerReceivedForDefended = await updateCaseInCcd(caseId,'coRespAnswerReceivedAOS');
   const coRespAnswerReceivedForDefended = await updateCaseInCcd(caseId, 'coRespAnswerReceivedAOS');
   const reason ='Adultery';
 
   I.amOnHomePage();
   I.login(caseWorker.username, caseWorker.password);
-  I.shouldBeOnCaseListPage();
+  I.wait(10);
   I.amOnPage('/case/DIVORCE/DIVORCE/' + caseId);
-  I.wait(5);
-
-  I.verifyCorespondentTab(reason, verifyContent);
+  I.waitInUrl('/case/DIVORCE/DIVORCE/' + caseId, 30);
   I.verifyPetitionerTab(reason,verifyContent);
-  I.verifyRespondentTab(reason,verifyContent);
   I.verifyAOSAnswersInTab(reason,verifyContent);
-  I.verifyReasonForDivorceTab(reason,verifyContent);
-  I.verifyJurisdictionTab(reason,verifyContent);
-  I.verifyPrayerTab(reason,verifyContent);
   I.verifyDocumentsTab(reason,verifyContent,caseId);
   I.verifyMarriageCertificateTab(reason, verifyContent);
+  I.verifyCorespondentTab(reason, verifyContent);
   I.click('Sign Out');
 
 });

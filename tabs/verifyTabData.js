@@ -1,6 +1,5 @@
 const I = actor();
 const { createCaseInCcd, updateCaseInCcd, getCaseWorkerLoginDetails, firstLetterToCaps, datechange } = require('../helpers/utils');
-// const verifyContent = require('../data/ccdAdulteryRespondentCorespondentDefendedCase.json');
 const verifyLableText = require('../data/ccdFieldTabLabelNames.json');
 
 
@@ -26,6 +25,21 @@ function verifyPetitionerTab(reason,verifyContent){
   I.see(verifyLableText.general.yes);
   I.see(verifyLableText.petitionertab.previousCourtProceedings);
   I.see(firstLetterToCaps(verifyContent.D8LegalProceedings));
+
+  //Respondent details
+  I.see(verifyLableText.respondentTab.respondentFName);
+  I.see(verifyContent.D8RespondentFirstName);
+  I.see(verifyLableText.respondentTab.respondentLName);
+  I.see(verifyContent.D8RespondentLastName);
+  I.see(verifyLableText.respondentTab.respondentHomeAdd);
+  I.see(verifyContent.D8DerivedRespondentHomeAddress);
+  I.see(verifyLableText.respondentTab.respondentSerAdd);
+  I.see(verifyContent.D8DerivedRespondentCorrespondenceAddr);
+  I.see(verifyLableText.respondentTab.respondentConsentEmailComm);
+  I.see(verifyLableText.general.yes);
+  I.see(verifyLableText.respondentTab.respondentGender);
+  I.see(firstLetterToCaps(verifyContent.D8InferredRespondentGender));
+
   if(['Adultery'].includes(reason)) {
     I.see(verifyLableText.confidentialPetitionerTab.petitionerServiceAddress);
     I.see(verifyContent.D8DerivedPetitionerCorrespondenceAddr);
@@ -34,6 +48,60 @@ function verifyPetitionerTab(reason,verifyContent){
     I.see(verifyLableText.confidentialPetitionerTab.petitionerHomeAddress);
     I.see(verifyContent.D8DerivedPetitionerHomeAddress);
   }
+
+// prayer related data
+  I.see(verifyLableText.prayerTab.otherCourtProceedings);
+  I.see( firstLetterToCaps(verifyContent.D8LegalProceedings));
+  I.see(verifyLableText.prayerTab.financialOrder);
+  I.see( firstLetterToCaps(verifyContent.D8FinancialOrder));
+  if(['Adultery'].includes(reason)) {
+    I.see(verifyLableText.prayerTab.applyForClaimCosts);
+    I.see(firstLetterToCaps(verifyContent.D8DivorceCostsClaim));
+  }
+  if(['Behaviour'].includes(reason)) {
+    I.see(verifyLableText.prayerTab.whoTheFinancialOrder);
+    I.see(verifyContent.D8FinancialOrderFor[0]);
+    I.see(verifyLableText.prayerTab.applyForClaimCosts);
+    I.see(firstLetterToCaps(verifyContent.D8DivorceCostsClaim));
+    I.see(verifyLableText.prayerTab.claimCostsFrom);
+    I.see('Respondent');
+  }
+  I.see(verifyLableText.prayerTab.factsStated);
+  I.see(firstLetterToCaps(verifyContent.D8StatementOfTruth));
+
+// Reason details
+  I.see(verifyLableText.reasonForDivorceTab.fact);
+  I.see(reason);
+
+  if(['Adultery'].includes(reason)) {
+    I.see(verifyLableText.reasonForDivorceTab.adulteryDetails);
+    I.see(verifyContent.D8ReasonForDivorceAdulteryDetails);
+    I.see(verifyLableText.reasonForDivorceTab.nameOfCoRespondent);
+    I.see(firstLetterToCaps(verifyContent.D8ReasonForDivorceAdulteryWishToName));
+    I.see(verifyLableText.reasonForDivorceTab.adulteryInfoThirdPartyDetails);
+    I.see(verifyContent.D8ReasonForDivorceAdultery2ndHandDetails);
+    I.see(verifyLableText.reasonForDivorceTab.adulteryPetitionerKnowsWhen);
+    I.see(firstLetterToCaps(verifyContent.D8ReasonForDivorceAdulteryKnowWhen));
+    I.see(verifyLableText.reasonForDivorceTab.detailsOfWhenAdulteryTookPlace);
+    I.see(verifyContent.D8ReasonForDivorceAdulteryWhenDetails);
+    I.see(verifyLableText.reasonForDivorceTab.adulteryPetitionerKnowsWhere);
+    I.see(firstLetterToCaps(verifyContent.D8ReasonForDivorceAdulteryKnowWhere));
+    I.see(verifyLableText.reasonForDivorceTab.detailsOfWhereAdulteryTookPlace);
+    I.see(verifyContent.D8ReasonForDivorceAdulteryWhereDetails);
+  }
+  if(['Behaviour'].includes(reason)) {
+    I.see(verifyLableText.reasonForDivorceTab.behaviourDetails);
+    I.see(verifyContent.D8DerivedStatementOfCase);
+  }
+
+  // Legal Connections
+
+  I.see(verifyLableText.jurisdictionTab.legalConnections);
+  I.see(verifyContent.D8Connections.A);
+  I.see(verifyContent.D8Connections.C);
+  I.see(verifyLableText.jurisdictionTab.livedTogether);
+  I.see(verifyContent.D8DerivedLivingArrangementsLastLivedAddr);
+
 }
 
 function verifyCorespondentTab(reason,verifyContent)
@@ -65,86 +133,6 @@ function verifyCorespondentTab(reason,verifyContent)
   }
 }
 
-function verifyRespondentTab(reason,verifyContent) {
-
-  I.click(verifyLableText.respondentTab.name);
-  I.see(verifyLableText.respondentTab.familyManRefNumber);
-  I.see(verifyContent.D8caseReference);
-  I.see(verifyLableText.respondentTab.respondentFName);
-  I.see(verifyContent.D8RespondentFirstName);
-  I.see(verifyLableText.respondentTab.respondentLName);
-  I.see(verifyContent.D8RespondentLastName);
-  I.see(verifyLableText.respondentTab.respondentHomeAdd);
-  I.see(verifyContent.D8DerivedRespondentHomeAddress);
-  I.see(verifyLableText.respondentTab.respondentSerAdd);
-  I.see(verifyContent.D8DerivedRespondentCorrespondenceAddr);
-  I.see(verifyLableText.respondentTab.respondentConsentEmailComm);
-  I.see(verifyLableText.general.yes);
-  I.see(verifyLableText.respondentTab.respondentGender);
-  I.see(firstLetterToCaps(verifyContent.D8InferredRespondentGender));
-
-}
-
-function verifyReasonForDivorceTab(reason,verifyContent) {
-// Verify Reason For Divorce Tab
-  I.click(verifyLableText.reasonForDivorceTab.name);
-  I.see(verifyLableText.reasonForDivorceTab.fact);
-  I.see(reason);
-  if(['Adultery'].includes(reason)) {
-    I.see(verifyLableText.reasonForDivorceTab.adulteryDetails);
-    I.see(verifyContent.D8ReasonForDivorceAdulteryDetails);
-    I.see(verifyLableText.reasonForDivorceTab.nameOfCoRespondent);
-    I.see(firstLetterToCaps(verifyContent.D8ReasonForDivorceAdulteryWishToName));
-    I.see(verifyLableText.reasonForDivorceTab.adulteryInfoThirdParty);
-    I.see(firstLetterToCaps(verifyContent.D8ReasonForDivorceAdulteryAnyInfo2ndHand));
-    I.see(verifyLableText.reasonForDivorceTab.adulteryInfoThirdPartyDetails);
-    I.see(verifyContent.D8ReasonForDivorceAdultery2ndHandDetails);
-    I.see(verifyLableText.reasonForDivorceTab.adulteryPetitionerKnowsWhen);
-    I.see(firstLetterToCaps(verifyContent.D8ReasonForDivorceAdulteryKnowWhen));
-    I.see(verifyLableText.reasonForDivorceTab.detailsOfWhenAdulteryTookPlace);
-    I.see(verifyContent.D8ReasonForDivorceAdulteryWhenDetails);
-    I.see(verifyLableText.reasonForDivorceTab.adulteryPetitionerKnowsWhere);
-    I.see(firstLetterToCaps(verifyContent.D8ReasonForDivorceAdulteryKnowWhere));
-    I.see(verifyLableText.reasonForDivorceTab.detailsOfWhereAdulteryTookPlace);
-    I.see(verifyContent.D8ReasonForDivorceAdulteryWhereDetails);
-  }
-  if(['Behaviour'].includes(reason)) {
-    I.see(verifyLableText.reasonForDivorceTab.behaviourDetails);
-    I.see(verifyContent.D8DerivedStatementOfCase);
-  }
-}
-function verifyJurisdictionTab(reason,verifyContent) {
-// Verify Jurisdiction Tab
-  I.click(verifyLableText.jurisdictionTab.name);
-  I.see(verifyLableText.jurisdictionTab.legalConnections);
-  I.see(verifyContent.D8Connections.A);
-  I.see(verifyContent.D8Connections.C);
-  I.see(verifyLableText.jurisdictionTab.livedTogether);
-  I.see(verifyContent.D8DerivedLivingArrangementsLastLivedAddr);
-}
-function verifyPrayerTab(reason,verifyContent) {
-// Verify Prayer Tab
-  I.click(verifyLableText.prayerTab.name);
-  I.see(verifyLableText.prayerTab.otherCourtProceedings);
-  I.see( firstLetterToCaps(verifyContent.D8LegalProceedings));
-  I.see(verifyLableText.prayerTab.financialOrder);
-  I.see( firstLetterToCaps(verifyContent.D8FinancialOrder));
-  if(['Adultery'].includes(reason)) {
-    I.see(verifyLableText.prayerTab.applyForClaimCosts);
-    I.see(firstLetterToCaps(verifyContent.D8DivorceCostsClaim));
-  }
-  if(['Behaviour'].includes(reason)) {
-    I.see(verifyLableText.prayerTab.whoTheFinancialOrder);
-    I.see(verifyContent.D8FinancialOrderFor[0]);
-    I.see(verifyLableText.prayerTab.applyForClaimCosts);
-    I.see(firstLetterToCaps(verifyContent.D8DivorceCostsClaim));
-    I.see(verifyLableText.prayerTab.claimCostsFrom);
-    I.see('Respondent');
-  }
-  I.see(verifyLableText.prayerTab.factsStated);
-  I.see(firstLetterToCaps(verifyContent.D8StatementOfTruth));
-
-}
 function verifyDocumentsTab(reason,verifyContent, caseId) {
 // Verify Documents Tab
   I.click(verifyLableText.documentsTab.name);
@@ -253,10 +241,6 @@ function verifyConfidentialPetitionerTab(reason,verifyContent) {
 
 module.exports = { verifyPetitionerTab,
   verifyCorespondentTab,
-  verifyRespondentTab,
-  verifyReasonForDivorceTab,
-  verifyJurisdictionTab,
-  verifyPrayerTab,
   verifyDocumentsTab,
   verifyMarriageCertificateTab,
   verifyAOSAnswersInTab,
