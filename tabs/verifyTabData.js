@@ -1,6 +1,6 @@
 const I = actor();
 const { createCaseInCcd, updateCaseInCcd, getCaseWorkerLoginDetails, firstLetterToCaps, datechange } = require('../helpers/utils');
-::const verifyLableText = require('../data/ccdFieldTabLabelNames.json');
+const verifyLableText = require('../data/ccdFieldTabLabelNames.json');
 
 
 function verifyPetitionerTab(reason,verifyContent){
