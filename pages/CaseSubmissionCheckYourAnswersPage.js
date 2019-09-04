@@ -7,6 +7,7 @@ module.exports = {
   },
 
   fillFormAndSubmit() {
+    I.waitInUrl('solicitorStatementOfTruthPaySubmit/submit', 10);
     I.seeInCurrentUrl('solicitorStatementOfTruthPaySubmit/submit');
     I.see('Case submission');
     I.see('Check your answers');

@@ -21,7 +21,6 @@ module.exports = {
     I.click(this.fields.respondentChangedName);
     I.selectOption(this.fields.respondentGender, 'female');
     I.fillField(this.fields.respondentHomeAddress, '300 Central London, Lagos W2 3MU');
-    I.click(this.fields.wishToEffectServiceOnRespondent);
     I.click(this.fields.respondentUsingASolicitor);
     I.fillField(this.fields.respondentServiceAddress, '007 Peter Pan Road , E14 5RT');
     I.wait(5);
