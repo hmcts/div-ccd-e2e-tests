@@ -114,9 +114,10 @@
 
   },
   "dnAnswers": {
-    "continuewithDN": "Petitioner is continuing with their divorce and applying for a decree nisi?",
+    "name": "Decree Nisi",
+    "continuewithDN": "Does the petitioner want to continue with the divorce and apply for a decree nisi?",
     "dateOfDnSubmitted": "Date DN application submitted",
-    "isEverythingStatedDivPetition": "Petitioner confirmed petition is true at DN stage?",
+    "isEverythingStatedDivPetition": "Is everything stated in this divorce petition true?",
     "isBehaviourStillHapp": "Is the behaviour still happening?",
     "petitionerCostAtDN": "Petitioner's cost order preference at DN stage",
     "petitionerFactsDnStage": "The petitioner believes that the facts stated in the application for Decree Nisi are true",

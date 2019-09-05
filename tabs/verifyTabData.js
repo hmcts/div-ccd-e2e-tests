@@ -165,7 +165,7 @@ function verifyMarriageCertificateTab(reason,verifyContent) {
 }
 function verifyDNAnswersInTab(reason,verifyContent) {
   if(['Behaviour'].includes(reason)) {
-    I.click(verifyLableText.petitionertab.name);
+    I.click(verifyLableText.dnAnswers.name);
     I.see(verifyLableText.dnAnswers.continuewithDN);
     I.see(firstLetterToCaps(verifyContent.DNApplyForDecreeNisi));
     I.see(verifyLableText.dnAnswers.dateOfDnSubmitted);
