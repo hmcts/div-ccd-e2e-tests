@@ -19,16 +19,12 @@ Scenario('Behaviour case Undefended', async function (I) {
 
   I.amOnHomePage();
   I.login(caseWorker.username, caseWorker.password);
-  I.shouldBeOnCaseListPage();
+  I.wait(20);
   I.amOnPage('/case/DIVORCE/DIVORCE/' + caseId);
-  I.wait(5);
+  I.wait(30);
   I.verifyPetitionerTab(reason,verifyContent);
   I.verifyDNAnswersInTab(reason,verifyContent);
-  I.verifyRespondentTab(reason,verifyContent);
   I.verifyAOSAnswersInTab(reason,verifyContent);
-  I.verifyReasonForDivorceTab(reason,verifyContent);
-  I.verifyJurisdictionTab(reason,verifyContent);
-  I.verifyPrayerTab(reason,verifyContent);
   I.verifyDocumentsTab(reason,verifyContent,caseId);
   I.verifyConfidentialPetitionerTab(reason,verifyContent);
   I.verifyMarriageCertificateTab(reason,verifyContent);

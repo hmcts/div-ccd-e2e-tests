@@ -20,7 +20,7 @@ Scenario('Adultery case defended by both Resp and Co Resp', async function (I) {
 
   I.amOnHomePage();
   I.login(caseWorker.username, caseWorker.password);
-  I.wait(10);
+  I.wait(20);
   I.amOnPage('/case/DIVORCE/DIVORCE/' + caseId);
   I.wait(30);
   I.verifyPetitionerTab(reason,verifyContent);
