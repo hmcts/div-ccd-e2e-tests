@@ -199,8 +199,6 @@ function verifyAOSAnswersInTab(reason,verifyContent){
     I.see(verifyContent.RespJurisdictionRespCountryOfResidence);
     I.see(verifyLableText.aosAnswers.resplegalProceedings);
     I.see(verifyContent.RespLegalProceedingsExist);
-    I.see(verifyLableText.aosAnswers.respAgreeStatementOfTruth);
-    I.see(verifyContent.RespStatementOfTruth);
     I.see(verifyLableText.aosAnswers.respDigitalChannel);
     I.see(firstLetterToCaps(verifyContent.RespContactMethodIsDigital));
     I.see(verifyLableText.general.yes);
@@ -217,8 +215,6 @@ function verifyAOSAnswersInTab(reason,verifyContent){
     I.see(verifyContent.RespLegalProceedingsExist);
     I.see(verifyLableText.aosAnswers.respAgreeCosts);
     I.see(verifyContent.RespAgreeToCosts);
-    I.see(verifyLableText.aosAnswers.respAgreeStatementOfTruth);
-    I.see(verifyContent.RespStatementOfTruth);
     I.see(verifyLableText.aosAnswers.respDigitalChannel);
     I.see(firstLetterToCaps(verifyContent.RespContactMethodIsDigital));
     I.see(verifyLableText.general.yes);

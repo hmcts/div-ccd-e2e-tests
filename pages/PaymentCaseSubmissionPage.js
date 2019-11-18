@@ -3,9 +3,9 @@ const I = actor();
 module.exports = {
 
   fields: {
-    howPaymentMade: 'select[id="SolPaymentHowToPay"]',  
-    enterYourAccountNumber: '#SolicitorFeeAccountNumber', 
-    enterYourPreference: '#FeeAccountReference', 
+    howPaymentMade: 'select[id="SolPaymentHowToPay"]',
+    enterYourAccountNumber: '#SolicitorFeeAccountNumber',
+    enterYourPreference: '#FeeAccountReference',
     submit: 'button[type="submit"]'
   },
 
@@ -18,6 +18,6 @@ module.exports = {
     I.wait(5);
     I.fillField(this.fields.enterYourPreference, 'Next case submitted');
     I.click(this.fields.submit);
-    I.wait(3);
+    I.wait(5);
   }
 };

@@ -14,7 +14,7 @@ module.exports = {
   },
 
   fillFormAndSubmit() {
-    I.fillField(this.fields.solicitorsName, 'PAPA AJASCO');
+    I.retry().fillField(this.fields.solicitorsName, 'PAPA AJASCO');
     I.fillField(this.fields.firmName, 'ELEMU GETON');
     I.fillField(this.fields.firmDxAddress, '100 Reede Road, RM10 8DU');
     I.fillField(this.fields.yourReferenceNumber, 'AWS11234');
