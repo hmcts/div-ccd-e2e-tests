@@ -11,12 +11,10 @@ module.exports = {
 
   fillFormAndSubmit() {
     I.wait(5);
-    I.selectOption(this.fields.jurisdiction, 'DIVORCE');
-    I.wait(5);
-    I.selectOption(this.fields.caseType, 'DIVORCE');
-    I.wait(5);
-    I.selectOption(this.fields.event, 'solicitorCreate');
+    I.retry().selectOption(this.fields.jurisdiction, 'DIVORCE');
+    I.retry().selectOption(this.fields.caseType, 'DIVORCE');
+    I.retry().selectOption(this.fields.event, 'solicitorCreate');
     I.click(this.fields.submit);
-    I.wait(8);
+    I.wait(10);
   }
 };

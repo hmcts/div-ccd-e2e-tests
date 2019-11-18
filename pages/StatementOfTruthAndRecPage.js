@@ -9,6 +9,7 @@ module.exports = {
     amAuthorisedByPetitionerToSign: '#solSignStatementofTruth-Yes',
     yourName: '#SolStatementOfReconciliationName',
     nameOfYourFirm: '#SolStatementOfReconciliationFirm',
+    howToServeRespondent:'#SolServiceMethod-personalService',
     additionalComments: '#StatementOfReconciliationComments',
     submit: 'button[type="submit"]'
   },
@@ -16,6 +17,7 @@ module.exports = {
   fillFormAndSubmit() {
     I.wait(6);
     I.seeInCurrentUrl('solicitorStatementOfTruthPaySubmit/solicitorStatementOfTruthPaySubmitSolStatementOfTruth');
+    I.retry().click(this.fields.howToServeRespondent);
     I.click(this.fields.reconciliationWithThePetitioner);
     I.click(this.fields.namesAndAddressesOfPersonsQualified);
     I.click(this.fields.petitionerBelievesFactsTrue);
