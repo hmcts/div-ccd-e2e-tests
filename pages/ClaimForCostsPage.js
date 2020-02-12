@@ -11,6 +11,6 @@ module.exports = {
     I.seeInCurrentUrl('solicitorCreateSolApplyToClaimCosts');
     I.click(this.fields.petitionerWantsToClaimCosts);
     I.click(this.fields.submit);
-    I.wait(3);
+    I.wait(1);
   }
 };

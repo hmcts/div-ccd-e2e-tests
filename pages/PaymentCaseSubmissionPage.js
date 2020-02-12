@@ -10,14 +10,12 @@ module.exports = {
   },
 
   fillFormAndSubmit() {
-    I.wait(10);
+    I.wait(1);
     I.click(this.fields.howPaymentMade);
-    I.selectOption('select[id=SolPaymentHowToPay', 'feePayByAccount');
-    I.wait(5);
+    I.selectOption('select[id=SolPaymentHowToPay', 'Fee account');
     I.fillField(this.fields.enterYourAccountNumber, 'PBA1234908');
-    I.wait(5);
     I.fillField(this.fields.enterYourPreference, 'Next case submitted');
     I.click(this.fields.submit);
-    I.wait(5);
+    I.wait(1);
   }
 };

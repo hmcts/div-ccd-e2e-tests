@@ -14,6 +14,6 @@ module.exports = {
     I.fillField(this.fields.eventDescription, 'Event description for CTSC transfer');
     I.waitForElement(this.fields.submit, 20);
     I.click(this.fields.submit);
-    I.wait(3);
+    I.wait(1);
   }
 };

@@ -17,7 +17,6 @@ module.exports = {
   },
 
   resetFilter() {
-    I.wait(10);
     I.waitForElement(this.selectors.jurisdictionSelect, 10);
     I.waitForElement(this.selectors.caseTypeSelect, 10);
     I.waitForElement(this.selectors.caseStateSelect, 10);

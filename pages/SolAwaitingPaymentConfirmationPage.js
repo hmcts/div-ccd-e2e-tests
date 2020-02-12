@@ -7,7 +7,7 @@ module.exports = {
   },
 
   checkPageAndSignOut() {
-    I.wait(10);
+    I.wait(2);
     I.click('Sign Out');
   }
 };

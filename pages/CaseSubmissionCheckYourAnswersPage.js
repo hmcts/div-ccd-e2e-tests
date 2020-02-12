@@ -13,6 +13,6 @@ module.exports = {
     I.see('Check your answers');
     I.see('I am duly authorised by the petitioner to sign this statement.');
     I.click(this.fields.submit);
-    I.wait(5);
+    I.wait(1);
   }
 };

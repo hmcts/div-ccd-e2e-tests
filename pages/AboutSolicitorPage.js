@@ -21,7 +21,7 @@ module.exports = {
     I.fillField(this.fields.phoneNumber, '07712345679');
     I.fillField(this.fields.email, 'ccdsolicitorcreatecase@pettyfrance.com');
     I.click(this.fields.solicitorAgree);
-    I.wait(5);
+    I.wait(1);
     I.click(this.fields.submit);
   }
 };

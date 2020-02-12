@@ -12,7 +12,7 @@ module.exports = {
     I.seeInCurrentUrl('solicitorCreateSolUploadDocs');
     I.see('Documents uploaded (Optional)');
     I.click(this.fields.addNewButton);
-    I.wait(5);
+    I.wait(2);
     I.attachFile('input[id="D8DocumentsUploaded_0_DocumentLink"]', 'data/fileupload.txt');
     I.waitForVisible(this.fields.submit, 20);
     I.click(this.fields.submit);

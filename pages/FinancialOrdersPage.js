@@ -11,6 +11,6 @@ module.exports = {
     I.seeInCurrentUrl('solicitorCreateSolDividingMoneyAndProperty');
     I.click(this.fields.petitionerApplyForFinancialOrder);
     I.click(this.fields.submit);
-    I.wait(3);
+    I.wait(1);
   }
 };

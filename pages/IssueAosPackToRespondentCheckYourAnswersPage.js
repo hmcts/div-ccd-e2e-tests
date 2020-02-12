@@ -14,6 +14,6 @@ module.exports = {
     I.fillField(this.fields.eventDescription, 'This is formerly Aos pack issue event description field and its optional');
     I.waitForElement(this.fields.submit, 10);
     I.click(this.fields.submit);
-    I.wait(5);
+    I.wait(2);
   }
 };

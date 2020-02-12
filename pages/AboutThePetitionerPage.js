@@ -22,13 +22,13 @@ module.exports = {
     I.fillField(this.fields.firstName, 'James');
     I.fillField(this.fields.lastName, 'St Patrick');
     I.click(this.fields.petitionerChangedName);
-    I.selectOption(this.fields.whoIsPetitionerDivorcing, 'wife');
-    I.selectOption(this.fields.petitionerGender, 'male');
+    I.selectOption(this.fields.whoIsPetitionerDivorcing, 'Wife');
+    I.selectOption(this.fields.petitionerGender, 'Male');
     I.click(this.fields.petitionerRespondentSameSex);
     I.fillField(this.fields.petitionerHomeAddress, '300 Central London, W2 3MU');
     I.fillField(this.fields.petitionerPhoneNumber, '01789029090');
     I.fillField(this.fields.petitionerEmailAddress, 'JamesStPatrick@power.com');
-    I.selectOption(this.fields.keepPetitionerContactDetails, 'share');
+    I.selectOption(this.fields.keepPetitionerContactDetails, '2: share');
     I.click(this.fields.submit);
   }
 };

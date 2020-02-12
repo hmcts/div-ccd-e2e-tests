@@ -52,19 +52,27 @@ exports.config = {
     UploadMarriageCertificatePage: './pages/UploadMarriageCertificatePage.js',
     CaseSubmissionCheckYourAnswersPage: './pages/CaseSubmissionCheckYourAnswersPage.js',
     SolAwaitingPaymentConfirmationPage: './pages/SolAwaitingPaymentConfirmationPage.js',
-    CcdCaseCreatedLandingPage:'./pages/CcdCaseCreatedLandingPage.js',
-    IssuePage:'./pages/IssuePage.js',
-    IssueCheckYourAnswersPage:'./pages/IssueCheckYourAnswersPage.js',
-    CcdCaseCreatedPetitionIssuedLandingPage:'./pages/CcdCaseCreatedPetitionIssuedLandingPage.js',
-    AosPackIssueTestPage:'./pages/AosPackIssueTestPage.js',
-    IssueAosPackToRespondentCheckYourAnswersPage:'./pages/IssueAosPackToRespondentCheckYourAnswersPage.js',
-    IssueAosPackToRespondentLandingPage:'./pages/IssueAosPackToRespondentLandingPage.js',
-    AosStartedPage:'./pages/AosStartedPage.js',
-    AosStartedCheckYourAnswersPage:'./pages/AosStartedCheckYourAnswersPage.js',
-    TransferCaseToADifferentRDCsPage:'./pages/TransferCaseToADifferentRDCsPage.js',
-    TransferBetweenRDCsPage:'./pages/TransferBetweenRDCsPage.js',
-    TransferToRDCLandingPage:'./pages/TransferToRDCLandingPage.js'
+    CcdCaseCreatedLandingPage: './pages/CcdCaseCreatedLandingPage.js',
+    IssuePage: './pages/IssuePage.js',
+    IssueCheckYourAnswersPage: './pages/IssueCheckYourAnswersPage.js',
+    CcdCaseCreatedPetitionIssuedLandingPage: './pages/CcdCaseCreatedPetitionIssuedLandingPage.js',
+    AosPackIssueTestPage: './pages/AosPackIssueTestPage.js',
+    IssueAosPackToRespondentCheckYourAnswersPage: './pages/IssueAosPackToRespondentCheckYourAnswersPage.js',
+    IssueAosPackToRespondentLandingPage: './pages/IssueAosPackToRespondentLandingPage.js',
+    AosStartedPage: './pages/AosStartedPage.js',
+    AosStartedCheckYourAnswersPage: './pages/AosStartedCheckYourAnswersPage.js',
+    TransferCaseToADifferentRDCsPage: './pages/TransferCaseToADifferentRDCsPage.js',
+    TransferBetweenRDCsPage: './pages/TransferBetweenRDCsPage.js',
+    TransferToRDCLandingPage: './pages/TransferToRDCLandingPage.js'
   },
+  plugins: {
+  retryFailedStep: {
+    enabled: true
+  },
+  autoDelay: {
+    enabled: true
+  }
+},
   bootstrap: false,
   mocha: {
     reporterOptions: {

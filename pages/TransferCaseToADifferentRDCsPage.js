@@ -8,9 +8,9 @@ module.exports = {
   },
 
   fillFormAndSubmit() {
-    I.wait(3);
+    I.wait(1);
     I.selectOption(this.fields.RDCOptional, 'Courts and Tribunals Service Centre');
     I.click(this.fields.submit);
-    I.wait(5);
+    I.wait(2);
   }
 };

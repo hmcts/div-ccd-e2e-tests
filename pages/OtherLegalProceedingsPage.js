@@ -11,6 +11,6 @@ module.exports = {
     I.seeInCurrentUrl('solicitorCreateSolExistingCourtCases');
     I.click(this.fields.existingCourtProceedings);
     I.click(this.fields.submit);
-    I.wait(3);
+    I.wait(1);
   }
 };

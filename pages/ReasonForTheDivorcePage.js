@@ -9,8 +9,7 @@ module.exports = {
 
   fillFormAndSubmit() {
     I.seeInCurrentUrl('solicitorCreateSolReasonForDivorce');
-    I.selectOption(this.fields.fact, 'adultery');
+    I.selectOption(this.fields.fact, 'Adultery');
     I.click(this.fields.submit);
-    I.wait(5);
   }
 };

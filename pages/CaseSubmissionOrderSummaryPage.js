@@ -10,6 +10,6 @@ module.exports = {
     I.see('Case submission');
     I.see('Your fee account reference: Next case submitted');
     I.click(this.fields.submit);
-    I.wait(5);
+    I.wait(1);
   }
 };
