@@ -7,11 +7,11 @@ const caseWorker = getCaseWorkerLoginDetails();
 Feature('Testing CCD Create and Update as well as Caseworker change AOS States');
 
 Scenario('Create and Update as well as caseworker change AOS states', async function (I) {
-  const caseId = await createCaseInCcd('data/ccd-basic-data.json');
+  const caseId = await createCaseInCcd('data/ccdAdulteryRespondentCorespondentDefendedCase.json');
   const response = await updateCaseInCcd(caseId, 'hwfApplicationAcceptedfromAwaitingHWFDecision', 'data/ccd-update-data.json');
 
-  I.amOnHomePage();
-  I.login(caseWorker.username, caseWorker.password);
+  I.amOnHomePageamOnHomePage();
+  I.login(caseWorkercaseWorker.username, caseWorker.password);
   I.shouldBeOnCaseListPage();
   I.amOnPage('/case/DIVORCE/DIVORCE/' + caseId);
   I.wait(5);
@@ -28,4 +28,27 @@ Scenario('Create and Update as well as caseworker change AOS states', async func
   I.aosStartedCheckYourAnswersPageFormAndSubmit();
   I.wait(5);
   I.click('Sign Out');
+});
+
+
+Scenario('ccd-basic-data', async function (I) {
+  const caseId = await createCaseInCcd('data/ccd-basic-data.json');
+  const response = await updateCaseInCcd(caseId, 'hwfApplicationAcceptedfromAwaitingHWFDecision', 'data/ccd-update-data.json');
+});
+
+Scenario('ccdAdulteryRespondentCorespondentDefendedCase', async function (I) {
+  const caseId = await createCaseInCcd('data/ccdAdulteryRespondentCorespondentDefendedCase.json');
+  const response = await updateCaseInCcd(caseId, 'hwfApplicationAcceptedfromAwaitingHWFDecision', 'data/ccd-update-data.json');
+});
+
+Scenario('ccdBehaviourUnDefendedCase', async function (I) {
+  const caseId = await createCaseInCcd('data/ccdBehaviourUnDefendedCase.json');
+  const response = await updateCaseInCcd(caseId, 'hwfApplicationAcceptedfromAwaitingHWFDecision', 'data/ccd-update-data.json');
+});
+
+
+
+Scenario('additionalpayment', async function (I) {
+  const caseId = await createCaseInCcd('/data/reasonadultery.json');
+  const response = await updateCaseInCcd(caseId, 'hwfApplicationAcceptedfromAwaitingHWFDecision', 'data/ccd-update-data.json');
 });
