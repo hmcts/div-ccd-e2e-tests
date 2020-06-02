@@ -6,6 +6,11 @@ const caseWorker = getCaseWorkerLoginDetails();
 
 Feature('Create Case using API');
 
+Scenario('ccd-basic-data', async function (I) {
+  const caseId = await createCaseInCcd('data/ccd-basic-data.json');
+  const response = await updateCaseInCcd(caseId, 'hwfApplicationAcceptedfromAwaitingHWFDecision', 'data/ccd-update-data.json');
+});
+
 Scenario('div-reason-adultery', async function (I) {
   const caseId = await createCaseInCcd('data/div-reason-adultery.json');
   const response = await updateCaseInCcd(caseId, 'hwfApplicationAcceptedfromAwaitingHWFDecision', 'data/ccd-update-data.json');
