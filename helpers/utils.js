@@ -120,9 +120,9 @@ async function createCaseInCcd(dataLocation = 'data/ccd-basic-data.json') {
 
   const serviceToken = await getServiceToken();
 
-  logger.info('authToken::', authToken);
-  logger.info('userId::',userId);
-  logger.info('serviceToken::',serviceToken);
+//  logger.info('authToken::', authToken);
+//  logger.info('userId::',userId);
+//  logger.info('serviceToken::',serviceToken);
   logger.info('Creating Case');
 
   const ccdApiUrl = `http://ccd-data-store-api-${env}.service.core-compute-${env}.internal`;
@@ -138,7 +138,7 @@ async function createCaseInCcd(dataLocation = 'data/ccd-basic-data.json') {
       'Content-Type': 'application/json'
     }
   };
-  logger.info(ccdApiUrl + ccdStartCasePath);
+//  logger.info(ccdApiUrl + ccdStartCasePath);
   const startCaseResponse = await request(startCaseOptions);
   console.log(startCaseResponse);
 
@@ -169,11 +169,11 @@ async function createCaseInCcd(dataLocation = 'data/ccd-basic-data.json') {
   const saveCaseResponse = await request(saveCaseOptions).catch(error => {
     console.log(error);
   });
-  console.log("##########################################");
-  console.log(saveBody);
-   console.log("##########################################");
-     console.log(saveCaseResponse);
- console.log("##########################################");
+//  console.log("##########################################");
+//  console.log(saveBody);
+//   console.log("##########################################");
+//     console.log(saveCaseResponse);
+// console.log("##########################################");
 
   const caseId = JSON.parse(saveCaseResponse).id;
 
