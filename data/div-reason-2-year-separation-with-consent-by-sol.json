@@ -1,0 +1,91 @@
+{
+  "PetitionerSolicitorEmail": "sol@mailinator.com",
+  "D8DerivedRespondentHomeAddress": "Respondent Home address\nTown\nPostcode",
+  "D8DerivedPetitionerHomeAddress": "Petitioner home address\nTown\nPostcode",
+  "D8DivorceCostsClaim": "No",
+  "SolServiceMethod": "courtService",
+  "D8InferredRespondentGender": "female",
+  "D8MentalSeparationDate": "2015-01-01",
+  "solSignStatementofTruth": "Yes",
+  "D8PhysicalSeparationDate": "2015-01-01",
+  "SolStatementOfReconciliationName": "Mrs Solicitor",
+  "SolStatementOfReconciliationFirm": "Smith LLP",
+  "D8RespondentLastName": "Katz",
+  "D8PetitionerNameDifferentToMarriageCert": "No",
+  "D8JurisdictionConnection": [
+    "F",
+    "G",
+    "E"
+  ],
+  "SolStatementOfReconciliationCertify": "Yes",
+  "D8SelectedDivorceCentreSiteId": "AA07",
+  "D8PetitionerLastName": "Katz",
+  "D8SolicitorReference": "234",
+  "D8PetitionerPhoneNumber": null,
+  "D8ReasonForDivorceSeperationDate": "2015-01-01",
+  "D8StatementOfTruth": "Yes",
+  "D8DocumentsGenerated": [],
+  "PetitionerSolicitorFirm": "Wilson LLP",
+  "SolStatementOfReconciliationDiscussed": "Yes",
+  "SolicitorAgreeToReceiveEmails": "Yes",
+  "D8PetitionerEmail": null,
+  "D8LivedApartSinceSeparation": "Yes",
+  "D8HelpWithFeesReferenceNumber": "654321",
+  "D8DivorceUnit": "serviceCentre",
+  "D8SeparationTimeTogetherPermitted": "6 months",
+  "D8DerivedRespondentCorrespondenceAddr": "Respondent service address\nTown\nPostcode",
+  "D8MarriagePetitionerName": "2yearWithSol Katz",
+  "PetitionerSolicitorPhone": "1234567891",
+  "D8MarriageIsSameSexCouple": "No",
+  "D8FinancialOrder": "No",
+  "D8RespondentNameAsOnMarriageCertificate": "No",
+  "D8MarriageDate": "2010-01-01",
+  "D8DivorceWho": "wife",
+  "SolPaymentHowToPay": "feesHelpWith",
+  "StatementOfReconciliationComments": null,
+  "D8RespondentFirstName": "Respondent",
+  "D8DocumentsUploaded": [
+    {
+      "id": "01e8cfe5-2b5b-4c25-9926-f71e9443e7a0",
+      "value": {
+        "DocumentLink": {
+          "document_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/bce5bc7f-01be-4d1b-8fbc-5156d7500c94",
+          "document_filename": "Tree_example_VIS.jpg",
+          "document_binary_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/bce5bc7f-01be-4d1b-8fbc-5156d7500c94/binary"
+        },
+        "DocumentType": null,
+        "DocumentComment": null,
+        "DocumentFileName": null,
+        "DocumentDateAdded": null,
+        "DocumentEmailContent": null
+      }
+    }
+  ],
+  "D8DesertionTimeTogetherPermitted": null,
+  "DerivedPetitionerSolicitorAddr": "Golden Curry\n81 High Street\nYiewsley",
+  "PetitionerSolicitorName": "MS Wilson",
+  "D8MarriedInUk": "Yes",
+  "D8PetitionerFirstName": "2yearWithSol",
+  "D8MarriageRespondentName": "Respondent Katz",
+  "D8PetitionerContactDetailsConfidential": "share",
+  "D8LegalProceedings": "No",
+  "createdDate": "2020-06-03",
+  "D8ReasonForDivorce": "separation-2-years",
+  "D8SeparationReferenceDate": "03 December 2017",
+  "solApplicationFeeOrderSummary": {
+    "Fees": [
+      {
+        "id": "7c7c5344-a782-4a91-9037-a1c3bb4fa823",
+        "value": {
+          "FeeCode": "FEE0002",
+          "FeeAmount": "55000",
+          "FeeVersion": "4",
+          "FeeDescription": "Filing an application for a divorce, nullity or civil partnership dissolution – fees order 1.2."
+        }
+      }
+    ],
+    "PaymentTotal": "55000",
+    "PaymentReference": null
+  },
+  "D8InferredPetitionerGender": "male"
+}

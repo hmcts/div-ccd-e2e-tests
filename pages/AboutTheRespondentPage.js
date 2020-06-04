@@ -21,7 +21,7 @@ module.exports = {
     I.click(this.fields.respondentChangedName);
     I.selectOption(this.fields.respondentGender, 'Female');
     I.fillField(this.fields.respondentHomeAddress, '300 Central London, Lagos W2 3MU');
-    I.click(this.fields.respondentUsingASolicitor);
+//    I.click(this.fields.respondentUsingASolicitor);
     I.fillField(this.fields.respondentServiceAddress, '007 Peter Pan Road , E14 5RT');
     I.wait(2);
     I.click(this.fields.submit);

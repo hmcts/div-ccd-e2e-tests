@@ -31,6 +31,11 @@ Scenario('div-reason-unreasonablebehaviour', async function (I) {
   const response = await updateCaseInCcd(caseId, 'hwfApplicationAcceptedfromAwaitingHWFDecision', 'data/ccd-update-data.json');
 });
 
+Scenario('div-reason-2-year-separation-with-consent-by-sol', async function (I) {
+  const caseId = await createCaseInCcd('data/div-reason-2-year-separation-with-consent-by-sol.json');
+  const response = await updateCaseInCcd(caseId, 'hwfApplicationAcceptedfromAwaitingHWFDecision', 'data/ccd-update-data.json');
+});
+
 //Scenario('div-reason-samesex', async function (I) {
 //  const caseId = await createCaseInCcd('data/div-reason-samesex.json');
 //  const response = await updateCaseInCcd(caseId, 'hwfApplicationAcceptedfromAwaitingHWFDecision', 'data/ccd-update-data.json');
@@ -40,3 +45,5 @@ Scenario('div-reason-unreasonablebehaviour', async function (I) {
 //  const caseId = await createCaseInCcd('data/div-reason-two-years-separation.json');
 //  const response = await updateCaseInCcd(caseId, 'hwfApplicationAcceptedfromAwaitingHWFDecision', 'data/ccd-update-data.json');
 //});
+
+
