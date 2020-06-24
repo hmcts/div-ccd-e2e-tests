@@ -21,7 +21,7 @@ Scenario('div-reason-desertion', async function (I) {
   const response = await updateCaseInCcd(caseId, 'hwfApplicationAcceptedfromAwaitingHWFDecision', 'data/ccd-update-data.json');
 });
 
-Scenario('reason-five-years-separation', async function (I) {
+Scenario('div-reason-five-years-separation', async function (I) {
   const caseId = await createCaseInCcd('data/div-reason-five-years-separation.json');
   const response = await updateCaseInCcd(caseId, 'hwfApplicationAcceptedfromAwaitingHWFDecision', 'data/ccd-update-data.json');
 });
@@ -41,9 +41,25 @@ Scenario('div-reason-2-year-separation-with-consent-by-sol', async function (I) 
 //  const response = await updateCaseInCcd(caseId, 'hwfApplicationAcceptedfromAwaitingHWFDecision', 'data/ccd-update-data.json');
 //});
 //
-//Scenario('div-reason-two-years-separation', async function (I) {
-//  const caseId = await createCaseInCcd('data/div-reason-two-years-separation.json');
-//  const response = await updateCaseInCcd(caseId, 'hwfApplicationAcceptedfromAwaitingHWFDecision', 'data/ccd-update-data.json');
-//});
+Scenario('div-reason-two-years-separation', async function (I) {
+  const caseId = await createCaseInCcd('data/div-reason-two-years-separation.json');
+  const response = await updateCaseInCcd(caseId, 'hwfApplicationAcceptedfromAwaitingHWFDecision', 'data/ccd-update-data.json');
+});
 
+
+Scenario('div-reason-adultery-DIV-6013', async function (I) {
+  const caseId = await createCaseInCcd('data/div-reason-adultery-DIV-6013.json');
+  const response = await updateCaseInCcd(caseId, 'hwfApplicationAcceptedfromAwaitingHWFDecision', 'data/ccd-update-data.json');
+});
+
+
+Scenario('ccdAdulteryRespondentCorespondentDefendedCase', async function (I) {
+  const caseId = await createCaseInCcd('data/ccdAdulteryRespondentCorespondentDefendedCase.json');
+  const response = await updateCaseInCcd(caseId, 'hwfApplicationAcceptedfromAwaitingHWFDecision', 'data/ccd-update-data.json');
+});
+
+Scenario('div-reason-adultery-cost-claim', async function (I) {
+  const caseId = await createCaseInCcd('data/div-reason-adultery-cost-claim.json');
+  const response = await updateCaseInCcd(caseId, 'hwfApplicationAcceptedfromAwaitingHWFDecision', 'data/ccd-update-data.json');
+});
 
