@@ -37,3 +37,9 @@ Scenario('div-BA-desertion', async function (I) {
 });
 
 
+Scenario('div-BA-Adultery-cost-claim-new', async function (I) {
+  const caseId = await createCaseInCcd('data/div-BA-Adultery-cost-claim-new.json');
+  const response = await updateCaseInCcd(caseId, 'hwfApplicationAcceptedfromAwaitingHWFDecision', 'data/ccd-update-data.json');
+});
+
+

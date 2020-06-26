@@ -1,0 +1,161 @@
+{
+  "D8DerivedRespondentHomeAddress": "1 STARLING COURT\nJOHN DYDE CLOSE\nBISHOP'S STORTFORD\nCM23 3BE",
+  "D8DerivedPetitionerHomeAddress": "1 STARLING COURT\nJOHN DYDE CLOSE\nBISHOP'S STORTFORD\nCM23 3BE",
+  "D8RespondentHomeAddress": {
+    "County": null,
+    "Country": null,
+    "PostCode": "CM23 3BE",
+    "PostTown": null,
+    "AddressLine1": null,
+    "AddressLine2": null,
+    "AddressLine3": null
+  },
+  "D8ScreenHasRespondentAddress": "YES",
+  "D8DivorceCostsClaim": "YES",
+  "Payments": [
+    {
+      "id": "9de95aa7-dfb2-4d8b-9e56-1362bde8eb0d",
+      "value": {
+        "PaymentDate": "2020-06-26",
+        "PaymentFeeId": "FEE0002",
+        "PaymentAmount": "55000",
+        "PaymentSiteId": "AA07",
+        "PaymentStatus": "Success",
+        "PaymentChannel": "online",
+        "PaymentReference": "RC-1593-1669-9578-2562",
+        "PaymentTransactionId": "g8gajd9ls49vbq4vct0t4p96a7"
+      }
+    }
+  ],
+  "D8ScreenHasMarriageCert": "YES",
+  "D8PetitionerHomeAddress": {
+    "County": null,
+    "Country": null,
+    "PostCode": "CM23 3BE",
+    "PostTown": null,
+    "AddressLine1": null,
+    "AddressLine2": null,
+    "AddressLine3": null
+  },
+  "D8DivorceClaimFrom": [
+    "respondent",
+    "correspondent"
+  ],
+  "D8ScreenHasMarriageBroken": "YES",
+  "D8InferredRespondentGender": "male",
+  "D8ReasonForDivorceEnableAdultery": "YES",
+  "D8ReasonForDivorceShowAdultery": "YES",
+  "D8DerivedStatementOfCase": "Your husband will be sent a copy of your divorce application, so you may want to avoid writing anything that will cause conflict between you. You can discuss your statement with your husband if you want to.\nYour husband will be sent a copy of your divorce application, so you may want to avoid writing anything that will cause conflict between you. You can discuss your statement with your husband if you want to.\nYour husband will be sent a copy of your divorce application, so you may want to avoid writing anything that will cause conflict between you. You can discuss your statement with your husband if you want to.",
+  "D8LivingArrangementsLiveTogether": "YES",
+  "D8ReasonForDivorceHasMarriage": "YES",
+  "D8ReasonForDivorceAdulteryWishToName": "YES",
+  "D8JurisdictionConfidentLegal": "YES",
+  "D8RespondentCorrespondenceUseHomeAddress": "Yes",
+  "D8FinancialOrderFor": [
+    "petitioner",
+    "children"
+  ],
+  "D8Connections": {
+    "A": "The Petitioner and the Respondent are habitually resident in England and Wales",
+    "B": null,
+    "C": "The Respondent is habitually resident in England and Wales",
+    "D": null,
+    "E": null,
+    "F": null,
+    "G": null
+  },
+  "D8PetitionerCorrespondenceAddress": {
+    "County": null,
+    "Country": null,
+    "PostCode": "CM23 3BE",
+    "PostTown": null,
+    "AddressLine1": null,
+    "AddressLine2": null,
+    "AddressLine3": null
+  },
+  "D8RespondentLastName": "Respondent",
+  "D8PetitionerNameDifferentToMarriageCert": "NO",
+  "D8JurisdictionConnection": [
+    "A",
+    "C"
+  ],
+  "D8LegalProceedingsRelated": [
+    "marriage",
+    "children",
+    "property"
+  ],
+  "D8ReasonForDivorceAdultery3rdAddress": {
+    "County": null,
+    "Country": null,
+    "PostCode": "CM23 3BE",
+    "PostTown": null,
+    "AddressLine1": null,
+    "AddressLine2": null,
+    "AddressLine3": null
+  },
+  "D8LegalProceedingsDetails": "Your husband will be sent a copy of your divorce application, so you may want to avoid writing anything that will cause conflict between you. You can discuss your statement with your husband if you want to.",
+  "D8PetitionerLastName": "Petitioner",
+  "D8ReasonForDivorceAdulteryIsNamed": "YES",
+  "D8ClaimsCostsAppliedForFees": "NO",
+  "D8ReasonForDivorceShowTwoYearsSeparation": "YES",
+  "D8StatementOfTruth": "YES",
+  "D8PetitionerCorrespondenceUseHomeAddress": "YES",
+  "D8ReasonForDivorceAdultery3rdPartyLName": "Co-Respondent",
+  "D8DerivedRespondentCurrentName": "Respondent Respondent",
+  "D8ReasonForDivorceLimitReasons": "NO",
+  "D8ReasonForDivorceAdulteryAnyInfo2ndHand": "YES",
+  "D8PetitionerEmail": "dntest1@mailinator.com",
+  "D8ReasonForDivorceClaiming5YearSeparatio": "NO",
+  "D8PetitionerConsent": "YES",
+  "D8ReasonForDivorceAdultery3rdPartyFName": "Co-Respondent",
+  "D8DivorceUnit": "serviceCentre",
+  "D8DerivedReasonForDivorceAdultery3dPtyNm": "Co-Respondent Co-Respondent",
+  "D8ReasonForDivorceShowDesertion": "YES",
+  "D8DerivedRespondentCorrespondenceAddr": "1 STARLING COURT\nJOHN DYDE CLOSE\nBISHOP'S STORTFORD\nCM23 3BE",
+  "D8MarriagePetitionerName": "Petitioner Petitioner",
+  "D8ReasonForDivorceAdulteryWhenDetails": "Your husband will be sent a copy of your divorce application, so you may want to avoid writing anything that will cause conflict between you. You can discuss your statement with your husband if you want to.",
+  "D8Cohort": "onlineSubmissionPrivateBeta",
+  "D8MarriageIsSameSexCouple": "NO",
+  "D8FinancialOrder": "YES",
+  "D8ReasonForDivorceAdulteryDetails": "Your husband will be sent a copy of your divorce application, so you may want to avoid writing anything that will cause conflict between you. You can discuss your statement with your husband if you want to.",
+  "D8ReasonForDivorceShowFiveYearsSeparatio": "YES",
+  "D8MarriageDate": "2001-01-01",
+  "D8HelpWithFeesNeedHelp": "NO",
+  "D8JurisdictionRespondentResidence": "YES",
+  "D8DivorceWho": "husband",
+  "D8MarriageCanDivorce": "YES",
+  "D8RespondentFirstName": "Respondent",
+  "D8ReasonForDivorceShowUnreasonableBehavi": "YES",
+  "D8DocumentsUploaded": [],
+  "D8DerivedPetitionerCorrespondenceAddr": "1 STARLING COURT\nJOHN DYDE CLOSE\nBISHOP'S STORTFORD\nCM23 3BE",
+  "D8JurisdictionPetitionerResidence": "YES",
+  "D8ReasonForDivorceClaimingAdultery": "YES",
+  "D8MarriedInUk": "YES",
+  "D8ReasonForDivorceAdulteryKnowWhen": "YES",
+  "D8ReasonForDivorceAdulteryKnowWhere": "YES",
+  "D8PetitionerFirstName": "Petitioner",
+  "D8MarriageRespondentName": "Respondent Respondent",
+  "D8PetitionerContactDetailsConfidential": "share",
+  "D8ReasonForDivorceAdultery2ndHandDetails": "Your husband will be sent a copy of your divorce application, so you may want to avoid writing anything that will cause conflict between you. You can discuss your statement with your husband if you want to.",
+  "D8ReasonForDivorceAdulteryWhereDetails": "Your husband will be sent a copy of your divorce application, so you may want to avoid writing anything that will cause conflict between you. You can discuss your statement with your husband if you want to.",
+  "D8DerivedReasonForDivorceAdultery3rdAddr": "18 STARLING COURT\nJOHN DYDE CLOSE\nBISHOP'S STORTFORD\nCM23 3BE",
+  "D8LegalProceedings": "YES",
+  "createdDate": "2020-06-26",
+  "D8JurisdictionPath": [
+    "JurisdictionHabitualResidence",
+    "JurisdictionInterstitial"
+  ],
+  "D8RespondentCorrespondenceAddress": {
+    "County": null,
+    "Country": null,
+    "PostCode": "CM23 3BE",
+    "PostTown": null,
+    "AddressLine1": null,
+    "AddressLine2": null,
+    "AddressLine3": null
+  },
+  "D8ReasonForDivorce": "adultery",
+  "D8DerivedPetitionerCurrentFullName": "Petitioner Petitioner",
+  "RespondentContactDetailsConfidential": "share",
+  "D8InferredPetitionerGender": "female"
+}
