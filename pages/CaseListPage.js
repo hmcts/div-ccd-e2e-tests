@@ -17,9 +17,9 @@ module.exports = {
   },
 
   resetFilter() {
-    I.waitForElement(this.selectors.jurisdictionSelect, 10);
-    I.waitForElement(this.selectors.caseTypeSelect, 10);
-    I.waitForElement(this.selectors.caseStateSelect, 10);
+    I.waitForElement(this.selectors.jurisdictionSelect, 20);
+    I.waitForElement(this.selectors.caseTypeSelect, 20);
+    I.waitForElement(this.selectors.caseStateSelect, 20);
     I.selectOption(this.selectors.caseStateSelect, 'Any');
     I.waitForElement(this.selectors.rdcSelect, 20);
     I.waitForElement(this.selectors.solicitorPaymentMethodSelect, 20);
