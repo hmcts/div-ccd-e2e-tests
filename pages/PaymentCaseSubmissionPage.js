@@ -5,16 +5,19 @@ module.exports = {
   fields: {
     howPaymentMade: 'select[id="SolPaymentHowToPay"]',
     enterYourAccountNumber: '#SolicitorFeeAccountNumber',
-    enterYourPreference: '#FeeAccountReference',
+    selectPbaNumber: '#PbaNumbers',
+    enterYourReference: '#FeeAccountReference',
     submit: 'button[type="submit"]'
   },
 
   fillFormAndSubmit() {
     I.wait(1);
     I.click(this.fields.howPaymentMade);
-    I.selectOption('select[id=SolPaymentHowToPay', 'Fee account');
-    I.fillField(this.fields.enterYourAccountNumber, 'PBA1234908');
-    I.fillField(this.fields.enterYourPreference, 'Next case submitted');
+    I.selectOption(howPaymentMade, 'Fee account');
+    I.click(this.fields.submit);
+    //I.fillField(this.fields.enterYourAccountNumber, 'PBA1234908');
+    I.selectOption(selectOption, I.grabTextFrom('select option:nth-child(2)'));
+    I.fillField(this.fields.enterYourReference, 'Next case submitted');
     I.click(this.fields.submit);
     I.wait(1);
   }
