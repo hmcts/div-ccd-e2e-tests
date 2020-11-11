@@ -13,7 +13,7 @@ module.exports = {
   fillFormAndSubmit() {
     I.wait(1);
     I.click(this.fields.howPaymentMade);
-    I.selectOption(howPaymentMade, 'Fee account');
+    I.selectOption(this.fields.howPaymentMade, 'Fee account');
     I.click(this.fields.submit);
     //I.fillField(this.fields.enterYourAccountNumber, 'PBA1234908');
     I.selectOption(selectOption, I.grabTextFrom('select option:nth-child(2)'));
