@@ -22,7 +22,7 @@ module.exports = {
     I.selectOption(this.selectors.caseTypeSelect, 'Divorce case - v115.00');
     I.waitForElement(this.selectors.caseStateSelect, 10);
     I.selectOption(this.selectors.caseStateSelect, 'Any');
-    I.waitForElement(this.selectors.rdcSelect, 20);
+    I.waitForElement(this.selectors.rdcSelect, 40);
     I.waitForElement(this.selectors.solicitorPaymentMethodSelect, 20);
     I.see('Create case');
     I.click('Apply');
