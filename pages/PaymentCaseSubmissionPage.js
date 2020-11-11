@@ -5,7 +5,7 @@ module.exports = {
   fields: {
     howPaymentMade: 'select[id="SolPaymentHowToPay"]',
     enterYourAccountNumber: '#SolicitorFeeAccountNumber',
-    selectPbaNumber: '#PbaNumbers',
+    selectPbaNumber: 'select[id="PbaNumbers"]',
     enterYourReference: '#FeeAccountReference',
     submit: 'button[type="submit"]'
   },
