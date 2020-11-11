@@ -71,7 +71,7 @@ module.exports = function () {
     },
 
     clickCreateCase: function() {
-      this.click('Create Case');
+      this.click('Create case');
     },
 
     clickCreateList: function() {
