@@ -17,6 +17,7 @@ const OtherLegalProceedingsPage = require('./pages/OtherLegalProceedingsPage');
 const FinancialOrdersPage = require('./pages/FinancialOrdersPage');
 const ClaimForCostsPage = require('./pages/ClaimForCostsPage');
 const UploadMarriageCertificatePage = require('./pages/UploadMarriageCertificatePage');
+const SolCreateLanguagePrefPage = require('./pages/SolCreateLanguagePrefPage');
 const SolCreateCheckYourAnswersPage = require('./pages/SolCreateCheckYourAnswersPage');
 const SolCaseCreatedPage = require('./pages/SolCaseCreatedPage');
 const StatementOfTruthAndRecPage = require('./pages/StatementOfTruthAndRecPage');
@@ -128,6 +129,10 @@ module.exports = function () {
 
     uploadTheMarriageCertificateOptional: function() {
       UploadMarriageCertificatePage.fillFormAndSubmit();
+    },
+
+    languagePreferenceSelection: function() {
+      SolCreateLanguagePrefPage.fillFormAndSubmit();
     },
 
     solicitorCreateCheckYourAnswerAndSubmit: function() {

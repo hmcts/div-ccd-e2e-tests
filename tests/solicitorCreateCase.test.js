@@ -30,6 +30,7 @@ Scenario('Solicitor create case and make payment', async (I) => {
   I.financialOrdersSelectButton();
   I.claimForCostsSelectButton(),
   I.uploadTheMarriageCertificateOptional();
+  I.languagePreferenceSelection();
   I.solicitorCreateCheckYourAnswerAndSubmit();
   const caseNumber = await I.solicitorCaseCreatedAndSubmit();
   console.log(caseNumber);
