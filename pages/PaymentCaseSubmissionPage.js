@@ -18,15 +18,6 @@ module.exports = {
     //I.fillField(this.fields.enterYourAccountNumber, 'PBA1234908');
 
     const pbaNumber = await I.grabTextFrom(`${this.fields.selectPbaNumber} option:nth-child(2)`);
-    console.log('the value is ..',  pbaNumber);
-
-    const pbaNumbers1 = await I.grabValueFrom(this.fields.selectPbaNumber);
-    console.log('the values are1 ..',  pbaNumbers1);
-
-    const pbaNumbers2 = await I.grabValueFromAll(this.fields.selectPbaNumber);
-    console.log('the values are2 ..',  pbaNumbers2);
-
-
     I.selectOption(this.fields.selectPbaNumber, pbaNumber);
     I.fillField(this.fields.enterYourReference, 'Next case submitted');
     I.click(this.fields.submit);
