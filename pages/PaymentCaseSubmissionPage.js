@@ -18,9 +18,9 @@ module.exports = {
     //I.fillField(this.fields.enterYourAccountNumber, 'PBA1234908');
 
     const pbaNumber = await I.grabTextFrom(`${this.fields.selectPbaNumber} option:nth-child(2)`);
-    I.selectOption(this.fields.selectPbaNumber, pbaNumber);
-    I.fillField(this.fields.enterYourReference, 'Next case submitted');
-    I.click(this.fields.submit);
-    I.wait(1);
+    await I.selectOption(this.fields.selectPbaNumber, pbaNumber);
+    await I.fillField(this.fields.enterYourReference, 'Next case submitted');
+    await I.click(this.fields.submit);
+    await I.wait(1);
   }
 };
