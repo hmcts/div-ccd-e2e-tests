@@ -35,7 +35,7 @@ Scenario('Solicitor create case and make payment', async (I) => {
   const caseNumber = await I.solicitorCaseCreatedAndSubmit();
   console.log(caseNumber);
   I.statementOfTruthAndReconciliationPageFormAndSubmit();
-  I.casePaymentAndSubmissionPageFormAndSubmit();
+  await I.casePaymentAndSubmissionPageFormAndSubmit();
   I.caseOrderSummaryPageFormAndSubmit();
   I.caseApplicationCompletePageFormAndSubmit();
   I.caseCheckYourAnswersPageFormAndSubmit();

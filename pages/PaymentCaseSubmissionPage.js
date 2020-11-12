@@ -10,7 +10,7 @@ module.exports = {
     submit: 'button[type="submit"]'
   },
 
-  fillFormAndSubmit() {
+  async fillFormAndSubmit() {
     I.wait(1);
     I.click(this.fields.howPaymentMade);
     I.selectOption(this.fields.howPaymentMade, 'Fee account');
