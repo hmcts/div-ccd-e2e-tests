@@ -16,8 +16,9 @@ module.exports = {
     I.selectOption(this.fields.howPaymentMade, 'Fee account');
     I.click(this.fields.submit);
     //I.fillField(this.fields.enterYourAccountNumber, 'PBA1234908');
-    console.log('the value is ..',  I.grabTextFrom(`${this.fields.selectPbaNumber} option:nth-child(2)`));
-    I.selectOption(this.fields.selectPbaNumber, I.grabTextFrom(`${this.fields.selectPbaNumber} option:nth-child(2)`));
+    const pbaNumber =  await I.grabTextFrom(`${this.fields.selectPbaNumber} option:nth-child(2)`);
+    console.log('the value is ..',  pbaNumber);
+    I.selectOption(this.fields.selectPbaNumber, pbaNumber);
     I.fillField(this.fields.enterYourReference, 'Next case submitted');
     I.click(this.fields.submit);
     I.wait(1);
