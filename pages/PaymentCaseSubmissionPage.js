@@ -18,9 +18,13 @@ module.exports = {
     //I.fillField(this.fields.enterYourAccountNumber, 'PBA1234908');
 
     const pbaNumber = await I.grabTextFrom(`${this.fields.selectPbaNumber} option:nth-child(2)`);
+    console.log('pbanumber...', pbaNumber);
     await I.selectOption(this.fields.selectPbaNumber, pbaNumber);
+    console.log('this.fields.selectPbaNumber...', this.fields.selectPbaNumber);
     await I.fillField(this.fields.enterYourReference, 'Next case submitted');
+    console.log('this.fields.enterYourReference...', this.fields.enterYourReference);
     await I.click(this.fields.submit);
-    await I.wait(1);
+    console.log('this.fields.submit...', this.fields.submit);
+    await I.wait(20);
   }
 };
