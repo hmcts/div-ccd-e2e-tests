@@ -11,7 +11,7 @@ module.exports = {
 
   fillFormAndSubmit() {
     I.wait(5);
-    I.retry(2).selectOption(this.fields.jurisdiction, 'DIVORCE');
+    I.retry(5).selectOption(this.fields.jurisdiction, 'DIVORCE');
     I.retry(2).selectOption(this.fields.caseType, 'DIVORCE');
     I.retry(2).selectOption(this.fields.event, 'solicitorCreate');
     I.click(this.fields.submit);
