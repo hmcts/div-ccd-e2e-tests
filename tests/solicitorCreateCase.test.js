@@ -8,13 +8,9 @@ const solicitor = getSolicitorLoginDetails();
 Feature('Solicitor create case');
 
 Scenario('Solicitor create case and make payment', async (I) => {
-  console.log('amOnHomePage...1')
   I.amOnHomePage();
-  console.log('amOnHomePage...2')
   I.login(solicitor.username, solicitor.password);
-  console.log('login...1', solicitor.username, '...', 'solicitor.password')
   I.shouldBeOnCaseListPage();
-  console.log('shouldBeOnCaseListPage...')
   I.clickCreateCase();
   I.wait(1);
   I.fillCreateCaseFormAndSubmit();
@@ -30,7 +26,6 @@ Scenario('Solicitor create case and make payment', async (I) => {
   I.financialOrdersSelectButton();
   I.claimForCostsSelectButton(),
   I.uploadTheMarriageCertificateOptional();
-  I.languagePreferenceSelection();
   I.solicitorCreateCheckYourAnswerAndSubmit();
   const caseNumber = await I.solicitorCaseCreatedAndSubmit();
   console.log(caseNumber);

@@ -148,7 +148,7 @@ module.exports = function () {
     },
 
     casePaymentAndSubmissionPageFormAndSubmit: function() {
-      PaymentCaseSubmissionPage.fillFormAndSubmit();
+      return PaymentCaseSubmissionPage.fillFormAndSubmit();
     },
 
     caseOrderSummaryPageFormAndSubmit: function() {

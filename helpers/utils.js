@@ -225,7 +225,6 @@ async function updateCaseInCcd(caseId, eventId, dataLocation = 'data/ccd-update-
     body: JSON.stringify(saveBody)
   };
 
-  console.log('updateCaseInCcd ...', saveEventOptions);
   const saveEventResponse = await request(saveEventOptions);
 
   return saveEventResponse;
