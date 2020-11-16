@@ -10,10 +10,10 @@ module.exports = {
   },
 
   fillFormAndSubmit() {
-    I.wait(2);
-    I.retry().selectOption(this.fields.jurisdiction, 'DIVORCE');
-    I.retry().selectOption(this.fields.caseType, 'DIVORCE');
-    I.retry().selectOption(this.fields.event, 'solicitorCreate');
+    I.wait(5);
+    I.retry(5).selectOption(this.fields.jurisdiction, 'DIVORCE');
+    I.retry(2).selectOption(this.fields.caseType, 'DIVORCE');
+    I.retry(2).selectOption(this.fields.event, 'solicitorCreate');
     I.click(this.fields.submit);
     I.wait(2);
   }

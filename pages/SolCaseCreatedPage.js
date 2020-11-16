@@ -12,7 +12,7 @@ module.exports = {
     I.waitForElement(this.fields.selectActionDropDown, 10);
     I.selectOption(this.fields.selectActionDropDown, 'Case submission');
     I.click(this.fields.submit);
-    I.wait(2);
+    I.waitForElement(this.fields.caseNumberDisplay, 60);
     const display = await I.grabTextFrom(this.fields.caseNumberDisplay);
     I.waitForVisible(this.fields.submit);
     I.click(this.fields.submit);

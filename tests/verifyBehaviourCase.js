@@ -28,5 +28,5 @@ Scenario('Behaviour case Undefended', async function (I) {
   I.verifyDocumentsTab(reason,verifyContent,caseId);
   I.verifyConfidentialPetitionerTab(reason,verifyContent);
   I.verifyMarriageCertificateTab(reason,verifyContent);
-  I.click('Sign Out');
+  I.click('Sign out');
 });

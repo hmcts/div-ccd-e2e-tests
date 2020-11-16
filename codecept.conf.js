@@ -50,6 +50,7 @@ exports.config = {
     StatementOfCaseAdulterySecPage: './pages/StatementOfCaseAdulterySecPage.js',
     StatementOfTruthAndRecPage: './pages/StatementOfTruthAndRecPage.js',
     UploadMarriageCertificatePage: './pages/UploadMarriageCertificatePage.js',
+    SolCreateLanguagePrefPage: './pages/SolCreateLanguagePrefPage.js',
     CaseSubmissionCheckYourAnswersPage: './pages/CaseSubmissionCheckYourAnswersPage.js',
     SolAwaitingPaymentConfirmationPage: './pages/SolAwaitingPaymentConfirmationPage.js',
     CcdCaseCreatedLandingPage: './pages/CcdCaseCreatedLandingPage.js',

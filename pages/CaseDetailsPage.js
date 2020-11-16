@@ -8,8 +8,8 @@ module.exports = {
   },
   listOfTabs: [
     'Case List', 
-    'Create Case', 
-    'Search', 
+    'Create case',
+    'Find case',
     'History', 
     'Solicitor',
     // "Corespondance",

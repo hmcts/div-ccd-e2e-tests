@@ -28,6 +28,6 @@ Scenario('Adultery case defended by both Resp and Co Resp', async function (I) {
   I.verifyDocumentsTab(reason,verifyContent,caseId);
   I.verifyMarriageCertificateTab(reason, verifyContent);
   I.verifyCorespondentTab(reason, verifyContent);
-  I.click('Sign Out');
+  I.click('Sign out');
 
 });

@@ -17,6 +17,7 @@ const OtherLegalProceedingsPage = require('./pages/OtherLegalProceedingsPage');
 const FinancialOrdersPage = require('./pages/FinancialOrdersPage');
 const ClaimForCostsPage = require('./pages/ClaimForCostsPage');
 const UploadMarriageCertificatePage = require('./pages/UploadMarriageCertificatePage');
+const SolCreateLanguagePrefPage = require('./pages/SolCreateLanguagePrefPage');
 const SolCreateCheckYourAnswersPage = require('./pages/SolCreateCheckYourAnswersPage');
 const SolCaseCreatedPage = require('./pages/SolCaseCreatedPage');
 const StatementOfTruthAndRecPage = require('./pages/StatementOfTruthAndRecPage');
@@ -71,7 +72,7 @@ module.exports = function () {
     },
 
     clickCreateCase: function() {
-      this.click('Create Case');
+      this.click('Create case');
     },
 
     clickCreateList: function() {
@@ -130,6 +131,10 @@ module.exports = function () {
       UploadMarriageCertificatePage.fillFormAndSubmit();
     },
 
+    languagePreferenceSelection: function() {
+      SolCreateLanguagePrefPage.fillFormAndSubmit();
+    },
+
     solicitorCreateCheckYourAnswerAndSubmit: function() {
       SolCreateCheckYourAnswersPage.fillFormAndSubmit();
     },
@@ -143,7 +148,7 @@ module.exports = function () {
     },
 
     casePaymentAndSubmissionPageFormAndSubmit: function() {
-      PaymentCaseSubmissionPage.fillFormAndSubmit();
+      return PaymentCaseSubmissionPage.fillFormAndSubmit();
     },
 
     caseOrderSummaryPageFormAndSubmit: function() {

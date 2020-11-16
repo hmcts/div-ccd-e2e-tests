@@ -8,6 +8,6 @@ module.exports = {
 
   checkPageAndSignOut() {
     I.wait(2);
-    I.click('Sign Out');
+    I.click('Sign out');
   }
 };

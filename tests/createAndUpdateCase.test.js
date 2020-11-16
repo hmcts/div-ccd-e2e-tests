@@ -27,5 +27,5 @@ Scenario('Create and Update as well as caseworker change AOS states', async func
   I.aosStartedPageFormAndSubmit();
   I.aosStartedCheckYourAnswersPageFormAndSubmit();
   I.wait(5);
-  I.click('Sign Out');
+  I.click('Sign out');
 });
