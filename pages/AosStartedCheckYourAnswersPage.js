@@ -9,7 +9,7 @@ module.exports = {
   },
 
   fillFormAndSubmit() {
-    I.waitForElement(this.fields.eventSummary, 20);
+    I.waitForElement(this.fields.eventSummary, 40);
     I.fillField(this.fields.eventSummary, 'This is AOS Started event summary field');
     I.fillField(this.fields.eventDescription, 'This is AOS Started event description field and its optional');
     I.waitForElement(this.fields.submit, 20);
