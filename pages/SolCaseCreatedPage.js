@@ -9,10 +9,10 @@ module.exports = {
   },
 
   async fillFormAndSubmit() {
-    I.waitForElement(this.fields.selectActionDropDown, 10);
+    I.waitForElement(this.fields.selectActionDropDown);
     I.selectOption(this.fields.selectActionDropDown, 'Case submission');
     I.click(this.fields.submit);
-    I.waitForElement(this.fields.caseNumberDisplay, 60);
+    I.waitForElement(this.fields.caseNumberDisplay);
     const display = await I.grabTextFrom(this.fields.caseNumberDisplay);
     I.waitForVisible(this.fields.submit);
     I.click(this.fields.submit);
