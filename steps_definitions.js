@@ -220,11 +220,11 @@ module.exports = function () {
     verifyCorespondentTab: function(reason,verifyContent) {
       verifyTabData.verifyCorespondentTab(reason, verifyContent);
     },
-    verifyDocumentsTab: function(reason,verifyContent,caseId) {
-      verifyTabData.verifyDocumentsTab(reason,verifyContent, caseId);
+    verifyDocumentsTab: function(reason, caseId) {
+      verifyTabData.verifyDocumentsTab(reason, caseId);
     },
-    verifyMarriageCertificateTab: function(reason,verifyContent) {
-      verifyTabData.verifyMarriageCertificateTab(reason,verifyContent);
+    verifyMarriageCertificateTab: function(verifyContent) {
+      verifyTabData.verifyMarriageCertificateTab(verifyContent);
     },
     verifyAOSAnswersInTab: function(reason,verifyContent){
       verifyTabData.verifyAOSAnswersInTab(reason,verifyContent);
@@ -232,8 +232,8 @@ module.exports = function () {
     verifyDNAnswersInTab: function(reason,verifyContent) {
       verifyTabData.verifyDNAnswersInTab(reason,verifyContent);
     },
-    verifyConfidentialPetitionerTab:function(reason,verifyContent) {
-      verifyTabData.verifyConfidentialPetitionerTab(reason,verifyContent);
+    verifyConfidentialPetitionerTab:function(verifyContent) {
+      verifyTabData.verifyConfidentialPetitionerTab(verifyContent);
     }
   });
 };

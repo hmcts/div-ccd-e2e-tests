@@ -1,5 +1,5 @@
 const I = actor();
-const { createCaseInCcd, updateCaseInCcd, getCaseWorkerLoginDetails, firstLetterToCaps, datechange } = require('../helpers/utils');
+const { firstLetterToCaps, datechange, formatDateToCcdDisplayDate } = require('../helpers/utils');
 const verifyLableText = require('../data/ccdFieldTabLabelNames.json');
 
 
@@ -88,10 +88,18 @@ function verifyPetitionerTab(reason,verifyContent){
     I.see(firstLetterToCaps(verifyContent.D8ReasonForDivorceAdulteryKnowWhere));
     I.see(verifyLableText.reasonForDivorceTab.detailsOfWhereAdulteryTookPlace);
     I.see(verifyContent.D8ReasonForDivorceAdulteryWhereDetails);
-  }
-  if(['Behaviour'].includes(reason)) {
+  } else if(['Behaviour'].includes(reason)) {
     I.see(verifyLableText.reasonForDivorceTab.behaviourDetails);
     I.see(verifyContent.D8DerivedStatementOfCase);
+  } else if (['Desertion'].includes(reason)) {
+    I.see(verifyLableText.reasonForDivorceTab.respondentLeaveWithoutAgreement);
+    I.see(verifyContent.D8ReasonForDivorceDesertionAgreed);
+    I.see(verifyLableText.reasonForDivorceTab.desertionDetails);
+    I.see(verifyContent.D8ReasonForDivorceDesertionDetails);
+    I.see(verifyLableText.reasonForDivorceTab.desertionDate);
+    I.see(formatDateToCcdDisplayDate(new Date(verifyContent.D8ReasonForDivorceDesertionDate)));
+    I.see(verifyLableText.reasonForDivorceTab.livedApart);
+    I.see(verifyContent.D8LivedApartSinceDesertion);
   }
 
   // Legal Connections
@@ -133,7 +141,7 @@ function verifyCorespondentTab(reason,verifyContent)
   }
 }
 
-function verifyDocumentsTab(reason,verifyContent, caseId) {
+function verifyDocumentsTab(reason, caseId) {
 // Verify Documents Tab
   I.click(verifyLableText.documentsTab.name);
   I.see(verifyLableText.documentsTab.documentsUploadedPFEStage);
@@ -141,29 +149,27 @@ function verifyDocumentsTab(reason,verifyContent, caseId) {
   I.see(verifyLableText.documentsTab.d8petitionText + caseId + verifyLableText.documentsTab.documentgeneratedExtension);
   if(['Adultery'].includes(reason)) {
     I.see(verifyLableText.documentsTab.coRespondentaosinvitationText + caseId + verifyLableText.documentsTab.documentgeneratedExtension);
-  }
-  if(['Behaviour'].includes(reason)) {
+  } else {
     I.see(verifyLableText.documentsTab.pfeUploadedDoc);
-    // I.see(verifyLableText.documentsTab.respondentAnswersText);
+    I.see(verifyLableText.documentsTab.respondentAnswersText);
     I.see(verifyLableText.documentsTab.documentsUploadedDNStage);
     I.see(verifyLableText.documentsTab.dnUploadedDoc);
   }
 }
-function verifyMarriageCertificateTab(reason,verifyContent) {
+function verifyMarriageCertificateTab(verifyContent) {
   I.click(verifyLableText.marriageCertificateTab.name);
   I.see(verifyLableText.marriageCertificateTab.petitionerFullNameMarriageCertificate);
   I.see(verifyContent.D8MarriagePetitionerName);
   I.see(verifyLableText.marriageCertificateTab.respondnetFullNameMarriageCertificate);
   I.see(verifyContent.D8MarriageRespondentName);
   I.see(verifyLableText.marriageCertificateTab.dateofMarriage);
-  //I.see(datechange(0));
-  I.see('2 Mar 2015');
+  I.see(formatDateToCcdDisplayDate(new Date(verifyContent.D8MarriageDate)));
   I.see(verifyLableText.marriageCertificateTab.isMarriageTookPlaceInUK);
   I.see(firstLetterToCaps(verifyContent.D8MarriedInUk));
   I.see(verifyLableText.marriageCertificateTab.placeOfMarriage);
   I.see(verifyContent.D8MarriagePlaceOfMarriage);
 }
-function verifyDNAnswersInTab(reason,verifyContent) {
+function verifyDNAnswersInTab(reason, verifyContent) {
   if(['Behaviour'].includes(reason)) {
     I.click(verifyLableText.dnAnswers.name);
     I.see(verifyLableText.dnAnswers.continuewithDN);
@@ -224,7 +230,7 @@ function verifyAOSAnswersInTab(reason,verifyContent){
   I.see(datechange(30));
 }
 
-function verifyConfidentialPetitionerTab(reason,verifyContent) {
+function verifyConfidentialPetitionerTab(verifyContent) {
   I.click(verifyLableText.confidentialPetitionerTab.name);
   I.see(verifyLableText.confidentialPetitionerTab.petitionerServiceAddress);
   I.see(verifyContent.D8DerivedPetitionerCorrespondenceAddr);

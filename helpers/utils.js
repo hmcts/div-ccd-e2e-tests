@@ -7,6 +7,7 @@ const fs = require('fs');
 const logger = Logger.getLogger('helpers/utils.js');
 
 const env = process.env.RUNNING_ENV || 'aat';
+const months = ['Jan', 'Feb', 'Mar','Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
 const getSolicitorLoginDetails = () => {
   if (!process.env.CCD_E2E_PASSWORD) {
@@ -238,11 +239,15 @@ function firstLetterToCaps(value){
 };
 
 function datechange(numberOfDaysToAdd){
-  const months = ['Jan', 'Feb', 'Mar','Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
   let currentDateTime = new Date();
   let newDate = new Date();
   newDate = new Date(newDate.setDate(currentDateTime.getDate()+numberOfDaysToAdd));
   let formattedDate = newDate.getDate() + ' ' + months[newDate.getMonth()] + ' ' + newDate.getFullYear();
+  return formattedDate;
+};
+
+function formatDateToCcdDisplayDate(givenDate = new Date()) {
+  let formattedDate = givenDate.getDate() + ' ' + months[givenDate.getMonth()] + ' ' + givenDate.getFullYear();
   return formattedDate;
 };
 
@@ -253,5 +258,6 @@ module.exports = {
   updateCaseInCcd,
   getBaseUrl,
   datechange,
+  formatDateToCcdDisplayDate,
   firstLetterToCaps
 };
