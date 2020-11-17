@@ -1,178 +1,8 @@
 {
-    "PetitionerSolicitorEmail": "jeremykatz@hotmail.co.uk",
-    "D8DerivedRespondentHomeAddress": "12\nwrewert",
-    "D8DerivedPetitionerHomeAddress": "21 The Mews\nBrighton",
-    "D8DivorceCostsClaim": "Yes",
-    "SolServiceMethod": "courtService",
-    "D8InferredRespondentGender": "male",
-    "D8RespondentCorrespondenceSendToSol": "No",
-    "solSignStatementofTruth": "Yes",
-    "SolStatementOfReconciliationName": "Jeremy",
-    "SolStatementOfReconciliationFirm": "Katz",
-    "D8RespondentLastName": "Smooth",
-    "D8PetitionerNameDifferentToMarriageCert": "No",
-    "D8JurisdictionConnection": [
-      "G",
-      "F",
-      "E",
-      "D",
-      "C",
-      "B",
-      "A"
-    ],
-    "SolStatementOfReconciliationCertify": "Yes",
-    "D8SelectedDivorceCentreSiteId": "AA07",
-    "D8PetitionerLastName": "Smooth",
-    "D8SolicitorReference": "REF1234",
-    "D8PetitionerPhoneNumber": null,
-    "D8ReasonForDivorceSeperationDate": "2014-01-01",
-    "D8DerivedLivingArrangementsLastLivedAddr": "8 Leacroft\nAshton-In-Makerfield\nWigan\nWN4 0LN",
-    "D8ReasonForDivorceAdulteryIsNamed": "NO",
-    "ReceivedAOSfromRespDate": "2019-05-07",
-    "RespStatementOfTruth": "Yes",
-    "D8ClaimsCostsAppliedForFees": "NO",
-    "D8ReasonForDivorceShowTwoYearsSeparation": "YES",
-    "D8StatementOfTruth": "YES",
-    "D8PetitionerCorrespondenceUseHomeAddress": "YES",
-    "D8DocumentsGenerated": [
-      {
-        "id": "05dc9267-6f2a-4ab6-867d-78b78503defc",
-        "value": {
-          "DocumentLink": {
-            "document_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/078164ef-6a3c-43bc-abf3-632a8abcb121",
-            "document_filename": "d8petition1545300878484074.pdf",
-            "document_binary_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/078164ef-6a3c-43bc-abf3-632a8abcb121/binary"
-          },
-          "DocumentType": "petition",
-          "DocumentComment": null,
-          "DocumentFileName": "d8petition1545300878484074",
-          "DocumentDateAdded": null,
-          "DocumentEmailContent": null
-        }
-      },
-      {
-        "id": "874e2de3-f6fe-4051-b4ef-3a1cb3998613",
-        "value": {
-          "DocumentLink": {
-            "document_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/751c500e-b47d-494f-82b1-bb282f9f3bdc",
-            "document_filename": "aosinvitation1545300878484074.pdf",
-            "document_binary_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/751c500e-b47d-494f-82b1-bb282f9f3bdc/binary"
-          },
-          "DocumentType": "aos",
-          "DocumentComment": null,
-          "DocumentFileName": "aosinvitation1545300878484074",
-          "DocumentDateAdded": null,
-          "DocumentEmailContent": null
-        }
-      }
-    ],
-    "PetitionerSolicitorFirm": "Katz Solicitors",
-    "SepYears": "2",
-    "SolStatementOfReconciliationDiscussed": "Yes",
-    "SolicitorAgreeToReceiveEmails": "Yes",
-    "D8PetitionerEmail": "amandasmooth@mailinator.com",
-    "D8DivorceUnit": "serviceCentre",
-    "RespDefendsDivorce": "No",
-    "ReceivedAOSfromResp": "Yes",
-    "D8RespondentLivesAtLastAddress": "YES",
-    "RespConfirmReadPetition": "Yes",
-    "D8DerivedRespondentCurrentName": "Bill West",
-    "D8ReasonForDivorceLimitReasons": "YES",
-    "DNApplicationSubmittedDate": "2019-05-07",
-    "AosLetterHolderId": "466276",
-    "D8ReasonForDivorceClaiming5YearSeparatio": "NO",
-    "D8PetitionerConsent": "YES",
-    "D8SeparationTimeTogetherPermitted": null,
-    "D8DerivedRespondentCorrespondenceAddr": "12\nwrewert",
-    "D8MarriagePetitionerName": "Amanda Smooth",
-    "D8ReasonForDivorceShowDesertion": "YES",
-    "D8Cohort": "onlineSubmissionPrivateBeta",
-    "PetitionerSolicitorPhone": "07736342343",
-    "D8MarriageIsSameSexCouple": "No",
-    "D8ReasonForDivorceDesertionAgreed": "Yes",
-    "D8LivingArrangementsLastLivedTogether": "NO",
-    "D8ReasonForDivorceShowFiveYearsSeparatio": "NO",
-    "D8FinancialOrder": "No",
-    "D8RespondentNameAsOnMarriageCertificate": "No",
-    "D8MarriageDate": "2011-01-01",
-    "D8DivorceWho": "husband",
-    "D8ReasonForDivorceDesertionDetails": "The just were gone.",
-    "SolPaymentHowToPay": "cheque",
-    "StatementOfReconciliationComments": null,
-    "D8caseReference": "EZ11D81265",
-    "D8HelpWithFeesNeedHelp": "NO",
-    "D8JurisdictionRespondentResidence": "YES",
-    "D8MarriageCanDivorce": "YES",
-    "RespAdmitOrConsentToFact": "Yes",
-    "D8RespondentFirstName": "Derek",
-    "D8DocumentsUploaded": [
-      {
-        "id": "aa9aeb53-1995-4f89-a5ae-3a1cc87e8e23",
-        "value": {
-          "DocumentLink": {
-            "document_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/9fd69424-de07-44a7-830a-3aca4073d4f9",
-            "document_filename": "jujdge been pronounced.jpg",
-            "document_binary_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/9fd69424-de07-44a7-830a-3aca4073d4f9/binary"
-          },
-          "DocumentType": null,
-          "DocumentComment": null,
-          "DocumentFileName": null,
-          "DocumentDateAdded": null,
-          "DocumentEmailContent": null
-        }
-      }
-    ],
-    "D8DesertionTimeTogetherPermitted": "6 months",
-    "D8ReasonForDivorceDesertionDate": "2014-01-01",
-    "DerivedPetitionerSolicitorAddr": "12\nwrewert",
-    "PetitionerSolicitorName": "Jeremy Katz",
-    "D8LivedApartSinceDesertion": "Yes",
-    "RespJurisdictionAgree": "Yes",
-    "D8DerivedPetitionerCorrespondenceAddr": "1 temp petitioner correspondence \nShenley Church End\nMilton Keynes\nMK5 6AY",
-    "ConfirmPetitionDN": "YES",
-    "D8JurisdictionPetitionerResidence": "YES",
-    "D8ReasonForDivorceClaimingAdultery": "NO",
-    "IssueDate": "2019-05-07",
-    "D8MarriedInUk": "Yes",
-    "D8PetitionerFirstName": "Amanda",
-    "D8MarriageRespondentName": "Derek Smooth",
-    "D8PetitionerContactDetailsConfidential": "share",
-    "D8LegalProceedings": "No",
-    "createdDate": "2019-10-25",
-    "D8MarriagePlaceOfMarriage": "UK",
-    "D8RespondentCorrespondenceAddress": {
-      "County": null,
-      "Country": null,
-      "PostCode": "WN4 0LN",
-      "PostTown": null,
-      "AddressLine1": null,
-      "AddressLine2": null,
-      "AddressLine3": null
-    },
-    "RespLegalProceedingsExist": "No",
-    "RespConsentToEmail": "Yes",
-    "D8DerivedPetitionerCurrentFullName": "Fiona Brown",
-    "RespEmailAddress": "billwest@mailinator.com",
-    "RespondentContactDetailsConfidential": "share",
-    "D8ReasonForDivorce": "desertion",
-    "D8SeparationReferenceDate": "25 April 2017",
-    "solApplicationFeeOrderSummary": {
-      "Fees": [
-        {
-          "id": "a65b7cbd-26ae-4642-bde0-8d9cb3133a7c",
-          "value": {
-            "FeeCode": "FEE0002",
-            "FeeAmount": "55000",
-            "FeeVersion": "4",
-            "FeeDescription": "Filing an application for a divorce, nullity or civil partnership dissolution – fees order 1.2."
-          }
-        }
-      ],
-      "PaymentTotal": "55000",
-      "PaymentReference": null
-    },
-    "D8InferredPetitionerGender": "female",
+    "BehaviourStillHappeningDN": "yes",
+    "D8DerivedRespondentHomeAddress": "8 Leacroft\nAshton-In-Makerfield\nWigan\nWN4 0LN",
     "DivorceCostsOptionDN": "originalAmount",
+    "D8DerivedPetitionerHomeAddress": "1 temp petitioner home\nShenley Church End\nMilton Keynes\nMK5 6AY",
     "D8RespondentHomeAddress": {
       "County": null,
       "Country": null,
@@ -193,6 +23,7 @@
       "AddressLine2": null,
       "AddressLine3": null
     },
+    "D8DivorceCostsClaim": "YES",
     "Payments": [
     ],
     "D8ScreenHasMarriageCert": "YES",
@@ -243,6 +74,7 @@
       "respondent"
     ],
     "D8ScreenHasMarriageBroken": "YES",
+    "D8InferredRespondentGender": "male",
     "DNApplyForDecreeNisi": "YES",
     "D8ReasonForDivorceEnableAdultery": "YES",
     "D8ReasonForDivorceShowAdultery": "YES",
@@ -272,5 +104,163 @@
       "AddressLine1": null,
       "AddressLine2": null,
       "AddressLine3": null
-    }
-}
+    },
+    "D8RespondentLastName": "West",
+    "D8PetitionerNameDifferentToMarriageCert": "NO",
+    "D8JurisdictionConnection": [
+      "A",
+      "C"
+    ],
+    "D8DerivedLivingArrangementsLastLivedAddr": "8 Leacroft\nAshton-In-Makerfield\nWigan\nWN4 0LN",
+    "D8PetitionerLastName": "Brown",
+    "D8ReasonForDivorceAdulteryIsNamed": "NO",
+    "ReceivedAOSfromRespDate": "2019-05-07",
+    "RespStatementOfTruth": "Yes",
+    "D8ClaimsCostsAppliedForFees": "NO",
+    "D8ReasonForDivorceShowTwoYearsSeparation": "YES",
+    "D8StatementOfTruth": "YES",
+    "D8PetitionerCorrespondenceUseHomeAddress": "YES",
+    "D8DocumentsGenerated": [
+      {
+        "id": "05dc9267-6f2a-4ab6-867d-78b78503defc",
+        "value": {
+          "DocumentLink": {
+            "document_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/078164ef-6a3c-43bc-abf3-632a8abcb121",
+            "document_filename": "d8petition1545300878484074.pdf",
+            "document_binary_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/078164ef-6a3c-43bc-abf3-632a8abcb121/binary"
+          },
+          "DocumentType": "petition",
+          "DocumentComment": null,
+          "DocumentFileName": "d8petition1545300878484074",
+          "DocumentDateAdded": null,
+          "DocumentEmailContent": null
+        }
+      },
+      {
+        "id": "874e2de3-f6fe-4051-b4ef-3a1cb3998613",
+        "value": {
+          "DocumentLink": {
+            "document_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/751c500e-b47d-494f-82b1-bb282f9f3bdc",
+            "document_filename": "aosinvitation1545300878484074.pdf",
+            "document_binary_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/751c500e-b47d-494f-82b1-bb282f9f3bdc/binary"
+          },
+          "DocumentType": "aos",
+          "DocumentComment": null,
+          "DocumentFileName": "aosinvitation1545300878484074",
+          "DocumentDateAdded": null,
+          "DocumentEmailContent": null
+        }
+      }
+    ],
+    "RespDefendsDivorce": "No",
+    "ReceivedAOSfromResp": "Yes",
+    "D8RespondentLivesAtLastAddress": "YES",
+    "RespConfirmReadPetition": "Yes",
+    "D8DerivedRespondentCurrentName": "Bill West",
+    "D8ReasonForDivorceLimitReasons": "YES",
+    "DNApplicationSubmittedDate": "2019-05-07",
+    "D8PetitionerEmail": "fionabrown@mailinator.com",
+    "D8ReasonForDivorceBehaviourDetails": "My husband is not nice. He is very mean towards me.\nMy husband and I are not compatible\nMy husband gives me stress.\nMy husband refuses to socialise with me.\nMy husband uses all my money\nMy husband belittles me. Doesn’t help around the house.",
+    "AosLetterHolderId": "466276",
+    "D8ReasonForDivorceClaiming5YearSeparatio": "NO",
+    "D8PetitionerConsent": "YES",
+    "D8DivorceUnit": "serviceCentre",
+    "D8ReasonForDivorceShowDesertion": "YES",
+    "D8DerivedRespondentCorrespondenceAddr": "8 Leacroft\nAshton-In-Makerfield\nWigan\nWN4 0LN",
+    "D8MarriagePetitionerName": "Fiona brown",
+    "D8Cohort": "onlineSubmissionPrivateBeta",
+    "D8MarriageIsSameSexCouple": "NO",
+    "D8FinancialOrder": "YES",
+    "D8LivingArrangementsLastLivedTogether": "NO",
+    "D8ReasonForDivorceShowFiveYearsSeparatio": "NO",
+    "D8MarriageDate": "2015-03-02",
+    "D8caseReference": "EZ11D81265",
+    "D8HelpWithFeesNeedHelp": "NO",
+    "D8JurisdictionRespondentResidence": "YES",
+    "D8DivorceWho": "husband",
+    "D8MarriageCanDivorce": "YES",
+    "RespAdmitOrConsentToFact": "Yes",
+    "D8RespondentFirstName": "Bill",
+    "D8ReasonForDivorceShowUnreasonableBehavi": "YES",
+    "D8DocumentsUploaded": [
+      {
+        "id": "7d783d06-7752-44b0-a2fe-2b6c3c058746",
+        "value": {
+          "DocumentLink": {
+            "document_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/53ff5748-bed1-4149-8c69-b10b6d222a1f",
+            "document_filename": "image.jpg",
+            "document_binary_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/53ff5748-bed1-4149-8c69-b10b6d222a1f/binary"
+          },
+          "DocumentType": "other",
+          "DocumentComment": "",
+          "DocumentFileName": "image.jpg",
+          "DocumentDateAdded": "2019-05-07",
+          "DocumentEmailContent": ""
+        }
+      },
+      {
+        "id": "56cdddf1-7c48-42d3-b1df-ad8bc8dc0bf7",
+        "value": {
+          "DocumentLink": {
+            "document_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/d2c65e0f-566e-41cb-b1e3-ef7c7c1e7665",
+            "document_filename": "9B9045BC-CBFA-4B0A-8019-E7EC45E2DBCE.jpeg",
+            "document_binary_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/d2c65e0f-566e-41cb-b1e3-ef7c7c1e7665/binary"
+          },
+          "DocumentType": "other",
+          "DocumentComment": "",
+          "DocumentFileName": "9B9045BC-CBFA-4B0A-8019-E7EC45E2DBCE.jpeg",
+          "DocumentDateAdded": "2019-05-07",
+          "DocumentEmailContent": ""
+        }
+      },
+      {
+        "id": "502bc825-21a9-4c72-8fbd-21116ba6630e",
+        "value": {
+          "DocumentLink": {
+            "document_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/f6320cd7-9803-4122-9e37-9f79f5ed2086",
+            "document_filename": "Image.png",
+            "document_binary_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/f6320cd7-9803-4122-9e37-9f79f5ed2086/binary"
+          },
+          "DocumentType": "other",
+          "DocumentComment": "",
+          "DocumentFileName": "Image.png",
+          "DocumentDateAdded": "2019-05-07",
+          "DocumentEmailContent": ""
+        }
+      }
+    ],
+    "RespJurisdictionAgree": "Yes",
+    "D8DerivedPetitionerCorrespondenceAddr": "1 temp petitioner correspondence \nShenley Church End\nMilton Keynes\nMK5 6AY",
+    "ConfirmPetitionDN": "YES",
+    "D8JurisdictionPetitionerResidence": "YES",
+    "D8ReasonForDivorceClaimingAdultery": "NO",
+    "IssueDate": "2019-05-07",
+    "D8MarriedInUk": "YES",
+    "D8PetitionerFirstName": "Fiona",
+    "D8MarriageRespondentName": "Bill west",
+    "D8PetitionerContactDetailsConfidential": "keep",
+    "D8LegalProceedings": "NO",
+    "createdDate": "2019-05-07",
+    "D8MarriagePlaceOfMarriage": "UK",
+    "D8RespondentCorrespondenceAddress": {
+      "County": null,
+      "Country": null,
+      "PostCode": "WN4 0LN",
+      "PostTown": null,
+      "AddressLine1": null,
+      "AddressLine2": null,
+      "AddressLine3": null
+    },
+    "RespLegalProceedingsExist": "No",
+    "D8ReasonForDivorce": "desertion",
+    "D8ReasonForDivorceDesertionAgreed":"Yes",
+    "D8ReasonForDivorceDesertionDetails":"The just were gone.",
+    "D8DesertionTimeTogetherPermitted":"6 months",
+    "D8ReasonForDivorceDesertionDate":"2014-01-01",
+    "D8LivedApartSinceDesertion":"Yes",
+    "RespConsentToEmail": "Yes",
+    "D8DerivedPetitionerCurrentFullName": "Fiona Brown",
+    "RespEmailAddress": "billwest@mailinator.com",
+    "RespondentContactDetailsConfidential": "share",
+    "D8InferredPetitionerGender": "female"
+  }  

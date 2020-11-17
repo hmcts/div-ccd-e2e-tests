@@ -53,8 +53,11 @@
     "adulteryPetitionerKnowsWhen": "Petitioner knows when adultery took place?",
     "detailsOfWhenAdulteryTookPlace": "When the adultery took place",
     "adulteryPetitionerKnowsWhere": "Petitioner know where adultery took place?",
-    "detailsOfWhereAdulteryTookPlace": "Details of where the adultery took plac"
-
+    "detailsOfWhereAdulteryTookPlace": "Details of where the adultery took plac",
+    "respondentLeaveWithoutAgreement": "Did the respondent leave without the petitioner’s agreement?",
+    "desertionDetails": "Desertion details",
+    "desertionDate": "Desertion date",
+    "livedApart": "Has the petitioner lived apart from the respondent for the entire time since they deserted the petitioner?"
   },
   "respondentTab": {
     "name": "AOS",

@@ -2,7 +2,6 @@
 
 const { createCaseInCcd, updateCaseInCcd, getCaseWorkerLoginDetails, firstLetterToCaps, datechange } = require('../helpers/utils');
 const verifyContent = require('../data/ccdBehaviourUnDefendedCase.json');
-const verifyLableText = require('../data/ccdFieldTabLabelNames.json');
 const caseWorker = getCaseWorkerLoginDetails();
 const reason = 'Behaviour';
 
@@ -22,11 +21,11 @@ Scenario('Behaviour case Undefended', async function (I) {
   I.wait(20);
   I.amOnPage('/case/DIVORCE/DIVORCE/' + caseId);
   I.wait(30);
-  I.verifyPetitionerTab(reason,verifyContent);
-  I.verifyDNAnswersInTab(reason,verifyContent);
-  I.verifyAOSAnswersInTab(reason,verifyContent);
-  I.verifyDocumentsTab(reason,verifyContent,caseId);
-  I.verifyConfidentialPetitionerTab(reason,verifyContent);
-  I.verifyMarriageCertificateTab(reason,verifyContent);
+  I.verifyPetitionerTab(reason, verifyContent);
+  I.verifyDNAnswersInTab(reason, verifyContent);
+  I.verifyAOSAnswersInTab(reason, verifyContent);
+  I.verifyDocumentsTab(reason, caseId);
+  I.verifyConfidentialPetitionerTab(verifyContent);
+  I.verifyMarriageCertificateTab(verifyContent);
   I.click('Sign out');
 });
