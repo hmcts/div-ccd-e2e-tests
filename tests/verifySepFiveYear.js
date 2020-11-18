@@ -1,16 +1,17 @@
 /// <reference path="../steps.d.ts" />
 
 const { createCaseInCcd, updateCaseInCcd, getCaseWorkerLoginDetails } = require('../helpers/utils');
-const verifyContent = require('../data/ccdAdulteryRespondentCorespondentDefendedCase.json');
+const verifyContent = require('../data/ccdDesertionCase.json');
 const caseWorker = getCaseWorkerLoginDetails();
-const { reasonsForDivorce, signOut } = require('../common/constants');
+const { reasonsForDivorce, signOut } = require('../common/constants')
 
 let caseId;
 
-Feature('Verify Adultery case defended by both Resp and Co Res ');
+Feature('Verify Desertion Case ');
 
-Scenario('Adultery case - Execute events for PFE, RFE, Co-RESP, DN , DA', async function (I) {
-  caseId = await createCaseInCcd('data/ccdAdulteryRespondentCorespondentDefendedCase.json');
+
+xScenario('Separation-5-yrs - Execute events for PFE, RFE, Co-RESP, DN , DA', async function (I) {
+  caseId = await createCaseInCcd('data/ccdBehaviourUnDefendedCase.json');
   const response = await updateCaseInCcd(caseId, 'hwfApplicationAcceptedfromAwaitingHWFDecision');
   const submitted = await updateCaseInCcd(caseId, 'issueFromSubmitted');
   const issueAOS = await updateCaseInCcd(caseId, 'issueAos');
@@ -26,17 +27,17 @@ Scenario('Adultery case - Execute events for PFE, RFE, Co-RESP, DN , DA', async 
   const daGranted = await updateCaseInCcd(caseId, 'daGranted');
 });
 
-Scenario('Adultery case - verify all tabs PFE, RFE, DN, DA', async function (I) {
+xScenario('Separation-5-yrs - verify all tabs PFE, RFE, DN, DA', async function (I) {
   I.amOnHomePage();
   I.login(caseWorker.username, caseWorker.password);
   I.wait(20);
   I.amOnPage('/case/DIVORCE/DIVORCE/' + caseId);
   I.wait(30);
-  I.verifyPetitionerTab(reasonsForDivorce.ADULTERY, verifyContent);
+  I.verifyPetitionerTab(reasonsForDivorce.SEPFIVEYRS, verifyContent);
+  I.verifyConfidentialPetitionerTab(verifyContent);
   I.verifyMarriageCertificateTab(verifyContent);
-  I.verifyAOSAnswersInTab(reasonsForDivorce.ADULTERY, verifyContent);
-  I.verifyCorespondentTab(verifyContent);
-  I.verifyDNAnswersInTab(reasonsForDivorce.ADULTERY, verifyContent);
-  I.verifyDocumentsTab(reasonsForDivorce.ADULTERY, caseId);
+  I.verifyAOSAnswersInTab(reasonsForDivorce.SEPFIVEYRS, verifyContent);
+  I.verifyDNAnswersInTab(reasonsForDivorce.SEPFIVEYRS, verifyContent);
+  I.verifyDocumentsTab(reasonsForDivorce.SEPFIVEYRS, caseId);
   I.click(signOut);
 });
