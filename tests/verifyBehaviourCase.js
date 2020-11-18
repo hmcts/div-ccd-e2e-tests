@@ -13,6 +13,19 @@ Scenario('Behaviour case Undefended - Execute events for PFE, RFE, Co-RESP, DN ,
   caseId = await createCaseInCcd('data/ccdBehaviourUnDefendedCase.json');
   const response = await updateCaseInCcd(caseId, 'hwfApplicationAcceptedfromAwaitingHWFDecision');
   const submitted = await updateCaseInCcd(caseId, 'issueFromSubmitted');
+
+  I.amOnHomePage();
+  I.login(caseWorker.username, caseWorker.password);
+  I.wait(20);
+  I.amOnPage('/case/DIVORCE/DIVORCE/' + caseId);
+  I.wait(30);
+  I.verifyPetitionerTab(reasonsForDivorce.BEHAVIOUR, verifyContent);
+  I.verifyConfidentialPetitionerTab(verifyContent);
+  I.verifyMarriageCertificateTab(verifyContent);
+  I.click(signOut);
+});
+
+Scenario('Behaviour case Undefended - AOS', async function (I) {
   const issueAOS = await updateCaseInCcd(caseId, 'issueAos');
   const startAOS = await updateCaseInCcd(caseId, 'startAos');
   const aosSubmittedCoRespoDefended = await updateCaseInCcd(caseId, 'co-RespAOSReceivedStarted');
