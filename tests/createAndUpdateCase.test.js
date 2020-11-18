@@ -1,6 +1,7 @@
 /// <reference path="../steps.d.ts" />
 
 const { createCaseInCcd, updateCaseInCcd, getCaseWorkerLoginDetails } = require('../helpers/utils');
+const { signOut } = require('../common/constants');
 
 const caseWorker = getCaseWorkerLoginDetails();
 
@@ -27,5 +28,5 @@ Scenario('Create and Update as well as caseworker change AOS states', async func
   I.aosStartedPageFormAndSubmit();
   I.aosStartedCheckYourAnswersPageFormAndSubmit();
   I.wait(5);
-  I.click('Sign out');
+  I.click(signOut);
 });
