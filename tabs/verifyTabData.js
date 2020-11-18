@@ -1,7 +1,7 @@
 const I = actor();
 const { firstLetterToCaps, datechange, formatDateToCcdDisplayDate } = require('../helpers/utils');
 const verifyLableText = require('../data/ccdFieldTabLabelNames.json');
-
+const { reasonsForDivorce } = require('../common/constants')
 
 function verifyPetitionerTab(reason,verifyContent){
   I.click(verifyLableText.petitionertab.name);
@@ -40,7 +40,7 @@ function verifyPetitionerTab(reason,verifyContent){
   I.see(verifyLableText.respondentTab.respondentGender);
   I.see(firstLetterToCaps(verifyContent.D8InferredRespondentGender));
 
-  if(['Adultery'].includes(reason)) {
+  if(reasonsForDivorce.ADULTERY == reason) {
     I.see(verifyLableText.confidentialPetitionerTab.petitionerServiceAddress);
     I.see(verifyContent.D8DerivedPetitionerCorrespondenceAddr);
     I.see(verifyLableText.confidentialPetitionerTab.petitionerEmail);
@@ -54,11 +54,11 @@ function verifyPetitionerTab(reason,verifyContent){
   I.see( firstLetterToCaps(verifyContent.D8LegalProceedings));
   I.see(verifyLableText.prayerTab.financialOrder);
   I.see( firstLetterToCaps(verifyContent.D8FinancialOrder));
-  if(['Adultery'].includes(reason)) {
+  if(reasonsForDivorce.ADULTERY == reason) {
     I.see(verifyLableText.prayerTab.applyForClaimCosts);
     I.see(firstLetterToCaps(verifyContent.D8DivorceCostsClaim));
   }
-  if(['Behaviour'].includes(reason)) {
+  if(reasonsForDivorce.BEHAVIOUR == reason) {
     I.see(verifyLableText.prayerTab.whoTheFinancialOrder);
     I.see(verifyContent.D8FinancialOrderFor[0]);
     I.see(verifyLableText.prayerTab.applyForClaimCosts);
@@ -73,7 +73,7 @@ function verifyPetitionerTab(reason,verifyContent){
   I.see(verifyLableText.reasonForDivorceTab.fact);
   I.see(reason);
 
-  if(['Adultery'].includes(reason)) {
+  if(reasonsForDivorce.ADULTERY == reason) {
     I.see(verifyLableText.reasonForDivorceTab.adulteryDetails);
     I.see(verifyContent.D8ReasonForDivorceAdulteryDetails);
     I.see(verifyLableText.reasonForDivorceTab.nameOfCoRespondent);
@@ -88,10 +88,10 @@ function verifyPetitionerTab(reason,verifyContent){
     I.see(firstLetterToCaps(verifyContent.D8ReasonForDivorceAdulteryKnowWhere));
     I.see(verifyLableText.reasonForDivorceTab.detailsOfWhereAdulteryTookPlace);
     I.see(verifyContent.D8ReasonForDivorceAdulteryWhereDetails);
-  } else if(['Behaviour'].includes(reason)) {
+  } else if(reasonsForDivorce.BEHAVIOUR == reason) {
     I.see(verifyLableText.reasonForDivorceTab.behaviourDetails);
     I.see(verifyContent.D8DerivedStatementOfCase);
-  } else if (['Desertion'].includes(reason)) {
+  } else if (reasonsForDivorce.DESERTION == reason) {
     I.see(verifyLableText.reasonForDivorceTab.respondentLeaveWithoutAgreement);
     I.see(verifyContent.D8ReasonForDivorceDesertionAgreed);
     I.see(verifyLableText.reasonForDivorceTab.desertionDetails);
@@ -114,7 +114,7 @@ function verifyPetitionerTab(reason,verifyContent){
 
 function verifyCorespondentTab(reason,verifyContent)
 {
-  if(['Adultery'].includes(reason)) {
+  if(reasonsForDivorce.ADULTERY == reason) {
     I.click(verifyLableText.coRespondenttab.name);
     I.see(verifyLableText.coRespondenttab.coRespondentFName);
     I.see(verifyContent.D8ReasonForDivorceAdultery3rdPartyFName);
@@ -147,7 +147,7 @@ function verifyDocumentsTab(reason, caseId) {
   I.see(verifyLableText.documentsTab.documentsUploadedPFEStage);
   I.see(verifyLableText.documentsTab.documentsGenerated);
   I.see(verifyLableText.documentsTab.d8petitionText + caseId + verifyLableText.documentsTab.documentgeneratedExtension);
-  if(['Adultery'].includes(reason)) {
+  if(reasonsForDivorce.ADULTERY == reason) {
     I.see(verifyLableText.documentsTab.coRespondentaosinvitationText + caseId + verifyLableText.documentsTab.documentgeneratedExtension);
   } else {
     I.see(verifyLableText.documentsTab.pfeUploadedDoc);
@@ -170,7 +170,7 @@ function verifyMarriageCertificateTab(verifyContent) {
   I.see(verifyContent.D8MarriagePlaceOfMarriage);
 }
 function verifyDNAnswersInTab(reason, verifyContent) {
-  if(['Behaviour'].includes(reason)) {
+  if(reasonsForDivorce.BEHAVIOUR == reason) {
     I.click(verifyLableText.dnAnswers.name);
     I.see(verifyLableText.dnAnswers.continuewithDN);
     I.see(firstLetterToCaps(verifyContent.DNApplyForDecreeNisi));
@@ -192,7 +192,7 @@ function verifyAOSAnswersInTab(reason,verifyContent){
   I.see(verifyLableText.aosAnswers.respConfirmedRead);
   I.see(verifyContent.RespConfirmReadPetition);
 
-  if(['Adultery'].includes(reason)) {
+  if(reasonsForDivorce.ADULTERY == reason) {
     I.see(verifyLableText.aosAnswers.respDefendDivorce);
     I.see(verifyContent.RespWillDefendDivorce);
     I.see(verifyLableText.aosAnswers.respAdmitted);
@@ -210,7 +210,7 @@ function verifyAOSAnswersInTab(reason,verifyContent){
     I.see(verifyLableText.general.yes);
     I.see(verifyLableText.aosAnswers.respDueDate);
   }
-  if(['Behaviour'].includes(reason)) {
+  if(reasonsForDivorce.BEHAVIOUR == reason) {
     I.see(verifyLableText.aosAnswers.respConfirmedRead);
     I.see(verifyContent.RespConfirmReadPetition);
     I.see(verifyLableText.aosAnswers.respAdmitted);

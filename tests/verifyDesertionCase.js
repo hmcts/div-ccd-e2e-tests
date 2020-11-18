@@ -3,11 +3,11 @@
 const { createCaseInCcd, updateCaseInCcd, getCaseWorkerLoginDetails } = require('../helpers/utils');
 const verifyContent = require('../data/ccdDesertionCase.json');
 const caseWorker = getCaseWorkerLoginDetails();
-const reason = 'Desertion';
+const { reasonsForDivorce, signOut } = require('../common/constants')
 
 let caseId;
 
-Feature('verify desertion case ');
+Feature('Verify Desertion Case ');
 
 Scenario('Desertion case - Petitioner', async function (I) {
   caseId = await createCaseInCcd('data/ccdDesertionCase.json');
@@ -19,15 +19,14 @@ Scenario('Desertion case - Petitioner', async function (I) {
   I.wait(20);
   I.amOnPage('/case/DIVORCE/DIVORCE/' + caseId);
   I.wait(30);
-  I.verifyPetitionerTab(reason, verifyContent);
+  I.verifyPetitionerTab(reasonsForDivorce.DESERTION, verifyContent);
   I.verifyConfidentialPetitionerTab(verifyContent);
   I.verifyMarriageCertificateTab(verifyContent);
-  I.click('Sign out');
+  I.click(signOut);
 });
 
 Scenario('Desertion case - AOS', async function (I) {
 
-  console.log('caseId is', caseId);
   const issueAOS = await updateCaseInCcd(caseId, 'issueAos');
   const startAOS = await updateCaseInCcd(caseId, 'startAos');
   const aosSubmittedUndefended = await updateCaseInCcd(caseId, 'aosSubmittedUndefended');
@@ -37,8 +36,8 @@ Scenario('Desertion case - AOS', async function (I) {
   I.wait(20);
   I.amOnPage('/case/DIVORCE/DIVORCE/' + caseId);
   I.wait(30);
-  I.verifyAOSAnswersInTab(reason, verifyContent);
-  I.click('Sign out');
+  I.verifyAOSAnswersInTab(reasonsForDivorce.DESERTION, verifyContent);
+  I.click(signOut);
 });
 
 Scenario('Desertion case - DN', async function (I) {
@@ -49,7 +48,7 @@ Scenario('Desertion case - DN', async function (I) {
   I.wait(20);
   I.amOnPage('/case/DIVORCE/DIVORCE/' + caseId);
   I.wait(30);
-  I.verifyDNAnswersInTab(reason, verifyContent);
-  I.verifyDocumentsTab(reason, caseId);
-  I.click('Sign out');
+  I.verifyDNAnswersInTab(reasonsForDivorce.DESERTION, verifyContent);
+  I.verifyDocumentsTab(reasonsForDivorce.DESERTION, caseId);
+  I.click(signOut);
 });

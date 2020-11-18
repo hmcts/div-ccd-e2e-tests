@@ -1,5 +1,7 @@
 const I = actor();
 
+const { reasonsForDivorce } = require('../common/constants')
+
 module.exports = {
 
   fields: {
@@ -9,7 +11,7 @@ module.exports = {
 
   fillFormAndSubmit() {
     I.seeInCurrentUrl('solicitorCreateSolReasonForDivorce');
-    I.selectOption(this.fields.fact, 'Adultery');
+    I.selectOption(this.fields.fact, reasonsForDivorce.ADULTERY);
     I.click(this.fields.submit);
   }
 };
