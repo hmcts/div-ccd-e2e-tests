@@ -9,10 +9,10 @@ module.exports = {
   },
 
   fillFormAndSubmit() {
-    I.waitForElement(this.fields.eventSummary, 20);
+    I.waitForElement(this.fields.eventSummary);
     I.fillField(this.fields.eventSummary, 'This is Issue AOS pack to respondent event summary field');
     I.fillField(this.fields.eventDescription, 'This is formerly Aos pack issue event description field and its optional');
-    I.waitForElement(this.fields.submit, 10);
+    I.waitForElement(this.fields.submit);
     I.click(this.fields.submit);
     I.wait(2);
   }
