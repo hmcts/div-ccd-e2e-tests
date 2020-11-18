@@ -230,6 +230,11 @@ function verifyAOSAnswersInTab(reason,verifyContent){
   I.see(datechange(30));
 }
 
+function verifyDecreeAbsoluteTab(verifyContent) {
+  I.click(verifyLableText.daAnswers.name);
+  I.see(verifyLableText.daAnswers.continuewithDA);
+}
+
 function verifyConfidentialPetitionerTab(verifyContent) {
   I.click(verifyLableText.confidentialPetitionerTab.name);
   I.see(verifyLableText.confidentialPetitionerTab.petitionerServiceAddress);
@@ -247,6 +252,7 @@ module.exports = { verifyPetitionerTab,
   verifyMarriageCertificateTab,
   verifyAOSAnswersInTab,
   verifyDNAnswersInTab,
+  verifyDecreeAbsoluteTab,
   verifyConfidentialPetitionerTab
 };
 

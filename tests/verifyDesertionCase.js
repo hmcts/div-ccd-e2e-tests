@@ -11,7 +11,7 @@ Feature('Verify Desertion Case ');
 
 
 Scenario('Desertion case - Execute events for PFE, RFE, Co-RESP, DN , DA', async function (I) {
-  caseId = await createCaseInCcd('data/ccdBehaviourUnDefendedCase.json');
+  caseId = await createCaseInCcd('data/ccdDesertionCase.json');
   const response = await updateCaseInCcd(caseId, 'hwfApplicationAcceptedfromAwaitingHWFDecision');
   const submitted = await updateCaseInCcd(caseId, 'issueFromSubmitted');
   const issueAOS = await updateCaseInCcd(caseId, 'issueAos');
