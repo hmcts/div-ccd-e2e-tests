@@ -35,6 +35,8 @@ const IssueAosPackToRespondentCheckYourAnswersPage = require('./pages/IssueAosPa
 const IssueAosPackToRespondentLandingPage = require('./pages/IssueAosPackToRespondentLandingPage');
 const AosStartedPage = require('./pages/AosStartedPage');
 const AosStartedCheckYourAnswersPage = require('./pages/AosStartedCheckYourAnswersPage');
+const AosReceivedUndefendedMoveToDN = require('./pages/AosReceivedUndefendedMoveToDN');
+const SelectEventAndSubmit = require('./pages/SelectEventAndSubmit');
 const MarriageCertificateDetailsPage = require('./pages/MarriageCertificateDetailsPage');
 const TransferCaseToADifferentRDCsPage = require('./pages/TransferCaseToADifferentRDCsPage');
 const TransferBetweenRDCsPage = require('./pages/TransferBetweenRDCsPage');
@@ -201,6 +203,14 @@ module.exports = function () {
 
     aosPackToRespondentLandingPageFormAndSubmit: function() {
       IssueAosPackToRespondentLandingPage.fillFormAndSubmit();
+    },
+
+    aosReceivedUndefendedMoveToDNFormSubmit: function() {
+      AosReceivedUndefendedMoveToDN.fillFormAndSubmit();
+    },
+    
+    selectAndSubmitEvent: function(eventName) {
+      SelectEventAndSubmit.fillFormAndSubmit(eventName);
     },
 
     aosStartedPageFormAndSubmit: function() {

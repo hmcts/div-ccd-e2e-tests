@@ -62,6 +62,8 @@ exports.config = {
     IssueAosPackToRespondentLandingPage: './pages/IssueAosPackToRespondentLandingPage.js',
     AosStartedPage: './pages/AosStartedPage.js',
     AosStartedCheckYourAnswersPage: './pages/AosStartedCheckYourAnswersPage.js',
+    AosReceivedUndefendedMoveToDN: './pages/AosReceivedUndefendedMoveToDN.js',
+    SelectEventAndSubmit: './pages/SelectEventAndSubmit.js',
     TransferCaseToADifferentRDCsPage: './pages/TransferCaseToADifferentRDCsPage.js',
     TransferBetweenRDCsPage: './pages/TransferBetweenRDCsPage.js',
     TransferToRDCLandingPage: './pages/TransferToRDCLandingPage.js'
