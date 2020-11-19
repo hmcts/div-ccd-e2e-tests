@@ -1,0 +1,18 @@
+{
+  "name": "Co-Respondent",
+  "coRespondentFName": "Co-respondent's first name",
+  "coRespondentLName": "Co-respondent's last name",
+  "coRespondentEmailAddress": "Co-respondent's email address",
+  "coRespondentAddress": "The Co-respondent's address",
+  "coRespondentCommunications": "Co-respondent consents to email communications?",
+  "coRespondentReadPetition": "Co-respondent has read the petition?",
+  "coRespondentDefendDivorce": "Co-respondent will defend the divorce?",
+  "coRespondentAdmitDivorce": "Co-respondent admits to the adultery?",
+  "coRespondentAgreeStatementOfTruth": "Co-respondent agreed to statement of truth?",
+  "coRespondentDigitalChannel":"Co-respondent is using digital channel?",
+  "coRespondentAosReceived": "Received AOS from co-respondent?",
+  "coRespondentAosReceivedDate": "Date AOS received from co-respondent",
+  "coRespondentAosDueDate":"Co-respondent AOS due date",
+  "coRespondentAnswerReceived":"Received answer from co-respondent?",
+  "coRespondentAnswerReceivedDate" :"Date received answer from co-respondent"
+}

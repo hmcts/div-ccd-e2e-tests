@@ -1,6 +1,6 @@
 const I = actor();
 
-const { reasonsForDivorce } = require('../common/constants')
+const { reasonsForDivorce } = require('../common/constants');
 
 module.exports = {
 

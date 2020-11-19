@@ -1,0 +1,17 @@
+{
+  "name": "Decree Nisi",
+  "continuewithDN": "Does the petitioner want to continue with the divorce and apply for a decree nisi?",
+  "anythingChangeWithApp": "Do you need to change your application or add anything?",
+  "descChangesAtDN": "Description of changes to petition at DN stage",
+  "dateOfDnSubmitted": "Date DN application submitted",
+  "isEverythingStatedDivPetition": "Is everything stated in this divorce petition true?",
+  "livedApart": "Has the petitioner lived apart from the respondent since applying for the divorce?",
+  "additionalDetails": "Additional details of the living arrangements since the divorce application.",
+  "petitionerCostOrderPref": "Petitioner's cost order preference at DN stage",
+  "stateWhatClaim": "State what the petitioner wants to claim and why",
+  "uploadAnyOther": "Do you need to upload any other documents?",
+  "isBehaviourStillHapp": "Is the behaviour still happening?",
+  "petitionerCostAtDN": "Petitioner's cost order preference at DN stage",
+  "petitionerFactsDnStage": "The petitioner believes that the facts stated in the application for Decree Nisi are true",
+  "claimOriginalAmountText": "I still want to claim my costs and will let the court decide how much"
+}

@@ -1,0 +1,8 @@
+{
+  "name": "Decree Absolute",
+  "continuewithDA": "Does the applicant want to apply for Decree Absolute and finalise the divorce?",
+  "respCanApplyDA": "Date from which the respondent can apply for Decree Absolute",
+  "granteDA": "Grant Decree Absolute?",
+  "daGrantedDate": "Decree Absolute Granted Date",
+  "finalDateForDA": "Final date to apply for Decree Absolute"
+}

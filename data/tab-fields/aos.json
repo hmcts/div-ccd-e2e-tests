@@ -1,4 +1,5 @@
 {
+  "name": "AOS",
   "respConfirmedRead": "Has the respondent read the application for divorce?",
   "respDefendDivorce":  "How does the respondent want to proceed?",
   "respAdmitted": "Respondent admitted to adultery or consented to 2-year separation",

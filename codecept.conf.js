@@ -14,7 +14,7 @@ exports.config = {
       restart: true,
       keepCookies: false,
       keepBrowserState: false,
-      waitForTimeout: 40000,
+      waitForTimeout: 60000,
       waitForAction: 3000,
       chrome: {
         ignoreHTTPSErrors: true,
@@ -62,6 +62,8 @@ exports.config = {
     IssueAosPackToRespondentLandingPage: './pages/IssueAosPackToRespondentLandingPage.js',
     AosStartedPage: './pages/AosStartedPage.js',
     AosStartedCheckYourAnswersPage: './pages/AosStartedCheckYourAnswersPage.js',
+    AosReceivedUndefendedMoveToDN: './pages/AosReceivedUndefendedMoveToDN.js',
+    SelectEventAndSubmit: './pages/SelectEventAndSubmit.js',
     TransferCaseToADifferentRDCsPage: './pages/TransferCaseToADifferentRDCsPage.js',
     TransferBetweenRDCsPage: './pages/TransferBetweenRDCsPage.js',
     TransferToRDCLandingPage: './pages/TransferToRDCLandingPage.js'

@@ -1,13 +1,10 @@
 const I = actor();
 
+const { signOut } = require('../common/constants');
+
 module.exports = {
-
-  fields: {
-    signOut: '#sign-out'
-  },
-
   checkPageAndSignOut() {
     I.wait(2);
-    I.click('Sign out');
+    I.click(signOut);
   }
 };

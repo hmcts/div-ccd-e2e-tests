@@ -5,11 +5,13 @@ const { signOut } = require('../common/constants');
 
 const caseWorker = getCaseWorkerLoginDetails();
 
+let caseId;
+
 Feature('Testing CCD Create and Update as well as Caseworker change AOS States');
 
 Scenario('Create and Update as well as caseworker change AOS states', async function (I) {
-  const caseId = await createCaseInCcd('data/ccd-basic-data.json');
-  const response = await updateCaseInCcd(caseId, 'hwfApplicationAcceptedfromAwaitingHWFDecision', 'data/ccd-update-data.json');
+  caseId = await createCaseInCcd('data/ccd-basic-data.json');
+  await updateCaseInCcd(caseId, 'hwfApplicationAcceptedfromAwaitingHWFDecision', 'data/ccd-update-data.json');
 
   I.amOnHomePage();
   I.login(caseWorker.username, caseWorker.password);
@@ -27,6 +29,21 @@ Scenario('Create and Update as well as caseworker change AOS states', async func
   I.aosPackToRespondentLandingPageFormAndSubmit();
   I.aosStartedPageFormAndSubmit();
   I.aosStartedCheckYourAnswersPageFormAndSubmit();
+  I.click(signOut);
+});
+
+Scenario('Caseworker change DN events', async function (I) {
+  I.amOnHomePage();
+  I.login(caseWorker.username, caseWorker.password);
+  I.shouldBeOnCaseListPage();
+  I.amOnPage('/case/DIVORCE/DIVORCE/' + caseId);
+  I.wait(5);
+  I.aosReceivedUndefendedMoveToDNFormSubmit();
+  I.selectAndSubmitEvent('DN application received');
+  I.selectAndSubmitEvent('Refer to legal advisor');
+  I.selectAndSubmitEvent('Entitlement granted');
+  I.selectAndSubmitEvent('DN Pronounced');
+  I.selectAndSubmitEvent('DA Granted')
   I.wait(5);
   I.click(signOut);
 });
