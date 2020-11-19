@@ -10,7 +10,7 @@ let caseId;
 
 Feature('Verify Desertion Case ');
 
-xScenario('Desertion case - Execute events & verify states for PFE, RFE, Co-RESP, DN , DA', async function (I) {
+xScenario('Desertion case - Execute events & verify states for PFE, RFE, DN , DA', async function (I) {
   caseId = await createCaseInCcd('data/ccdDesertionCase.json');
 
   const submitted = await updateCaseInCcd(caseId, 'hwfApplicationAcceptedfromAwaitingHWFDecision');

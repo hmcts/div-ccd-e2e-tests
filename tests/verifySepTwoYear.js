@@ -8,9 +8,9 @@ const assert = require('assert');
 
 let caseId;
 
-Feature('Verify Desertion Case ');
+Feature('Verify Separation-2-yr Case ');
 
-xScenario('Separation-2-yrs - Execute events for PFE, RFE, Co-RESP, DN , DA', async function (I) {
+xScenario('Separation-2-yrs - Execute events for PFE, RFE, DN , DA', async function (I) {
   caseId = await createCaseInCcd('data/ccdBehaviourUnDefendedCase.json');
 
   const submitted = await updateCaseInCcd(caseId, 'hwfApplicationAcceptedfromAwaitingHWFDecision');
