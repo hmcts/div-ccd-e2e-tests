@@ -11,19 +11,19 @@ Feature('Verify Adultery case defended by both Resp and Co Res ');
 
 Scenario('Adultery case - Execute events for PFE, RFE, Co-RESP, DN , DA', async function (I) {
   caseId = await createCaseInCcd('data/ccdAdulteryRespondentCorespondentDefendedCase.json');
-  const response = await updateCaseInCcd(caseId, 'hwfApplicationAcceptedfromAwaitingHWFDecision');
-  const submitted = await updateCaseInCcd(caseId, 'issueFromSubmitted');
-  const issueAOS = await updateCaseInCcd(caseId, 'issueAos');
-  const startAOS = await updateCaseInCcd(caseId, 'startAos');
-  const aosSubmittedCoRespoDefended = await updateCaseInCcd(caseId, 'co-RespAOSReceivedStarted');
-  const aosSubmittedRespoDefended = await updateCaseInCcd(caseId, 'aosSubmittedDefended');
-  const coRespAnswerReceivedForDefended = await updateCaseInCcd(caseId, 'coRespAnswerReceivedAOS');
-  const answerNotReceived = await updateCaseInCcd(caseId, 'answerNotReceived');
-  const dnApplied = await updateCaseInCcd(caseId, 'dnReceived');
-  const refertoLegalAdvisor = await updateCaseInCcd(caseId, 'refertoLegalAdvisor');
-  const entitlementGranted = await updateCaseInCcd(caseId, 'entitlementGranted');
-  const awaitingDecreeAbsolute = await updateCaseInCcd(caseId, 'dnPronounced');
-  const daGranted = await updateCaseInCcd(caseId, 'daGranted');
+  await updateCaseInCcd(caseId, 'hwfApplicationAcceptedfromAwaitingHWFDecision');
+  await updateCaseInCcd(caseId, 'issueFromSubmitted');
+  await updateCaseInCcd(caseId, 'issueAos');
+  await updateCaseInCcd(caseId, 'startAos');
+  await updateCaseInCcd(caseId, 'co-RespAOSReceivedStarted');
+  await updateCaseInCcd(caseId, 'aosSubmittedDefended');
+  await updateCaseInCcd(caseId, 'coRespAnswerReceivedAOS');
+  await updateCaseInCcd(caseId, 'answerNotReceived');
+  await updateCaseInCcd(caseId, 'dnReceived');
+  await updateCaseInCcd(caseId, 'refertoLegalAdvisor');
+  await updateCaseInCcd(caseId, 'entitlementGranted');
+  await updateCaseInCcd(caseId, 'dnPronounced');
+  await updateCaseInCcd(caseId, 'daGranted');
 });
 
 Scenario('Adultery case - verify all tabs PFE, RFE, DN, DA', async function (I) {
@@ -32,11 +32,11 @@ Scenario('Adultery case - verify all tabs PFE, RFE, DN, DA', async function (I) 
   I.wait(20);
   I.amOnPage('/case/DIVORCE/DIVORCE/' + caseId);
   I.wait(30);
-  I.verifyPetitionerTab(reasonsForDivorce.ADULTERY, verifyContent);
-  I.verifyMarriageCertificateTab(verifyContent);
-  I.verifyAOSAnswersInTab(reasonsForDivorce.ADULTERY, verifyContent);
-  I.verifyCorespondentTab(verifyContent);
-  I.verifyDNAnswersInTab(reasonsForDivorce.ADULTERY, verifyContent);
-  I.verifyDocumentsTab(reasonsForDivorce.ADULTERY, caseId);
+  I.validatePetitionerTabData(reasonsForDivorce.ADULTERY, verifyContent);
+  I.validateMarriageCertTabData(verifyContent);
+  I.validateAOSTabData(reasonsForDivorce.ADULTERY, verifyContent);
+  I.validateCoRespTabData(verifyContent);
+  I.validateDecreeNisiTabData(reasonsForDivorce.ADULTERY, verifyContent);
+  I.validateDocumentTabData(reasonsForDivorce.ADULTERY, caseId);
   I.click(signOut);
 });

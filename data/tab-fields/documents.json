@@ -1,0 +1,13 @@
+{
+  "name": "Documents",
+  "documentsGenerated": "Documents generated",
+  "documentsUploadedPFEStage": "Documents uploaded",
+  "documentsUploadedDNStage": "Documents uploaded at DN stage",
+  "pfeUploadedDoc": "9B9045BC-CBFA-4B0A-8019-E7EC45E2DBCE.jpeg",
+  "dnUploadedDoc": "JPEG image.jpeg",
+  "d8petitionText": "d8petition",
+  "aosInvitationText": "aosinvitation",
+  "coRespondentaosinvitationText": "co-respondentaosinvitation",
+  "respondentAnswersText":"respondentAnswers.pdf",
+  "documentgeneratedExtension": ".pdf"
+}

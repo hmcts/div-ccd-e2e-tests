@@ -14,7 +14,7 @@ exports.config = {
       restart: true,
       keepCookies: false,
       keepBrowserState: false,
-      waitForTimeout: 40000,
+      waitForTimeout: 60000,
       waitForAction: 3000,
       chrome: {
         ignoreHTTPSErrors: true,

@@ -9,7 +9,7 @@ Feature('Testing CCD Create and Update as well as Caseworker change AOS States')
 
 Scenario('Create and Update as well as caseworker change AOS states', async function (I) {
   const caseId = await createCaseInCcd('data/ccd-basic-data.json');
-  const response = await updateCaseInCcd(caseId, 'hwfApplicationAcceptedfromAwaitingHWFDecision', 'data/ccd-update-data.json');
+  await updateCaseInCcd(caseId, 'hwfApplicationAcceptedfromAwaitingHWFDecision', 'data/ccd-update-data.json');
 
   I.amOnHomePage();
   I.login(caseWorker.username, caseWorker.password);

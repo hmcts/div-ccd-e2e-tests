@@ -27,7 +27,19 @@
   "respSolicitorEmail": "Respondent's solicitor's Email",
   "reasonForDivorce": "Fact",
   "behaviourDetails": "Behaviour details",
+  "adulteryDetails":  "Adultery details",
+  "nameOfCoRespondent": "Name co-respondent?",
+  "adulteryInfoThirdPartyDetails": "Has any of the information about the adultery come from another person?",
+  "adulteryPetitionerKnowsWhen": "Petitioner knows when adultery took place?",
+  "detailsOfWhenAdulteryTookPlace": "When the adultery took place",
+  "adulteryPetitionerKnowsWhere": "Petitioner know where adultery took place?",
+  "detailsOfWhereAdulteryTookPlace": "Details of where the adultery took plac",
+  "respondentLeaveWithoutAgreement": "Did the respondent leave without the petitioner’s agreement?",
+  "desertionDetails": "Desertion details",
+  "desertionDate": "Desertion date",
+  "livedApart": "Has the petitioner lived apart from the respondent for the entire time since they deserted the petitioner?",
   "legalConnections": "Legal connections",
+  "livedTogether": "At what address did the petitioner and the respondent last live together?",
   "otherProceedings": "Petitioner's other proceedings:",
   "anyPreviousProceedings": "Are there any existing or previous court proceedings relating to the petitioner's marriage, property or children?",
   "wishToApplyForFinancialOrder": "Does the petitioner wish to apply for a financial order?",
@@ -45,5 +57,7 @@
   "placeOfMarriage": "Place of marriage",
   "WhoPetitionerDivorcing": "Who is petitioner divorcing?",
   "sameSexCouple": "Were the petitioner and the respondent a same-sex couple when they got married?",
-  "petitionerFactsStated": "I believe that the facts stated in the application are true."
+  "petitionerFactsStated": "I believe that the facts stated in the application are true.",
+  "whoTheFinancialOrder": "Who is the financial order for?",
+  "claimCostsFrom": "Claim costs from"
 }

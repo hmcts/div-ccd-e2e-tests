@@ -33,11 +33,11 @@ xScenario('Separation-5-yrs - verify all tabs PFE, RFE, DN, DA', async function 
   I.wait(20);
   I.amOnPage('/case/DIVORCE/DIVORCE/' + caseId);
   I.wait(30);
-  I.verifyPetitionerTab(reasonsForDivorce.SEPFIVEYRS, verifyContent);
-  I.verifyConfidentialPetitionerTab(verifyContent);
-  I.verifyMarriageCertificateTab(verifyContent);
-  I.verifyAOSAnswersInTab(reasonsForDivorce.SEPFIVEYRS, verifyContent);
-  I.verifyDNAnswersInTab(reasonsForDivorce.SEPFIVEYRS, verifyContent);
-  I.verifyDocumentsTab(reasonsForDivorce.SEPFIVEYRS, caseId);
+  I.validatePetitionerTabData(reasonsForDivorce.SEPFIVEYRS, verifyContent);
+  I.validateConfidentialPetitionerTab(verifyContent);
+  I.validateMarriageCertTabData(verifyContent);
+  I.validateAOSTabData(reasonsForDivorce.SEPFIVEYRS, verifyContent);
+  I.validateDecreeNisiTabData(reasonsForDivorce.SEPFIVEYRS, verifyContent);
+  I.validateDocumentTabData(reasonsForDivorce.SEPFIVEYRS, caseId);
   I.click(signOut);
 });

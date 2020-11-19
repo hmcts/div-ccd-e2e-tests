@@ -1,0 +1,8 @@
+{
+  "name": "Marriage Certificate",
+  "petitionerFullNameMarriageCertificate": "Petitioner's full name as on marriage certificate",
+  "respondnetFullNameMarriageCertificate": "Respondent's full name as on marriage certificate",
+  "dateofMarriage": "Marriage date",
+  "isMarriageTookPlaceInUK": "Did the marriage take place in the UK?",
+  "placeOfMarriage": "Place of marriage"
+}

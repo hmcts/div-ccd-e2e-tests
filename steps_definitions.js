@@ -40,7 +40,15 @@ const TransferCaseToADifferentRDCsPage = require('./pages/TransferCaseToADiffere
 const TransferBetweenRDCsPage = require('./pages/TransferBetweenRDCsPage');
 const TransferToRDCLandingPage = require('./pages/TransferToRDCLandingPage');
 
-const verifyTabData = require ('./tabs/verifyTabData');
+const validatePetitionerTabData = require ('./tabs/validatePetitionerTabData');
+const validateConfidentialPetitionerTab = require ('./tabs/validateConfidentialPetitionerTab');
+const validateAOSTabData = require ('./tabs/validateAOSTabData');
+const validateCoRespTabData = require ('./tabs/validateCoRespTabData');
+const validateDecreeNisiTabData = require ('./tabs/validateDecreeNisiTabData');
+const validateOutcomeOfDNTabData = require ('./tabs/validateOutcomeOfDNTabData');
+const validateDecreeAbsoluteTabData = require ('./tabs/validateDecreeAbsoluteTabData');
+const validateMarriageCertTabData = require ('./tabs/validateMarriageCertTabData');
+const validateDocumentTabData = require ('./tabs/validateDocumentTabData');
 
 module.exports = function () {
   return actor({
@@ -214,26 +222,41 @@ module.exports = function () {
     caseCreatedCTSCServiceCentrePageFormAndSubmit: function() {
       TransferToRDCLandingPage.fillFormAndSubmit();
     },
-    verifyPetitionerTab: function(reason,verifyContent) {
-      verifyTabData.verifyPetitionerTab(reason,verifyContent);
+
+    validatePetitionerTabData: function(reason,verifyContent) {
+      validatePetitionerTabData(reason,verifyContent);
     },
-    verifyCorespondentTab: function(reason,verifyContent) {
-      verifyTabData.verifyCorespondentTab(reason, verifyContent);
+
+    validateCoRespTabData: function(reason,verifyContent) {
+      validateCoRespTabData(verifyContent);
     },
-    verifyDocumentsTab: function(reason, caseId) {
-      verifyTabData.verifyDocumentsTab(reason, caseId);
+
+    validateDocumentTabData: function(reason, caseId) {
+      validateDocumentTabData(reason, caseId);
     },
-    verifyMarriageCertificateTab: function(verifyContent) {
-      verifyTabData.verifyMarriageCertificateTab(verifyContent);
+
+    validateMarriageCertTabData: function(verifyContent) {
+      validateMarriageCertTabData(verifyContent);
     },
-    verifyAOSAnswersInTab: function(reason,verifyContent){
-      verifyTabData.verifyAOSAnswersInTab(reason,verifyContent);
+
+    validateAOSTabData: function(reason,verifyContent){
+      validateAOSTabData(reason,verifyContent);
     },
-    verifyDNAnswersInTab: function(reason,verifyContent) {
-      verifyTabData.verifyDNAnswersInTab(reason,verifyContent);
+
+    validateDecreeNisiTabData: function(reason,verifyContent) {
+      validateDecreeNisiTabData(reason,verifyContent);
     },
-    verifyConfidentialPetitionerTab:function(verifyContent) {
-      verifyTabData.verifyConfidentialPetitionerTab(verifyContent);
+    
+    validateConfidentialPetitionerTab:function(verifyContent) {
+      validateConfidentialPetitionerTab(verifyContent);
+    },
+    
+    validateOutcomeOfDNTabData:function(verifyContent) {
+      validateOutcomeOfDNTabData(verifyContent);
+    },
+
+    validateDecreeAbsoluteTabData:function(verifyContent) {
+      validateDecreeAbsoluteTabData(verifyContent);
     }
   });
 };

@@ -33,11 +33,11 @@ Scenario('Desertion case - verify all tabs PFE, RFE, DN, DA', async function (I)
   I.wait(20);
   I.amOnPage('/case/DIVORCE/DIVORCE/' + caseId);
   I.wait(30);
-  I.verifyPetitionerTab(reasonsForDivorce.DESERTION, verifyContent);
+  I.validatePetitionerTabData(reasonsForDivorce.DESERTION, verifyContent);
   I.verifyConfidentialPetitionerTab(verifyContent);
-  I.verifyMarriageCertificateTab(verifyContent);
-  I.verifyAOSAnswersInTab(reasonsForDivorce.DESERTION, verifyContent);
-  I.verifyDNAnswersInTab(reasonsForDivorce.DESERTION, verifyContent);
-  I.verifyDocumentsTab(reasonsForDivorce.DESERTION, caseId);
+  I.validateMarriageCertTabData(verifyContent);
+  I.validateAOSTabData(reasonsForDivorce.DESERTION, verifyContent);
+  I.validateDecreeNisiTabData(reasonsForDivorce.DESERTION, verifyContent);
+  I.validateDocumentTabData(reasonsForDivorce.DESERTION, caseId);
   I.click(signOut);
 });

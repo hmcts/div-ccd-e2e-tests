@@ -2,6 +2,8 @@
   "name": "Outcome of Decree Nisi",
   "laDecisionDate": "Legal advisor decision date",
   "granteDN":"Grant Decree Nisi?",
+  "clarificationResponse": "Clarification Response",
+  "pronouncementDetails": "Pronouncement Details",
   "bulkCaseRef":"Bulk case reference",
   "courtName": "Court name",
   "dateAndTimeOfHearing": "Date and time of hearing",
