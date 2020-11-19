@@ -3,28 +3,48 @@
 const { createCaseInCcd, updateCaseInCcd, getCaseWorkerLoginDetails, firstLetterToCaps, datechange } = require('../helpers/utils');
 const verifyContent = require('../data/ccdBehaviourUnDefendedCase.json');
 const caseWorker = getCaseWorkerLoginDetails();
-const { reasonsForDivorce, signOut } = require('../common/constants');
+const { reasonsForDivorce, signOut, states } = require('../common/constants')
+const assert = require('assert');
 
 let caseId;
 
 Feature('Verify Behaviour Case ');
 
-Scenario('Behaviour case Undefended - Execute events for PFE, RFE, Co-RESP, DN , DA', async function (I) {
+Scenario('Behaviour case Undefended - Execute events for PFE, RFE,  DN , DA', async function (I) {
   caseId = await createCaseInCcd('data/ccdBehaviourUnDefendedCase.json');
-  await updateCaseInCcd(caseId, 'hwfApplicationAcceptedfromAwaitingHWFDecision');
-  await updateCaseInCcd(caseId, 'issueFromSubmitted');
-  await updateCaseInCcd(caseId, 'issueAos');
-  await updateCaseInCcd(caseId, 'startAos');
-  await updateCaseInCcd(caseId, 'co-RespAOSReceivedStarted');
-  await updateCaseInCcd(caseId, 'aosSubmittedDefended');
-  await updateCaseInCcd(caseId, 'coRespAnswerReceivedAOS');
-  await updateCaseInCcd(caseId, 'answerNotReceived');
-  await updateCaseInCcd(caseId, 'dnReceived');
-  await updateCaseInCcd(caseId, 'refertoLegalAdvisor');
-  await updateCaseInCcd(caseId, 'entitlementGranted');
-  await updateCaseInCcd(caseId, 'dnPronounced');
+
+  const submitted = await updateCaseInCcd(caseId, 'hwfApplicationAcceptedfromAwaitingHWFDecision');
+  assert.strictEqual(JSON.parse(submitted).state, states.SUBMITTTED);
+
+  const issued = await updateCaseInCcd(caseId, 'issueFromSubmitted');
+  assert.strictEqual(JSON.parse(issued).state, states.ISSUED);
+
+  const issueAOS = await updateCaseInCcd(caseId, 'issueAos');
+  assert.strictEqual(JSON.parse(issueAOS).state, states.AOS_AWAITING);
+
+  const startAOS = await updateCaseInCcd(caseId, 'startAos');
+  assert.strictEqual(JSON.parse(startAOS).state, states.AOS_STARTED);
+
+  const aosSubmittedRespoDefended = await updateCaseInCcd(caseId, 'aosSubmittedDefended');
+  assert.strictEqual(JSON.parse(aosSubmittedRespoDefended).state, states.AWAITING_ANSWER);
+
+  const answerNotReceived = await updateCaseInCcd(caseId, 'answerNotReceived');
+  assert.strictEqual(JSON.parse(answerNotReceived).state, states.AWAITING_DN);
+
+  const dnApplied = await updateCaseInCcd(caseId, 'dnReceived');
+  assert.strictEqual(JSON.parse(dnApplied).state, states.AWAITING_LA);
+
+  const refertoLegalAdvisor = await updateCaseInCcd(caseId, 'refertoLegalAdvisor');
+  assert.strictEqual(JSON.parse(refertoLegalAdvisor).state, states.AWAITING_CONSIDERATION);
+
+  const entitlementGranted = await updateCaseInCcd(caseId, 'entitlementGranted');
+  assert.strictEqual(JSON.parse(entitlementGranted).state, states.AWAITING_CONSIDERATION);
+
+  const awaitingDecreeAbsolute = await updateCaseInCcd(caseId, 'dnPronounced');
+  assert.strictEqual(JSON.parse(awaitingDecreeAbsolute).state, states.AWAITING_DA);
+
   const daGranted = await updateCaseInCcd(caseId, 'daGranted');
-  console.log('daGranted is ', daGranted);
+  assert.strictEqual(JSON.parse(daGranted).state, states.DIVORCE_GRANTED);
 });
 
 Scenario('Behaviour case Undefended - verify all tabs PFE, RFE, DN, DA', async function (I) {

@@ -1,6 +1,7 @@
 const I = actor();
 const { firstLetterToCaps, datechange } = require('../helpers/utils');
 const labels = require('../data/tab-fields/aos.json');
+const commonFields = require('../data/tab-fields/commonFields.json');
 const { reasonsForDivorce } = require('../common/constants')
 
 
@@ -25,7 +26,7 @@ module.exports = (reason,verifyContent) => {
     I.see(verifyContent.RespLegalProceedingsExist);
     I.see(labels.aosAnswers.respDigitalChannel);
     I.see(firstLetterToCaps(verifyContent.RespContactMethodIsDigital));
-    I.see(labels.general.yes);
+    I.see(commonFields.yes);
     I.see(labels.aosAnswers.respDueDate);
   }
   if(reasonsForDivorce.BEHAVIOUR == reason) {
@@ -41,7 +42,7 @@ module.exports = (reason,verifyContent) => {
     I.see(verifyContent.RespAgreeToCosts);
     I.see(labels.aosAnswers.respDigitalChannel);
     I.see(firstLetterToCaps(verifyContent.RespContactMethodIsDigital));
-    I.see(labels.general.yes);
+    I.see(commonFields.yes);
     I.see(labels.aosAnswers.respDueDate);
   }
   I.see(datechange(30));

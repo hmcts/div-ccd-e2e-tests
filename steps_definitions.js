@@ -40,7 +40,7 @@ const TransferCaseToADifferentRDCsPage = require('./pages/TransferCaseToADiffere
 const TransferBetweenRDCsPage = require('./pages/TransferBetweenRDCsPage');
 const TransferToRDCLandingPage = require('./pages/TransferToRDCLandingPage');
 
-const validatePetitionerTabData = require ('./tabs/validatePetitionerTabData');
+const validatePetitionTabData = require ('./tabs/validatePetitionTabData');
 const validateConfidentialPetitionerTab = require ('./tabs/validateConfidentialPetitionerTab');
 const validateAOSTabData = require ('./tabs/validateAOSTabData');
 const validateCoRespTabData = require ('./tabs/validateCoRespTabData');
@@ -223,8 +223,8 @@ module.exports = function () {
       TransferToRDCLandingPage.fillFormAndSubmit();
     },
 
-    validatePetitionerTabData: function(reason,verifyContent) {
-      validatePetitionerTabData(reason,verifyContent);
+    validatePetitionTabData: function(reason,verifyContent) {
+      validatePetitionTabData(reason,verifyContent);
     },
 
     validateCoRespTabData: function(reason,verifyContent) {
