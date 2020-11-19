@@ -5,6 +5,8 @@ const { getSolicitorLoginDetails  } = require('../helpers/utils');
 
 const solicitor = getSolicitorLoginDetails();
 
+let caseNumber;
+
 Feature('Solicitor create case');
 
 Scenario('Solicitor create case and make payment', async (I) => {
@@ -28,7 +30,7 @@ Scenario('Solicitor create case and make payment', async (I) => {
   I.uploadTheMarriageCertificateOptional();
   I.languagePreferenceSelection();
   I.solicitorCreateCheckYourAnswerAndSubmit();
-  const caseNumber = await I.solicitorCaseCreatedAndSubmit();
+  caseNumber = await I.solicitorCaseCreatedAndSubmit();
   console.log(caseNumber);
   I.statementOfTruthAndReconciliationPageFormAndSubmit();
   await I.casePaymentAndSubmissionPageFormAndSubmit();
@@ -37,3 +39,18 @@ Scenario('Solicitor create case and make payment', async (I) => {
   I.caseCheckYourAnswersPageFormAndSubmit();
   I.solAwaitingPaymentConfPageFormAndSubmit();
 });
+
+Scenario('Solicitor should not see payment made events', async (I) => {
+  I.amOnHomePage();
+  I.login(caseWorker.username, caseWorker.password);
+  I.wait(20);
+  I.amOnPage('/case/DIVORCE/DIVORCE/' + caseNumber);
+  I.waitForElement('select[id="next-step"]');
+  I.click('select[id="next-step"]');
+  I.see('Update Language');
+  I.dontSee('Awaiting petitioner');
+  I.dontSee('Fee account debited');
+  I.dontSee('HWF application accepted');
+  I.dontSee('Payment made');
+});
+
