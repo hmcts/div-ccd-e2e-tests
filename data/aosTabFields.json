@@ -1,0 +1,20 @@
+{
+  "respConfirmedRead": "Has the respondent read the application for divorce?",
+  "respDefendDivorce":  "How does the respondent want to proceed?",
+  "respAdmitted": "Respondent admitted to adultery or consented to 2-year separation",
+  "respAgreedClaimdJurisdiction": "Respondent agreed to claimed jurisdiction?",
+  "respReasonJurisdiction": "Reason respondent disagreed to claimed jurisdiction",
+  "respJurisdictionCountry": "Respondent country of residence",
+  "resplegalProceedings": "Do legal proceedings exist (respondent)?",
+  "legalProceedingsDetails": "Legal proceedings details (respondent)",
+  "respAgreeCosts": "Does respondent agree to costs?",
+  "respCostAmt": "Respondent's costs amount",
+  "respCostsReason": "Respondent's costs reason",
+  "respStatementOfTruth": "Respondent Statement of Truth",
+  "respConsiderFinancialSituation": "Respondent requires consideration of financial situation?",
+  "aosReceivedFromResp": "AOS received from respondent",
+  "aosReceivedDate": "Date AOS received from respondent",
+  "respAgreeStatementOfTruth": "The respondent believes that the facts stated in this response are true",
+  "respDigitalChannel": "Respondent is using digital channel?",
+  "respDueDate": "Due Date"
+}
