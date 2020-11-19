@@ -2,7 +2,7 @@ const I = actor();
 const { firstLetterToCaps, formatDateToCcdDisplayDate } = require('../helpers/utils');
 const labels = require('../data/tab-fields/petition.json');
 const commonFields = require('../data/tab-fields/commonFields.json');
-const { reasonsForDivorce } = require('../common/constants')
+const { reasonsForDivorce } = require('../common/constants');
 
 
 module.exports = (reason,verifyContent) => {
@@ -39,7 +39,7 @@ module.exports = (reason,verifyContent) => {
   I.see(verifyContent.D8DerivedRespondentCorrespondenceAddr);
   I.see(labels.respondentConsentEmailComm);
   I.see(commonFields.yes);
-  I.see(labels.respondentGender);
+  I.see(labels.respGender);
   I.see(firstLetterToCaps(verifyContent.D8InferredRespondentGender));
 
   I.see(labels.wishToApplyForFinancialOrder);

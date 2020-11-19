@@ -3,14 +3,14 @@
 const { createCaseInCcd, updateCaseInCcd, getCaseWorkerLoginDetails } = require('../helpers/utils');
 const verifyContent = require('../data/ccdDesertionCase.json');
 const caseWorker = getCaseWorkerLoginDetails();
-const { reasonsForDivorce, signOut, states } = require('../common/constants')
+const { reasonsForDivorce, signOut, states } = require('../common/constants');
 const assert = require('assert');
 
 let caseId;
 
 Feature('Verify Desertion Case ');
 
-xScenario('Desertion case - Execute events & verify states for PFE, RFE, DN , DA', async function (I) {
+Scenario('Desertion case - Execute events & verify states for PFE, RFE, DN , DA', async function (I) {
   caseId = await createCaseInCcd('data/ccdDesertionCase.json');
 
   const submitted = await updateCaseInCcd(caseId, 'hwfApplicationAcceptedfromAwaitingHWFDecision');
@@ -38,7 +38,7 @@ xScenario('Desertion case - Execute events & verify states for PFE, RFE, DN , DA
   assert.strictEqual(JSON.parse(refertoLegalAdvisor).state, states.AWAITING_CONSIDERATION);
 
   const entitlementGranted = await updateCaseInCcd(caseId, 'entitlementGranted');
-  assert.strictEqual(JSON.parse(entitlementGranted).state, states.AWAITING_CONSIDERATION);
+  assert.strictEqual(JSON.parse(entitlementGranted).state, states.AWAITING_PRONOUNCEMENT);
 
   const awaitingDecreeAbsolute = await updateCaseInCcd(caseId, 'dnPronounced');
   assert.strictEqual(JSON.parse(awaitingDecreeAbsolute).state, states.AWAITING_DA);

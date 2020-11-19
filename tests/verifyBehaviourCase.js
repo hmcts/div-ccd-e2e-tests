@@ -3,7 +3,7 @@
 const { createCaseInCcd, updateCaseInCcd, getCaseWorkerLoginDetails, firstLetterToCaps, datechange } = require('../helpers/utils');
 const verifyContent = require('../data/ccdBehaviourUnDefendedCase.json');
 const caseWorker = getCaseWorkerLoginDetails();
-const { reasonsForDivorce, signOut, states } = require('../common/constants')
+const { reasonsForDivorce, signOut, states } = require('../common/constants');
 const assert = require('assert');
 
 let caseId;
@@ -38,7 +38,7 @@ Scenario('Behaviour case Undefended - Execute events for PFE, RFE,  DN , DA', as
   assert.strictEqual(JSON.parse(refertoLegalAdvisor).state, states.AWAITING_CONSIDERATION);
 
   const entitlementGranted = await updateCaseInCcd(caseId, 'entitlementGranted');
-  assert.strictEqual(JSON.parse(entitlementGranted).state, states.AWAITING_CONSIDERATION);
+  assert.strictEqual(JSON.parse(entitlementGranted).state, states.AWAITING_PRONOUNCEMENT);
 
   const awaitingDecreeAbsolute = await updateCaseInCcd(caseId, 'dnPronounced');
   assert.strictEqual(JSON.parse(awaitingDecreeAbsolute).state, states.AWAITING_DA);
@@ -53,7 +53,7 @@ Scenario('Behaviour case Undefended - verify all tabs PFE, RFE, DN, DA', async f
   I.wait(20);
   I.amOnPage('/case/DIVORCE/DIVORCE/' + caseId);
   I.wait(30);
-  I.validatePetitionerTabData(reasonsForDivorce.BEHAVIOUR, verifyContent);
+  I.validatePetitionTabData(reasonsForDivorce.BEHAVIOUR, verifyContent);
   I.validateConfidentialPetitionerTab(verifyContent);
   I.validateMarriageCertTabData(verifyContent);
   I.validateAOSTabData(reasonsForDivorce.BEHAVIOUR, verifyContent);

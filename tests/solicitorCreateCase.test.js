@@ -1,5 +1,6 @@
 /// <reference path="../steps.d.ts" />
 
+const { signOut } = require('../common/constants');
 const { getSolicitorLoginDetails  } = require('../helpers/utils');
 
 
@@ -31,6 +32,7 @@ Scenario('Solicitor create case and make payment', async (I) => {
   I.languagePreferenceSelection();
   I.solicitorCreateCheckYourAnswerAndSubmit();
   caseNumber = await I.solicitorCaseCreatedAndSubmit();
+  caseNumber = caseNumber.replace(/\D/gi, '');
   console.log(caseNumber);
   I.statementOfTruthAndReconciliationPageFormAndSubmit();
   await I.casePaymentAndSubmissionPageFormAndSubmit();
@@ -42,7 +44,7 @@ Scenario('Solicitor create case and make payment', async (I) => {
 
 Scenario('Solicitor should not see payment made events', async (I) => {
   I.amOnHomePage();
-  I.login(caseWorker.username, caseWorker.password);
+  I.login(solicitor.username, solicitor.password);
   I.wait(20);
   I.amOnPage('/case/DIVORCE/DIVORCE/' + caseNumber);
   I.waitForElement('select[id="next-step"]');
@@ -52,5 +54,6 @@ Scenario('Solicitor should not see payment made events', async (I) => {
   I.dontSee('Fee account debited');
   I.dontSee('HWF application accepted');
   I.dontSee('Payment made');
+  I.click(signOut);
 });
 

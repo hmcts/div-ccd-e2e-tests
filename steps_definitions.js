@@ -237,7 +237,7 @@ module.exports = function () {
       validatePetitionTabData(reason,verifyContent);
     },
 
-    validateCoRespTabData: function(reason,verifyContent) {
+    validateCoRespTabData: function(verifyContent) {
       validateCoRespTabData(verifyContent);
     },
 

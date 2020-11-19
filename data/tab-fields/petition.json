@@ -19,6 +19,8 @@
   "petitionerSolicitorEmail":"Petitioner Solicitor Email",
   "confirmEmailService": "I confirm I am willing to accept service of all correspondence and orders by email at the email address stated above.",
   "respHomeAddress": "The Respondent's home address",
+  "respondentSerAdd": "The Respondent's service address",
+  "respondentConsentEmailComm": "Respondent consented to email communications?",
   "respGender": "What is the respondent's gender?",
   "isRespUsingSolicitor": "Is the respondent using a solicitor?",
   "respSolicitorName": "Respondent's solicitor's name",

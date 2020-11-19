@@ -6,6 +6,7 @@ const { signOut } = require('../common/constants');
 const caseWorker = getCaseWorkerLoginDetails();
 
 let caseId;
+
 Feature('Testing CCD Create and Update as well as Caseworker change AOS States');
 
 Scenario('Create and Update as well as caseworker change AOS states', async function (I) {
