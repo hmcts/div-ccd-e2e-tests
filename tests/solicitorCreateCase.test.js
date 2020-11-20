@@ -1,10 +1,15 @@
 /// <reference path="../steps.d.ts" />
 
-const { signOut } = require('../common/constants');
-const { getSolicitorLoginDetails  } = require('../helpers/utils');
+const { events, signOut } = require('../common/constants');
+const { getSolicitorLoginDetails, getCaseWorkerLoginDetails } = require('../helpers/utils');
 
 
 const solicitor = getSolicitorLoginDetails();
+const caseWorker = getCaseWorkerLoginDetails();
+
+const nextStepDropDown = 'select[id="next-step"]'
+
+let caseNumber;
 
 let caseNumber;
 
@@ -47,13 +52,28 @@ Scenario('Solicitor should not see payment made events', async (I) => {
   I.login(solicitor.username, solicitor.password);
   I.wait(20);
   I.amOnPage('/case/DIVORCE/DIVORCE/' + caseNumber);
-  I.waitForElement('select[id="next-step"]');
-  I.click('select[id="next-step"]');
-  I.see('Update Language');
-  I.dontSee('Awaiting petitioner');
-  I.dontSee('Fee account debited');
-  I.dontSee('HWF application accepted');
-  I.dontSee('Payment made');
+  I.waitForElement(nextStepDropDown);
+  I.click(nextStepDropDown);
+  I.see(events.UPDATE_LANG);
+  I.dontSee(events.ISSUE);
+  I.dontSee(events.REFUND);
+  I.dontSee(events.TRANSFER_BETWEEN_RDC);
+  I.dontSee(events.TRANSFER_CTSC_TO_RDC);
+  I.click(signOut);
+});
+
+Scenario('Caseworker should be able to see payment made events', async (I) => {
+  I.amOnHomePage();
+  I.login(caseWorker.username, caseWorker.password);
+  I.wait(20);
+  I.amOnPage('/case/DIVORCE/DIVORCE/' + caseNumber);
+  I.waitForElement(nextStepDropDown);
+  I.click(nextStepDropDown);
+  I.see(events.UPDATE_LANG);
+  I.see(events.ISSUE);
+  I.see(events.REFUND);
+  I.see(events.TRANSFER_BETWEEN_RDC);
+  I.see(events.TRANSFER_CTSC_TO_RDC);
   I.click(signOut);
 });
 
