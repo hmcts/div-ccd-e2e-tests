@@ -4,7 +4,7 @@ const reasonsForDivorce = {
     DESERTION: 'Desertion',
     SEPFIVEYRS: 'separation-5-years',
     SEPTWOYRS: 'separation-2-years'
-}
+};
 
 const signOut = 'Sign out';
 
@@ -24,10 +24,19 @@ const states = {
     AWAITING_PRONOUNCEMENT: 'AwaitingPronouncement',
     AWAITING_DA: 'AwaitingDecreeAbsolute',
     DIVORCE_GRANTED: 'DivorceGranted'
-}
+};
+
+const events = {
+    UPDATE_LANG: 'Update Language',
+    ISSUE: 'Issue',
+    REFUND: 'Refund',
+    TRANSFER_BETWEEN_RDC: 'Transfer between RDCs',
+    TRANSFER_CTSC_TO_RDC: 'Transfer from CTSC to RDC'
+};
 
 module.exports = {
     reasonsForDivorce,
     states,
+    events,
     signOut
 };

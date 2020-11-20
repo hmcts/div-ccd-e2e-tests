@@ -17,8 +17,9 @@ module.exports = {
     I.click(this.fields.submit);
     //I.fillField(this.fields.enterYourAccountNumber, 'PBA1234908');
 
-    const pbaNumber = await I.grabTextFrom(`${this.fields.selectPbaNumber} option:nth-child(2)`);
-    I.selectOption(this.fields.selectPbaNumber, pbaNumber);
+    //All the pba numbers in the dropdown are not working. So, hardcoding for now.
+    //const pbaNumber = await I.grabTextFrom(`${this.fields.selectPbaNumber} option:nth-child(2)`);
+    I.selectOption(this.fields.selectPbaNumber, 'PBA0077051');
     I.fillField(this.fields.enterYourReference, 'Next case submitted');
     I.click(this.fields.submit);
     I.wait(1);
