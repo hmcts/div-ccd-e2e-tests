@@ -11,6 +11,8 @@ const nextStepDropDown = 'select[id="next-step"]'
 
 let caseNumber;
 
+let caseNumber;
+
 Feature('Solicitor create case');
 
 Scenario('Solicitor create case and make payment', async (I) => {
