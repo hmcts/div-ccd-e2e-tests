@@ -1,10 +1,11 @@
 /// <reference path="../steps.d.ts" />
 
 const { signOut } = require('../common/constants');
-const { getSolicitorLoginDetails  } = require('../helpers/utils');
+const { getSolicitorLoginDetails, getCaseWorkerLoginDetails } = require('../helpers/utils');
 
 
 const solicitor = getSolicitorLoginDetails();
+const caseWorker = getCaseWorkerLoginDetails();
 
 let caseNumber;
 
@@ -42,7 +43,7 @@ Scenario('Solicitor create case and make payment', async (I) => {
   I.solAwaitingPaymentConfPageFormAndSubmit();
 });
 
-Scenario('Solicitor should not see payment made events', async (I) => {
+xScenario('Solicitor should not see payment made events', async (I) => {
   I.amOnHomePage();
   I.login(solicitor.username, solicitor.password);
   I.wait(20);
@@ -54,6 +55,18 @@ Scenario('Solicitor should not see payment made events', async (I) => {
   I.dontSee('Fee account debited');
   I.dontSee('HWF application accepted');
   I.dontSee('Payment made');
+  I.click(signOut);
+});
+
+Scenario('Caseworker should be able to see payment made events', async (I) => {
+  I.amOnHomePage();
+  I.login(caseWorker.username, caseWorker.password);
+  I.wait(20);
+  I.amOnPage('/case/DIVORCE/DIVORCE/' + caseNumber);
+  I.waitForElement('select[id="next-step"]');
+  I.click('select[id="next-step"]');
+  I.see('Update Language');
+  I.see('Payment made');
   I.click(signOut);
 });
 

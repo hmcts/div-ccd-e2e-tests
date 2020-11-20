@@ -6,54 +6,58 @@ const caseWorker = getCaseWorkerLoginDetails();
 const { reasonsForDivorce, signOut, states } = require('../common/constants');
 const assert = require('assert');
 
+const verifyState = (eventResponse, state) => {
+  assert.strictEqual(JSON.parse(eventResponse).state, state);
+};
+
 let caseId;
 
 Feature('Verify Adultery case defended by both Resp and Co Resp ');
 
-Scenario('Adultery case - Execute events for PFE, RFE, Co-RESP, DN , DA', async function (I) {
+Scenario('Execute events for end to end flow PFE, RFE, Co-RESP, DN , DA', async function (I) {
   caseId = await createCaseInCcd('data/ccdAdulteryRespondentCorespondentDefendedCase.json');
 
   const submitted = await updateCaseInCcd(caseId, 'hwfApplicationAcceptedfromAwaitingHWFDecision');
-  assert.strictEqual(JSON.parse(submitted).state, states.SUBMITTTED);
+  verifyState(submitted, states.SUBMITTTED);
 
   const issued = await updateCaseInCcd(caseId, 'issueFromSubmitted');
-  assert.strictEqual(JSON.parse(issued).state, states.ISSUED);
+  verifyState(issued, states.ISSUED);
 
   const issueAOS = await updateCaseInCcd(caseId, 'issueAos');
-  assert.strictEqual(JSON.parse(issueAOS).state, states.AOS_AWAITING);
+  verifyState(issueAOS, states.AOS_AWAITING);
 
   const startAOS = await updateCaseInCcd(caseId, 'startAos');
-  assert.strictEqual(JSON.parse(startAOS).state, states.AOS_STARTED);
+  verifyState(startAOS, states.AOS_STARTED);
 
   const aosSubmittedCoRespoDefended = await updateCaseInCcd(caseId, 'co-RespAOSReceivedStarted');
-  assert.strictEqual(JSON.parse(aosSubmittedCoRespoDefended).state, states.AOS_STARTED);
+  verifyState(aosSubmittedCoRespoDefended, states.AOS_STARTED);
 
   const aosSubmittedRespoDefended = await updateCaseInCcd(caseId, 'aosSubmittedDefended');
-  assert.strictEqual(JSON.parse(aosSubmittedRespoDefended).state, states.AWAITING_ANSWER);
+  verifyState(aosSubmittedRespoDefended, states.AWAITING_ANSWER);
 
   const coRespAnswerReceivedForDefended = await updateCaseInCcd(caseId, 'coRespAnswerReceivedAOS');
-  assert.strictEqual(JSON.parse(coRespAnswerReceivedForDefended).state, states.AWAITING_ANSWER);
+  verifyState(coRespAnswerReceivedForDefended, states.AWAITING_ANSWER);
 
   const answerNotReceived = await updateCaseInCcd(caseId, 'answerNotReceived');
-  assert.strictEqual(JSON.parse(answerNotReceived).state, states.AWAITING_DN);
+  verifyState(answerNotReceived, states.AWAITING_DN);
 
   const dnApplied = await updateCaseInCcd(caseId, 'dnReceived');
-  assert.strictEqual(JSON.parse(dnApplied).state, states.AWAITING_LA);
+  verifyState(dnApplied, states.AWAITING_LA);
 
   const refertoLegalAdvisor = await updateCaseInCcd(caseId, 'refertoLegalAdvisor');
-  assert.strictEqual(JSON.parse(refertoLegalAdvisor).state, states.AWAITING_CONSIDERATION);
+  verifyState(refertoLegalAdvisor, states.AWAITING_CONSIDERATION);
 
   const entitlementGranted = await updateCaseInCcd(caseId, 'entitlementGranted');
-  assert.strictEqual(JSON.parse(entitlementGranted).state, states.AWAITING_PRONOUNCEMENT);
+  verifyState(entitlementGranted, states.AWAITING_PRONOUNCEMENT);
 
   const awaitingDecreeAbsolute = await updateCaseInCcd(caseId, 'dnPronounced');
-  assert.strictEqual(JSON.parse(awaitingDecreeAbsolute).state, states.AWAITING_DA);
+  verifyState(awaitingDecreeAbsolute, states.AWAITING_DA);
 
   const daGranted = await updateCaseInCcd(caseId, 'daGranted');
-  assert.strictEqual(JSON.parse(daGranted).state, states.DIVORCE_GRANTED);
+  verifyState(daGranted, states.DIVORCE_GRANTED);
 });
 
-Scenario('Adultery case - verify all tabs PFE, RFE, DN, DA', async function (I) {
+Scenario('verify all tab fields PFE, RFE, DN, DA', async function (I) {
   I.amOnHomePage();
   I.login(caseWorker.username, caseWorker.password);
   I.wait(20);

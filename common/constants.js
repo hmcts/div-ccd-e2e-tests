@@ -11,6 +11,10 @@ const signOut = 'Sign out';
 const states = {
     SUBMITTTED: 'Submitted',
     ISSUED: 'Issued',
+    REJECTED: 'Rejected',
+    DEFENDED_DIVORCE: 'DefendedDivorce',
+    AWAITING_SERVICE: 'AwaitingService',
+    AOS_AWAITING_SOL: 'AosAwaitingSol',
     AOS_AWAITING: 'AosAwaiting',
     AOS_STARTED: 'AosStarted',
     AWAITING_ANSWER: 'AosSubmittedAwaitingAnswer',
