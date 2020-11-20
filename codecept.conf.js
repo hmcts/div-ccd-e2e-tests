@@ -10,7 +10,7 @@ exports.config = {
   helpers: {
     Puppeteer: {
       url: baseUrl,
-      show: true,
+      show: false,
       restart: true,
       keepCookies: false,
       keepBrowserState: false,
