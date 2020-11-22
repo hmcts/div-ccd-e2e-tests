@@ -13,7 +13,7 @@ module.exports = {
   },
 
   fillFormAndSubmit() {
-    I.waitForElement(this.fields.marriageDateDay, 20);
+    I.waitForElement(this.fields.marriageDateDay);
     I.fillField(this.fields.marriageDateDay, '09');
     I.fillField(this.fields.marriageDateMonth, '04');
     I.fillField(this.fields.marriageDateYear, '2011');
