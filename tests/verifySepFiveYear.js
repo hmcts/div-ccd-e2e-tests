@@ -1,7 +1,7 @@
 /// <reference path="../steps.d.ts" />
 
 const { createCaseInCcd, updateCaseInCcd, getCaseWorkerLoginDetails } = require('../helpers/utils');
-const verifyContent = require('../data/ccdDesertionCase.json');
+const verifyContent = require('../data/ccdSepFiveYrs.json');
 const caseWorker = getCaseWorkerLoginDetails();
 const { reasonsForDivorce, signOut, states } = require('../common/constants');
 const assert = require('assert');
@@ -14,8 +14,8 @@ let caseId;
 
 Feature('Verify Separation-5-yr Case ');
 
-xScenario('Execute events for end to end flow of PFE, RFE, DN , DA', async function (I) {
-  caseId = await createCaseInCcd('data/ccdBehaviourUnDefendedCase.json');
+Scenario('Execute events for end to end flow of PFE, RFE, DN , DA', async function (I) {
+  caseId = await createCaseInCcd('data/ccdSepFiveYrs.json');
 
   const submitted = await updateCaseInCcd(caseId, 'hwfApplicationAcceptedfromAwaitingHWFDecision');
   verifyState(submitted, states.SUBMITTTED);
@@ -51,13 +51,13 @@ xScenario('Execute events for end to end flow of PFE, RFE, DN , DA', async funct
   verifyState(daGranted, states.DIVORCE_GRANTED);
 });
 
-xScenario('verify all tab fields of PFE, RFE, DN, DA', async function (I) {
+Scenario('verify all tab fields of PFE, RFE, DN, DA', async function (I) {
   I.amOnHomePage();
   I.login(caseWorker.username, caseWorker.password);
   I.wait(20);
   I.amOnPage('/case/DIVORCE/DIVORCE/' + caseId);
   I.wait(30);
-  I.validatePetitionTabData(reasonsForDivorce.SEPFIVEYRS, verifyContent);
+  I.validatePetitionTabData(reasonsForDivorce.SEPFIVEYRSDISPLAY, verifyContent);
   I.validateConfidentialPetitionerTab(verifyContent);
   I.validateMarriageCertTabData(verifyContent);
   I.validateAOSTabData(reasonsForDivorce.SEPFIVEYRS, verifyContent);
