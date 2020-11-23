@@ -51,6 +51,8 @@ const validateOutcomeOfDNTabData = require ('./tabs/validateOutcomeOfDNTabData')
 const validateDecreeAbsoluteTabData = require ('./tabs/validateDecreeAbsoluteTabData');
 const validateMarriageCertTabData = require ('./tabs/validateMarriageCertTabData');
 const validateDocumentTabData = require ('./tabs/validateDocumentTabData');
+const validatePaymentTabData = require ('./tabs/validatePaymentTabData');
+const validateLanguageTabData = require ('./tabs/validateLanguageTabData');
 
 module.exports = function () {
   return actor({
@@ -267,6 +269,14 @@ module.exports = function () {
 
     validateDecreeAbsoluteTabData:function(verifyContent) {
       validateDecreeAbsoluteTabData(verifyContent);
+    },
+
+    validatePaymentTabData:function(verifyContent) {
+      validatePaymentTabData(verifyContent);
+    },
+
+    validateLanguageTabData:function(verifyContent) {
+      validateLanguageTabData(verifyContent);
     }
   });
 };
