@@ -5,7 +5,7 @@ const commonFields = require('../data/tab-fields/commonFields.json');
 const { reasonsForDivorce } = require('../common/constants');
 
 
-module.exports = (reason,verifyContent) => {
+module.exports = (reason, verifyContent) => {
   I.click(labels.name);
   I.see(labels.rdc);
   I.see(labels.courtName);
@@ -56,6 +56,7 @@ module.exports = (reason,verifyContent) => {
     I.see(labels.claimCostsFrom);
     I.see('Respondent');
   }
+
   I.see(labels.factsStated);
   I.see(firstLetterToCaps(verifyContent.D8StatementOfTruth));
 
@@ -92,6 +93,7 @@ module.exports = (reason,verifyContent) => {
     I.see(verifyContent.D8LivedApartSinceDesertion);
   }
 
+
   // Legal Connections
 
   I.see(labels.legalConnections);
@@ -99,5 +101,4 @@ module.exports = (reason,verifyContent) => {
   I.see(verifyContent.D8Connections.C);
   I.see(labels.livedTogether);
   I.see(verifyContent.D8DerivedLivingArrangementsLastLivedAddr);
-
 }

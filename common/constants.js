@@ -3,7 +3,9 @@ const reasonsForDivorce = {
     BEHAVIOUR: 'Behaviour',
     DESERTION: 'Desertion',
     SEPFIVEYRS: 'separation-5-years',
-    SEPTWOYRS: 'separation-2-years'
+    SEPFIVEYRSDISPLAY: '5-year separation',
+    SEPTWOYRS: 'separation-2-years',
+    SEPTWOYRSDISPLAY: '2-year separation'
 };
 
 const signOut = 'Sign out';
