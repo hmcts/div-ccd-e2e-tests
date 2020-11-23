@@ -1,0 +1,14 @@
+{
+  "name": "Payment",
+  "onlinePaymentSection": "Online payments received",
+  "paymentChannel": "Payment channel",
+  "paymentTxnID": "Payment transaction ID",
+  "paymentRef": "Payment reference",
+  "paymentDate": "Payment date",
+  "paymentAmount": "Payment amount",
+  "paymentStatus": "Payment status",
+  "paymentFeeID": "Payment fee ID",
+  "paymentSiteID": "Payment site ID",
+  "unprocessedPaymentsSection": "Unprocessed payments",
+  "processedPaymentsSection": "Processed payments"
+}

@@ -62,6 +62,10 @@ Scenario('verify all tab fields of PFE, RFE, DN, DA', async function (I) {
   I.validateMarriageCertTabData(verifyContent);
   I.validateAOSTabData(reasonsForDivorce.SEPFIVEYRS, verifyContent);
   I.validateDecreeNisiTabData(reasonsForDivorce.SEPFIVEYRS, verifyContent);
+  I.validateOutcomeOfDNTabData(verifyContent);
+  I.validateDecreeAbsoluteTabData(verifyContent);
   I.validateDocumentTabData(reasonsForDivorce.SEPFIVEYRS, caseId);
+  I.validatePaymentTabData(verifyContent);
+  I.validateLanguageTabData(verifyContent);
   I.click(signOut);
 });
