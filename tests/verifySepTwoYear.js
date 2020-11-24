@@ -1,6 +1,6 @@
 /// <reference path="../steps.d.ts" />
 
-const { createCaseInCcd, updateCaseInCcd, getCaseWorkerLoginDetails } = require('../helpers/utils');
+const { createCaseInCcd, updateCaseInCcd, getCaseWorkerLoginDetails, createCaseAndFetchResponse } = require('../helpers/utils');
 const verifyContent = require('../data/ccdSepTwoYrs.json');
 const caseWorker = getCaseWorkerLoginDetails();
 const { reasonsForDivorce, signOut, states } = require('../common/constants');
@@ -68,4 +68,14 @@ Scenario('verify all tab fields of PFE, RFE, DN, DA', async function (I) {
   I.validatePaymentTabData(verifyContent);
   I.validateLanguageTabData(verifyContent);
   I.click(signOut);
+});
+
+
+Scenario('Case creation should fail with invalid fixed list data', async function (I) {
+  let caseResponse;
+  await createCaseAndFetchResponse('data/ccdInvalidSepTwoYrs.json').catch(error => {
+    caseResponse =  error;
+  });
+  assert.strictEqual(caseResponse['statusCode'], 422);
+  assert.strictEqual(JSON.parse(caseResponse['error']).message, 'Case data validation failed');
 });
