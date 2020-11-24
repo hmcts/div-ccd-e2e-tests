@@ -231,7 +231,7 @@ async function updateCaseInCcd(caseId, eventId, dataLocation = 'data/ccd-update-
   return saveEventResponse;
 }
 const getBaseUrl = () => {
-  return env === 'demo' ? 'www.ccd.demo.platform.hmcts.net' : 'manage-case.aat.platform.hmcts.net';
+  return 'manage-case.aat.platform.hmcts.net';
 };
 
 function firstLetterToCaps(value){
