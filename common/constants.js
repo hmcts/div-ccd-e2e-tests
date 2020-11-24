@@ -33,7 +33,20 @@ const events = {
     ISSUE: 'Issue',
     REFUND: 'Refund',
     TRANSFER_BETWEEN_RDC: 'Transfer between RDCs',
-    TRANSFER_CTSC_TO_RDC: 'Transfer from CTSC to RDC'
+    TRANSFER_CTSC_TO_RDC: 'Transfer from CTSC to RDC',
+    HWF_ACCEPT_AWAIT_DECISION:'hwfApplicationAcceptedfromAwaitingHWFDecision',
+    ISSUE_FROM_SUBMITTED:'issueFromSubmitted',
+    ISSUE_AOS:'issueAos',
+    START_AOS: 'startAos',
+    AOS_SUBMITTED_DEFENDED:'aosSubmittedDefended',
+    ANSWER_NOT_RECEIVED:'answerNotReceived',
+    DN_RECEIVED:'dnReceived',
+    REFER_TO_LEGAL_ADVSIOR: 'refertoLegalAdvisor',
+    ENTITLEMENT_GRANTED: 'entitlementGranted',
+    DN_PRONOUNCED: 'dnPronounced',
+    DA_GRANTED:'daGranted',
+    CO_RESP_ANSWER_RECVD_AOS: 'coRespAnswerReceivedAOS',
+    CO_RESP_AOS_RECEIVED_STARTED: 'co-RespAOSReceivedStarted'
 };
 
 module.exports = {

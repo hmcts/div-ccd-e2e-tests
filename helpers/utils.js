@@ -114,6 +114,15 @@ async function getServiceToken() {
 }
 
 async function createCaseInCcd(dataLocation = 'data/ccd-basic-data.json') {
+  const saveCaseResponse = await createCaseAndFetchResponse(dataLocation).catch(error => {
+    console.log(error);
+  });
+  const caseId = JSON.parse(saveCaseResponse).id;
+  logger.info('Created case with id %s', caseId);
+  return caseId;
+}
+
+async function createCaseAndFetchResponse(dataLocation = 'data/ccd-basic-data.json') {
 
   const authToken = await getUserToken();
 
@@ -164,16 +173,8 @@ async function createCaseInCcd(dataLocation = 'data/ccd-basic-data.json') {
     body: JSON.stringify(saveBody)
   };
 
-  const saveCaseResponse = await request(saveCaseOptions).catch(error => {
-    console.log(error);
-  });
-    // console.log(saveCaseResponse);
-
-  const caseId = JSON.parse(saveCaseResponse).id;
-
-  logger.info('Created case with id %s', caseId);
-
-  return caseId;
+  const saveCaseResponse =  await request(saveCaseOptions);
+  return saveCaseResponse;
 }
 
 async function updateCaseInCcd(caseId, eventId, dataLocation = 'data/ccd-update-data.json') {
@@ -255,6 +256,7 @@ module.exports = {
   getSolicitorLoginDetails,
   getCaseWorkerLoginDetails,
   createCaseInCcd,
+  createCaseAndFetchResponse,
   updateCaseInCcd,
   getBaseUrl,
   datechange,
