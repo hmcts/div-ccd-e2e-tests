@@ -24,8 +24,6 @@
     "AddressLine3": null
   },
   "D8DivorceCostsClaim": "YES",
-  "Payments": [
-  ],
   "D8ScreenHasMarriageCert": "YES",
   "RespContactMethodIsDigital": "YES",
   "DocumentsUploadedDN": [
@@ -257,5 +255,29 @@
   "D8DerivedPetitionerCurrentFullName": "Fiona Brown",
   "RespEmailAddress": "billwest@mailinator.com",
   "RespondentContactDetailsConfidential": "share",
-  "D8InferredPetitionerGender": "female"
+  "D8InferredPetitionerGender": "female",
+  "LanguagePreferenceWelsh": "YES",
+  "DesertionTimeLivedTogetherDetailsDNTrans": "Amser Anialwch Yn Cyd-fyw Manylion sDN",
+  "CostsDifferentDetailsTrans": "deisebydd eisiau hawlio'r costau hyn",
+  "PronouncementJudge": "Peter Chapman",
+  "DecreeNisiGrantedDate": "2019-10-03",
+  "DnOutcomeCase": "Yes",
+  "DateRespondentEligibleForDA": "2020-02-15",
+  "DNApprovalDate": "2020-04-03",
+  "DateCaseNoLongerEligibleForDA": "2021-01-01",
+  "Payments": [
+    {
+      "id": "39eaa9ac-8012-4e0e-bdac-9076c7896d57",
+      "value": {
+        "PaymentDate": "2020-11-22",
+        "PaymentFeeId": "FEE0002",
+        "PaymentAmount": "55000",
+        "PaymentSiteId": "AA07",
+        "PaymentStatus": "Success",
+        "PaymentChannel": "online",
+        "PaymentReference": "RC-1606-0217-7578-8880",
+        "PaymentTransactionId": "av04pd325bgav8pia5pauqj8g2"
+      }
+    }
+  ]
 }
