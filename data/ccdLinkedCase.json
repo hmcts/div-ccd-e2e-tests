@@ -1,0 +1,367 @@
+{
+    "BehaviourStillHappeningDN": null,
+    "D8DerivedRespondentHomeAddress": "FLAT 10 SKYLINE 292-298\nHIGH STREET\nSLOUGH\nSL1 1GF",
+    "DivorceCostsOptionDN": "originalAmount",
+    "D8RespondentHomeAddress": {
+      "County": null,
+      "Country": null,
+      "PostCode": "SL1 1GF",
+      "PostTown": null,
+      "AddressLine1": null,
+      "AddressLine2": null,
+      "AddressLine3": null
+    },
+    "Payments": [
+      {
+        "id": "39eaa9ac-8012-4e0e-bdac-9076c7896d57",
+        "value": {
+          "PaymentDate": "2020-11-22",
+          "PaymentFeeId": "FEE0002",
+          "PaymentAmount": "55000",
+          "PaymentSiteId": "AA07",
+          "PaymentStatus": "Success",
+          "PaymentChannel": "online",
+          "PaymentReference": "RC-1606-0217-7578-8880",
+          "PaymentTransactionId": "av04pd325bgav8pia5pauqj8g2"
+        }
+      }
+    ],
+    "D8ScreenHasMarriageCert": "YES",
+    "BehaviourLivedApartSinceEventDN": null,
+    "DocumentsUploadedDN": [
+        {
+          "id": "3798450e-ee81-4319-a9f7-280b6f8d1b81",
+          "value": {
+            "DocumentLink": {
+              "document_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/bf643aa2-aa8b-4591-8f78-d8f29d4508d0",
+              "document_filename": "Image.png",
+              "document_binary_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/bf643aa2-aa8b-4591-8f78-d8f29d4508d0/binary"
+            },
+            "DocumentType": "other",
+            "DocumentComment": "",
+            "DocumentFileName": "Image.png",
+            "DocumentDateAdded": null,
+            "DocumentEmailContent": ""
+          }
+        },
+        {
+          "id": "753b9de1-375b-47db-957f-0405bc220b9e",
+          "value": {
+            "DocumentLink": {
+              "document_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/b3d96065-8b9d-4913-a5fe-dc8f41122b8e",
+              "document_filename": "JPEG image.jpeg",
+              "document_binary_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/b3d96065-8b9d-4913-a5fe-dc8f41122b8e/binary"
+            },
+            "DocumentType": "other",
+            "DocumentComment": "",
+            "DocumentFileName": "JPEG image.jpeg",
+            "DocumentDateAdded": null,
+            "DocumentEmailContent": ""
+          }
+        }
+      ],
+    "D8DivorceClaimFrom": [
+      "respondent"
+    ],
+    "D8ScreenHasMarriageBroken": "YES",
+    "D8InferredRespondentGender": "male",
+    "D8ReasonForDivorceEnableAdultery": "YES",
+    "D8LivingArrangementsLiveTogether": "YES",
+    "AdulteryTimeLivedTogetherDetailsDN": null,
+    "D8ReasonForDivorceHasMarriage": "YES",
+    "D8MentalSeparationDate": "2010-09-09",
+    "AdulteryLifeIntolerable": null,
+    "D8PhysicalSeparationDate": "2011-01-09",
+    "statementOfTruthDN": "yes",
+    "AdulteryTimeLivedTogetherDetailsDNTrans": null,
+    "D8RespondentLastName": "Ddakjsf",
+    "D8PetitionerNameDifferentToMarriageCert": "YES",
+    "D8LegalProceedingsDetails": "sf",
+    "PermittedDecreeNisiReason": "0",
+    "RespConsiderFinancialSituation": "Yes",
+    "D8ReasonForDivorceAdulteryIsNamed": "NO",
+    "ReceivedAOSfromRespDate": "2020-11-22",
+    "DesertionAskedToResumeDN": null,
+    "D8ClaimsCostsAppliedForFees": "NO",
+    "D8ReasonForDivorceShowTwoYearsSeparation": "YES",
+    "D8StatementOfTruth": "YES",
+    "DesertionTimeLivedTogetherDetailsDNTrans": null,
+    "SeparationTimeLivedTogetherDetailsDN": null,
+    "ReceivedAosFromCoResp": null,
+    "D8ReasonForDivorceLimitReasons": "NO",
+    "D8PetitionerEmail": "testfivepfe@mailinator.com",
+    "AosLetterHolderId": "94383d47-c4ed-4c68-9670-18fa342eca61",
+    "CoRespLinkedToCase": null,
+    "AdulteryLivedApartSinceEventDN": null,
+    "D8PetitionerConsent": "YES",
+    "D8ReasonForDivorceShowDesertion": "YES",
+    "D8DerivedRespondentCorrespondenceAddr": "FLAT 10 SKYLINE 292-298\nHIGH STREET\nSLOUGH\nSL1 1GF",
+    "D8MarriagePetitionerName": "dfalkjkagf",
+    "D8Cohort": "onlineSubmissionPrivateBeta",
+    "D8MarriageIsSameSexCouple": "YES",
+    "D8FinancialOrder": "YES",
+    "D8HelpWithFeesNeedHelp": "NO",
+    "RespJurisdictionDisagreeReason": "Reason respondent disagreed to claimed jurisdiction",
+    "D8DivorceWho": "husband",
+    "RespCostsAmount": "120",
+    "DesertionAskedToResumeDNDetails": null,
+    "AdulteryDateFoundOut": null,
+    "RespAdmitOrConsentToFact": "Yes",
+    "D8RespondentFirstName": "Dafkj",
+    "RespJurisdictionAgree": "Yes",
+    "CoRespEmailAddress": null,
+    "D8DerivedPetitionerCorrespondenceAddr": "FLAT 10 SKYLINE 292-298\nHIGH STREET\nSLOUGH\nSL1 1GF",
+    "IssueDate": "2020-11-22",
+    "D8MarriedInUk": "YES",
+    "D8PetitionerFirstName": "Dljfa",
+    "D8MarriageRespondentName": "dkjasfhagha",
+    "createdDate": "2020-11-22",
+    "D8JurisdictionPath": [
+      "JurisdictionHabitualResidence",
+      "JurisdictionLastTwelveMonths",
+      "JurisdictionInterstitial"
+    ],
+    "D8MarriagePlaceOfMarriage": "uk",
+    "D8RespondentCorrespondenceAddress": {
+      "County": null,
+      "Country": null,
+      "PostCode": "SL1 1GF",
+      "PostTown": null,
+      "AddressLine1": null,
+      "AddressLine2": null,
+      "AddressLine3": null
+    },
+    "BehaviourTimeLivedTogetherDetailsDNTrans": null,
+    "D8SeparationReferenceDate": "22 May 2015",
+    "RespWillDefendDivorce": "No",
+    "RespondentContactDetailsConfidential": "share",
+    "DesertionTimeLivedTogetherDetailsDNTransLang": null,
+    "RespHardshipDescription": "Hardship defence details",
+    "AlternativeRespCorrAddress": null,
+    "D8PetitionerNameChangedHow": [
+      "marriageCertificate"
+    ],
+    "D8DerivedPetitionerHomeAddress": "FLAT 10 SKYLINE 292-298\nHIGH STREET\nSLOUGH\nSL1 1GF",
+    "dueDate": "2020-12-22",
+    "D8ScreenHasRespondentAddress": "YES",
+    "DesertionTimeLivedTogetherDetailsDN": null,
+    "D8DivorceCostsClaim": "YES",
+    "RespContactMethodIsDigital": "Yes",
+    "D8PetitionerHomeAddress": {
+      "County": null,
+      "Country": null,
+      "PostCode": "SL1 1GF",
+      "PostTown": null,
+      "AddressLine1": null,
+      "AddressLine2": null,
+      "AddressLine3": null
+    },
+    "RespAgreeToCosts": null,
+    "ReceivedAosFromCoRespDate": null,
+    "DNApplyForDecreeNisi": "YES",
+    "D8ReasonForDivorceShowAdultery": "YES",
+    "D8DerivedStatementOfCase": "I have been separated from my husband for 5 years or more from the 09 January 2011.",
+    "D8JurisdictionConfidentLegal": "YES",
+    "D8DerivedLivingArrangementsLastLivedAddr": "8 Leacroft\nAshton-In-Makerfield\nWigan\nWN4 0LN",
+    "D8RespondentCorrespondenceUseHomeAddress": "Yes",
+    "D8FinancialOrderFor": [
+      "petitioner",
+      "children"
+    ],
+    "D8Connections": {
+        "A": "The Petitioner and the Respondent are habitually resident in England and Wales",
+        "B": null,
+        "C": "The Respondent is habitually resident in England and Wales",
+        "D": null,
+        "E": null,
+        "F": null,
+        "G": null
+      },
+    "LanguagePreferenceWelsh": "NO",
+    "D8PetitionerCorrespondenceAddress": {
+      "County": null,
+      "Country": null,
+      "PostCode": "SL1 1GF",
+      "PostTown": null,
+      "AddressLine1": null,
+      "AddressLine2": null,
+      "AddressLine3": null
+    },
+    "BehaviourTimeLivedTogetherDetailsDN": null,
+    "D8JurisdictionConnection": [
+      "A",
+      "C"
+    ],
+    "D8LegalProceedingsRelated": [
+      "marriage",
+      "children",
+      "property"
+    ],
+    "SeparationLivedApartSinceEventDN": "yes",
+    "D8PetitionerLastName": "Dafjk",
+    "RespStatementOfTruth": "Yes",
+    "D8PetitionerPhoneNumber": "8932758259",
+    "D8ReasonForDivorceSeperationDate": "2011-01-09",
+    "D8PetitionerCorrespondenceUseHomeAddress": "YES",
+    "D8DocumentsGenerated": [
+      {
+        "id": "3ef966f7-9007-4cde-b34e-f3e1344bf0b2",
+        "value": {
+          "DocumentLink": {
+            "document_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/371df823-7dc9-4d2c-b57c-038a62f79973",
+            "document_filename": "d8petition1606021772010239.pdf",
+            "document_binary_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/371df823-7dc9-4d2c-b57c-038a62f79973/binary"
+          },
+          "DocumentType": "petition",
+          "DocumentComment": null,
+          "DocumentFileName": "d8petition1606021772010239",
+          "DocumentDateAdded": null,
+          "DocumentEmailContent": null
+        }
+      },
+      {
+        "id": "77c73580-b570-4f5e-97e9-50ee960698fe",
+        "value": {
+          "DocumentLink": {
+            "document_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/0d40773a-cae9-4671-a4c1-97c16778d421",
+            "document_filename": "aosinvitation1606021772010239.pdf",
+            "document_binary_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/0d40773a-cae9-4671-a4c1-97c16778d421/binary"
+          },
+          "DocumentType": "aos",
+          "DocumentComment": null,
+          "DocumentFileName": "aosinvitation1606021772010239",
+          "DocumentDateAdded": null,
+          "DocumentEmailContent": null
+        }
+      },
+      {
+        "id": "3235be2d-6510-4eed-a9ff-65f93c52afcb",
+        "value": {
+          "DocumentLink": {
+            "document_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/950d2757-fe52-41b1-8c95-70e3b20bb16f",
+            "document_filename": "respondentAnswers.pdf",
+            "document_binary_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/950d2757-fe52-41b1-8c95-70e3b20bb16f/binary"
+          },
+          "DocumentType": "respondentAnswers",
+          "DocumentComment": null,
+          "DocumentFileName": "respondentAnswers",
+          "DocumentDateAdded": null,
+          "DocumentEmailContent": null
+        }
+      },
+      {
+        "id": "9c29056d-456c-4a6d-b3f1-988f36eecc3c",
+        "value": {
+          "DocumentLink": {
+            "document_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/3987c32b-ac63-4a4e-bc54-c3c31eb983ce",
+            "document_filename": "dnAnswers.pdf",
+            "document_binary_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/3987c32b-ac63-4a4e-bc54-c3c31eb983ce/binary"
+          },
+          "DocumentType": "dnAnswers",
+          "DocumentComment": null,
+          "DocumentFileName": "dnAnswers",
+          "DocumentDateAdded": null,
+          "DocumentEmailContent": null
+        }
+      }
+    ],
+    "CostsDifferentDetailsTransLang": null,
+    "ReceivedAOSfromResp": "Yes",
+    "RespConfirmReadPetition": "Yes",
+    "RespLegalProceedingsDescription": "Legal proceedings details",
+    "PetitionChangedDetailsDNTrans": null,
+    "D8DerivedRespondentCurrentName": "Dafkj Ddakjsf",
+    "DNApplicationSubmittedDate": "2020-11-22",
+    "D8LivedApartSinceSeparation": "YES",
+    "D8ReasonForDivorceClaiming5YearSeparatio": "YES",
+    "D8DivorceUnit": "serviceCentre",
+    "D8SeparationTimeTogetherPermitted": "6 months",
+    "BehaviourTimeLivedTogetherDetailsDNTransLang": null,
+    "D8ReasonForDivorceShowFiveYearsSeparatio": "YES",
+    "D8MarriageDate": "2015-03-02",
+    "D8caseReference": "EZ11D81265",
+    "PetitionChangedDetailsDN": "Provide details of what you need to change or add",
+    "D8JurisdictionRespondentResidence": "NO",
+    "D8MarriageCanDivorce": "YES",
+    "CoRespLinkedToCaseDate": null,
+    "BehaviourMostRecentIncidentDateDN": null,
+    "RespHardshipDefenseResponse": "Yes",
+    "D8ReasonForDivorceShowUnreasonableBehavi": "YES",
+   
+    "D8DocumentsUploaded": [
+        {
+          "id": "7d783d06-7752-44b0-a2fe-2b6c3c058746",
+          "value": {
+            "DocumentLink": {
+              "document_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/53ff5748-bed1-4149-8c69-b10b6d222a1f",
+              "document_filename": "image.jpg",
+              "document_binary_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/53ff5748-bed1-4149-8c69-b10b6d222a1f/binary"
+            },
+            "DocumentType": "other",
+            "DocumentComment": "",
+            "DocumentFileName": "image.jpg",
+            "DocumentDateAdded": "2019-05-07",
+            "DocumentEmailContent": ""
+          }
+        },
+        {
+          "id": "56cdddf1-7c48-42d3-b1df-ad8bc8dc0bf7",
+          "value": {
+            "DocumentLink": {
+              "document_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/d2c65e0f-566e-41cb-b1e3-ef7c7c1e7665",
+              "document_filename": "9B9045BC-CBFA-4B0A-8019-E7EC45E2DBCE.jpeg",
+              "document_binary_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/d2c65e0f-566e-41cb-b1e3-ef7c7c1e7665/binary"
+            },
+            "DocumentType": "other",
+            "DocumentComment": "",
+            "DocumentFileName": "9B9045BC-CBFA-4B0A-8019-E7EC45E2DBCE.jpeg",
+            "DocumentDateAdded": "2019-05-07",
+            "DocumentEmailContent": ""
+          }
+        },
+        {
+          "id": "502bc825-21a9-4c72-8fbd-21116ba6630e",
+          "value": {
+            "DocumentLink": {
+              "document_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/f6320cd7-9803-4122-9e37-9f79f5ed2086",
+              "document_filename": "Image.png",
+              "document_binary_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/f6320cd7-9803-4122-9e37-9f79f5ed2086/binary"
+            },
+            "DocumentType": "other",
+            "DocumentComment": "",
+            "DocumentFileName": "Image.png",
+            "DocumentDateAdded": "2019-05-07",
+            "DocumentEmailContent": ""
+          }
+        }
+      ],
+    "PetitionChangedYesNoDN": "YES",
+    "ConfirmPetitionDN": null,
+    "D8JurisdictionPetitionerResidence": "YES",
+    "PetitionChangedDetailsDNTransLang": null,
+    "D8ReasonForDivorceClaimingAdultery": "NO",
+    "RespPhoneNumber": "07444512345",
+    "DesertionLivedApartSinceEventDN": null,
+    "DesertionAskedToResumeDNRefused": null,
+    "D8PetitionerContactDetailsConfidential": "keep",
+    "CostsDifferentDetails": null,
+    "D8LegalProceedings": "YES",
+    "RespCostsReason": "Respondent's costs reason",
+    "RespLegalProceedingsExist": "Yes",
+    "D8ReasonForDivorce": "separation-2-years",
+    "RespJurisdictionRespCountryOfResidence": "Respondent country of residence",
+    "RespConsentToEmail": "Yes",
+    "AdulteryTimeLivedTogetherDetailsDNTransLang": null,
+    "D8DerivedPetitionerCurrentFullName": "Dljfa Dafjk",
+    "RespEmailAddress": "testfiverfe@mailinator.com",
+    "D8InferredPetitionerGender": "male",
+    "D8JurisdictionLastTwelveMonths": "YES",
+    "PronouncementJudge": "Peter Chapman",
+    "DecreeNisiGrantedDate": "2019-10-03",
+    "DnOutcomeCase": "Yes",
+    "DateRespondentEligibleForDA": "2020-02-15",
+    "DNApprovalDate": "2020-04-03",
+    "DateCaseNoLongerEligibleForDA": "2021-01-01",
+    "CostsDifferentDetailsTrans": "petitioner wants to claim this costs",
+    "PreviousCaseId": {"CaseReference": "1515766541805208"}
+}
