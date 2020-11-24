@@ -5,9 +5,9 @@ const caseWorker = getCaseWorkerLoginDetails();
 const { signOut } = require('../common/constants');
 
 
-Feature('Verify Separation-2-yr Case ');
+Feature('Verify Amended Case ');
 
-Scenario('Execute events for end to end flow of PFE, RFE, DN , DA', async function (I) {
+Scenario('Create linked case and verify tab', async function (I) {
   const caseId = await createCaseInCcd('data/ccdLinkedCase.json');
   I.amOnHomePage();
   I.login(caseWorker.username, caseWorker.password);
