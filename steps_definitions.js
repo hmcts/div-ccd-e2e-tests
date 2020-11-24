@@ -53,6 +53,7 @@ const validateMarriageCertTabData = require ('./tabs/validateMarriageCertTabData
 const validateDocumentTabData = require ('./tabs/validateDocumentTabData');
 const validatePaymentTabData = require ('./tabs/validatePaymentTabData');
 const validateLanguageTabData = require ('./tabs/validateLanguageTabData');
+const validateLinkedCaseTabData = require ('./tabs/validateLinkedCaseTabData');
 
 module.exports = function () {
   return actor({
@@ -277,6 +278,10 @@ module.exports = function () {
 
     validateLanguageTabData:function(verifyContent) {
       validateLanguageTabData(verifyContent);
+    },
+
+    validateLinkedCaseTabData:function(verifyContent) {
+      validateLinkedCaseTabData(verifyContent);
     }
   });
 };
