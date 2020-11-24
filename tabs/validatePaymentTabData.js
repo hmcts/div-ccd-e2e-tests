@@ -7,7 +7,6 @@ module.exports = (verifyContent) => {
   I.click(labels.name);
   I.see(labels.onlinePaymentSection);
   I.see(labels.paymentChannel);
-  console.log('payment channel is ',verifyContent.Payments[0].value.PaymentChannel);
   I.see(firstLetterToCaps(verifyContent.Payments[0].value.PaymentChannel));
   I.see(labels.paymentTxnID);
   I.see(verifyContent.Payments[0].value.PaymentTransactionId);
