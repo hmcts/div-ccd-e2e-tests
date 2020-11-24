@@ -45,7 +45,7 @@ Scenario('Solicitor create case and make payment', async (I) => {
   I.solAwaitingPaymentConfPageFormAndSubmit();
 });
 
-Scenario('Solicitor should not see payment made events', async (I) => {
+Scenario('Solicitor should not see issue, refund events', async (I) => {
   I.amOnHomePage();
   I.login(solicitor.username, solicitor.password);
   I.wait(20);
@@ -60,7 +60,7 @@ Scenario('Solicitor should not see payment made events', async (I) => {
   I.click(signOut);
 });
 
-Scenario('Caseworker should be able to see payment made events', async (I) => {
+Scenario('Caseworker should be able to see issue, refund events', async (I) => {
   I.amOnHomePage();
   I.login(caseWorker.username, caseWorker.password);
   I.wait(20);
