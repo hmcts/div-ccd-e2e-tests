@@ -27,7 +27,7 @@ Scenario('Solicitor create case and make payment', async (I) => {
   I.selectJurisdictionQuestionPageAndSubmit();
   I.selectReasonForTheDivorceQuestionPageAndSubmit();
   I.fillAdulteryDetailsFormAndSubmit();
-  I.fillAdulteryDetailsSecondPageFormAndSubmit();
+  I.fillAdulteryDetailsSecondPageFormAndSubmit(); 
   I.otherLegalProceedings();
   I.financialOrdersSelectButton();
   I.claimForCostsSelectButton(),
@@ -43,7 +43,7 @@ Scenario('Solicitor create case and make payment', async (I) => {
   I.caseApplicationCompletePageFormAndSubmit();
   I.caseCheckYourAnswersPageFormAndSubmit();
   I.solAwaitingPaymentConfPageFormAndSubmit();
-});
+}).retry(2);
 
 Scenario('Solicitor should not see issue, refund events', async (I) => {
   I.amOnHomePage();
@@ -58,7 +58,7 @@ Scenario('Solicitor should not see issue, refund events', async (I) => {
   I.dontSee(events.TRANSFER_BETWEEN_RDC);
   I.dontSee(events.TRANSFER_CTSC_TO_RDC);
   I.click(signOut);
-});
+}).retry(2);
 
 Scenario('Caseworker should be able to see issue, refund events', async (I) => {
   I.amOnHomePage();
@@ -73,5 +73,5 @@ Scenario('Caseworker should be able to see issue, refund events', async (I) => {
   I.see(events.TRANSFER_BETWEEN_RDC);
   I.see(events.TRANSFER_CTSC_TO_RDC);
   I.click(signOut);
-});
+}).retry(2);
 

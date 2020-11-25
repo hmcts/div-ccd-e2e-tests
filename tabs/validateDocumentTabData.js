@@ -9,10 +9,9 @@ module.exports = (reason, caseId) => {
     I.see(labels.d8petitionText + caseId + labels.documentgeneratedExtension);
     if(reasonsForDivorce.ADULTERY == reason) {
       I.see(labels.coRespondentaosinvitationText + caseId + labels.documentgeneratedExtension);
-    } else {
-      I.see(labels.pfeUploadedDoc);
-      I.see(labels.respondentAnswersText);
-      I.see(labels.documentsUploadedDNStage);
-      I.see(labels.dnUploadedDoc);
-    }
+    } 
+    I.see(labels.pfeUploadedDoc);
+    I.see(labels.respondentAnswersText);
+    I.see(labels.documentsUploadedDNStage);
+    I.see(labels.dnUploadedDoc);
   }

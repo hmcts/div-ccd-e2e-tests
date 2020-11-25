@@ -16,5 +16,5 @@ Scenario('Create linked case and verify tab', async function (I) {
   I.wait(30);
   I.validateLinkedCaseTabData();
   I.click(signOut);
-});
+}).retry(2);
 

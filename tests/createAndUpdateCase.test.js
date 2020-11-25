@@ -30,7 +30,7 @@ Scenario('Create and Update as well as caseworker change AOS states', async func
   I.aosStartedPageFormAndSubmit();
   I.aosStartedCheckYourAnswersPageFormAndSubmit();
   I.click(signOut);
-});
+}).retry(2);
 
 Scenario('Caseworker change DN events', async function (I) {
   I.amOnHomePage();
@@ -46,4 +46,4 @@ Scenario('Caseworker change DN events', async function (I) {
   I.selectAndSubmitEvent('DA Granted')
   I.wait(5);
   I.click(signOut);
-});
+}).retry(2);

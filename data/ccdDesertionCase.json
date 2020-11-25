@@ -250,6 +250,7 @@
       "AddressLine3": null
     },
     "RespLegalProceedingsExist": "No",
+    "DesertionLivedApartSinceEventDN": "Yes",
     "D8ReasonForDivorce": "desertion",
     "D8ReasonForDivorceDesertionAgreed":"Yes",
     "D8ReasonForDivorceDesertionDetails":"The just were gone.",

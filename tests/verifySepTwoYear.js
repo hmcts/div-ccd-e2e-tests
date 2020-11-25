@@ -49,7 +49,7 @@ Scenario('Execute events for end to end flow of PFE, RFE, DN , DA', async functi
 
   const daGranted = await updateCaseInCcd(caseId, events.DA_GRANTED);
   verifyState(daGranted, states.DIVORCE_GRANTED);
-});
+}).retry(2);
 
 Scenario('verify all tab fields of PFE, RFE, DN, DA', async function (I) {
   I.amOnHomePage();
@@ -68,14 +68,14 @@ Scenario('verify all tab fields of PFE, RFE, DN, DA', async function (I) {
   I.validatePaymentTabData(verifyContent);
   I.validateLanguageTabData(verifyContent);
   I.click(signOut);
-});
+}).retry(2);
 
 
 Scenario('Case creation should fail with invalid fixed list data', async function (I) {
   let caseResponse;
   await createCaseAndFetchResponse('data/ccdInvalidSepTwoYrs.json').catch(error => {
-    caseResponse =  error;
+    caseResponse = error;
   });
   assert.strictEqual(caseResponse['statusCode'], 422);
   assert.strictEqual(JSON.parse(caseResponse['error']).message, 'Case data validation failed');
-});
+}).retry(2);

@@ -91,11 +91,18 @@ module.exports = (reason, verifyContent) => {
     I.see(formatDateToCcdDisplayDate(new Date(verifyContent.D8ReasonForDivorceDesertionDate)));
     I.see(labels.livedApart);
     I.see(verifyContent.D8LivedApartSinceDesertion);
+  } else if (reasonsForDivorce.SEPFIVEYRS == reason || reasonsForDivorce.SEPTWOYRS == reason ) {
+    I.see(labels.d8MentalSeparationDate);
+    I.see(formatDateToCcdDisplayDate(new Date(verifyContent.D8MentalSeparationDate)));
+    I.see(labels.d8PhysicalSeparationDate);
+    I.see(formatDateToCcdDisplayDate(new Date(verifyContent.D8PhysicalSeparationDate)));
+    I.see(labels.d8ReasonForDivorceSeperationDate);
+    I.see(formatDateToCcdDisplayDate(new Date(verifyContent.D8PhysicalSeparationDate)));
+    I.see(labels.d8LivedApartSinceSeparation);
+    I.see(firstLetterToCaps(verifyContent.D8LivedApartSinceSeparation));
   }
 
-
   // Legal Connections
-
   I.see(labels.legalConnections);
   I.see(verifyContent.D8Connections.A);
   I.see(verifyContent.D8Connections.C);

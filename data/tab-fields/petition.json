@@ -61,5 +61,9 @@
   "sameSexCouple": "Were the petitioner and the respondent a same-sex couple when they got married?",
   "petitionerFactsStated": "I believe that the facts stated in the application are true.",
   "whoTheFinancialOrder": "Who is the financial order for?",
-  "claimCostsFrom": "Claim costs from"
+  "claimCostsFrom": "Claim costs from",
+  "d8MentalSeparationDate": "Date the petitioner decided the marriage was over",
+  "d8PhysicalSeparationDate": "Date the petitioner and respondent started living apart",
+  "d8ReasonForDivorceSeperationDate":"On what date did the petitioner and the respondent separate?",
+  "d8LivedApartSinceSeparation": "Have the petitioner and respondent lived apart for the entire time since they separated?"
 }

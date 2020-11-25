@@ -17,5 +17,6 @@
   "aosReceivedDate": "Date AOS received from respondent",
   "respAgreeStatementOfTruth": "The respondent believes that the facts stated in this response are true",
   "respDigitalChannel": "Respondent is using digital channel?",
-  "respDueDate": "Due Date"
+  "respDueDate": "Due Date",
+  "aosLetterHolderID": "AOS Letter Holder ID"
 }

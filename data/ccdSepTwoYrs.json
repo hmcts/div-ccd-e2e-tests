@@ -336,7 +336,7 @@
         }
       ],
     "PetitionChangedYesNoDN": "YES",
-    "ConfirmPetitionDN": null,
+    "ConfirmPetitionDN": "YES",
     "D8JurisdictionPetitionerResidence": "YES",
     "PetitionChangedDetailsDNTransLang": null,
     "D8ReasonForDivorceClaimingAdultery": "NO",

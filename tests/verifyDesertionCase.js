@@ -49,7 +49,7 @@ Scenario('Execute events for end to end flow of PFE, RFE, DN , DA', async functi
 
   const daGranted = await updateCaseInCcd(caseId, events.DA_GRANTED);
   verifyState(daGranted, states.DIVORCE_GRANTED);
-});
+}).retry(2);
 
 Scenario('verify all tab fields of PFE, RFE, DN, DA', async function (I) {
   I.amOnHomePage();
@@ -68,4 +68,4 @@ Scenario('verify all tab fields of PFE, RFE, DN, DA', async function (I) {
   I.validatePaymentTabData(verifyContent);
   I.validateLanguageTabData(verifyContent);
   I.click(signOut);
-});
+}).retry(2);
