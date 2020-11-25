@@ -91,7 +91,7 @@ module.exports = (reason, verifyContent) => {
     I.see(formatDateToCcdDisplayDate(new Date(verifyContent.D8ReasonForDivorceDesertionDate)));
     I.see(labels.livedApart);
     I.see(verifyContent.D8LivedApartSinceDesertion);
-  } else if (reasonsForDivorce.SEPFIVEYRS == reason || reasonsForDivorce.SEPTWOYRS == reason ) {
+  } else if (reasonsForDivorce.SEPFIVEYRSDISPLAY == reason || reasonsForDivorce.SEPTWOYRSDISPLAY == reason ) {
     I.see(labels.d8MentalSeparationDate);
     I.see(formatDateToCcdDisplayDate(new Date(verifyContent.D8MentalSeparationDate)));
     I.see(labels.d8PhysicalSeparationDate);

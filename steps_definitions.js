@@ -276,8 +276,8 @@ module.exports = function () {
       validatePaymentTabData(verifyContent);
     },
 
-    validateLanguageTabData:function(verifyContent) {
-      validateLanguageTabData(verifyContent);
+    validateLanguageTabData:function(reason, verifyContent) {
+      validateLanguageTabData(reason, verifyContent);
     },
 
     validateLinkedCaseTabData:function(verifyContent) {

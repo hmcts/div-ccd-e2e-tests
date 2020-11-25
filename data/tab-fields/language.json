@@ -2,6 +2,9 @@
   "name": "Language",
   "prefWelsh": "Is the language preference Welsh?",
   "changesToPetAtDN": "Description of changes to petition at DN stage (Translated)",
-  "livingArrangementsDetails": "Additional living arrangements since the divorce application (Translated)",
+  "desertionTimeLivedTogetherDetailsDNTrans": "Additional living arrangements since the divorce application (Translated)",
+  "separationTimeLivedTogetherDetailsDNTrans": "Additional details of the living arrangements since the divorce application. (Translated)",
+  "behaviourTimeLivedTogetherDetailsDNTrans": "Additional details of the living arrangements since the the most recent example of the behaviour (Translated)",
+  "adulteryTimeLivedTogetherDetailsDNTrans": "Additional details of the living arrangements since finding out about the adultery (Translated)",
   "stateWhatPetClaim": "State what the petitioner wants to claim and why (Translated)"
 }

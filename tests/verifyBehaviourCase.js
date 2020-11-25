@@ -66,6 +66,6 @@ Scenario('verify all tab fields of PFE, RFE, DN, DA', async function (I) {
   I.validateDecreeAbsoluteTabData(verifyContent);
   I.validateDocumentTabData(reasonsForDivorce.BEHAVIOUR, caseId);
   I.validatePaymentTabData(verifyContent);
-  I.validateLanguageTabData(verifyContent);
+  I.validateLanguageTabData(reasonsForDivorce.BEHAVIOUR, verifyContent);
   I.click(signOut);
 }).retry(2);

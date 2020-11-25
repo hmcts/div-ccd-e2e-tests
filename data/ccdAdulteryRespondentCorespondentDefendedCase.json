@@ -204,21 +204,51 @@
 "CoRespLinkedToCaseDate": "2019-04-09",
 "D8ReasonForDivorceShowUnreasonableBehavi": "YES",
 "D8DocumentsUploaded": [
-{
-"id": "3a156470-6dbf-4f9a-b2b1-c4cbc469f05c",
-"value": {
-"DocumentLink": {
-"document_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/6b6b5935-10b3-4a32-aaac-cb26ed5f28ad",
-"document_filename": "Screenshot 2019-03-28 at 12.55.29.png",
-"document_binary_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/6b6b5935-10b3-4a32-aaac-cb26ed5f28ad/binary"
-},
-"DocumentType": "other",
-"DocumentComment": "",
-"DocumentFileName": "Screenshot 2019-03-28 at 12.55.29.png",
-"DocumentDateAdded": "2019-04-09",
-"DocumentEmailContent": ""
-}
-}
+  {
+    "id": "7d783d06-7752-44b0-a2fe-2b6c3c058746",
+    "value": {
+      "DocumentLink": {
+        "document_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/53ff5748-bed1-4149-8c69-b10b6d222a1f",
+        "document_filename": "image.jpg",
+        "document_binary_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/53ff5748-bed1-4149-8c69-b10b6d222a1f/binary"
+      },
+      "DocumentType": "other",
+      "DocumentComment": "",
+      "DocumentFileName": "image.jpg",
+      "DocumentDateAdded": "2019-05-07",
+      "DocumentEmailContent": ""
+    }
+  },
+  {
+    "id": "56cdddf1-7c48-42d3-b1df-ad8bc8dc0bf7",
+    "value": {
+      "DocumentLink": {
+        "document_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/d2c65e0f-566e-41cb-b1e3-ef7c7c1e7665",
+        "document_filename": "9B9045BC-CBFA-4B0A-8019-E7EC45E2DBCE.jpeg",
+        "document_binary_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/d2c65e0f-566e-41cb-b1e3-ef7c7c1e7665/binary"
+      },
+      "DocumentType": "other",
+      "DocumentComment": "",
+      "DocumentFileName": "9B9045BC-CBFA-4B0A-8019-E7EC45E2DBCE.jpeg",
+      "DocumentDateAdded": "2019-05-07",
+      "DocumentEmailContent": ""
+    }
+  },
+  {
+    "id": "502bc825-21a9-4c72-8fbd-21116ba6630e",
+    "value": {
+      "DocumentLink": {
+        "document_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/f6320cd7-9803-4122-9e37-9f79f5ed2086",
+        "document_filename": "Image.png",
+        "document_binary_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/f6320cd7-9803-4122-9e37-9f79f5ed2086/binary"
+      },
+      "DocumentType": "other",
+      "DocumentComment": "",
+      "DocumentFileName": "Image.png",
+      "DocumentDateAdded": "2019-05-07",
+      "DocumentEmailContent": ""
+    }
+  }
 ],
 "D8JurisdictionPetitionerResidence": "YES",
 "RespPhoneNumber": "1324556789",
@@ -235,7 +265,7 @@
 "RespEmailAddress": "resp-case-26@mailinator.com",
 "D8InferredPetitionerGender": "male",
 "LanguagePreferenceWelsh": "YES",
-"DesertionTimeLivedTogetherDetailsDNTrans": "Amser Anialwch Yn Cyd-fyw Manylion sDN",
+"AdulteryTimeLivedTogetherDetailsDNTrans": "Amser Anialwch Yn Cyd-fyw Manylion sDN",
 "CostsDifferentDetailsTrans": "deisebydd eisiau hawlio'r costau hyn",
 "PronouncementJudge": "Peter Chapman",
 "DecreeNisiGrantedDate": "2019-10-03",
