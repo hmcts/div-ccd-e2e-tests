@@ -146,7 +146,7 @@
     "D8ScreenHasRespondentAddress": "YES",
     "DesertionTimeLivedTogetherDetailsDN": null,
     "D8DivorceCostsClaim": "YES",
-    "RespContactMethodIsDigital": "Yes",
+    "RespContactMethodIsDigital": "YES",
     "D8PetitionerHomeAddress": {
       "County": null,
       "Country": null,
@@ -197,7 +197,7 @@
       "children",
       "property"
     ],
-    "SeparationLivedApartSinceEventDN": "yes",
+    "SeparationLivedApartSinceEventDN": "YES",
     "D8PetitionerLastName": "Dafjk",
     "RespStatementOfTruth": "Yes",
     "D8PetitionerPhoneNumber": "8932758259",
