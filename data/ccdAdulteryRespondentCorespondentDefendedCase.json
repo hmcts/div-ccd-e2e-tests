@@ -250,6 +250,38 @@
     }
   }
 ],
+"DocumentsUploadedDN": [
+  {
+    "id": "3798450e-ee81-4319-a9f7-280b6f8d1b81",
+    "value": {
+      "DocumentLink": {
+        "document_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/bf643aa2-aa8b-4591-8f78-d8f29d4508d0",
+        "document_filename": "Image.png",
+        "document_binary_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/bf643aa2-aa8b-4591-8f78-d8f29d4508d0/binary"
+      },
+      "DocumentType": "other",
+      "DocumentComment": "",
+      "DocumentFileName": "Image.png",
+      "DocumentDateAdded": null,
+      "DocumentEmailContent": ""
+    }
+  },
+  {
+    "id": "753b9de1-375b-47db-957f-0405bc220b9e",
+    "value": {
+      "DocumentLink": {
+        "document_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/b3d96065-8b9d-4913-a5fe-dc8f41122b8e",
+        "document_filename": "JPEG image.jpeg",
+        "document_binary_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/b3d96065-8b9d-4913-a5fe-dc8f41122b8e/binary"
+      },
+      "DocumentType": "other",
+      "DocumentComment": "",
+      "DocumentFileName": "JPEG image.jpeg",
+      "DocumentDateAdded": null,
+      "DocumentEmailContent": ""
+    }
+  }
+],
 "D8JurisdictionPetitionerResidence": "YES",
 "RespPhoneNumber": "1324556789",
 "D8PetitionerContactDetailsConfidential": "share",
