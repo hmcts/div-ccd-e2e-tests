@@ -232,52 +232,52 @@ module.exports = function () {
       TransferToRDCLandingPage.fillFormAndSubmit();
     },
 
-    validatePetitionTabData: async function(reason,verifyContent) {
-      await validatePetitionTabData(reason,verifyContent);
+    validatePetitionTabData: function(reason,verifyContent) {
+      return validatePetitionTabData(reason,verifyContent);
     },
 
-    validateCoRespTabData: async function(verifyContent) {
-      await validateCoRespTabData(verifyContent);
+    validateCoRespTabData: function(verifyContent) {
+      return validateCoRespTabData(verifyContent);
     },
 
-    validateDocumentTabData: async function(reason, caseId) {
-      await validateDocumentTabData(reason, caseId);
+    validateDocumentTabData: function(reason, caseId) {
+      return validateDocumentTabData(reason, caseId);
     },
 
-    validateMarriageCertTabData: async function(verifyContent) {
-      await validateMarriageCertTabData(verifyContent);
+    validateMarriageCertTabData: function(verifyContent) {
+      return validateMarriageCertTabData(verifyContent);
     },
 
-    validateAOSTabData: async function(reason,verifyContent){
-      await validateAOSTabData(reason,verifyContent);
+    validateAOSTabData: function(reason,verifyContent){
+      return validateAOSTabData(reason,verifyContent);
     },
 
-    validateDecreeNisiTabData: async function(reason,verifyContent) {
-      await validateDecreeNisiTabData(reason,verifyContent);
+    validateDecreeNisiTabData: function(reason,verifyContent) {
+      return validateDecreeNisiTabData(reason,verifyContent);
     },
     
-    validateConfidentialPetitionerTab: async function(verifyContent) {
-      await validateConfidentialPetitionerTab(verifyContent);
+    validateConfidentialPetitionerTab: function(verifyContent) {
+      return validateConfidentialPetitionerTab(verifyContent);
     },
     
-    validateOutcomeOfDNTabData: async function(verifyContent) {
-      await validateOutcomeOfDNTabData(verifyContent);
+    validateOutcomeOfDNTabData: function(verifyContent) {
+      return validateOutcomeOfDNTabData(verifyContent);
     },
 
-    validateDecreeAbsoluteTabData: async function(verifyContent) {
-      await validateDecreeAbsoluteTabData(verifyContent);
+    validateDecreeAbsoluteTabData: function(verifyContent) {
+      return validateDecreeAbsoluteTabData(verifyContent);
     },
 
-    validatePaymentTabData: async function(verifyContent) {
-      await validatePaymentTabData(verifyContent);
+    validatePaymentTabData: function(verifyContent) {
+      return validatePaymentTabData(verifyContent);
     },
 
-    validateLanguageTabData: async function(reason, verifyContent) {
-      await validateLanguageTabData(reason, verifyContent);
+    validateLanguageTabData: function(reason, verifyContent) {
+      return validateLanguageTabData(reason, verifyContent);
     },
 
-    validateLinkedCaseTabData: async function(verifyContent) {
-      await validateLinkedCaseTabData(verifyContent);
+    validateLinkedCaseTabData: function(verifyContent) {
+      return validateLinkedCaseTabData(verifyContent);
     }
   });
 };
