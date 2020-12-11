@@ -7,105 +7,105 @@ const { reasonsForDivorce } = require('../common/constants');
 
 module.exports = async (reason, verifyContent) => {
   await I.clickTab(labels.name);
-  I.see(labels.rdc);
-  I.see(labels.courtName);
-  I.see(labels.petitionerFName);
-  I.see(verifyContent.D8PetitionerFirstName);
-  I.see(labels.petitionerLName);
-  I.see(verifyContent.D8PetitionerLastName);
-  I.see(labels.petionerGender);
-  I.see(firstLetterToCaps(verifyContent.D8InferredPetitionerGender));
-  I.see(labels.petitionerChangedName);
-  I.see(firstLetterToCaps(verifyContent.D8PetitionerNameDifferentToMarriageCert));
-  I.see(labels.placeOfMarriage);
-  I.see(verifyContent.D8MarriagePlaceOfMarriage);
-  I.see(labels.WhoPetitionerDivorcing);
-  I.see(firstLetterToCaps(verifyContent.D8DivorceWho));
-  I.see(labels.sameSexCouple);
-  I.see(firstLetterToCaps(verifyContent.D8MarriageIsSameSexCouple));
-  I.see(labels.petitionerFactsStated);
-  I.see(commonFields.yes);
-  I.see(labels.anyPreviousProceedings);
-  I.see(firstLetterToCaps(verifyContent.D8LegalProceedings));
+  await I.see(labels.rdc);
+  await I.see(labels.courtName);
+  await I.see(labels.petitionerFName);
+  await I.see(verifyContent.D8PetitionerFirstName);
+  await I.see(labels.petitionerLName);
+  await I.see(verifyContent.D8PetitionerLastName);
+  await I.see(labels.petionerGender);
+  await I.see(firstLetterToCaps(verifyContent.D8InferredPetitionerGender));
+  await I.see(labels.petitionerChangedName);
+  await I.see(firstLetterToCaps(verifyContent.D8PetitionerNameDifferentToMarriageCert));
+  await I.see(labels.placeOfMarriage);
+  await I.see(verifyContent.D8MarriagePlaceOfMarriage);
+  await I.see(labels.WhoPetitionerDivorcing);
+  await I.see(firstLetterToCaps(verifyContent.D8DivorceWho));
+  await I.see(labels.sameSexCouple);
+  await I.see(firstLetterToCaps(verifyContent.D8MarriageIsSameSexCouple));
+  await I.see(labels.petitionerFactsStated);
+  await I.see(commonFields.yes);
+  await I.see(labels.anyPreviousProceedings);
+  await I.see(firstLetterToCaps(verifyContent.D8LegalProceedings));
 
   //Respondent details
-  I.see(labels.respondentFName);
-  I.see(verifyContent.D8RespondentFirstName);
-  I.see(labels.respondentLName);
-  I.see(verifyContent.D8RespondentLastName);
-  I.see(labels.respHomeAddress);
-  I.see(verifyContent.D8DerivedRespondentHomeAddress);
-  I.see(labels.respondentSerAdd);
-  I.see(verifyContent.D8DerivedRespondentCorrespondenceAddr);
-  I.see(labels.respondentConsentEmailComm);
-  I.see(commonFields.yes);
-  I.see(labels.respGender);
-  I.see(firstLetterToCaps(verifyContent.D8InferredRespondentGender));
+  await I.see(labels.respondentFName);
+  await I.see(verifyContent.D8RespondentFirstName);
+  await I.see(labels.respondentLName);
+  await I.see(verifyContent.D8RespondentLastName);
+  await I.see(labels.respHomeAddress);
+  await I.see(verifyContent.D8DerivedRespondentHomeAddress);
+  await I.see(labels.respondentSerAdd);
+  await I.see(verifyContent.D8DerivedRespondentCorrespondenceAddr);
+  await I.see(labels.respondentConsentEmailComm);
+  await I.see(commonFields.yes);
+  await I.see(labels.respGender);
+  await I.see(firstLetterToCaps(verifyContent.D8InferredRespondentGender));
 
-  I.see(labels.wishToApplyForFinancialOrder);
-  I.see( firstLetterToCaps(verifyContent.D8FinancialOrder));
+  await I.see(labels.wishToApplyForFinancialOrder);
+  await I.see( firstLetterToCaps(verifyContent.D8FinancialOrder));
   if(reasonsForDivorce.ADULTERY == reason) {
-    I.see(labels.applyForClaimCosts);
-    I.see(firstLetterToCaps(verifyContent.D8DivorceCostsClaim));
+    await I.see(labels.applyForClaimCosts);
+    await I.see(firstLetterToCaps(verifyContent.D8DivorceCostsClaim));
   }
   if(reasonsForDivorce.BEHAVIOUR == reason) {
-    I.see(labels.whoTheFinancialOrder);
-    I.see(verifyContent.D8FinancialOrderFor[0]);
-    I.see(labels.applyForClaimCosts);
-    I.see(firstLetterToCaps(verifyContent.D8DivorceCostsClaim));
-    I.see(labels.claimCostsFrom);
-    I.see('Respondent');
+    await I.see(labels.whoTheFinancialOrder);
+    await I.see(verifyContent.D8FinancialOrderFor[0]);
+    await I.see(labels.applyForClaimCosts);
+    await I.see(firstLetterToCaps(verifyContent.D8DivorceCostsClaim));
+    await I.see(labels.claimCostsFrom);
+    await I.see('Respondent');
   }
 
-  I.see(labels.factsStated);
-  I.see(firstLetterToCaps(verifyContent.D8StatementOfTruth));
+  await I.see(labels.factsStated);
+  await I.see(firstLetterToCaps(verifyContent.D8StatementOfTruth));
 
   // Reason details
-  I.see(labels.reasonForDivorce);
-  I.see(reason);
+  await I.see(labels.reasonForDivorce);
+  await I.see(reason);
 
   if(reasonsForDivorce.ADULTERY == reason) {
-    I.see(labels.adulteryDetails);
-    I.see(verifyContent.D8ReasonForDivorceAdulteryDetails);
-    I.see(labels.nameOfCoRespondent);
-    I.see(firstLetterToCaps(verifyContent.D8ReasonForDivorceAdulteryWishToName));
-    I.see(labels.adulteryInfoThirdPartyDetails);
-    I.see(verifyContent.D8ReasonForDivorceAdultery2ndHandDetails);
-    I.see(labels.adulteryPetitionerKnowsWhen);
-    I.see(firstLetterToCaps(verifyContent.D8ReasonForDivorceAdulteryKnowWhen));
-    I.see(labels.detailsOfWhenAdulteryTookPlace);
-    I.see(verifyContent.D8ReasonForDivorceAdulteryWhenDetails);
-    I.see(labels.adulteryPetitionerKnowsWhere);
-    I.see(firstLetterToCaps(verifyContent.D8ReasonForDivorceAdulteryKnowWhere));
-    I.see(labels.detailsOfWhereAdulteryTookPlace);
-    I.see(verifyContent.D8ReasonForDivorceAdulteryWhereDetails);
+    await I.see(labels.adulteryDetails);
+    await I.see(verifyContent.D8ReasonForDivorceAdulteryDetails);
+    await I.see(labels.nameOfCoRespondent);
+    await I.see(firstLetterToCaps(verifyContent.D8ReasonForDivorceAdulteryWishToName));
+    await I.see(labels.adulteryInfoThirdPartyDetails);
+    await I.see(verifyContent.D8ReasonForDivorceAdultery2ndHandDetails);
+    await I.see(labels.adulteryPetitionerKnowsWhen);
+    await I.see(firstLetterToCaps(verifyContent.D8ReasonForDivorceAdulteryKnowWhen));
+    await I.see(labels.detailsOfWhenAdulteryTookPlace);
+    await I.see(verifyContent.D8ReasonForDivorceAdulteryWhenDetails);
+    await I.see(labels.adulteryPetitionerKnowsWhere);
+    await I.see(firstLetterToCaps(verifyContent.D8ReasonForDivorceAdulteryKnowWhere));
+    await I.see(labels.detailsOfWhereAdulteryTookPlace);
+    await I.see(verifyContent.D8ReasonForDivorceAdulteryWhereDetails);
   } else if(reasonsForDivorce.BEHAVIOUR == reason) {
-    I.see(labels.behaviourDetails);
-    I.see(verifyContent.D8DerivedStatementOfCase);
+    await I.see(labels.behaviourDetails);
+    await I.see(verifyContent.D8DerivedStatementOfCase);
   } else if (reasonsForDivorce.DESERTION == reason) {
-    I.see(labels.respondentLeaveWithoutAgreement);
-    I.see(verifyContent.D8ReasonForDivorceDesertionAgreed);
-    I.see(labels.desertionDetails);
-    I.see(verifyContent.D8ReasonForDivorceDesertionDetails);
-    I.see(labels.desertionDate);
-    I.see(formatDateToCcdDisplayDate(new Date(verifyContent.D8ReasonForDivorceDesertionDate)));
-    I.see(labels.livedApart);
-    I.see(verifyContent.D8LivedApartSinceDesertion);
+    await I.see(labels.respondentLeaveWithoutAgreement);
+    await I.see(verifyContent.D8ReasonForDivorceDesertionAgreed);
+    await I.see(labels.desertionDetails);
+    await I.see(verifyContent.D8ReasonForDivorceDesertionDetails);
+    await I.see(labels.desertionDate);
+    await I.see(formatDateToCcdDisplayDate(new Date(verifyContent.D8ReasonForDivorceDesertionDate)));
+    await I.see(labels.livedApart);
+    await I.see(verifyContent.D8LivedApartSinceDesertion);
   } else if (reasonsForDivorce.SEPFIVEYRSDISPLAY == reason || reasonsForDivorce.SEPTWOYRSDISPLAY == reason ) {
-    I.see(labels.d8MentalSeparationDate);
-    I.see(formatDateToCcdDisplayDate(new Date(verifyContent.D8MentalSeparationDate)));
-    I.see(labels.d8PhysicalSeparationDate);
-    I.see(formatDateToCcdDisplayDate(new Date(verifyContent.D8PhysicalSeparationDate)));
-    I.see(labels.d8ReasonForDivorceSeperationDate);
-    I.see(formatDateToCcdDisplayDate(new Date(verifyContent.D8PhysicalSeparationDate)));
-    I.see(labels.d8LivedApartSinceSeparation);
-    I.see(firstLetterToCaps(verifyContent.D8LivedApartSinceSeparation));
+    await I.see(labels.d8MentalSeparationDate);
+    await I.see(formatDateToCcdDisplayDate(new Date(verifyContent.D8MentalSeparationDate)));
+    await I.see(labels.d8PhysicalSeparationDate);
+    await I.see(formatDateToCcdDisplayDate(new Date(verifyContent.D8PhysicalSeparationDate)));
+    await I.see(labels.d8ReasonForDivorceSeperationDate);
+    await I.see(formatDateToCcdDisplayDate(new Date(verifyContent.D8PhysicalSeparationDate)));
+    await I.see(labels.d8LivedApartSinceSeparation);
+    await I.see(firstLetterToCaps(verifyContent.D8LivedApartSinceSeparation));
   }
 
   // Legal Connections
-  I.see(labels.legalConnections);
-  I.see(verifyContent.D8Connections.A);
-  I.see(verifyContent.D8Connections.C);
-  I.see(labels.livedTogether);
-  I.see(verifyContent.D8DerivedLivingArrangementsLastLivedAddr);
+  await I.see(labels.legalConnections);
+  await I.see(verifyContent.D8Connections.A);
+  await I.see(verifyContent.D8Connections.C);
+  await I.see(labels.livedTogether);
+  await I.see(verifyContent.D8DerivedLivingArrangementsLastLivedAddr);
 }

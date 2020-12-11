@@ -4,8 +4,8 @@ const { formatDateToCcdDisplayDate } = require('../helpers/utils');
 
 module.exports = async (verifyContent) => {
   await I.clickTab(labels.name);
-  I.see(labels.respCanApplyDA);
-  I.see(formatDateToCcdDisplayDate(new Date(verifyContent.DateRespondentEligibleForDA)));
-  I.see(labels.finalDateForDA);
-  I.see(formatDateToCcdDisplayDate(new Date(verifyContent.DateCaseNoLongerEligibleForDA)));
+  await I.see(labels.respCanApplyDA);
+  await I.see(formatDateToCcdDisplayDate(new Date(verifyContent.DateRespondentEligibleForDA)));
+  await I.see(labels.finalDateForDA);
+  await I.see(formatDateToCcdDisplayDate(new Date(verifyContent.DateCaseNoLongerEligibleForDA)));
 }

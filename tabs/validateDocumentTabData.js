@@ -4,14 +4,14 @@ const { reasonsForDivorce } = require('../common/constants');
 
 module.exports = async (reason, caseId) => {
     await I.clickTab(labels.name);
-    I.see(labels.documentsUploadedPFEStage);
-    I.see(labels.documentsGenerated);
-    I.see(labels.d8petitionText + caseId + labels.documentgeneratedExtension);
+    await I.see(labels.documentsUploadedPFEStage);
+    await I.see(labels.documentsGenerated);
+    await I.see(labels.d8petitionText + caseId + labels.documentgeneratedExtension);
     if(reasonsForDivorce.ADULTERY == reason) {
-      I.see(labels.coRespondentaosinvitationText + caseId + labels.documentgeneratedExtension);
+      await I.see(labels.coRespondentaosinvitationText + caseId + labels.documentgeneratedExtension);
     } 
-    I.see(labels.pfeUploadedDoc);
-    I.see(labels.respondentAnswersText);
-    I.see(labels.documentsUploadedDNStage);
-    I.see(labels.dnUploadedDoc);
+    await I.see(labels.pfeUploadedDoc);
+    await I.see(labels.respondentAnswersText);
+    await I.see(labels.documentsUploadedDNStage);
+    await I.see(labels.dnUploadedDoc);
   }

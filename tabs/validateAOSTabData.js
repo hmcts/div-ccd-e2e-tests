@@ -8,30 +8,30 @@ const { reasonsForDivorce } = require('../common/constants');
 module.exports = async (reason,verifyContent) => {
   // AOS Answers
   await I.clickTab(labels.name);
-  I.see(labels.respConfirmedRead);
-  I.see(verifyContent.RespConfirmReadPetition);
-  I.see(labels.respAdmitted);
-  I.see(verifyContent.RespAdmitOrConsentToFact);
-  I.see(labels.respAgreedClaimdJurisdiction);
-  I.see(verifyContent.RespJurisdictionAgree);
-  I.see(labels.resplegalProceedings);
-  I.see(verifyContent.RespLegalProceedingsExist);
-  I.see(labels.respDigitalChannel);
-  I.see(firstLetterToCaps(verifyContent.RespContactMethodIsDigital));
-  I.see(labels.aosLetterHolderID);
+  await I.see(labels.respConfirmedRead);
+  await I.see(verifyContent.RespConfirmReadPetition);
+  await I.see(labels.respAdmitted);
+  await I.see(verifyContent.RespAdmitOrConsentToFact);
+  await I.see(labels.respAgreedClaimdJurisdiction);
+  await I.see(verifyContent.RespJurisdictionAgree);
+  await I.see(labels.resplegalProceedings);
+  await I.see(verifyContent.RespLegalProceedingsExist);
+  await I.see(labels.respDigitalChannel);
+  await I.see(firstLetterToCaps(verifyContent.RespContactMethodIsDigital));
+  await I.see(labels.aosLetterHolderID);
 
   if(reasonsForDivorce.ADULTERY == reason) {
-    I.see(labels.respDefendDivorce);
-    I.see(verifyContent.RespWillDefendDivorce);
-    I.see(labels.respReasonJurisdiction);
-    I.see(verifyContent.RespJurisdictionDisagreeReason);
-    I.see(labels.respJurisdictionCountry);
-    I.see(verifyContent.RespJurisdictionRespCountryOfResidence);
+    await I.see(labels.respDefendDivorce);
+    await I.see(verifyContent.RespWillDefendDivorce);
+    await I.see(labels.respReasonJurisdiction);
+    await I.see(verifyContent.RespJurisdictionDisagreeReason);
+    await I.see(labels.respJurisdictionCountry);
+    await I.see(verifyContent.RespJurisdictionRespCountryOfResidence);
   }
   if(reasonsForDivorce.BEHAVIOUR == reason) {
-    I.see(labels.respAgreeCosts);
-    I.see(verifyContent.RespAgreeToCosts);
+    await I.see(labels.respAgreeCosts);
+    await I.see(verifyContent.RespAgreeToCosts);
   }
-  I.see(labels.respDueDate);
-  I.see(datechange(30));
+  await I.see(labels.respDueDate);
+  await I.see(datechange(30));
 }

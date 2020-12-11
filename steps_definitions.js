@@ -76,10 +76,6 @@ module.exports = function () {
       CaseDetailsPage.shouldDisplayTabs();
     },
 
-    clickTab: function (list) {
-      CaseDetailsPage.clickTab(list);
-    },
-
     shouldBeOnCaseListPage: function () {
       CaseListPage.resetFilter();
     },
@@ -236,52 +232,52 @@ module.exports = function () {
       TransferToRDCLandingPage.fillFormAndSubmit();
     },
 
-    validatePetitionTabData: function(reason,verifyContent) {
-      validatePetitionTabData(reason,verifyContent);
+    validatePetitionTabData: async function(reason,verifyContent) {
+      await validatePetitionTabData(reason,verifyContent);
     },
 
-    validateCoRespTabData: function(verifyContent) {
-      validateCoRespTabData(verifyContent);
+    validateCoRespTabData: async function(verifyContent) {
+      await validateCoRespTabData(verifyContent);
     },
 
-    validateDocumentTabData: function(reason, caseId) {
-      validateDocumentTabData(reason, caseId);
+    validateDocumentTabData: async function(reason, caseId) {
+      await validateDocumentTabData(reason, caseId);
     },
 
-    validateMarriageCertTabData: function(verifyContent) {
-      validateMarriageCertTabData(verifyContent);
+    validateMarriageCertTabData: async function(verifyContent) {
+      await validateMarriageCertTabData(verifyContent);
     },
 
-    validateAOSTabData: function(reason,verifyContent){
-      validateAOSTabData(reason,verifyContent);
+    validateAOSTabData: async function(reason,verifyContent){
+      await validateAOSTabData(reason,verifyContent);
     },
 
-    validateDecreeNisiTabData: function(reason,verifyContent) {
-      validateDecreeNisiTabData(reason,verifyContent);
+    validateDecreeNisiTabData: async function(reason,verifyContent) {
+      await validateDecreeNisiTabData(reason,verifyContent);
     },
     
-    validateConfidentialPetitionerTab:function(verifyContent) {
-      validateConfidentialPetitionerTab(verifyContent);
+    validateConfidentialPetitionerTab: async function(verifyContent) {
+      await validateConfidentialPetitionerTab(verifyContent);
     },
     
-    validateOutcomeOfDNTabData:function(verifyContent) {
-      validateOutcomeOfDNTabData(verifyContent);
+    validateOutcomeOfDNTabData: async function(verifyContent) {
+      await validateOutcomeOfDNTabData(verifyContent);
     },
 
-    validateDecreeAbsoluteTabData:function(verifyContent) {
-      validateDecreeAbsoluteTabData(verifyContent);
+    validateDecreeAbsoluteTabData: async function(verifyContent) {
+      await validateDecreeAbsoluteTabData(verifyContent);
     },
 
-    validatePaymentTabData:function(verifyContent) {
-      validatePaymentTabData(verifyContent);
+    validatePaymentTabData: async function(verifyContent) {
+      await validatePaymentTabData(verifyContent);
     },
 
-    validateLanguageTabData:function(reason, verifyContent) {
-      validateLanguageTabData(reason, verifyContent);
+    validateLanguageTabData: async function(reason, verifyContent) {
+      await validateLanguageTabData(reason, verifyContent);
     },
 
-    validateLinkedCaseTabData:function(verifyContent) {
-      validateLinkedCaseTabData(verifyContent);
+    validateLinkedCaseTabData: async function(verifyContent) {
+      await validateLinkedCaseTabData(verifyContent);
     }
   });
 };

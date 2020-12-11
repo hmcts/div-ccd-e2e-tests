@@ -5,24 +5,24 @@ const { reasonsForDivorce } = require('../common/constants');
 
 module.exports = async (reason, verifyContent) => {
   await I.clickTab(labels.name);
-  I.see(labels.continuewithDN);
-  I.see(firstLetterToCaps(verifyContent.DNApplyForDecreeNisi));
-  I.see(labels.dateOfDnSubmitted);
-  I.see(formatDateToCcdDisplayDate(new Date(verifyContent.DNApplicationSubmittedDate)));
-  I.see(labels.isEverythingStatedDivPetition);
-  I.see(firstLetterToCaps(verifyContent.statementOfTruthDN));
+  await I.see(labels.continuewithDN);
+  await I.see(firstLetterToCaps(verifyContent.DNApplyForDecreeNisi));
+  await I.see(labels.dateOfDnSubmitted);
+  await I.see(formatDateToCcdDisplayDate(new Date(verifyContent.DNApplicationSubmittedDate)));
+  await I.see(labels.isEverythingStatedDivPetition);
+  await I.see(firstLetterToCaps(verifyContent.statementOfTruthDN));
   if(reasonsForDivorce.BEHAVIOUR == reason) {
-    I.see(labels.isBehaviourStillHapp);
-    I.see(firstLetterToCaps(verifyContent.BehaviourStillHappeningDN));
+    await I.see(labels.isBehaviourStillHapp);
+    await I.see(firstLetterToCaps(verifyContent.BehaviourStillHappeningDN));
   } else if(reasonsForDivorce.DESERTION == reason) {
-    I.see(labels.livedApart);
-    I.see(firstLetterToCaps(verifyContent.DesertionLivedApartSinceEventDN));
+    await I.see(labels.livedApart);
+    await I.see(firstLetterToCaps(verifyContent.DesertionLivedApartSinceEventDN));
   } else if ([reasonsForDivorce.SEPFIVEYRS, reasonsForDivorce.SEPTWOYRS].includes(reason)) {
-    I.see(labels.livedApart);
-    I.see(firstLetterToCaps(verifyContent.SeparationLivedApartSinceEventDN))
+    await I.see(labels.livedApart);
+    await I.see(firstLetterToCaps(verifyContent.SeparationLivedApartSinceEventDN))
   }
-  I.see(labels.petitionerCostAtDN);
-  I.see(labels.claimOriginalAmountText);
-  I.see(labels.petitionerFactsDnStage);
-  I.see(firstLetterToCaps(verifyContent.ConfirmPetitionDN));
+  await I.see(labels.petitionerCostAtDN);
+  await I.see(labels.claimOriginalAmountText);
+  await I.see(labels.petitionerFactsDnStage);
+  await I.see(firstLetterToCaps(verifyContent.ConfirmPetitionDN));
 }

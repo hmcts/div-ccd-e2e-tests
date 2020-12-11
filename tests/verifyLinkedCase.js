@@ -15,6 +15,6 @@ Scenario('Create linked case and verify tab', async function (I) {
   I.amOnPage('/case/DIVORCE/DIVORCE/' + caseId);
   I.wait(30);
   await I.validateLinkedCaseTabData();
-  I.click(signOut);
+  await I.click(signOut);
 }).retry(2);
 
