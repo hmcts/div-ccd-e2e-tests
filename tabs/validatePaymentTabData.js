@@ -3,8 +3,8 @@ const { firstLetterToCaps, formatDateToCcdDisplayDate } = require('../helpers/ut
 const labels = require('../data/tab-fields/payments.json');
 
 
-module.exports = (verifyContent) => {
-  I.click(labels.name);
+module.exports = async (verifyContent) => {
+  await I.clickTab(labels.name);
   I.see(labels.onlinePaymentSection);
   I.see(labels.paymentChannel);
   I.see(firstLetterToCaps(verifyContent.Payments[0].value.PaymentChannel));

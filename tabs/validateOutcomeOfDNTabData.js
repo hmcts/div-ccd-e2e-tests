@@ -2,8 +2,8 @@ const I = actor();
 const labels = require('../data/tab-fields/outcomeOfDecreeNisi.json');
 const { formatDateToCcdDisplayDate } = require('../helpers/utils');
 
-module.exports = (verifyContent) => {
-    I.click(labels.name);
+module.exports = async (verifyContent) => {
+    await I.clickTab(labels.name);
     I.see(labels.laDecisionDate);
     I.see(formatDateToCcdDisplayDate(new Date(verifyContent.DNApprovalDate)));
     I.see(labels.clarificationResponse);

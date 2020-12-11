@@ -14,7 +14,7 @@ exports.config = {
       restart: true,
       keepCookies: false,
       keepBrowserState: false,
-      waitForTimeout: 60000,
+      waitForTimeout: 90000,
       waitForAction: 3000,
       chrome: {
         ignoreHTTPSErrors: true,
@@ -24,6 +24,9 @@ exports.config = {
           '--proxy-server=proxyout.reform.hmcts.net:8080'
         ]
       }
+    },
+    'PuppeteerHelper': {
+      'require': './helpers/PuppeteerHelper.js'
     }
   },
   include: {

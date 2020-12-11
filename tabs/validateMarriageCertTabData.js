@@ -2,8 +2,8 @@ const I = actor();
 const { firstLetterToCaps, formatDateToCcdDisplayDate } = require('../helpers/utils');
 const labels = require('../data/tab-fields/marriageCertificate.json');
 
-module.exports = (verifyContent) => {
-  I.click(labels.name);
+module.exports = async (verifyContent) => {
+  await I.clickTab(labels.name);
   I.see(labels.petitionerFullNameMarriageCertificate);
   I.see(verifyContent.D8MarriagePetitionerName);
   I.see(labels.respondnetFullNameMarriageCertificate);

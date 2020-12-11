@@ -5,9 +5,9 @@ const commonFields = require('../data/tab-fields/commonFields.json');
 const { reasonsForDivorce } = require('../common/constants');
 
 
-module.exports = (reason,verifyContent) => {
+module.exports = async (reason,verifyContent) => {
   // AOS Answers
-  I.click(labels.name);
+  await I.clickTab(labels.name);
   I.see(labels.respConfirmedRead);
   I.see(verifyContent.RespConfirmReadPetition);
   I.see(labels.respAdmitted);

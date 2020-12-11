@@ -2,8 +2,8 @@ const I = actor();
 const labels = require('../data/tab-fields/documents.json');
 const { reasonsForDivorce } = require('../common/constants');
 
-module.exports = (reason, caseId) => {
-    I.click(labels.name);
+module.exports = async (reason, caseId) => {
+    await I.clickTab(labels.name);
     I.see(labels.documentsUploadedPFEStage);
     I.see(labels.documentsGenerated);
     I.see(labels.d8petitionText + caseId + labels.documentgeneratedExtension);

@@ -57,16 +57,16 @@ Scenario('verify all tab fields of PFE, RFE, DN, DA', async function (I) {
   I.wait(20);
   I.amOnPage('/case/DIVORCE/DIVORCE/' + caseId);
   I.wait(30);
-  I.validatePetitionTabData(reasonsForDivorce.SEPTWOYRSDISPLAY, verifyContent);
-  I.validateConfidentialPetitionerTab(verifyContent);
-  I.validateMarriageCertTabData(verifyContent);
-  I.validateAOSTabData(reasonsForDivorce.SEPTWOYRS, verifyContent);
-  I.validateDecreeNisiTabData(reasonsForDivorce.SEPTWOYRS, verifyContent);
-  I.validateOutcomeOfDNTabData(verifyContent);
-  I.validateDecreeAbsoluteTabData(verifyContent);
-  I.validateDocumentTabData(reasonsForDivorce.SEPTWOYRS, caseId);
-  I.validatePaymentTabData(verifyContent);
-  I.validateLanguageTabData(reasonsForDivorce.SEPTWOYRS, verifyContent);
+  await I.validatePetitionTabData(reasonsForDivorce.SEPTWOYRSDISPLAY, verifyContent);
+  await I.validateConfidentialPetitionerTab(verifyContent);
+  await I.validateMarriageCertTabData(verifyContent);
+  await I.validateAOSTabData(reasonsForDivorce.SEPTWOYRS, verifyContent);
+  await I.validateDecreeNisiTabData(reasonsForDivorce.SEPTWOYRS, verifyContent);
+  await I.validateOutcomeOfDNTabData(verifyContent);
+  await I.validateDecreeAbsoluteTabData(verifyContent);
+  await I.validateDocumentTabData(reasonsForDivorce.SEPTWOYRS, caseId);
+  await I.validatePaymentTabData(verifyContent);
+  await I.validateLanguageTabData(reasonsForDivorce.SEPTWOYRS, verifyContent);
   I.click(signOut);
 }).retry(2);
 

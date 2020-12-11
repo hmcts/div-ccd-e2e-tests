@@ -5,8 +5,8 @@ const commonFields = require('../data/tab-fields/commonFields.json');
 const { reasonsForDivorce } = require('../common/constants');
 
 
-module.exports = (reason, verifyContent) => {
-  I.click(labels.name);
+module.exports = async (reason, verifyContent) => {
+  await I.clickTab(labels.name);
   I.see(labels.rdc);
   I.see(labels.courtName);
   I.see(labels.petitionerFName);

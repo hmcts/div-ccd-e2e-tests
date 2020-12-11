@@ -3,8 +3,8 @@ const { firstLetterToCaps, formatDateToCcdDisplayDate } = require('../helpers/ut
 const labels = require('../data/tab-fields/decreeNisi.json');
 const { reasonsForDivorce } = require('../common/constants');
 
-module.exports = (reason, verifyContent) => {
-  I.click(labels.name);
+module.exports = async (reason, verifyContent) => {
+  await I.clickTab(labels.name);
   I.see(labels.continuewithDN);
   I.see(firstLetterToCaps(verifyContent.DNApplyForDecreeNisi));
   I.see(labels.dateOfDnSubmitted);

@@ -2,8 +2,8 @@ const I = actor();
 const { firstLetterToCaps } = require('../helpers/utils');
 const labels = require('../data/tab-fields/coRespondent.json');
 
-module.exports = (verifyContent) => {
-  I.click(labels.name);
+module.exports = async (verifyContent) => {
+  await I.clickTab(labels.name);
   I.see(labels.coRespondentFName);
   I.see(verifyContent.D8ReasonForDivorceAdultery3rdPartyFName);
   I.see(labels.coRespondentLName);
