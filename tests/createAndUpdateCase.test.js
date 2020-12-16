@@ -1,7 +1,7 @@
 /// <reference path="../steps.d.ts" />
 
 const { createCaseInCcd, updateCaseInCcd, getCaseWorkerLoginDetails } = require('../helpers/utils');
-const { signOut } = require('../common/constants');
+const { eventDisplayName, signOut } = require('../common/constants');
 
 const caseWorker = getCaseWorkerLoginDetails();
 
@@ -39,11 +39,11 @@ Scenario('Caseworker change DN events', async function (I) {
   I.amOnPage('/case/DIVORCE/DIVORCE/' + caseId);
   I.wait(5);
   I.aosReceivedUndefendedMoveToDNFormSubmit();
-  I.selectAndSubmitEvent('DN application received');
-  I.selectAndSubmitEvent('Refer to legal advisor');
-  I.selectAndSubmitEvent('Entitlement granted');
-  I.selectAndSubmitEvent('DN Pronounced');
-  I.selectAndSubmitEvent('DA Granted')
+  I.selectAndSubmitEvent(eventDisplayName.DN_RECEIVED);
+  I.selectAndSubmitEvent(eventDisplayName.REFER_TO_LEGAL_ADVSIOR);
+  I.selectAndSubmitEvent(eventDisplayName.ENTITLEMENT_GRANTED);
+  I.selectAndSubmitEvent(eventDisplayName.DN_PRONOUNCED);
+  I.selectAndSubmitEvent(eventDisplayName.DA_GRANTED)
   I.wait(5);
   I.click(signOut);
 }).retry(2);

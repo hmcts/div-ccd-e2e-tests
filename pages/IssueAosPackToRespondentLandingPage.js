@@ -11,7 +11,7 @@ module.exports = {
     I.waitForElement(this.fields.selectActionDropDown, 20);
     I.see('AOS Awaiting');
     I.wait(1);
-    I.click('//a[contains(.,\'Petition\')]');
+    I.clickTab('Petition');
     I.see('FamilyMan reference');
     I.see('First name(s)');
     I.see('Last name');
@@ -25,14 +25,14 @@ module.exports = {
     I.see('What is the respondent\'s gender?');
     I.see('Fact');
     I.wait(1);
-    I.click('//a[contains(.,\'AOS\')]');
+    I.clickTab('AOS');
     I.see('AOS Letter Holder ID');
     I.see('Due Date');
     I.wait(1);
-    I.click('//a[contains(.,\'Payment\')]');
+    I.clickTab('Payment');
     I.see('Online payments received');
     I.wait(1);
-    I.click('//a[contains(.,\'Documents\')]');
+    I.clickTab('Documents');
     I.wait(1);
     I.see('Documents uploaded 1');
     I.see('Document Url');
@@ -40,7 +40,7 @@ module.exports = {
     I.see('Documents generated 1');
     I.see('Documents generated 2');
     I.wait(1);
-    I.click('//a[contains(.,\'Marriage Certificate\')]');
+    I.clickTab('Marriage Certificate');
     I.see('Did the marriage take place in the UK?');
     I.see('Marriage date');
     I.wait(1);

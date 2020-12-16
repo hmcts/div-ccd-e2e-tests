@@ -21,7 +21,8 @@ const SolCreateLanguagePrefPage = require('./pages/SolCreateLanguagePrefPage');
 const SolCreateCheckYourAnswersPage = require('./pages/SolCreateCheckYourAnswersPage');
 const SolCaseCreatedPage = require('./pages/SolCaseCreatedPage');
 const StatementOfTruthAndRecPage = require('./pages/StatementOfTruthAndRecPage');
-const PaymentCaseSubmissionPage = require('./pages/PaymentCaseSubmissionPage');
+const FeeAccountPaymentCaseSubmissionPage = require('./pages/FeeAccountPaymentCaseSubmissionPage');
+const HWFPaymentCaseSubmissionPage = require('./pages/HWFPaymentCaseSubmissionPage');
 const CaseSubmissionOrderSummaryPage = require('./pages/CaseSubmissionOrderSummaryPage');
 const CaseSubmissionAppCompletePage = require('./pages/CaseSubmissionAppCompletePage');
 const CaseSubmissionCheckYourAnswersPage = require('./pages/CaseSubmissionCheckYourAnswersPage');
@@ -156,12 +157,16 @@ module.exports = function () {
       StatementOfTruthAndRecPage.fillFormAndSubmit();
     },
 
-    casePaymentAndSubmissionPageFormAndSubmit: function() {
-      return PaymentCaseSubmissionPage.fillFormAndSubmit();
+    casePaymentWithFeeAccountAndSubmissionPageFormAndSubmit: function() {
+      return FeeAccountPaymentCaseSubmissionPage.fillFormAndSubmit();
     },
 
-    caseOrderSummaryPageFormAndSubmit: function() {
-      CaseSubmissionOrderSummaryPage.fillFormAndSubmit();
+    casePaymentWithHWFAndSubmissionPageFormAndSubmit: function() {
+      return HWFPaymentCaseSubmissionPage.fillFormAndSubmit();
+    },
+
+    caseOrderSummaryPageFormAndSubmit: function(paymentType) {
+      CaseSubmissionOrderSummaryPage.fillFormAndSubmit(paymentType);
     },
 
     caseApplicationCompletePageFormAndSubmit: function() {

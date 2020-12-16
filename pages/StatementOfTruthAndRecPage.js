@@ -9,7 +9,7 @@ module.exports = {
     amAuthorisedByPetitionerToSign: '#solSignStatementofTruth-Yes',
     yourName: '#SolStatementOfReconciliationName',
     nameOfYourFirm: '#SolStatementOfReconciliationFirm',
-    howToServeRespondent:'#SolServiceMethod-personalService',
+    howToServeRespondent:'#SolServiceMethod-courtService',
     additionalComments: '#StatementOfReconciliationComments',
     submit: 'button[type="submit"]'
   },

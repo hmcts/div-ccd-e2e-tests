@@ -8,9 +8,11 @@ class PuppeteerHelper extends Helper {
     async clickTab(tabTitle) {
         const page = this.helpers[helperName].page;
         const tabXPath = `//div[text()='${tabTitle}']`;
-        await page.waitForXPath(tabXPath);
-        const clickableTab = await page.$x(tabXPath);
-        await clickableTab[0].click();
+        const tabExists = await page.waitForXPath(tabXPath, {timeout: 6000}) ? true : false;
+        if (tabExists) {
+            const clickableTab = await page.$x(tabXPath);
+            await page.evaluate(el => el.click(), clickableTab[0]);
+        }
     }
 }
 module.exports = PuppeteerHelper;
