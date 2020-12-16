@@ -19,17 +19,22 @@ exports.config = {
       chrome: {
         ignoreHTTPSErrors: true,
         args: [
+          // '--headless',
+          '--disable-gpu',
           '--no-sandbox',
-          '--start-fullscreen',
-          '--proxy-server=proxyout.reform.hmcts.net:8080'
-        ]
+          '--allow-running-insecure-content',
+          '--ignore-certificate-errors',
+          '--proxy-server=proxyout.reform.hmcts.net:8080',
+          '--proxy-bypass-list=*beta*LB.reform.hmcts.net',
+          '--window-size=1440,1400'
+      ]
       }
-    },
-    'PuppeteerHelper': {
-      'require': './helpers/PuppeteerHelper.js'
-    }
   },
-  include: {
+  'PuppeteerHelper': {
+    'require': './helpers/PuppeteerHelper.js'
+  }
+},
+include: {
     I: './steps_definitions.js',
     AboutSolicitorPage: './pages/AboutSolicitorPage.js',
     AboutThePetitionerPage: './pages/AboutThePetitionerPage.js',
@@ -45,7 +50,8 @@ exports.config = {
     LoginPage: './pages/LoginPage.js',
     MarriageCertificateDetailsPage: './pages/MarriageCertificateDetailsPage.js',
     OtherLegalProceedingsPage: './pages/OtherLegalProceedingsPage.js',
-    PaymentCaseSubmissionPage: './pages/PaymentCaseSubmissionPage.js',
+    FeeAccountPaymentCaseSubmissionPage: './pages/FeeAccountPaymentCaseSubmissionPage.js',
+    HWFPaymentCaseSubmissionPage: './pages/HWFPaymentCaseSubmissionPage.js',
     ReasonForTheDivorcePage: './pages/ReasonForTheDivorcePage.js',
     SolCaseCreatedPage: './pages/SolCaseCreatedPage.js',
     SolCreateCheckYourAnswersPage: './pages/SolCreateCheckYourAnswersPage.js',
@@ -70,8 +76,8 @@ exports.config = {
     TransferCaseToADifferentRDCsPage: './pages/TransferCaseToADifferentRDCsPage.js',
     TransferBetweenRDCsPage: './pages/TransferBetweenRDCsPage.js',
     TransferToRDCLandingPage: './pages/TransferToRDCLandingPage.js'
-  },
-  plugins: {
+},
+plugins: {
   retryFailedStep: {
     enabled: true
   },
@@ -79,15 +85,21 @@ exports.config = {
     enabled: true
   }
 },
-  bootstrap: false,
-  mocha: {
-    reporterOptions: {
-      reportDir: process.env.E2E_OUTPUT_DIR || './functional-output',
-      reportName: 'Divorce CCD E2E Tests',
-      inlineAssets: true
-    }
-  },
-  name: 'div-ccd-e2e-test'
+bootstrap: false,
+multiple: {
+  'parallel': {
+      // Splits tests into 2 chunks
+      'chunks': 4
+  }
+},
+mocha: {
+  reporterOptions: {
+    reportDir: process.env.E2E_OUTPUT_DIR || './functional-output',
+    reportName: 'Divorce CCD E2E Tests',
+    inlineAssets: true
+  }
+},
+name: 'div-ccd-e2e-test'
 };
 
 
