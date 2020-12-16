@@ -24,12 +24,12 @@ exports.config = {
           '--proxy-server=proxyout.reform.hmcts.net:8080'
         ]
       }
-    },
-    'PuppeteerHelper': {
-      'require': './helpers/PuppeteerHelper.js'
-    }
   },
-  include: {
+  'PuppeteerHelper': {
+    'require': './helpers/PuppeteerHelper.js'
+  }
+},
+include: {
     I: './steps_definitions.js',
     AboutSolicitorPage: './pages/AboutSolicitorPage.js',
     AboutThePetitionerPage: './pages/AboutThePetitionerPage.js',
@@ -71,8 +71,8 @@ exports.config = {
     TransferCaseToADifferentRDCsPage: './pages/TransferCaseToADifferentRDCsPage.js',
     TransferBetweenRDCsPage: './pages/TransferBetweenRDCsPage.js',
     TransferToRDCLandingPage: './pages/TransferToRDCLandingPage.js'
-  },
-  plugins: {
+},
+plugins: {
   retryFailedStep: {
     enabled: true
   },
@@ -80,15 +80,21 @@ exports.config = {
     enabled: true
   }
 },
-  bootstrap: false,
-  mocha: {
-    reporterOptions: {
-      reportDir: process.env.E2E_OUTPUT_DIR || './functional-output',
-      reportName: 'Divorce CCD E2E Tests',
-      inlineAssets: true
-    }
-  },
-  name: 'div-ccd-e2e-test'
+bootstrap: false,
+multiple: {
+  'parallel': {
+      // Splits tests into 2 chunks
+      'chunks': 4
+  }
+},
+mocha: {
+  reporterOptions: {
+    reportDir: process.env.E2E_OUTPUT_DIR || './functional-output',
+    reportName: 'Divorce CCD E2E Tests',
+    inlineAssets: true
+  }
+},
+name: 'div-ccd-e2e-test'
 };
 
 
