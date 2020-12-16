@@ -41,7 +41,7 @@ node {
                 currentBuild.result = 'UNSTABLE'
                 echo "RESULT: ${currentBuild.result}"
             } finally {
-                archiveArtifacts 'functional-output/*'
+                archiveArtifacts 'functional-output/**/*'
             }
 
         }
