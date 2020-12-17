@@ -8,7 +8,7 @@ module.exports = {
   },
 
   fillFormAndSubmit() {
-    I.waitForElement(this.fields.selectActionDropDown, 20);
+    I.waitForElement(this.fields.selectActionDropDown);
     I.see('AOS Awaiting');
     I.wait(1);
     I.clickTab('Petition');
@@ -44,7 +44,7 @@ module.exports = {
     I.see('Did the marriage take place in the UK?');
     I.see('Marriage date');
     I.wait(1);
-    I.waitForElement(this.fields.selectActionDropDown, 20);
+    I.waitForElement(this.fields.selectActionDropDown);
     I.selectOption(this.fields.selectActionDropDown, 'AOS started');
     I.wait(1);
     I.waitForVisible(this.fields.submit);

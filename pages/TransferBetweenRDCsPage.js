@@ -9,10 +9,10 @@ module.exports = {
   },
 
   fillFormAndSubmit() {
-    I.waitForElement(this.fields.eventSummary, 20);
+    I.waitForElement(this.fields.eventSummary);
     I.fillField(this.fields.eventSummary, 'I am transferring from one RDC to CTSC');
     I.fillField(this.fields.eventDescription, 'Event description for CTSC transfer');
-    I.waitForElement(this.fields.submit, 20);
+    I.waitForElement(this.fields.submit);
     I.click(this.fields.submit);
     I.wait(1);
   }

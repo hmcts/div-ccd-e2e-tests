@@ -8,7 +8,7 @@ module.exports = {
   },
 
   fillFormAndSubmit() {
-    I.waitForElement(this.fields.selectActionDropDown, 20);
+    I.waitForElement(this.fields.selectActionDropDown);
     I.see('Petition issued');
     I.selectOption(this.fields.selectActionDropDown, 'Issue AOS pack to respondent');
     I.wait(1);

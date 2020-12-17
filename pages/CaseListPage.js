@@ -12,7 +12,7 @@ module.exports = {
   },
 
   selectCase() {
-    I.waitForElement(this.selectors.caseLink, 25);
+    I.waitForElement(this.selectors.caseLink);
     I.click(this.selectors.caseLink);
   },
 
