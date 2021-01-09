@@ -1,17 +1,20 @@
 /// <reference path="../steps.d.ts" />
 
-const { paymentType } = require('../common/constants');
-const { getSolicitorLoginDetails } = require('../helpers/utils');
+const {paymentType} = require('../common/constants');
+const {getSolicitorLoginDetails, getCaseWorkerLoginDetails} = require('../helpers/utils');
 
 
 const solicitor = getSolicitorLoginDetails();
+const caseWorker = getCaseWorkerLoginDetails();
+
 
 let caseNumber;
+let caseNumberWithHyphen;
 
-Feature('Solicitor create case - with fee account');
 
-//Skipping fee payment as PBA number id deleted for this user. Once PBA is set again the test can be uncommented
-xScenario('Solicitor create case and make payment', async (I) => {
+Feature('create an urgent case journey');
+
+Scenario('Solicitor create an urgent case', async (I) => {
   I.amOnHomePage();
   I.login(solicitor.username, solicitor.password);
   I.clickCreateCase();
@@ -24,20 +27,31 @@ xScenario('Solicitor create case and make payment', async (I) => {
   I.selectJurisdictionQuestionPageAndSubmit();
   I.selectReasonForTheDivorceQuestionPageAndSubmit();
   I.fillAdulteryDetailsFormAndSubmit();
-  I.fillAdulteryDetailsSecondPageFormAndSubmit(); 
+  I.fillAdulteryDetailsSecondPageFormAndSubmit();
   I.otherLegalProceedings();
   I.financialOrdersSelectButton();
   I.claimForCostsSelectButton(),
-  I.uploadTheMarriageCertificateOptional();
+    I.uploadTheMarriageCertificateOptional();
   I.languagePreferenceSelection();
   I.solicitorCreateCheckYourAnswerAndSubmit();
   caseNumber = await I.solicitorCaseCreatedAndSubmit();
   caseNumber = caseNumber.replace(/\D/gi, '');
+  caseNumberWithHyphen = await I.solicitorCaseCreatedAndSubmit();
   console.log(caseNumber);
-  I.statementOfTruthAndReconciliationPageFormAndSubmit('no');
-  await I.casePaymentWithFeeAccountAndSubmissionPageFormAndSubmit();
-  I.caseOrderSummaryPageFormAndSubmit(paymentType.FEE_ACCOUNT);
+  console.log('..................... '+caseNumberWithHyphen+' .............');
+  I.statementOfTruthAndReconciliationPageFormAndSubmit('yes');
+  await I.casePaymentWithHWFAndSubmissionPageFormAndSubmit();
+  I.caseOrderSummaryPageFormAndSubmit(paymentType.HWF);
   I.caseApplicationCompletePageFormAndSubmit();
   I.caseCheckYourAnswersPageFormAndSubmit();
   I.solAwaitingPaymentConfPageFormAndSubmit();
+}).retry(2);
+
+Scenario('Caseworker able to filter and search urgent case', async (I) => {
+  I.amOnHomePage();
+  I.login(caseWorker.username, caseWorker.password);
+  I.wait(20);
+  I.clickCreateList();
+  I.ShouldBeAbleToFilterAnUrgentCase('yes', caseNumberWithHyphen);
+
 }).retry(2);

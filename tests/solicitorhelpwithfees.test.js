@@ -36,7 +36,7 @@ Scenario('Solicitor create case and make payment', async (I) => {
   caseNumber = await I.solicitorCaseCreatedAndSubmit();
   caseNumber = caseNumber.replace(/\D/gi, '');
   console.log(caseNumber);
-  I.statementOfTruthAndReconciliationPageFormAndSubmit();
+  I.statementOfTruthAndReconciliationPageFormAndSubmit('no');
   await I.casePaymentWithHWFAndSubmissionPageFormAndSubmit();
   I.caseOrderSummaryPageFormAndSubmit(paymentType.HWF);
   I.caseApplicationCompletePageFormAndSubmit();

@@ -81,6 +81,10 @@ module.exports = function () {
       CaseListPage.resetFilter();
     },
 
+    ShouldBeAbleToFilterAnUrgentCase: function (urgent, caseNum) {
+      CaseListPage.urgentCaseFilter(urgent, caseNum);
+    },
+
     clickCreateCase: function() {
       this.click('Create case');
     },
@@ -153,8 +157,8 @@ module.exports = function () {
       return SolCaseCreatedPage.fillFormAndSubmit();
     },
 
-    statementOfTruthAndReconciliationPageFormAndSubmit: function() {
-      StatementOfTruthAndRecPage.fillFormAndSubmit();
+    statementOfTruthAndReconciliationPageFormAndSubmit: function (urgent) {
+      StatementOfTruthAndRecPage.fillFormAndSubmit(urgent);
     },
 
     casePaymentWithFeeAccountAndSubmissionPageFormAndSubmit: function() {
