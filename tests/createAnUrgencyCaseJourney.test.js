@@ -47,6 +47,15 @@ Scenario('Solicitor create an urgent case', async (I) => {
   I.solAwaitingPaymentConfPageFormAndSubmit();
 }).retry(2);
 
+Scenario('Solicitor able to filter and search urgent case', async (I) => {
+  I.amOnHomePage();
+  I.login(solicitor.username, solicitor.password);
+  I.wait(20);
+  I.clickCreateList();
+  I.ShouldBeAbleToFilterAnUrgentCase('yes', caseNumberWithHyphen);
+
+}).retry(2);
+
 Scenario('Caseworker able to filter and search urgent case', async (I) => {
   I.amOnHomePage();
   I.login(caseWorker.username, caseWorker.password);
