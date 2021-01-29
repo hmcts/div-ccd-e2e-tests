@@ -34,9 +34,9 @@ Scenario('Solicitor create an urgent case', async (I) => {
     I.uploadTheMarriageCertificateOptional();
   I.languagePreferenceSelection();
   I.solicitorCreateCheckYourAnswerAndSubmit();
-  caseNumber = await I.solicitorCaseCreatedAndSubmit();
-  caseNumber = caseNumber.replace(/\D/gi, '');
   caseNumberWithHyphen = await I.solicitorCaseCreatedAndSubmit();
+  caseNumberWithHyphen = caseNumberWithHyphen.replace('#', '');
+  caseNumber = caseNumberWithHyphen.replace(/\D/gi, '');
   console.log(caseNumber);
   console.log('..................... '+caseNumberWithHyphen+' .............');
   I.statementOfTruthAndReconciliationPageFormAndSubmit('yes');
