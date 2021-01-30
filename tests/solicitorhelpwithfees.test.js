@@ -3,7 +3,7 @@ const testconfig = require('./config')
 
 const nextStepDropDown = 'select[id="next-step"]'
 
-let caseNumber;
+let caseNumber='1612027849946935';
 
 Feature('Solicitor create case - help with fees');
 
@@ -56,11 +56,12 @@ Scenario('Solicitor should not see issue, refund events', async (I) => {
 Scenario('Caseworker should be able to see issue, refund events and issue aos pack', async (I) => {
   await I.amOnHomePage();
   await I.login(testconfig.TestEnvCWUser, testconfig.TestEnvCWPassword);
-  await I.wait(1);
+  await I.wait(0.5);
   await I.amOnPage('/case/DIVORCE/DIVORCE/' + caseNumber);
   await I.selectAndSubmitEvent(eventDisplayName.HWF_APP_ACCEPTED);
   await I.waitForElement(nextStepDropDown);
   await I.click(nextStepDropDown);
+  await I.wait(0.5);
   await I.see(eventDisplayName.UPDATE_LANG);
   await I.see(eventDisplayName.ISSUE);
   await I.see(eventDisplayName.REFUND);

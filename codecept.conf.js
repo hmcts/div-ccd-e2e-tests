@@ -8,7 +8,7 @@ exports.config = {
     Puppeteer: {
       url: testConfig.TestUrl,
       show: testConfig.TestShowBrowserWindow,
-      waitForNavigation: ['domcontentloaded', 'networkidle0'],
+      waitForNavigation: ['domcontentloaded'],
       restart: true,
       keepCookies: false,
       keepBrowserState: false,
@@ -29,6 +29,9 @@ exports.config = {
   },
   PuppeteerHelper: {
     'require': './helpers/PuppeteerHelper.js'
+  },
+  JSWait: {
+      require: './helpers/JSWait.js'
   },
   Mochawesome: {
       uniqueScreenshotNames: 'true'
