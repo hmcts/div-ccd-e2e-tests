@@ -12,7 +12,7 @@ module.exports = {
   },
 
   async fillFormAndSubmit() {
-    I.wait(1);
+    I.wait(10);
     I.click(this.fields.howPaymentMade);
     I.selectOption(this.fields.howPaymentMade, paymentType.HWF);
     I.click(this.fields.submit);

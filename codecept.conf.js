@@ -1,16 +1,14 @@
-const { getBaseUrl } = require('./helpers/utils');
-
-const testEnv = getBaseUrl();
-const baseUrl = `https://${testEnv}`;
+const testConfig = require('./tests/config.js');
 
 exports.config = {
-  tests: 'tests/**/*.js',
+  tests: 'tests/**/createAnUrgencyCaseJourney.test.js',
   timeout: 10000,
   output: process.cwd() + '/functional-output',
   helpers: {
     Puppeteer: {
-      url: baseUrl,
-      show: false,
+      url: testConfig.TestUrl,
+      show: testConfig.TestShowBrowserWindow,
+      waitForNavigation: ['domcontentloaded', 'networkidle0'],
       restart: true,
       keepCookies: false,
       keepBrowserState: false,
@@ -30,71 +28,33 @@ exports.config = {
       ]
       }
   },
-  'PuppeteerHelper': {
+  PuppeteerHelper: {
     'require': './helpers/PuppeteerHelper.js'
+  },
+  Mochawesome: {
+      uniqueScreenshotNames: 'true'
   }
 },
 include: {
-    I: './steps_definitions.js',
-    AboutSolicitorPage: './pages/AboutSolicitorPage.js',
-    AboutThePetitionerPage: './pages/AboutThePetitionerPage.js',
-    AboutTheRespondentPage: './pages/AboutTheRespondentPage.js',
-    CaseDetailsPage: './pages/CaseDetailsPage.js',
-    CaseListPage: './pages/CaseListPage.js',
-    CaseSubmissionAppCompletePage: './pages/CaseSubmissionAppCompletePage.js',
-    CaseSubmissionOrderSummaryPage: './pages/CaseSubmissionOrderSummaryPage.js',
-    ClaimForCostsPage: './pages/ClaimForCostsPage.js',
-    CreateCasePage: './pages/CreateCasePage.js',
-    FinancialOrdersPage: './pages/FinancialOrdersPage.js',
-    JurisdictionPage: './pages/JurisdictionPage.js',
-    LoginPage: './pages/LoginPage.js',
-    MarriageCertificateDetailsPage: './pages/MarriageCertificateDetailsPage.js',
-    OtherLegalProceedingsPage: './pages/OtherLegalProceedingsPage.js',
-    FeeAccountPaymentCaseSubmissionPage: './pages/FeeAccountPaymentCaseSubmissionPage.js',
-    HWFPaymentCaseSubmissionPage: './pages/HWFPaymentCaseSubmissionPage.js',
-    ReasonForTheDivorcePage: './pages/ReasonForTheDivorcePage.js',
-    SolCaseCreatedPage: './pages/SolCaseCreatedPage.js',
-    SolCreateCheckYourAnswersPage: './pages/SolCreateCheckYourAnswersPage.js',
-    StatementOfCaseAdulteryPage: './pages/StatementOfCaseAdulteryPage.js',
-    StatementOfCaseAdulterySecPage: './pages/StatementOfCaseAdulterySecPage.js',
-    StatementOfTruthAndRecPage: './pages/StatementOfTruthAndRecPage.js',
-    UploadMarriageCertificatePage: './pages/UploadMarriageCertificatePage.js',
-    SolCreateLanguagePrefPage: './pages/SolCreateLanguagePrefPage.js',
-    CaseSubmissionCheckYourAnswersPage: './pages/CaseSubmissionCheckYourAnswersPage.js',
-    SolAwaitingPaymentConfirmationPage: './pages/SolAwaitingPaymentConfirmationPage.js',
-    CcdCaseCreatedLandingPage: './pages/CcdCaseCreatedLandingPage.js',
-    IssuePage: './pages/IssuePage.js',
-    IssueCheckYourAnswersPage: './pages/IssueCheckYourAnswersPage.js',
-    CcdCaseCreatedPetitionIssuedLandingPage: './pages/CcdCaseCreatedPetitionIssuedLandingPage.js',
-    AosPackIssueTestPage: './pages/AosPackIssueTestPage.js',
-    IssueAosPackToRespondentCheckYourAnswersPage: './pages/IssueAosPackToRespondentCheckYourAnswersPage.js',
-    IssueAosPackToRespondentLandingPage: './pages/IssueAosPackToRespondentLandingPage.js',
-    AosStartedPage: './pages/AosStartedPage.js',
-    AosStartedCheckYourAnswersPage: './pages/AosStartedCheckYourAnswersPage.js',
-    AosReceivedUndefendedMoveToDN: './pages/AosReceivedUndefendedMoveToDN.js',
-    SelectEventAndSubmit: './pages/SelectEventAndSubmit.js',
-    TransferCaseToADifferentRDCsPage: './pages/TransferCaseToADifferentRDCsPage.js',
-    TransferBetweenRDCsPage: './pages/TransferBetweenRDCsPage.js',
-    TransferToRDCLandingPage: './pages/TransferToRDCLandingPage.js'
+    I: './steps_definitions.js'
 },
 plugins: {
   retryFailedStep: {
     enabled: true
   },
   autoDelay: {
-    enabled: true
+    enabled: testConfig.TestAutoDelayEnabled
   }
 },
 bootstrap: false,
 multiple: {
   'parallel': {
-      // Splits tests into 2 chunks
       'chunks': 4
   }
 },
 mocha: {
   reporterOptions: {
-    reportDir: process.env.E2E_OUTPUT_DIR || './functional-output',
+    reportDir: testConfig.TestOutputDir,
     reportName: 'Divorce CCD E2E Tests',
     inlineAssets: true
   }

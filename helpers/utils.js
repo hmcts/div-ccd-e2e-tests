@@ -3,40 +3,21 @@ const requestModule = require('request-promise-native');
 const request = requestModule.defaults({ 'proxy': 'http://proxyout.reform.hmcts.net:8080' });
 // const request = requestModule.defaults();
 const fs = require('fs');
+const testConfig = require('../tests/config.js');
 
 const logger = Logger.getLogger('helpers/utils.js');
 
-const env = process.env.RUNNING_ENV || 'aat';
-const months = ['Jan', 'Feb', 'Mar','Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-
-const getSolicitorLoginDetails = () => {
-  if (!process.env.CCD_E2E_PASSWORD) {
-    throw new Error('You need to set CCD_E2E_EMAIL and CCD_E2E_PASSWORD env variables');
-  }
-  return {
-    username: process.env.CCD_E2E_EMAIL,
-    password: process.env.CCD_E2E_PASSWORD
-  };
-};
-
-const getCaseWorkerLoginDetails = () => {
-  if (!process.env.CCD_E2E_PASSWORD) {
-    throw new Error('You need to set CCD_E2E_EMAIL and CCD_E2E_PASSWORD env variables');
-  }
-  return {
-    username: process.env.CCD_CASEWORKER_E2E_EMAIL,
-    password: process.env.CCD_CASEWORKER_E2E_PASSWORD
-  };
-};
+const env = testConfig.TestEnv;
+const months = ['Jan', 'Feb', 'Mar','Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
 
 async function getUserToken() {
   logger.info('Getting User Token');
 
   // Setup Details
-  const username = process.env.CCD_CASEWORKER_E2E_EMAIL;
-  const password = process.env.CCD_CASEWORKER_E2E_PASSWORD;
+  const username = testConfig.TestEnvCWUser;
+  const password = testConfig.TestEnvCWPassword;
   const redirectUri = `https://div-pfe-${env}.service.core-compute-${env}.internal/authenticated`;
-  const idamClientSecret = process.env.IDAM_CLIENT_SECRET;
+  const idamClientSecret = testConfig.TestIdamClientSecret
 
   const idamBaseUrl = 'https://idam-api.aat.platform.hmcts.net';
 
@@ -88,7 +69,7 @@ async function getUserId(authToken) {
 async function getServiceToken() {
   logger.info('Getting Service Token');
 
-  const serviceSecret = process.env.SERVICE_SECRET;
+  const serviceSecret = testConfig.TestS2SAuthSecret;
 
   const s2sBaseUrl = `http://rpe-service-auth-provider-${env}.service.core-compute-${env}.internal`;
   const s2sAuthPath = '/lease';
@@ -253,8 +234,6 @@ function formatDateToCcdDisplayDate(givenDate = new Date()) {
 };
 
 module.exports = {
-  getSolicitorLoginDetails,
-  getCaseWorkerLoginDetails,
   createCaseInCcd,
   createCaseAndFetchResponse,
   updateCaseInCcd,

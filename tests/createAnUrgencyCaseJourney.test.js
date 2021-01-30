@@ -1,12 +1,5 @@
-/// <reference path="../steps.d.ts" />
-
 const {paymentType} = require('../common/constants');
-const {getSolicitorLoginDetails, getCaseWorkerLoginDetails} = require('../helpers/utils');
-
-
-const solicitor = getSolicitorLoginDetails();
-const caseWorker = getCaseWorkerLoginDetails();
-
+const config = require('./config');
 
 let caseNumber;
 let caseNumberWithHyphen;
@@ -16,7 +9,7 @@ Feature('create an urgent case journey');
 
 Scenario('Solicitor create an urgent case', async (I) => {
   I.amOnHomePage();
-  I.login(solicitor.username, solicitor.password);
+  I.login(config.TestEnvProfUser, config.TestEnvProfPassword);
   I.clickCreateCase();
   I.wait(1);
   I.fillCreateCaseFormAndSubmit();
@@ -49,7 +42,7 @@ Scenario('Solicitor create an urgent case', async (I) => {
 
 Scenario('Solicitor able to filter and search urgent case', async (I) => {
   I.amOnHomePage();
-  I.login(solicitor.username, solicitor.password);
+  I.login(config.TestEnvProfUser, config.TestEnvProfPassword);
   I.wait(20);
   I.clickCreateList();
   I.ShouldBeAbleToFilterAnUrgentCase('yes', caseNumberWithHyphen);
@@ -58,7 +51,7 @@ Scenario('Solicitor able to filter and search urgent case', async (I) => {
 
 Scenario('Caseworker able to filter and search urgent case', async (I) => {
   I.amOnHomePage();
-  I.login(caseWorker.username, caseWorker.password);
+ I.login(config.TestEnvCWUser, config.TestEnvCWPassword);
   I.wait(20);
   I.clickCreateList();
   I.ShouldBeAbleToFilterAnUrgentCase('yes', caseNumberWithHyphen);

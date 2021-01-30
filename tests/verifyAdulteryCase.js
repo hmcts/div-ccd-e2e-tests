@@ -1,10 +1,8 @@
-/// <reference path="../steps.d.ts" />
-
-const { createCaseInCcd, updateCaseInCcd, getCaseWorkerLoginDetails } = require('../helpers/utils');
+const { createCaseInCcd, updateCaseInCcd } = require('../helpers/utils');
 const verifyContent = require('../data/ccdAdulteryRespondentCorespondentDefendedCase.json');
-const caseWorker = getCaseWorkerLoginDetails();
 const { reasonsForDivorce, signOut, states, events } = require('../common/constants');
 const assert = require('assert');
+const config = require('./config');
 
 const verifyState = (eventResponse, state) => {
   assert.strictEqual(JSON.parse(eventResponse).state, state);
@@ -59,7 +57,7 @@ Scenario('Execute events for end to end flow PFE, RFE, Co-RESP, DN , DA', async 
 
 Scenario('verify all tab fields PFE, RFE, DN, DA', async function (I) {
   I.amOnHomePage();
-  I.login(caseWorker.username, caseWorker.password);
+ I.login(config.TestEnvCWUser, config.TestEnvCWPassword);
   I.wait(20);
   I.amOnPage('/case/DIVORCE/DIVORCE/' + caseId);
   I.wait(30);

@@ -21,11 +21,11 @@
     "request-promise-native": "^1.0.5"
   },
   "devDependencies": {
-    "codeceptjs": "^2.0.7",
+    "codeceptjs": "^2.6.11",
     "eslint": "^4.19.1",
     "eslint-config-google": "^0.9.1",
     "eslint-plugin-mocha": "^5.0.0",
     "mochawesome": "^4.1.0",
-    "puppeteer": "^1.19.0"
+    "puppeteer": "^5.4.1"
   }
 }

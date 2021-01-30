@@ -1,9 +1,6 @@
-/// <reference path="../steps.d.ts" />
-
-const { createCaseInCcd, updateCaseInCcd, getCaseWorkerLoginDetails } = require('../helpers/utils');
+const { createCaseInCcd, updateCaseInCcd } = require('../helpers/utils');
 const { eventDisplayName, signOut } = require('../common/constants');
-
-const caseWorker = getCaseWorkerLoginDetails();
+const config = require('./config');
 
 let caseId;
 
@@ -14,7 +11,7 @@ Scenario('Create and Update as well as caseworker change AOS states', async func
   await updateCaseInCcd(caseId, 'hwfApplicationAcceptedfromAwaitingHWFDecision', 'data/ccd-update-data.json');
 
   I.amOnHomePage();
-  I.login(caseWorker.username, caseWorker.password);
+  I.login(config.TestEnvCWUser, config.TestEnvCWPassword);
   I.shouldBeOnCaseListPage();
   I.amOnPage('/case/DIVORCE/DIVORCE/' + caseId);
   I.wait(5);
@@ -34,7 +31,7 @@ Scenario('Create and Update as well as caseworker change AOS states', async func
 
 Scenario('Caseworker change DN events', async function (I) {
   I.amOnHomePage();
-  I.login(caseWorker.username, caseWorker.password);
+ I.login(config.TestEnvCWUser, config.TestEnvCWPassword);
   I.shouldBeOnCaseListPage();
   I.amOnPage('/case/DIVORCE/DIVORCE/' + caseId);
   I.wait(5);

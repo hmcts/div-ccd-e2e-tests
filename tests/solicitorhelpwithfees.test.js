@@ -1,21 +1,15 @@
-/// <reference path="../steps.d.ts" />
-
 const { eventDisplayName, signOut, paymentType } = require('../common/constants');
-const { getSolicitorLoginDetails, getCaseWorkerLoginDetails } = require('../helpers/utils');
-
-
-const solicitor = getSolicitorLoginDetails();
-const caseWorker = getCaseWorkerLoginDetails();
+const config = require('./config')
 
 const nextStepDropDown = 'select[id="next-step"]'
 
-let caseNumber='1608063617043924';
+let caseNumber;
 
 Feature('Solicitor create case - help with fees');
 
 Scenario('Solicitor create case and make payment', async (I) => {
   I.amOnHomePage();
-  I.login(solicitor.username, solicitor.password);
+  I.login(config.TestEnvProfUser, config.TestEnvProfPassword);
   I.clickCreateCase();
   I.wait(1);
   I.fillCreateCaseFormAndSubmit();
@@ -42,11 +36,11 @@ Scenario('Solicitor create case and make payment', async (I) => {
   I.caseApplicationCompletePageFormAndSubmit();
   I.caseCheckYourAnswersPageFormAndSubmit();
   I.solAwaitingPaymentConfPageFormAndSubmit();
-}).retry(2);
+});
 
-Scenario('Solicitor should not see issue, refund events', async (I) => {
+xScenario('Solicitor should not see issue, refund events', async (I) => {
   I.amOnHomePage();
-  I.login(solicitor.username, solicitor.password);
+  I.login(config.TestEnvProfUser, config.TestEnvProfPassword);
   I.wait(20);
   I.amOnPage('/case/DIVORCE/DIVORCE/' + caseNumber);
   I.waitForElement(nextStepDropDown);
@@ -57,11 +51,11 @@ Scenario('Solicitor should not see issue, refund events', async (I) => {
   I.dontSee(eventDisplayName.TRANSFER_BETWEEN_RDC);
   I.dontSee(eventDisplayName.TRANSFER_CTSC_TO_RDC);
   I.click(signOut);
-}).retry(2);
+});
 
-Scenario('Caseworker should be able to see issue, refund events and issue aos pack', async (I) => {
+xScenario('Caseworker should be able to see issue, refund events and issue aos pack', async (I) => {
   I.amOnHomePage();
-  I.login(caseWorker.username, caseWorker.password);
+ I.login(config.TestEnvCWUser, config.TestEnvCWPassword);
   I.wait(20);
   I.amOnPage('/case/DIVORCE/DIVORCE/' + caseNumber);
   I.selectAndSubmitEvent(eventDisplayName.HWF_APP_ACCEPTED);
@@ -76,5 +70,5 @@ Scenario('Caseworker should be able to see issue, refund events and issue aos pa
   I.issueCheckYourAnswersPageFormAndSubmit();
   I.selectAndSubmitEvent(eventDisplayName.ISSUE_AOS_TO_RESP);
   I.click(signOut);
-}).retry(2);
+});
 

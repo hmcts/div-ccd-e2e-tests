@@ -1,10 +1,4 @@
-/// <reference path="../steps.d.ts" />
-
 const { paymentType } = require('../common/constants');
-const { getSolicitorLoginDetails } = require('../helpers/utils');
-
-
-const solicitor = getSolicitorLoginDetails();
 
 let caseNumber;
 
@@ -13,7 +7,7 @@ Feature('Solicitor create case - with fee account');
 //Skipping fee payment as PBA number id deleted for this user. Once PBA is set again the test can be uncommented
 xScenario('Solicitor create case and make payment', async (I) => {
   I.amOnHomePage();
-  I.login(solicitor.username, solicitor.password);
+  I.login(config.TestEnvProfUser, config.TestEnvProfPassword);
   I.clickCreateCase();
   I.wait(1);
   I.fillCreateCaseFormAndSubmit();
