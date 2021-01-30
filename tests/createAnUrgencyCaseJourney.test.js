@@ -1,15 +1,15 @@
 const {paymentType} = require('../common/constants');
-const config = require('./config');
+const testconfig = require('./config');
 
 let caseNumber;
-let caseNumberWithHyphen='1611-9269-9777-6419';
+let caseNumberWithHyphen;
 
 
 Feature('create an urgent case journey');
 
 Scenario('Solicitor create an urgent case', async (I) => {
   await I.amOnHomePage();
-  await I.login(config.TestEnvProfUser, config.TestEnvProfPassword);
+  await I.login(testconfig.TestEnvProfUser, testconfig.TestEnvProfPassword);
   await I.clickCreateCase();
   await I.wait(1);
   await I.fillCreateCaseFormAndSubmit();
@@ -38,22 +38,22 @@ Scenario('Solicitor create an urgent case', async (I) => {
   await I.caseApplicationCompletePageFormAndSubmit();
   await I.caseCheckYourAnswersPageFormAndSubmit();
   await I.solAwaitingPaymentConfPageFormAndSubmit();
-}).retry(config.TestRetryScenarios);
+}).retry(testconfig.TestRetryScenarios);
 
 xScenario('Solicitor able to filter and search urgent case', async (I) => {
   await I.amOnHomePage();
-  await I.login(config.TestEnvProfUser, config.TestEnvProfPassword);
-  await I.wait(20);
+  await I.login(testconfig.TestEnvProfUser, testconfig.TestEnvProfPassword);
+  await I.wait(1);
   await I.clickCreateList();
   await I.ShouldBeAbleToFilterAnUrgentCase('yes', caseNumberWithHyphen);
 
-}).retry(config.TestRetryScenarios);
+}).retry(testconfig.TestRetryScenarios);
 
 xScenario('Caseworker able to filter and search urgent case', async (I) => {
   await I.amOnHomePage();
-  await I.login(config.TestEnvCWUser, config.TestEnvCWPassword);
-  await I.wait(20);
+  await I.login(testconfig.TestEnvCWUser, testconfig.TestEnvCWPassword);
+  await I.wait(1);
   await I.clickCreateList();
   await I.ShouldBeAbleToFilterAnUrgentCase('yes', caseNumberWithHyphen);
 
-}).retry(config.TestRetryScenarios);
+}).retry(testconfig.TestRetryScenarios);

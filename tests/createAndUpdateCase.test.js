@@ -1,6 +1,6 @@
 const { createCaseInCcd, updateCaseInCcd } = require('../helpers/utils');
 const { eventDisplayName, signOut } = require('../common/constants');
-const config = require('./config');
+const testconfig = require('./config');
 
 let caseId;
 
@@ -11,7 +11,7 @@ Scenario('Create and Update as well as caseworker change AOS states', async func
   await updateCaseInCcd(caseId, 'hwfApplicationAcceptedfromAwaitingHWFDecision', 'data/ccd-update-data.json');
 
   await I.amOnHomePage();
-  await I.login(config.TestEnvCWUser, config.TestEnvCWPassword);
+  await I.login(testconfig.TestEnvCWUser, testconfig.TestEnvCWPassword);
   await I.shouldBeOnCaseListPage();
   await I.amOnPage('/case/DIVORCE/DIVORCE/' + caseId);
   await I.wait(1);
@@ -27,11 +27,11 @@ Scenario('Create and Update as well as caseworker change AOS states', async func
   await I.aosStartedPageFormAndSubmit();
   await I.aosStartedCheckYourAnswersPageFormAndSubmit();
   await I.click(signOut);
-}).retry(config.TestRetryScenarios);
+}).retry(testconfig.TestRetryScenarios);
 
 Scenario('Caseworker change DN events', async function (I) {
   await I.amOnHomePage();
-  await I.login(config.TestEnvCWUser, config.TestEnvCWPassword);
+  await I.login(testconfig.TestEnvCWUser, testconfig.TestEnvCWPassword);
   await I.shouldBeOnCaseListPage();
   await I.amOnPage('/case/DIVORCE/DIVORCE/' + caseId);
   await I.wait(1);
@@ -43,4 +43,4 @@ Scenario('Caseworker change DN events', async function (I) {
   await I.selectAndSubmitEvent(eventDisplayName.DA_GRANTED)
   await I.wait(5);
   await I.click(signOut);
-}).retry(config.TestRetryScenarios);
+}).retry(testconfig.TestRetryScenarios);

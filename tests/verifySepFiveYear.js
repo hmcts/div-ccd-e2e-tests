@@ -1,7 +1,7 @@
 const { createCaseInCcd, updateCaseInCcd } = require('../helpers/utils');
 const { reasonsForDivorce, signOut, states, events } = require('../common/constants');
 const assert = require('assert');
-const config = require('./config');
+const testconfig = require('./config');
 
 const verifyContent = require('../data/ccdSepFiveYrs.json');
 
@@ -52,10 +52,10 @@ Scenario('Execute events for end to end flow of PFE, RFE, DN , DA', async functi
 
 Scenario('verify all tab fields of PFE, RFE, DN, DA', async function (I) {
   await I.amOnHomePage();
-  await I.login(config.TestEnvCWUser, config.TestEnvCWPassword);
-  await I.wait(20);
+  await I.login(testconfig.TestEnvCWUser, testconfig.TestEnvCWPassword);
+  await I.wait(1);
   await I.amOnPage('/case/DIVORCE/DIVORCE/' + caseId);
-  await I.wait(30);
+  await I.wait(1);
   await I.validatePetitionTabData(reasonsForDivorce.SEPFIVEYRSDISPLAY, verifyContent);
   await I.validateConfidentialPetitionerTab(verifyContent);
   await I.validateMarriageCertTabData(verifyContent);
@@ -66,5 +66,5 @@ Scenario('verify all tab fields of PFE, RFE, DN, DA', async function (I) {
   await I.validateDocumentTabData(reasonsForDivorce.SEPFIVEYRS, caseId);
   await I.validatePaymentTabData(verifyContent);
   await I.validateLanguageTabData(reasonsForDivorce.SEPFIVEYRS, verifyContent);
-  I.click(signOut);
-}).retry(config.TestRetryScenarios);
+  await I.click(signOut);
+}).retry(testconfig.TestRetryScenarios);
