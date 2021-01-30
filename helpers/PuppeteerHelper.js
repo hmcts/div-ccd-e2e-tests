@@ -2,6 +2,7 @@
 
 const Helper = codecept_helper;
 const helperName = 'Puppeteer';
+const testConfig = require('../tests/config');
 
 class PuppeteerHelper extends Helper {
 

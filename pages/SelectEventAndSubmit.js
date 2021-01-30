@@ -3,6 +3,7 @@ const I = actor();
 module.exports = {
 
   fields: {
+    eventSummary: '#field-trigger-summary',
     selectActionDropDown: 'select[id="next-step"]',
     submit: 'button[type="submit"]'
   },
