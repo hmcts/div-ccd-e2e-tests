@@ -13,6 +13,7 @@ module.exports = {
 
   async fillFormAndSubmit() {
     await I.waitForElement(this.fields.respondentsEmailAddress);
+    await I.runAccessibilityTest();
     await I.fillField(this.fields.respondentsEmailAddress, 'Tasha.StPatrick@jo.com');
     await I.click(this.fields.aosReceivedFromRespondent);
     await I.fillField(this.fields.dateAosReceivedFromRespondentDay, '11');

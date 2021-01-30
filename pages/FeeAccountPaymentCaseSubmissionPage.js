@@ -14,6 +14,7 @@ module.exports = {
 
   async fillFormAndSubmit() {
     await I.waitForElement(this.fields.howPaymentMade);
+    await I.runAccessibilityTest();
     await I.click(this.fields.howPaymentMade);
     await I.retry(2).selectOption(this.fields.howPaymentMade, paymentType.FEE_ACCOUNT);
     await I.click(this.fields.submit);
@@ -21,6 +22,8 @@ module.exports = {
 
     //All the pba numbers in the dropdown are not working. So, hardcoding for now.
     //const pbaNumber = await await I.grabTextFrom(`${this.fields.selectPbaNumber} option:nth-child(2)`);
+    await I.waitForElement(this.fields.selectPbaNumber);
+    await I.runAccessibilityTest();
     await I.selectOption(this.fields.selectPbaNumber, 'PBA0072626');
     await I.fillField(this.fields.enterYourReference, 'Next case submitted');
     await I.click(this.fields.submit);

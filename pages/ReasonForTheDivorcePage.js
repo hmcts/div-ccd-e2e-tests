@@ -11,6 +11,7 @@ module.exports = {
 
   async fillFormAndSubmit() {
     await I.waitInUrl('solicitorCreateSolReasonForDivorce');
+    await I.runAccessibilityTest();
     await I.selectOption(this.fields.fact, reasonsForDivorce.ADULTERY);
     await I.click(this.fields.submit);
   }

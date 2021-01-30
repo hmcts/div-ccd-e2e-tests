@@ -10,6 +10,7 @@ module.exports = {
 
   async fillFormAndSubmit() {
     await I.waitForElement(this.fields.selectActionDropDown);
+    await I.runAccessibilityTest();
     await I.selectOption(this.fields.selectActionDropDown, 'AOS Received (undefended)');
     await I.wait(1);
     await I.click(this.fields.submit);

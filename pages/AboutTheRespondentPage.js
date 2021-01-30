@@ -16,6 +16,7 @@ module.exports = {
 
   async fillFormAndSubmit() {
     await I.waitForElement(this.fields.firstName);
+    await I.runAccessibilityTest();
     await I.fillField(this.fields.firstName, 'Tasha');
     await I.fillField(this.fields.lastName, 'St Patrick');
     await I.click(this.fields.respondentChangedName);
