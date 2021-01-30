@@ -1,9 +1,9 @@
 const testConfig = require('./tests/config.js');
 
 exports.config = {
-  tests: 'tests/**/createAnUrgencyCaseJourney.test.js',
+  tests: testConfig.TestPathToRun,
   timeout: 10000,
-  output: process.cwd() + '/functional-output',
+  output: testConfig.TestOutputDir,
   helpers: {
     Puppeteer: {
       url: testConfig.TestUrl,
@@ -13,7 +13,6 @@ exports.config = {
       keepCookies: false,
       keepBrowserState: false,
       waitForTimeout: 90000,
-      waitForAction: 3000,
       chrome: {
         ignoreHTTPSErrors: true,
         args: [

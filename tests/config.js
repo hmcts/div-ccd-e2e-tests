@@ -4,7 +4,7 @@ module.exports = {
     TestShowBrowserWindow: process.env.SHOW_BROWSER_WINDOW || true,
     TestRetryFeatures: 0,
     TestRetryScenarios: process.env.RETRY_SCENARIOS || 2,
-    TestPathToRun: process.env.E2E_TEST_PATH || 'tests/**/createAnUrgencyCaseJourney.test.js',
+    TestPathToRun: process.env.E2E_TEST_PATH || 'tests/**/*.test.js',
     TestOutputDir: process.env.E2E_OUTPUT_DIR || './functional-output/xui',
     TestEnvCWUser: process.env.CCD_CASEWORKER_E2E_EMAIL || '',
     TestEnvCWPassword: process.env.CCD_CASEWORKER_E2E_PASSWORD || '',
