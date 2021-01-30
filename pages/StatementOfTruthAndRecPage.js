@@ -19,7 +19,7 @@ module.exports = {
 
   async fillFormAndSubmit(urgent) {
     await I.wait(1);
-    await I.seeInCurrentUrl('solicitorStatementOfTruthPaySubmit/solicitorStatementOfTruthPaySubmitSolStatementOfTruth');
+    await I.waitInUrl('solicitorStatementOfTruthPaySubmit/solicitorStatementOfTruthPaySubmitSolStatementOfTruth');
     if (urgent === 'no') {
       await I.click(this.fields.caseUrgentNo);
     } else if (urgent === 'yes') {

@@ -8,7 +8,7 @@ module.exports = {
   },
 
   async fillFormAndSubmit() {
-    await I.seeInCurrentUrl('solicitorCreateSolApplyToClaimCosts');
+    await I.waitInUrl('solicitorCreateSolApplyToClaimCosts');
     await I.click(this.fields.petitionerWantsToClaimCosts);
     await I.click(this.fields.submit);
     await I.wait(1);

@@ -8,7 +8,7 @@ module.exports = {
   },
 
   async fillFormAndSubmit() {
-    await I.seeInCurrentUrl('solicitorCreateSolSOCCoRespondent');
+    await I.waitInUrl('solicitorCreateSolSOCCoRespondent');
     await I.see('The petitioner has the option to name the person with whom the respondent committed adultery.');
     await I.click(this.fields.namePersonAdulteryCommittedWith);
     await I.click(this.fields.submit);

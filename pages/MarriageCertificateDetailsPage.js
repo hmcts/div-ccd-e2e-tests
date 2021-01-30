@@ -22,6 +22,6 @@ module.exports = {
     await I.click(this.fields.didMarriageTakePlaceInUK);
     await I.click(this.fields.submit);
     await I.wait(1);
-    await I.seeInCurrentUrl('solicitorCreateSolJurisdiction');
+    await I.waitInUrl('solicitorCreateSolJurisdiction');
   }
 };

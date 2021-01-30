@@ -9,9 +9,9 @@ module.exports = {
     submit: 'button[type="submit"]'
   },
 
-  fillFormAndSubmit() {
-    I.seeInCurrentUrl('solicitorCreateSolReasonForDivorce');
-    I.selectOption(this.fields.fact, reasonsForDivorce.ADULTERY);
-    I.click(this.fields.submit);
+  async fillFormAndSubmit() {
+    await I.waitInUrl('solicitorCreateSolReasonForDivorce');
+    await I.selectOption(this.fields.fact, reasonsForDivorce.ADULTERY);
+    await I.click(this.fields.submit);
   }
 };
