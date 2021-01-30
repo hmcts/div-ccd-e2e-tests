@@ -9,12 +9,12 @@ module.exports = {
     submit: 'button[type="submit"]'
   },
 
-  fillFormAndSubmit() {
-    I.wait(5);
-    I.retry(5).selectOption(this.fields.jurisdiction, 'DIVORCE');
-    I.retry(2).selectOption(this.fields.caseType, 'DIVORCE');
-    I.retry(2).selectOption(this.fields.event, 'solicitorCreate');
-    I.click(this.fields.submit);
-    I.wait(2);
+  async fillFormAndSubmit() {
+    await I.wait(1);
+    await I.retry(5).selectOption(this.fields.jurisdiction, 'DIVORCE');
+    await I.retry(2).selectOption(this.fields.caseType, 'DIVORCE');
+    await I.retry(2).selectOption(this.fields.event, 'solicitorCreate');
+    await I.click(this.fields.submit);
+    await I.wait(1);
   }
 };

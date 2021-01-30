@@ -13,39 +13,39 @@ module.exports = {
     urgentFilterNo: '#SolUrgentCase-No'
   },
 
-  selectCase() {
-    I.waitForElement(this.selectors.caseLink, 25);
-    I.click(this.selectors.caseLink);
+  async selectCase() {
+    await I.waitForElement(this.selectors.caseLink, 25);
+    await I.click(this.selectors.caseLink);
   },
 
-  resetFilter() {
-    I.waitForElement(this.selectors.jurisdictionSelect);
-    I.waitForElement(this.selectors.caseTypeSelect);
-    I.retry(2).selectOption(this.selectors.caseTypeSelect, 'Divorce case - v115.00');
-    I.waitForElement(this.selectors.caseStateSelect);
-    I.selectOption(this.selectors.caseStateSelect, 'Any');
-    I.waitForElement(this.selectors.rdcSelect);
-    I.waitForElement(this.selectors.solicitorPaymentMethodSelect);
-    I.see('Create case');
-    I.click('Apply');
+  async resetFilter() {
+    await I.waitForElement(this.selectors.jurisdictionSelect);
+    await I.waitForElement(this.selectors.caseTypeSelect);
+    await I.retry(2).selectOption(this.selectors.caseTypeSelect, 'Divorce case - v115.00');
+    await I.waitForElement(this.selectors.caseStateSelect);
+    await I.selectOption(this.selectors.caseStateSelect, 'Any');
+    await I.waitForElement(this.selectors.rdcSelect);
+    await I.waitForElement(this.selectors.solicitorPaymentMethodSelect);
+    await I.see('Create case');
+    await I.click('Apply');
   },
 
-  urgentCaseFilter(urgent,caseNum) {
-    I.waitForElement(this.selectors.jurisdictionSelect);
-    I.waitForElement(this.selectors.caseTypeSelect);
-    I.retry(2).selectOption(this.selectors.caseTypeSelect, 'Divorce case - v115.00');
-    I.waitForElement(this.selectors.caseStateSelect);
-    I.selectOption(this.selectors.caseStateSelect, 'Any');
-    I.waitForElement(this.selectors.rdcSelect);
-    I.waitForElement(this.selectors.solicitorPaymentMethodSelect);
+  async urgentCaseFilter(urgent,caseNum) {
+    await I.waitForElement(this.selectors.jurisdictionSelect);
+    await I.waitForElement(this.selectors.caseTypeSelect);
+    await I.retry(2).selectOption(this.selectors.caseTypeSelect, 'Divorce case - v115.00');
+    await I.waitForElement(this.selectors.caseStateSelect);
+    await I.selectOption(this.selectors.caseStateSelect, 'Any');
+    await I.waitForElement(this.selectors.rdcSelect);
+    await I.waitForElement(this.selectors.solicitorPaymentMethodSelect);
     if (urgent === 'yes') {
-      I.click(this.selectors.urgentFilterYes);
+      await I.click(this.selectors.urgentFilterYes);
     } else {
-      I.click(this.selectors.urgentFilterNo);
+      await I.click(this.selectors.urgentFilterNo);
     }
-    I.see('Create case');
-    I.click('Apply');
-    I.click('Last Modified');
-    I.click(caseNum);
+    await I.see('Create case');
+    await I.click('Apply');
+    await I.click('Last Modified');
+    await I.click(caseNum);
   }
 };

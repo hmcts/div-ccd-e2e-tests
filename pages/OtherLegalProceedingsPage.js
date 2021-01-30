@@ -7,10 +7,10 @@ module.exports = {
     submit: 'button[type="submit"]'
   },
 
-  fillFormAndSubmit() {
-    I.seeInCurrentUrl('solicitorCreateSolExistingCourtCases');
-    I.click(this.fields.existingCourtProceedings);
-    I.click(this.fields.submit);
-    I.wait(1);
+  async fillFormAndSubmit() {
+    await I.seeInCurrentUrl('solicitorCreateSolExistingCourtCases');
+    await I.click(this.fields.existingCourtProceedings);
+    await I.click(this.fields.submit);
+    await I.wait(1);
   }
 };

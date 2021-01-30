@@ -6,12 +6,12 @@ module.exports = {
     submit: 'button[type="submit"]'
   },
 
-  fillFormAndSubmit() {
-    I.waitInUrl('solicitorCreate/submit', 10);
-    I.seeInCurrentUrl('solicitorCreate/submit');
-    I.see('Check your answers');
-    I.see('Check the information below carefully.');
-    I.waitForVisible(this.fields.submit, 20);
-    I.click(this.fields.submit);
+  async fillFormAndSubmit() {
+    await I.waitInUrl('solicitorCreate/submit');
+    await I.seeInCurrentUrl('solicitorCreate/submit');
+    await I.see('Check your answers');
+    await I.see('Check the information below carefully.');
+    await I.waitForVisible(this.fields.submit);
+    await I.click(this.fields.submit);
   }
 };

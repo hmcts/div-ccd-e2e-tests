@@ -8,13 +8,13 @@ module.exports = {
     submit: 'button[type="submit"]'
   },
 
-  fillFormAndSubmit() {
-    I.seeInCurrentUrl('solicitorCreateSolUploadDocs');
-    I.see('Documents uploaded (Optional)');
-    I.click(this.fields.addNewButton);
-    I.wait(2);
-    I.attachFile('input[id="D8DocumentsUploaded_0_DocumentLink"]', 'data/fileupload.txt');
-    I.waitForVisible(this.fields.submit, 20);
-    I.click(this.fields.submit);
+  async fillFormAndSubmit() {
+    await I.seeInCurrentUrl('solicitorCreateSolUploadDocs');
+    await I.see('Documents uploaded (Optional)');
+    await I.click(this.fields.addNewButton);
+    await I.wait(2);
+    await I.attachFile('input[id="D8DocumentsUploaded_0_DocumentLink"]', 'data/fileupload.txt');
+    await I.waitForVisible(this.fields.submit, 20);
+    await I.click(this.fields.submit);
   }
 };

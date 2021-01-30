@@ -66,5 +66,5 @@ Scenario('verify all tab fields of PFE, RFE, DN, DA', async function (I) {
   await I.validateDocumentTabData(reasonsForDivorce.DESERTION, caseId);
   await I.validatePaymentTabData(verifyContent);
   await I.validateLanguageTabData(reasonsForDivorce.DESERTION, verifyContent);
-  I.click(signOut);
+  await I.click(signOut);
 }).retry(config.TestRetryScenarios);

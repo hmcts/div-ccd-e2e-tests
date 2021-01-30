@@ -12,14 +12,14 @@ module.exports = {
   },
 
   async fillFormAndSubmit() {
-    I.wait(10);
-    I.click(this.fields.howPaymentMade);
-    I.selectOption(this.fields.howPaymentMade, paymentType.HWF);
-    I.click(this.fields.submit);
+    await I.wait(1);
+    await I.click(this.fields.howPaymentMade);
+    await I.selectOption(this.fields.howPaymentMade, paymentType.HWF);
+    await I.click(this.fields.submit);
 
-    I.waitForElement(this.fields.hwfRefNumTitle);
-    I.fillField(this.fields.hwfRefNumTitle, 'HWF-123-456');
-    I.click(this.fields.submit);
-    I.wait(1);
+    await I.waitForElement(this.fields.hwfRefNumTitle);
+    await I.fillField(this.fields.hwfRefNumTitle, 'HWF-123-456');
+    await I.click(this.fields.submit);
+    await I.wait(1);
   }
 };

@@ -12,16 +12,16 @@ module.exports = {
     submit: 'button[type="submit"]'
   },
 
-  fillFormAndSubmit() {
-    I.waitForElement(this.fields.marriageDateDay);
-    I.fillField(this.fields.marriageDateDay, '09');
-    I.fillField(this.fields.marriageDateMonth, '04');
-    I.fillField(this.fields.marriageDateYear, '2011');
-    I.fillField(this.fields.petitionerFullname, 'James St Patrick');
-    I.fillField(this.fields.respondentFullname, 'Tasha St Patrick');
-    I.click(this.fields.didMarriageTakePlaceInUK);
-    I.click(this.fields.submit);
-    I.wait(5);
-    I.seeInCurrentUrl('solicitorCreateSolJurisdiction');
+  async fillFormAndSubmit() {
+    await I.waitForElement(this.fields.marriageDateDay);
+    await I.fillField(this.fields.marriageDateDay, '09');
+    await I.fillField(this.fields.marriageDateMonth, '04');
+    await I.fillField(this.fields.marriageDateYear, '2011');
+    await I.fillField(this.fields.petitionerFullname, 'James St Patrick');
+    await I.fillField(this.fields.respondentFullname, 'Tasha St Patrick');
+    await I.click(this.fields.didMarriageTakePlaceInUK);
+    await I.click(this.fields.submit);
+    await I.wait(1);
+    await I.seeInCurrentUrl('solicitorCreateSolJurisdiction');
   }
 };

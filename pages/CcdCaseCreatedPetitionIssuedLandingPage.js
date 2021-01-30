@@ -7,14 +7,14 @@ module.exports = {
     submit: 'button[type="submit"]'
   },
 
-  fillFormAndSubmit() {
-    I.waitForElement(this.fields.selectActionDropDown, 20);
-    I.see('Petition issued');
-    I.selectOption(this.fields.selectActionDropDown, 'Issue AOS pack to respondent');
-    I.wait(1);
-    I.waitForVisible(this.fields.submit);
-    I.click(this.fields.submit);
-    I.wait(2);
+  async fillFormAndSubmit() {
+    await I.waitForElement(this.fields.selectActionDropDown, 20);
+    await I.see('Petition issued');
+    await I.selectOption(this.fields.selectActionDropDown, 'Issue AOS pack to respondent');
+    await I.wait(1);
+    await I.waitForVisible(this.fields.submit);
+    await I.click(this.fields.submit);
+    await I.wait(1);
   }
 
 };

@@ -8,12 +8,12 @@ module.exports = {
     submit: 'button[type="submit"]'
   },
 
-  fillFormAndSubmit() {
-    I.waitForElement(this.fields.eventSummary, 20);
-    I.fillField(this.fields.eventSummary, 'This is AOS Started event summary field');
-    I.fillField(this.fields.eventDescription, 'This is AOS Started event description field and its optional');
-    I.waitForElement(this.fields.submit, 20);
-    I.click(this.fields.submit);
-    I.wait(3);
+  async fillFormAndSubmit() {
+    await I.waitForElement(this.fields.eventSummary, 20);
+    await I.fillField(this.fields.eventSummary, 'This is AOS Started event summary field');
+    await I.fillField(this.fields.eventDescription, 'This is AOS Started event description field and its optional');
+    await I.waitForElement(this.fields.submit, 20);
+    await I.click(this.fields.submit);
+    await I.wait(1);
   }
 };

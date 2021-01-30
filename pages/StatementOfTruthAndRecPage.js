@@ -17,25 +17,25 @@ module.exports = {
     submit: 'button[type="submit"]'
   },
 
-  fillFormAndSubmit(urgent) {
-    I.wait(1);
-    I.seeInCurrentUrl('solicitorStatementOfTruthPaySubmit/solicitorStatementOfTruthPaySubmitSolStatementOfTruth');
+  async fillFormAndSubmit(urgent) {
+    await I.wait(1);
+    await I.seeInCurrentUrl('solicitorStatementOfTruthPaySubmit/solicitorStatementOfTruthPaySubmitSolStatementOfTruth');
     if (urgent === 'no') {
-      I.click(this.fields.caseUrgentNo);
+      await I.click(this.fields.caseUrgentNo);
     } else if (urgent === 'yes') {
-      I.click(this.fields.caseUrgentYes);
-      I.fillField(this.fields.caseUrgentSupportingInfoTextBox, 'here is the supporting information and instructions for the urgency');
+      await I.click(this.fields.caseUrgentYes);
+      await I.fillField(this.fields.caseUrgentSupportingInfoTextBox, 'here is the supporting information and instructions for the urgency');
     }
-    I.retry().click(this.fields.howToServeRespondent);
-    I.click(this.fields.reconciliationWithThePetitioner);
-    I.click(this.fields.namesAndAddressesOfPersonsQualified);
-    I.click(this.fields.petitionerBelievesFactsTrue);
-    I.click(this.fields.amAuthorisedByPetitionerToSign);
-    I.wait(1);
-    I.fillField(this.fields.yourName, 'SOLICITORNAME');
-    I.fillField(this.fields.nameOfYourFirm, 'SOLICITOR DIVORCE FIRM');
-    I.fillField(this.fields.additionalComments, 'additional comments');
-    I.click(this.fields.submit);
-    I.wait(1);
+    await I.retry().click(this.fields.howToServeRespondent);
+    await I.click(this.fields.reconciliationWithThePetitioner);
+    await I.click(this.fields.namesAndAddressesOfPersonsQualified);
+    await I.click(this.fields.petitionerBelievesFactsTrue);
+    await I.click(this.fields.amAuthorisedByPetitionerToSign);
+    await I.wait(1);
+    await I.fillField(this.fields.yourName, 'SOLICITORNAME');
+    await I.fillField(this.fields.nameOfYourFirm, 'SOLICITOR DIVORCE FIRM');
+    await I.fillField(this.fields.additionalComments, 'additional comments');
+    await I.click(this.fields.submit);
+    await I.wait(1);
   }
 };

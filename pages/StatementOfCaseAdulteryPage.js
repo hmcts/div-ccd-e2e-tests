@@ -8,11 +8,11 @@ module.exports = {
     secondHandInfo: '#D8ReasonForDivorceAdulteryAnyInfo2ndHand-No'
   },
 
-  fillFormAndSubmit() {
-    I.seeInCurrentUrl('solicitorCreateSolSOCAdultery1');
-    I.fillField(this.fields.adulteryDetails, 'My wife and her boyfriends beat me up everytime but I dont cry');
-    I.click(this.fields.secondHandInfo);
-    I.click(this.fields.submit);
-    I.wait(2);
+  async fillFormAndSubmit() {
+    await I.seeInCurrentUrl('solicitorCreateSolSOCAdultery1');
+    await I.fillField(this.fields.adulteryDetails, 'My wife and her boyfriends beat me up everytime but I dont cry');
+    await I.click(this.fields.secondHandInfo);
+    await I.click(this.fields.submit);
+    await I.wait(1);
   }
 };

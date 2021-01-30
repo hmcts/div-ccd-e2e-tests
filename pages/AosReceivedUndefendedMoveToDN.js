@@ -8,16 +8,16 @@ module.exports = {
     selectDNReason: 'select[id="PermittedDecreeNisiReason"]'
   },
 
-  fillFormAndSubmit() {
-    I.waitForElement(this.fields.selectActionDropDown);
-    I.selectOption(this.fields.selectActionDropDown, 'AOS Received (undefended)');
-    I.wait(1);
-    I.click(this.fields.submit);
-    I.selectOption(this.fields.selectDNReason, 'Undefended divorce with Respondent agreement');
-    I.waitForVisible(this.fields.submit);
-    I.click(this.fields.submit);
-    I.wait(1);
-    I.waitForVisible(this.fields.submit);
-    I.click(this.fields.submit);
+  async fillFormAndSubmit() {
+    await I.waitForElement(this.fields.selectActionDropDown);
+    await I.selectOption(this.fields.selectActionDropDown, 'AOS Received (undefended)');
+    await I.wait(1);
+    await I.click(this.fields.submit);
+    await I.selectOption(this.fields.selectDNReason, 'Undefended divorce with Respondent agreement');
+    await I.waitForVisible(this.fields.submit);
+    await I.click(this.fields.submit);
+    await I.wait(1);
+    await I.waitForVisible(this.fields.submit);
+    await I.click(this.fields.submit);
   }
 };

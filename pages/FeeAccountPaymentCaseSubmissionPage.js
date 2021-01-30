@@ -13,17 +13,17 @@ module.exports = {
   },
 
   async fillFormAndSubmit() {
-    I.wait(1);
-    I.click(this.fields.howPaymentMade);
-    I.selectOption(this.fields.howPaymentMade, paymentType.FEE_ACCOUNT);
-    I.click(this.fields.submit);
-    //I.fillField(this.fields.enterYourAccountNumber, 'PBA1234908');
+    await I.wait(1);
+    await I.click(this.fields.howPaymentMade);
+    await I.selectOption(this.fields.howPaymentMade, paymentType.FEE_ACCOUNT);
+    await I.click(this.fields.submit);
+    //await I.fillField(this.fields.enterYourAccountNumber, 'PBA1234908');
 
     //All the pba numbers in the dropdown are not working. So, hardcoding for now.
-    //const pbaNumber = await I.grabTextFrom(`${this.fields.selectPbaNumber} option:nth-child(2)`);
-    I.selectOption(this.fields.selectPbaNumber, 'PBA0072626');
-    I.fillField(this.fields.enterYourReference, 'Next case submitted');
-    I.click(this.fields.submit);
-    I.wait(1);
+    //const pbaNumber = await await I.grabTextFrom(`${this.fields.selectPbaNumber} option:nth-child(2)`);
+    await I.selectOption(this.fields.selectPbaNumber, 'PBA0072626');
+    await I.fillField(this.fields.enterYourReference, 'Next case submitted');
+    await I.click(this.fields.submit);
+    await I.wait(1);
   }
 };

@@ -8,14 +8,14 @@ module.exports = {
     submit: 'button[type="submit"]'
   },
 
-  fillFormAndSubmit(paymentMethod) {
-    I.see('Case submission');
+  async fillFormAndSubmit(paymentMethod) {
+    await I.see('Case submission');
     if (paymentMethod === paymentType.FEE_ACCOUNT) {
-      I.see('Your fee account reference: Next case submitted');
+      await I.see('Your fee account reference: Next case submitted');
     } else if (paymentMethod === paymentMethod.HWF) {
-      I.see('Help with fee reference: HWF-123-456');
+      await I.see('Help with fee reference: HWF-123-456');
     }
-    I.click(this.fields.submit);
-    I.wait(1);
+    await I.click(this.fields.submit);
+    await I.wait(1);
   }
 };

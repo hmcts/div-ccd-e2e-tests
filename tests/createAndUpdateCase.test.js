@@ -14,7 +14,7 @@ Scenario('Create and Update as well as caseworker change AOS states', async func
   await I.login(config.TestEnvCWUser, config.TestEnvCWPassword);
   await I.shouldBeOnCaseListPage();
   await I.amOnPage('/case/DIVORCE/DIVORCE/' + caseId);
-  await I.wait(5);
+  await I.wait(1);
   await I.ccdCaseCreatedFromJsonLandingPageFormAndSubmit();
   await I.changeToCourtsAndTribunalsServiceCentrePageFormAndSubmit();
   await I.enterRDCChangeSummaryAndDescriptionPageFormAndSubmit();
@@ -34,7 +34,7 @@ Scenario('Caseworker change DN events', async function (I) {
   await I.login(config.TestEnvCWUser, config.TestEnvCWPassword);
   await I.shouldBeOnCaseListPage();
   await I.amOnPage('/case/DIVORCE/DIVORCE/' + caseId);
-  await I.wait(5);
+  await I.wait(1);
   await I.aosReceivedUndefendedMoveToDNFormSubmit();
   await I.selectAndSubmitEvent(eventDisplayName.DN_RECEIVED);
   await I.selectAndSubmitEvent(eventDisplayName.REFER_TO_LEGAL_ADVSIOR);

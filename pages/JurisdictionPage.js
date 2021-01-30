@@ -7,10 +7,10 @@ module.exports = {
     submit: 'button[type="submit"]'
   },
 
-  selectLegalActionsAndSubmit() {
-    I.see('The Petitioner and the Respondent are habitually resident in England and Wales');
-    I.click(this.fields.legalConnections);
-    I.click(this.fields.submit);
-    I.wait(3);
+  async selectLegalActionsAndSubmit() {
+    await I.see('The Petitioner and the Respondent are habitually resident in England and Wales');
+    await I.click(this.fields.legalConnections);
+    await I.click(this.fields.submit);
+    await I.wait(1);
   }
 };

@@ -7,14 +7,14 @@ module.exports = {
     submit: 'button[type="submit"]'
   },
 
-  fillFormAndSubmit() {
-    I.waitForElement(this.fields.selectActionDropDown, 20);
-    I.see('Petition submitted');
-    I.selectOption(this.fields.selectActionDropDown, 'Transfer between RDCs');
-    I.wait(1);
-    I.waitForVisible(this.fields.submit);
-    I.click(this.fields.submit);
-    I.wait(1);
+  async fillFormAndSubmit() {
+    await I.waitForElement(this.fields.selectActionDropDown, 20);
+    await I.see('Petition submitted');
+    await I.selectOption(this.fields.selectActionDropDown, 'Transfer between RDCs');
+    await I.wait(1);
+    await I.waitForVisible(this.fields.submit);
+    await I.click(this.fields.submit);
+    await I.wait(1);
   }
 
 };
