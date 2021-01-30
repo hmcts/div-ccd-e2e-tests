@@ -8,9 +8,9 @@ module.exports = {
     submit: 'input[type="submit"]'
   },
 
-  submitLogin(email, password) {
-    I.fillField(this.fields.email, email);
-    I.fillField(this.fields.password, password);
-    I.click(this.fields.submit);
+  async submitLogin(email, password) {
+    await I.fillField(this.fields.email, email);
+    await I.fillField(this.fields.password, password);
+    await I.click(this.fields.submit);
   }
 };

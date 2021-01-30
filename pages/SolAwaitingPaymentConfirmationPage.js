@@ -3,8 +3,8 @@ const I = actor();
 const { signOut } = require('../common/constants');
 
 module.exports = {
-  checkPageAndSignOut() {
-    I.wait(2);
-    I.click(signOut);
+  async checkPageAndSignOut() {
+    await I.wait(1);
+    await I.click(signOut);
   }
 };

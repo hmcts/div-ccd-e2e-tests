@@ -1,80 +1,75 @@
-/// <reference path="../steps.d.ts" />
-
 const { eventDisplayName, signOut, paymentType } = require('../common/constants');
-const { getSolicitorLoginDetails, getCaseWorkerLoginDetails } = require('../helpers/utils');
-
-
-const solicitor = getSolicitorLoginDetails();
-const caseWorker = getCaseWorkerLoginDetails();
+const testconfig = require('./config')
 
 const nextStepDropDown = 'select[id="next-step"]'
 
-let caseNumber='1608063617043924';
+let caseNumber='1612027849946935';
 
 Feature('Solicitor create case - help with fees');
 
 Scenario('Solicitor create case and make payment', async (I) => {
-  I.amOnHomePage();
-  I.login(solicitor.username, solicitor.password);
-  I.clickCreateCase();
-  I.wait(1);
-  I.fillCreateCaseFormAndSubmit();
-  I.fillAboutSolicitorFormAndSubmit();
-  I.fillAboutThePetitionerFormAndSubmit();
-  I.fillAboutTheRespondentFormAndSubmit();
-  I.completeMarriageCertificateDetailsPageAndSubmit();
-  I.selectJurisdictionQuestionPageAndSubmit();
-  I.selectReasonForTheDivorceQuestionPageAndSubmit();
-  I.fillAdulteryDetailsFormAndSubmit();
-  I.fillAdulteryDetailsSecondPageFormAndSubmit(); 
-  I.otherLegalProceedings();
-  I.financialOrdersSelectButton();
-  I.claimForCostsSelectButton(),
-  I.uploadTheMarriageCertificateOptional();
-  I.languagePreferenceSelection();
-  I.solicitorCreateCheckYourAnswerAndSubmit();
+  await I.amOnHomePage();
+  await I.login(testconfig.TestEnvProfUser, testconfig.TestEnvProfPassword);
+  await I.clickCreateCase();
+  await I.wait(1);
+  await I.fillCreateCaseFormAndSubmit();
+  await I.fillAboutSolicitorFormAndSubmit();
+  await I.fillAboutThePetitionerFormAndSubmit();
+  await I.fillAboutTheRespondentFormAndSubmit();
+  await I.completeMarriageCertificateDetailsPageAndSubmit();
+  await I.selectJurisdictionQuestionPageAndSubmit();
+  await I.selectReasonForTheDivorceQuestionPageAndSubmit();
+  await I.fillAdulteryDetailsFormAndSubmit();
+  await I.fillAdulteryDetailsSecondPageFormAndSubmit(); 
+  await I.otherLegalProceedings();
+  await I.financialOrdersSelectButton();
+  await I.claimForCostsSelectButton(),
+  await I.uploadTheMarriageCertificateOptional();
+  await I.languagePreferenceSelection();
+  await I.solicitorCreateCheckYourAnswerAndSubmit();
   caseNumber = await I.solicitorCaseCreatedAndSubmit();
   caseNumber = caseNumber.replace(/\D/gi, '');
   console.log(caseNumber);
-  I.statementOfTruthAndReconciliationPageFormAndSubmit();
+  await I.statementOfTruthAndReconciliationPageFormAndSubmit('no');
   await I.casePaymentWithHWFAndSubmissionPageFormAndSubmit();
-  I.caseOrderSummaryPageFormAndSubmit(paymentType.HWF);
-  I.caseApplicationCompletePageFormAndSubmit();
-  I.caseCheckYourAnswersPageFormAndSubmit();
-  I.solAwaitingPaymentConfPageFormAndSubmit();
-}).retry(2);
+  await I.caseOrderSummaryPageFormAndSubmit(paymentType.HWF);
+  await I.caseApplicationCompletePageFormAndSubmit();
+  await I.caseCheckYourAnswersPageFormAndSubmit();
+  await I.solAwaitingPaymentConfPageFormAndSubmit();
+}).retry(testconfig.TestRetryScenarios);
 
 Scenario('Solicitor should not see issue, refund events', async (I) => {
-  I.amOnHomePage();
-  I.login(solicitor.username, solicitor.password);
-  I.wait(20);
-  I.amOnPage('/case/DIVORCE/DIVORCE/' + caseNumber);
-  I.waitForElement(nextStepDropDown);
-  I.click(nextStepDropDown);
-  I.see(eventDisplayName.UPDATE_LANG);
-  I.dontSee(eventDisplayName.ISSUE);
-  I.dontSee(eventDisplayName.REFUND);
-  I.dontSee(eventDisplayName.TRANSFER_BETWEEN_RDC);
-  I.dontSee(eventDisplayName.TRANSFER_CTSC_TO_RDC);
-  I.click(signOut);
-}).retry(2);
+  await I.amOnHomePage();
+  await I.login(testconfig.TestEnvProfUser, testconfig.TestEnvProfPassword)
+  await I.wait(1);
+  await I.amOnPage('/case/DIVORCE/DIVORCE/' + caseNumber);
+  await I.waitForElement(nextStepDropDown);
+  await I.click(nextStepDropDown);
+  await I.see(eventDisplayName.UPDATE_LANG);
+  await I.dontSee(eventDisplayName.ISSUE);
+  await I.dontSee(eventDisplayName.REFUND);
+  await I.dontSee(eventDisplayName.TRANSFER_BETWEEN_RDC);
+  await I.dontSee(eventDisplayName.TRANSFER_CTSC_TO_RDC);
+  await I.click(signOut);
+}).retry(testconfig.TestRetryScenarios);
 
 Scenario('Caseworker should be able to see issue, refund events and issue aos pack', async (I) => {
-  I.amOnHomePage();
-  I.login(caseWorker.username, caseWorker.password);
-  I.wait(20);
-  I.amOnPage('/case/DIVORCE/DIVORCE/' + caseNumber);
-  I.selectAndSubmitEvent(eventDisplayName.HWF_APP_ACCEPTED);
-  I.waitForElement(nextStepDropDown);
-  I.click(nextStepDropDown);
-  I.see(eventDisplayName.UPDATE_LANG);
-  I.see(eventDisplayName.ISSUE);
-  I.see(eventDisplayName.REFUND);
-  I.see(eventDisplayName.TRANSFER_BETWEEN_RDC);
-  I.see(eventDisplayName.TRANSFER_CTSC_TO_RDC);
-  I.issueFromSubmittedPageFormAndSubmit();
-  I.issueCheckYourAnswersPageFormAndSubmit();
-  I.selectAndSubmitEvent(eventDisplayName.ISSUE_AOS_TO_RESP);
-  I.click(signOut);
-}).retry(2);
+  await I.amOnHomePage();
+  await I.login(testconfig.TestEnvCWUser, testconfig.TestEnvCWPassword);
+  await I.wait(0.5);
+  await I.amOnPage('/case/DIVORCE/DIVORCE/' + caseNumber);
+  await I.selectAndSubmitEvent(eventDisplayName.HWF_APP_ACCEPTED);
+  await I.waitForElement(nextStepDropDown);
+  await I.click(nextStepDropDown);
+  await I.wait(0.5);
+  await I.see(eventDisplayName.UPDATE_LANG);
+  await I.see(eventDisplayName.ISSUE);
+  await I.see(eventDisplayName.REFUND);
+  await I.see(eventDisplayName.TRANSFER_BETWEEN_RDC);
+  await I.see(eventDisplayName.TRANSFER_CTSC_TO_RDC);
+  await I.issueFromSubmittedPageFormAndSubmit();
+  await I.issueCheckYourAnswersPageFormAndSubmit();
+  await I.selectAndSubmitEvent(eventDisplayName.ISSUE_AOS_TO_RESP);
+  await I.click(signOut);
+}).retry(testconfig.TestRetryScenarios);
 

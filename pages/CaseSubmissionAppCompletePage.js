@@ -6,11 +6,11 @@ module.exports = {
     submit: 'button[type="submit"]'
   },
 
-  fillFormAndSubmit() {
-    I.seeInCurrentUrl('solicitorStatementOfTruthPaySubmitSolSummary');
-    I.see('Before you submit');
-    I.see('0300 303 0642');
-    I.click(this.fields.submit);
-    I.wait(1);
+  async fillFormAndSubmit() {
+    await I.waitInUrl('solicitorStatementOfTruthPaySubmitSolSummary');
+    await I.see('Before you submit');
+    await I.see('0300 303 0642');
+    await I.click(this.fields.submit);
+    await I.wait(1);
   }
 };

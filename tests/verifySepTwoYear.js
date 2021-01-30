@@ -1,10 +1,9 @@
-/// <reference path="../steps.d.ts" />
-
-const { createCaseInCcd, updateCaseInCcd, getCaseWorkerLoginDetails, createCaseAndFetchResponse } = require('../helpers/utils');
-const verifyContent = require('../data/ccdSepTwoYrs.json');
-const caseWorker = getCaseWorkerLoginDetails();
+const { createCaseInCcd, updateCaseInCcd, createCaseAndFetchResponse } = require('../helpers/utils');
 const { reasonsForDivorce, signOut, states, events } = require('../common/constants');
 const assert = require('assert');
+const testconfig = require('./config');
+
+const verifyContent = require('../data/ccdSepTwoYrs.json');
 
 const verifyState = (eventResponse, state) => {
   assert.strictEqual(JSON.parse(eventResponse).state, state);
@@ -49,14 +48,14 @@ Scenario('Execute events for end to end flow of PFE, RFE, DN , DA', async functi
 
   const daGranted = await updateCaseInCcd(caseId, events.DA_GRANTED);
   verifyState(daGranted, states.DIVORCE_GRANTED);
-}).retry(2);
+}).retry(testconfig.TestRetryScenarios);
 
 Scenario('verify all tab fields of PFE, RFE, DN, DA', async function (I) {
-  I.amOnHomePage();
-  I.login(caseWorker.username, caseWorker.password);
-  I.wait(20);
-  I.amOnPage('/case/DIVORCE/DIVORCE/' + caseId);
-  I.wait(30);
+  await I.amOnHomePage();
+  await I.login(testconfig.TestEnvCWUser, testconfig.TestEnvCWPassword);
+  await I.wait(1);
+  await I.amOnPage('/case/DIVORCE/DIVORCE/' + caseId);
+  await I.wait(1);
   await I.validatePetitionTabData(reasonsForDivorce.SEPTWOYRSDISPLAY, verifyContent);
   await I.validateConfidentialPetitionerTab(verifyContent);
   await I.validateMarriageCertTabData(verifyContent);
@@ -68,7 +67,7 @@ Scenario('verify all tab fields of PFE, RFE, DN, DA', async function (I) {
   await I.validatePaymentTabData(verifyContent);
   await I.validateLanguageTabData(reasonsForDivorce.SEPTWOYRS, verifyContent);
   await I.click(signOut);
-}).retry(2);
+}).retry(testconfig.TestRetryScenarios);
 
 
 Scenario('Case creation should fail with invalid fixed list data', async function (I) {
@@ -78,4 +77,4 @@ Scenario('Case creation should fail with invalid fixed list data', async functio
   });
   assert.strictEqual(caseResponse['statusCode'], 422);
   assert.strictEqual(JSON.parse(caseResponse['error']).message, 'Case data validation failed');
-}).retry(2);
+}).retry(testconfig.TestRetryScenarios);

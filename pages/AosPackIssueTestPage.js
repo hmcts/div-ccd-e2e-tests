@@ -10,13 +10,13 @@ module.exports = {
     submit: 'button[type="submit"]'
   },
 
-  fillFormAndSubmit() {
-    I.waitForElement(this.fields.familyManReference, 20);
-    I.fillField(this.fields.familyManReference, 'EZ11D81267');
-    I.seeInField(this.fields.petitionersFullName, 'Gary Ford');
-    I.fillField(this.fields.placeOfMarriage, 'United Kingdom');
-    I.waitForElement(this.fields.submit, 20);
-    I.click(this.fields.submit);
-    I.wait(3);
+  async fillFormAndSubmit() {
+    await I.waitForElement(this.fields.familyManReference);
+    await I.fillField(this.fields.familyManReference, 'EZ11D81267');
+    await I.seeInField(this.fields.petitionersFullName, 'Gary Ford');
+    await I.fillField(this.fields.placeOfMarriage, 'United Kingdom');
+    await I.waitForElement(this.fields.submit);
+    await I.click(this.fields.submit);
+    await I.wait(1);
   }
 };

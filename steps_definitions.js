@@ -62,99 +62,103 @@ module.exports = function () {
     // Define custom steps here, use 'this' to access default methods of I.
     // It is recommended to place a general 'login' function here.
     amOnHomePage: function () {
-      this.amOnPage('');
+      return this.amOnPage('');
     },
 
     login: function (email, password) {
-      LoginPage.submitLogin(email, password);
+      return LoginPage.submitLogin(email, password);
     },
 
     selectACaseFromList: function () {
-      CaseListPage.selectCase();
+      return CaseListPage.selectCase();
     },
 
     shouldBeOnCaseDetailsPage: function () {
-      CaseDetailsPage.shouldDisplayTabs();
+      return CaseDetailsPage.shouldDisplayTabs();
     },
 
     shouldBeOnCaseListPage: function () {
-      CaseListPage.resetFilter();
+      return CaseListPage.resetFilter();
+    },
+
+    ShouldBeAbleToFilterAnUrgentCase: function (urgent, caseNum) {
+      return CaseListPage.urgentCaseFilter(urgent, caseNum);
     },
 
     clickCreateCase: function() {
-      this.click('Create case');
+      return this.click('Create case');
     },
 
     clickCreateList: function() {
-      this.click('Case List');
+      return this.click('Case List');
     },
 
     fillCreateCaseFormAndSubmit() {
-      CreateCasePage.fillFormAndSubmit();
+      return CreateCasePage.fillFormAndSubmit();
     },
 
     fillAboutSolicitorFormAndSubmit() {
-      AboutSolicitorPage.fillFormAndSubmit();
+      return AboutSolicitorPage.fillFormAndSubmit();
     },
 
     fillAboutThePetitionerFormAndSubmit() {
-      AboutThePetitionerPage.fillFormAndSubmit();
+      return AboutThePetitionerPage.fillFormAndSubmit();
     },
 
     fillAboutTheRespondentFormAndSubmit() {
-      AboutTheRespondentPage.fillFormAndSubmit();
+      return AboutTheRespondentPage.fillFormAndSubmit();
     },
 
     completeMarriageCertificateDetailsPageAndSubmit: function () {
-      MarriageCertificateDetailsPage.fillFormAndSubmit();
+      return MarriageCertificateDetailsPage.fillFormAndSubmit();
     },
 
     selectJurisdictionQuestionPageAndSubmit: function () {
-      JurisdictionPage.selectLegalActionsAndSubmit();
+      return JurisdictionPage.selectLegalActionsAndSubmit();
     },
 
     selectReasonForTheDivorceQuestionPageAndSubmit: function () {
-      ReasonForTheDivorcePage.fillFormAndSubmit();
+      return ReasonForTheDivorcePage.fillFormAndSubmit();
     },
 
     fillAdulteryDetailsFormAndSubmit() {
-      StatementOfCaseAdulteryPage.fillFormAndSubmit();
+      return StatementOfCaseAdulteryPage.fillFormAndSubmit();
     },
 
     fillAdulteryDetailsSecondPageFormAndSubmit() {
-      StatementOfCaseAdulterySecPage.fillFormAndSubmit();
+      return StatementOfCaseAdulterySecPage.fillFormAndSubmit();
     },
 
     otherLegalProceedings: function() {
-      OtherLegalProceedingsPage.fillFormAndSubmit();
+      return OtherLegalProceedingsPage.fillFormAndSubmit();
     },
 
     financialOrdersSelectButton: function() {
-      FinancialOrdersPage.fillFormAndSubmit();
+      return FinancialOrdersPage.fillFormAndSubmit();
     },
 
     claimForCostsSelectButton: function() {
-      ClaimForCostsPage.fillFormAndSubmit();
+      return ClaimForCostsPage.fillFormAndSubmit();
     },
 
     uploadTheMarriageCertificateOptional: function() {
-      UploadMarriageCertificatePage.fillFormAndSubmit();
+      return UploadMarriageCertificatePage.fillFormAndSubmit();
     },
 
     languagePreferenceSelection: function() {
-      SolCreateLanguagePrefPage.fillFormAndSubmit();
+      return SolCreateLanguagePrefPage.fillFormAndSubmit();
     },
 
     solicitorCreateCheckYourAnswerAndSubmit: function() {
-      SolCreateCheckYourAnswersPage.fillFormAndSubmit();
+      return SolCreateCheckYourAnswersPage.fillFormAndSubmit();
     },
 
     solicitorCaseCreatedAndSubmit: function() {
       return SolCaseCreatedPage.fillFormAndSubmit();
     },
 
-    statementOfTruthAndReconciliationPageFormAndSubmit: function() {
-      StatementOfTruthAndRecPage.fillFormAndSubmit();
+    statementOfTruthAndReconciliationPageFormAndSubmit: function (urgent) {
+      return StatementOfTruthAndRecPage.fillFormAndSubmit(urgent);
     },
 
     casePaymentWithFeeAccountAndSubmissionPageFormAndSubmit: function() {
@@ -166,35 +170,35 @@ module.exports = function () {
     },
 
     caseOrderSummaryPageFormAndSubmit: function(paymentType) {
-      CaseSubmissionOrderSummaryPage.fillFormAndSubmit(paymentType);
+      return CaseSubmissionOrderSummaryPage.fillFormAndSubmit(paymentType);
     },
 
     caseApplicationCompletePageFormAndSubmit: function() {
-      CaseSubmissionAppCompletePage.fillFormAndSubmit();
+      return CaseSubmissionAppCompletePage.fillFormAndSubmit();
     },
 
     caseCheckYourAnswersPageFormAndSubmit: function() {
-      CaseSubmissionCheckYourAnswersPage.fillFormAndSubmit();
+      return CaseSubmissionCheckYourAnswersPage.fillFormAndSubmit();
     },
 
     solAwaitingPaymentConfPageFormAndSubmit: function() {
-      SolAwaitingPaymentConfirmationPage.checkPageAndSignOut();
+      return SolAwaitingPaymentConfirmationPage.checkPageAndSignOut();
     },
 
     ccdCaseCreatedFromJsonLandingPageFormAndSubmit: function() {
-      CcdCaseCreatedLandingPage.fillFormAndSubmit();
+      return CcdCaseCreatedLandingPage.fillFormAndSubmit();
     },
 
     issueFromSubmittedPageFormAndSubmit: function() {
-      IssuePage.fillFormAndSubmit();
+      return IssuePage.fillFormAndSubmit();
     },
 
     issueCheckYourAnswersPageFormAndSubmit: function() {
-      IssueCheckYourAnswersPage.fillFormAndSubmit();
+      return IssueCheckYourAnswersPage.fillFormAndSubmit();
     },
 
     petitionIssuedPageAndAosPackSelectPageFormAndSubmit: function() {
-      CcdCaseCreatedPetitionIssuedLandingPage.fillFormAndSubmit();
+      return CcdCaseCreatedPetitionIssuedLandingPage.fillFormAndSubmit();
     },
 
     // aosPackIssueTestPageFormAndSubmit: function() {
@@ -202,39 +206,39 @@ module.exports = function () {
     // },
 
     aosPackIssueTestCheckYourAnswersPageFormAndSubmit: function() {
-      IssueAosPackToRespondentCheckYourAnswersPage.fillFormAndSubmit();
+      return IssueAosPackToRespondentCheckYourAnswersPage.fillFormAndSubmit();
     },
 
     aosPackToRespondentLandingPageFormAndSubmit: function() {
-      IssueAosPackToRespondentLandingPage.fillFormAndSubmit();
+      return IssueAosPackToRespondentLandingPage.fillFormAndSubmit();
     },
 
     aosReceivedUndefendedMoveToDNFormSubmit: function() {
-      AosReceivedUndefendedMoveToDN.fillFormAndSubmit();
+      return AosReceivedUndefendedMoveToDN.fillFormAndSubmit();
     },
     
     selectAndSubmitEvent: function(eventName) {
-      SelectEventAndSubmit.fillFormAndSubmit(eventName);
+      return SelectEventAndSubmit.fillFormAndSubmit(eventName);
     },
 
     aosStartedPageFormAndSubmit: function() {
-      AosStartedPage.fillFormAndSubmit();
+      return AosStartedPage.fillFormAndSubmit();
     },
 
     aosStartedCheckYourAnswersPageFormAndSubmit: function() {
-      AosStartedCheckYourAnswersPage.fillFormAndSubmit();
+      return AosStartedCheckYourAnswersPage.fillFormAndSubmit();
     },
 
     changeToCourtsAndTribunalsServiceCentrePageFormAndSubmit: function() {
-      TransferCaseToADifferentRDCsPage.fillFormAndSubmit();
+      return TransferCaseToADifferentRDCsPage.fillFormAndSubmit();
     },
 
     enterRDCChangeSummaryAndDescriptionPageFormAndSubmit: function() {
-      TransferBetweenRDCsPage.fillFormAndSubmit();
+      return TransferBetweenRDCsPage.fillFormAndSubmit();
     },
 
     caseCreatedCTSCServiceCentrePageFormAndSubmit: function() {
-      TransferToRDCLandingPage.fillFormAndSubmit();
+      return TransferToRDCLandingPage.fillFormAndSubmit();
     },
 
     validatePetitionTabData: function(reason,verifyContent) {

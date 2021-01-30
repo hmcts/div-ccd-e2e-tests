@@ -7,10 +7,10 @@ module.exports = {
     submit: 'button[type="submit"]'
   },
 
-  fillFormAndSubmit() {
-    I.seeInCurrentUrl('solicitorCreatelangPref');
-    I.click(this.fields.existingLanguagePreferences);
-    I.click(this.fields.submit);
-    I.wait(2);
+  async fillFormAndSubmit() {
+    await I.waitInUrl('solicitorCreatelangPref');
+    await I.click(this.fields.existingLanguagePreferences);
+    await I.click(this.fields.submit);
+    await I.wait(1);
   }
 };

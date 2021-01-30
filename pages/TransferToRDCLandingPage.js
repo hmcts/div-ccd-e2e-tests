@@ -7,12 +7,12 @@ module.exports = {
     submit: 'button[type="submit"]'
   },
 
-  fillFormAndSubmit() {
-    I.waitForElement(this.fields.selectActionDropDown, 20);
-    I.see('Petition submitted');
-    I.clickTab('Petition');
-    I.wait(1);
-    I.see('Courts and Tribunals Service Centre');
+  async fillFormAndSubmit() {
+    await I.waitForElement(this.fields.selectActionDropDown);
+    await I.see('Petition submitted');
+    await I.clickTab('Petition');
+    await I.wait(1);
+    await I.see('Courts and Tribunals Service Centre');
   }
 
 };

@@ -17,18 +17,18 @@ module.exports = {
     submit: 'button[type="submit"]'
   },
 
-  fillFormAndSubmit() {
-    I.waitForElement(this.fields.firstName, 20);
-    I.fillField(this.fields.firstName, 'James');
-    I.fillField(this.fields.lastName, 'St Patrick');
-    I.click(this.fields.petitionerChangedName);
-    I.selectOption(this.fields.whoIsPetitionerDivorcing, 'Wife');
-    I.selectOption(this.fields.petitionerGender, 'Male');
-    I.click(this.fields.petitionerRespondentSameSex);
-    I.fillField(this.fields.petitionerHomeAddress, '300 Central London, W2 3MU');
-    I.fillField(this.fields.petitionerPhoneNumber, '01789029090');
-    I.fillField(this.fields.petitionerEmailAddress, 'JamesStPatrick@power.com');
-    I.selectOption(this.fields.keepPetitionerContactDetails, '2: share');
-    I.click(this.fields.submit);
+  async fillFormAndSubmit() {
+    await I.waitForElement(this.fields.firstName);
+    await I.fillField(this.fields.firstName, 'James');
+    await I.fillField(this.fields.lastName, 'St Patrick');
+    await I.click(this.fields.petitionerChangedName);
+    await I.selectOption(this.fields.whoIsPetitionerDivorcing, 'Wife');
+    await I.selectOption(this.fields.petitionerGender, 'Male');
+    await I.click(this.fields.petitionerRespondentSameSex);
+    await I.fillField(this.fields.petitionerHomeAddress, '300 Central London, W2 3MU');
+    await I.fillField(this.fields.petitionerPhoneNumber, '01789029090');
+    await I.fillField(this.fields.petitionerEmailAddress, 'JamesStPatrick@power.com');
+    await I.selectOption(this.fields.keepPetitionerContactDetails, '2: share');
+    await I.click(this.fields.submit);
   }
 };

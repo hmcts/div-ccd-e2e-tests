@@ -1,10 +1,8 @@
-/// <reference path="../steps.d.ts" />
-
-const { createCaseInCcd, updateCaseInCcd, getCaseWorkerLoginDetails, firstLetterToCaps, datechange } = require('../helpers/utils');
+const { createCaseInCcd, updateCaseInCcd } = require('../helpers/utils');
 const verifyContent = require('../data/ccdBehaviourUnDefendedCase.json');
-const caseWorker = getCaseWorkerLoginDetails();
 const { reasonsForDivorce, signOut, states, events } = require('../common/constants');
 const assert = require('assert');
+const testconfig = require('./config');
 
 const verifyState = (eventResponse, state) => {
   assert.strictEqual(JSON.parse(eventResponse).state, state);
@@ -49,14 +47,14 @@ Scenario('Execute events for end to end flow of PFE, RFE,  DN , DA', async funct
 
   const daGranted = await updateCaseInCcd(caseId, events.DA_GRANTED);
   verifyState(daGranted, states.DIVORCE_GRANTED);
-}).retry(2);
+}).retry(testconfig.RetryScenarios);
 
 Scenario('verify all tab fields of PFE, RFE, DN, DA', async function (I) {
-  I.amOnHomePage();
-  I.login(caseWorker.username, caseWorker.password);
-  I.wait(20);
-  I.amOnPage('/case/DIVORCE/DIVORCE/' + caseId);
-  I.wait(30);
+  await I.amOnHomePage();
+  await I.login(testconfig.TestEnvCWUser, testconfig.TestEnvCWPassword);
+  await I.wait(1);
+  await I.amOnPage('/case/DIVORCE/DIVORCE/' + caseId);
+  await I.wait(1);
   await I.validatePetitionTabData(reasonsForDivorce.BEHAVIOUR, verifyContent);
   await I.validateConfidentialPetitionerTab(verifyContent);
   await I.validateMarriageCertTabData(verifyContent);
@@ -68,4 +66,4 @@ Scenario('verify all tab fields of PFE, RFE, DN, DA', async function (I) {
   await I.validatePaymentTabData(verifyContent);
   await I.validateLanguageTabData(reasonsForDivorce.BEHAVIOUR, verifyContent);
   I.click(signOut);
-}).retry(2);
+}).retry(testconfig.RetryScenarios);

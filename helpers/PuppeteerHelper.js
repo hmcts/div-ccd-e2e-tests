@@ -14,5 +14,15 @@ class PuppeteerHelper extends Helper {
             await page.evaluate(el => el.click(), clickableTab[0]);
         }
     }
+
+    async runAccessibilityTest() {
+        if (!testConfig.TestForAccessibility) {
+            return;
+        }
+        const url = await this.helpers[helperName].grabCurrentUrl();
+        const {page} = await this.helpers[helperName];
+
+        runAccessibility(url, page);
+    }
 }
 module.exports = PuppeteerHelper;

@@ -8,14 +8,14 @@ module.exports = {
   },
 
 
-  fillFormAndSubmit(eventName) {
-    I.waitForElement(this.fields.selectActionDropDown);
-    I.selectOption(this.fields.selectActionDropDown, eventName);
-    I.wait(1);
-    I.click(this.fields.submit);
-    I.wait(1);
-    I.waitForVisible(this.fields.submit);
-    I.click(this.fields.submit);
-    I.wait(2);
+  async fillFormAndSubmit(eventName) {
+    await I.waitForElement(this.fields.selectActionDropDown);
+    await I.selectOption(this.fields.selectActionDropDown, eventName);
+    await I.wait(1);
+    await I.click(this.fields.submit);
+    await I.wait(1);
+    await I.waitForVisible(this.fields.submit);
+    await I.click(this.fields.submit);
+    await I.wait(1);
   }
 }

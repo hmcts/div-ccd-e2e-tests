@@ -7,11 +7,11 @@ module.exports = {
     submit: 'button[type="submit"]'
   },
 
-  fillFormAndSubmit() {
-    I.seeInCurrentUrl('solicitorCreateSolSOCCoRespondent');
-    I.see('The petitioner has the option to name the person with whom the respondent committed adultery.');
-    I.click(this.fields.namePersonAdulteryCommittedWith);
-    I.click(this.fields.submit);
-    I.wait(1);
+  async fillFormAndSubmit() {
+    await I.waitInUrl('solicitorCreateSolSOCCoRespondent');
+    await I.see('The petitioner has the option to name the person with whom the respondent committed adultery.');
+    await I.click(this.fields.namePersonAdulteryCommittedWith);
+    await I.click(this.fields.submit);
+    await I.wait(1);
   }
 };
