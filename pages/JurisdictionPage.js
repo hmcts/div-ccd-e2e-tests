@@ -8,7 +8,7 @@ module.exports = {
   },
 
   async selectLegalActionsAndSubmit() {
-    await I.see('The Petitioner and the Respondent are habitually resident in England and Wales');
+    await I.waitForText('The Petitioner and the Respondent are habitually resident in England and Wales');
     await I.click(this.fields.legalConnections);
     await I.click(this.fields.submit);
     await I.wait(1);

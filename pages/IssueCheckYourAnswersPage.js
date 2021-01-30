@@ -9,10 +9,10 @@ module.exports = {
   },
 
   async fillFormAndSubmit() {
-    await I.waitForElement(this.fields.eventSummary, 20);
+    await I.waitForElement(this.fields.eventSummary);
     await I.fillField(this.fields.eventSummary, 'This is event summary field');
     await I.fillField(this.fields.eventDescription, 'This is event description field and its optional');
-    await I.waitForElement(this.fields.submit, 20);
+    await I.waitForElement(this.fields.submit);
     await I.click(this.fields.submit);
     await I.wait(1);
   }

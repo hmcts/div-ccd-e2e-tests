@@ -8,7 +8,7 @@ module.exports = {
   },
 
   async fillFormAndSubmit() {
-    await I.waitForElement(this.fields.selectActionDropDown, 20);
+    await I.waitForElement(this.fields.selectActionDropDown);
     await I.see('Petition issued');
     await I.selectOption(this.fields.selectActionDropDown, 'Issue AOS pack to respondent');
     await I.wait(1);

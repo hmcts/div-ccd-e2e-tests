@@ -14,6 +14,7 @@ module.exports = {
   },
 
   async fillFormAndSubmit() {
+    await I.waitForElement(this.fields.solicitorsName);
     await I.retry().fillField(this.fields.solicitorsName, 'PAPA AJASCO');
     await I.fillField(this.fields.firmName, 'ELEMU GETON');
     await I.fillField(this.fields.firmDxAddress, '100 Reede Road, RM10 8DU');

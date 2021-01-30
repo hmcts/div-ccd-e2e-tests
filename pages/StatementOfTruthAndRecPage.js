@@ -18,7 +18,6 @@ module.exports = {
   },
 
   async fillFormAndSubmit(urgent) {
-    await I.wait(1);
     await I.waitInUrl('solicitorStatementOfTruthPaySubmit/solicitorStatementOfTruthPaySubmitSolStatementOfTruth');
     if (urgent === 'no') {
       await I.click(this.fields.caseUrgentNo);
@@ -36,6 +35,5 @@ module.exports = {
     await I.fillField(this.fields.nameOfYourFirm, 'SOLICITOR DIVORCE FIRM');
     await I.fillField(this.fields.additionalComments, 'additional comments');
     await I.click(this.fields.submit);
-    await I.wait(1);
   }
 };

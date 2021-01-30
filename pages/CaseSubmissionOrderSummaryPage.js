@@ -9,7 +9,7 @@ module.exports = {
   },
 
   async fillFormAndSubmit(paymentMethod) {
-    await I.see('Case submission');
+    await I.waitForText('Case submission');
     if (paymentMethod === paymentType.FEE_ACCOUNT) {
       await I.see('Your fee account reference: Next case submitted');
     } else if (paymentMethod === paymentMethod.HWF) {

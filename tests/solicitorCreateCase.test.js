@@ -10,7 +10,6 @@ xScenario('Solicitor create case and make payment', async (I) => {
   await I.amOnHomePage();
   await I.login(testconfig.TestEnvProfUser, testconfig.TestEnvProfPassword);
   await I.clickCreateCase();
-  await I.wait(1);
   await I.fillCreateCaseFormAndSubmit();
   await I.fillAboutSolicitorFormAndSubmit();
   await I.fillAboutThePetitionerFormAndSubmit();

@@ -13,9 +13,9 @@ module.exports = {
   },
 
   async fillFormAndSubmit() {
-    await I.wait(1);
+    await I.waitForElement(this.fields.howPaymentMade);
     await I.click(this.fields.howPaymentMade);
-    await I.selectOption(this.fields.howPaymentMade, paymentType.FEE_ACCOUNT);
+    await I.retry(2).selectOption(this.fields.howPaymentMade, paymentType.FEE_ACCOUNT);
     await I.click(this.fields.submit);
     //await I.fillField(this.fields.enterYourAccountNumber, 'PBA1234908');
 

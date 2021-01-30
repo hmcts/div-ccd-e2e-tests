@@ -8,7 +8,7 @@ module.exports = {
   },
 
   async fillFormAndSubmit() {
-    await I.waitForElement(this.fields.selectActionDropDown, 20);
+    await I.waitForElement(this.fields.selectActionDropDown);
     await I.see('AOS Awaiting');
     await I.wait(1);
     await I.clickTab('Petition');
@@ -44,7 +44,7 @@ module.exports = {
     await I.see('Did the marriage take place in the UK?');
     await I.see('Marriage date');
     await I.wait(1);
-    await I.waitForElement(this.fields.selectActionDropDown, 20);
+    await I.waitForElement(this.fields.selectActionDropDown);
     await I.selectOption(this.fields.selectActionDropDown, 'AOS started');
     await I.wait(1);
     await I.waitForVisible(this.fields.submit);
