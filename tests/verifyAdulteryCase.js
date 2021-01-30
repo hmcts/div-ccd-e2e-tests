@@ -53,14 +53,14 @@ Scenario('Execute events for end to end flow PFE, RFE, Co-RESP, DN , DA', async 
 
   const daGranted = await updateCaseInCcd(caseId, events.DA_GRANTED);
   verifyState(daGranted, states.DIVORCE_GRANTED);
-}).retry(2);
+}).retry(config.TestRetryScenarios);
 
 Scenario('verify all tab fields PFE, RFE, DN, DA', async function (I) {
-  I.amOnHomePage();
- I.login(config.TestEnvCWUser, config.TestEnvCWPassword);
-  I.wait(20);
-  I.amOnPage('/case/DIVORCE/DIVORCE/' + caseId);
-  I.wait(30);
+  await I.amOnHomePage();
+  await I.login(config.TestEnvCWUser, config.TestEnvCWPassword);
+  await I.wait(20);
+  await I.amOnPage('/case/DIVORCE/DIVORCE/' + caseId);
+  await I.wait(30);
   await I.validatePetitionTabData(reasonsForDivorce.ADULTERY, verifyContent);
   await I.validateMarriageCertTabData(verifyContent);
   await I.validateAOSTabData(reasonsForDivorce.ADULTERY, verifyContent);
@@ -72,4 +72,4 @@ Scenario('verify all tab fields PFE, RFE, DN, DA', async function (I) {
   await I.validatePaymentTabData(verifyContent);
   await I.validateLanguageTabData(reasonsForDivorce.ADULTERY, verifyContent);
   I.click(signOut);
-}).retry(2);
+}).retry(config.TestRetryScenarios);

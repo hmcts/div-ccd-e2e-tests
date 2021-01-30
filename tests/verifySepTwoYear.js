@@ -48,14 +48,14 @@ Scenario('Execute events for end to end flow of PFE, RFE, DN , DA', async functi
 
   const daGranted = await updateCaseInCcd(caseId, events.DA_GRANTED);
   verifyState(daGranted, states.DIVORCE_GRANTED);
-}).retry(2);
+}).retry(config.TestRetryScenarios);
 
 Scenario('verify all tab fields of PFE, RFE, DN, DA', async function (I) {
-  I.amOnHomePage();
- I.login(config.TestEnvCWUser, config.TestEnvCWPassword);
-  I.wait(20);
-  I.amOnPage('/case/DIVORCE/DIVORCE/' + caseId);
-  I.wait(30);
+  await I.amOnHomePage();
+  await I.login(config.TestEnvCWUser, config.TestEnvCWPassword);
+  await I.wait(20);
+  await I.amOnPage('/case/DIVORCE/DIVORCE/' + caseId);
+  await I.wait(30);
   await I.validatePetitionTabData(reasonsForDivorce.SEPTWOYRSDISPLAY, verifyContent);
   await I.validateConfidentialPetitionerTab(verifyContent);
   await I.validateMarriageCertTabData(verifyContent);
@@ -67,7 +67,7 @@ Scenario('verify all tab fields of PFE, RFE, DN, DA', async function (I) {
   await I.validatePaymentTabData(verifyContent);
   await I.validateLanguageTabData(reasonsForDivorce.SEPTWOYRS, verifyContent);
   await I.click(signOut);
-}).retry(2);
+}).retry(config.TestRetryScenarios);
 
 
 Scenario('Case creation should fail with invalid fixed list data', async function (I) {
@@ -77,4 +77,4 @@ Scenario('Case creation should fail with invalid fixed list data', async functio
   });
   assert.strictEqual(caseResponse['statusCode'], 422);
   assert.strictEqual(JSON.parse(caseResponse['error']).message, 'Case data validation failed');
-}).retry(2);
+}).retry(config.TestRetryScenarios);

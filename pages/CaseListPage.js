@@ -10,7 +10,7 @@ module.exports = {
     rdcSelect: '#D8DivorceUnit',
     solicitorPaymentMethodSelect: '#SolPaymentHowToPay',
     urgentFilterYes: '#SolUrgentCase-Yes',
-    urgentFilterNo: '#olUrgentCase-No'
+    urgentFilterNo: '#SolUrgentCase-No'
   },
 
   selectCase() {

@@ -6,12 +6,12 @@ Feature('Verify Amended Case ');
 
 Scenario('Create linked case and verify tab', async function (I) {
   const caseId = await createCaseInCcd('data/ccdLinkedCase.json');
-  I.amOnHomePage();
- I.login(config.TestEnvCWUser, config.TestEnvCWPassword);
-  I.wait(20);
-  I.amOnPage('/case/DIVORCE/DIVORCE/' + caseId);
-  I.wait(30);
+  await I.amOnHomePage();
+  await I.login(config.TestEnvCWUser, config.TestEnvCWPassword);
+  await I.wait(20);
+  await I.amOnPage('/case/DIVORCE/DIVORCE/' + caseId);
+  await I.wait(30);
   await I.validateLinkedCaseTabData();
   await I.click(signOut);
-}).retry(2);
+}).retry(config.TestRetryScenarios);
 
