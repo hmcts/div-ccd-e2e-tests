@@ -48,7 +48,7 @@ Scenario('Execute events for end to end flow of PFE, RFE, DN , DA', async functi
 
   const daGranted = await updateCaseInCcd(caseId, events.DA_GRANTED);
   verifyState(daGranted, states.DIVORCE_GRANTED);
-}).retry(config.TestRetryScenarios);
+}).retry(testconfig.TestRetryScenarios);
 
 Scenario('verify all tab fields of PFE, RFE, DN, DA', async function (I) {
   await I.amOnHomePage();
