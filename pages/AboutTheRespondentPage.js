@@ -23,7 +23,7 @@ module.exports = {
     await I.fillField(this.fields.respondentHomeAddress, '300 Central London, Lagos W2 3MU');
     // I.click(this.fields.respondentUsingASolicitor); // as respondentUsingASolicitor yes or no has removed now
     await I.fillField(this.fields.respondentServiceAddress, '007 Peter Pan Road , E14 5RT');
-    await I.wait1;
+    await I.wait(1);
     await I.click(this.fields.submit);
   }
 };

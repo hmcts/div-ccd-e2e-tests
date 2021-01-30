@@ -13,7 +13,7 @@ module.exports = {
     await I.selectOption(this.fields.selectActionDropDown, eventName);
     await I.wait(1);
     await I.click(this.fields.submit);
-    await I.wait(1);
+    await I.waitForText(this.fields.eventSummary);
     await I.waitForVisible(this.fields.submit);
     await I.click(this.fields.submit);
     await I.wait(1);
