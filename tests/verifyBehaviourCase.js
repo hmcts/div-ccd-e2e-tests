@@ -54,7 +54,7 @@ Scenario('verify all tab fields of PFE, RFE, DN, DA', async function (I) {
   await I.login(testconfig.TestEnvCWUser, testconfig.TestEnvCWPassword);
   await I.wait(1);
   await I.amOnPage('/case/DIVORCE/DIVORCE/' + caseId);
-  await I.wait(30);
+  await I.wait(1);
   await I.validatePetitionTabData(reasonsForDivorce.BEHAVIOUR, verifyContent);
   await I.validateConfidentialPetitionerTab(verifyContent);
   await I.validateMarriageCertTabData(verifyContent);
