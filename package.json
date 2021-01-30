@@ -5,7 +5,7 @@
   "description": "",
   "scripts": {
     "pretest": "npm run create:type-definitions",
-    "test": "codeceptjs run-multiple parallel --steps --reporter mochawesome",
+    "test": "TESTS_FOR_ACCESSIBILITY='true' codeceptjs run-multiple parallel --steps --reporter mochawesome",
     "create:type-definitions": "codeceptjs def",
     "lint": "eslint ."
   },
