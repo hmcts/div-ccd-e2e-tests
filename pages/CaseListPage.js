@@ -21,8 +21,9 @@ module.exports = {
 
   async resetFilter() {
     await I.waitForElement(this.selectors.jurisdictionSelect);
+    await I.retry(5).selectOption(this.selectors.jurisdictionSelect, 'Family Divorce');
     await I.waitForElement(this.selectors.caseTypeSelect);
-    await I.retry(2).selectOption(this.selectors.caseTypeSelect, 'Divorce case - v115.00');
+    await I.retry(5).selectOption(this.selectors.caseTypeSelect, 'Divorce case - v115.00');
     await I.waitForElement(this.selectors.caseStateSelect);
     await I.selectOption(this.selectors.caseStateSelect, 'Any');
     await I.waitForElement(this.selectors.rdcSelect);
@@ -33,8 +34,9 @@ module.exports = {
 
   async urgentCaseFilter(urgent, state = 'Any', caseNum) {
     await I.waitForElement(this.selectors.jurisdictionSelect);
+    await I.retry(5).selectOption(this.selectors.jurisdictionSelect, 'Family Divorce');
     await I.waitForElement(this.selectors.caseTypeSelect);
-    await I.retry(2).selectOption(this.selectors.caseTypeSelect, 'Divorce case - v115.00');
+    await I.retry(5).selectOption(this.selectors.caseTypeSelect, 'Divorce case - v115.00');
     await I.waitForElement(this.selectors.caseStateSelect);
     await I.selectOption(this.selectors.caseStateSelect, state);
     await I.waitForElement(this.selectors.rdcSelect);
