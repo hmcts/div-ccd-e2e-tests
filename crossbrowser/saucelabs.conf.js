@@ -54,10 +54,10 @@ const setupConfig = {
             capabilities: {}
         },
         WebDriverHelper: {
-            require: './helpers/WebDriverHelper.js'
+            require: '../helpers/WebDriverHelper.js'
         },
         SauceLabsReportingHelper: {
-            require: './helpers/SauceLabsReportingHelper.js'
+            require: '../helpers/SauceLabsReportingHelper.js'
         },
         Mochawesome: {
             uniqueScreenshotNames: 'true'
