@@ -37,7 +37,7 @@ Scenario('Solicitor create an urgent case', async (I) => {
   await I.solAwaitingPaymentConfPageFormAndSubmit();
 }).retry(testconfig.TestRetryScenarios);
 
-xScenario('Solicitor able to filter and search urgent case', async (I) => {
+Scenario('Solicitor able to filter and search urgent case', async (I) => {
   await I.amOnHomePage();
   await I.login(testconfig.TestEnvProfUser, testconfig.TestEnvProfPassword);
   await I.wait(1);
