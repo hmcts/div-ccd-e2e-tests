@@ -36,6 +36,7 @@ node {
             try {
                 sh 'yarn install'
                 sh 'yarn test'
+                sh 'yarn test:crossbrowser'
             }
             catch (Exception err) {
                 currentBuild.result = 'UNSTABLE'

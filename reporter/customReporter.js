@@ -61,6 +61,6 @@ function consoleReport(reportjson) {
         console.log('\t');
     }
 }
-/* eslint-disable no-unused-vars */
+/* eslint-enable no-unused-vars */
 
 module.exports = {generateAccessibilityReport};
