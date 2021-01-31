@@ -48,7 +48,6 @@ module.exports = {
     }
     await I.see('Create case');
     await I.click('Apply');
-    await I.wait(30);
     await I.waitForText('Last Modified');
     await I.click('Last Modified');
     await I.waitForText(caseNum);
