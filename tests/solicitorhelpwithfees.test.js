@@ -36,7 +36,8 @@ Scenario('Solicitor create case and make payment', async (I) => {
   await I.caseApplicationCompletePageFormAndSubmit();
   await I.caseCheckYourAnswersPageFormAndSubmit();
   await I.solAwaitingPaymentConfPageFormAndSubmit();
-}).retry(testconfig.TestRetryScenarios);
+}).tag('@crossbrowser')
+    .retry(testconfig.TestRetryScenarios);
 
 Scenario('Solicitor should not see issue, refund events', async (I) => {
   await I.amOnHomePage();
