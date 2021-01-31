@@ -43,7 +43,7 @@ Scenario('Solicitor able to filter and search urgent case', async (I) => {
   await I.wait(1);
   await I.clickCreateList();
   await I.ShouldBeAbleToFilterAnUrgentCase(yesorno.Yes, stateDisplayName.SOL_AWAIT_PAYMENT_CONFIRM, caseNumberWithHyphen);
-}).retry(testconfig.TestRetryScenarios);
+});
 
 Scenario('Caseworker able to filter and search urgent case', async (I) => {
   await I.amOnHomePage();
@@ -51,4 +51,4 @@ Scenario('Caseworker able to filter and search urgent case', async (I) => {
   await I.wait(1);
   await I.clickCreateList();
   await I.ShouldBeAbleToFilterAnUrgentCase(yesorno.Yes, stateDisplayName.SOL_AWAIT_PAYMENT_CONFIRM, caseNumberWithHyphen);
-}).retry(testconfig.TestRetryScenarios);
+});
