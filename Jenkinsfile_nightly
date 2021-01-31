@@ -35,7 +35,6 @@ node {
         stage('Journey Tests') {
             try {
                 sh 'yarn install'
-                sh 'yarn test'
                 sh 'yarn test:crossbrowser'
             }
             catch (Exception err) {

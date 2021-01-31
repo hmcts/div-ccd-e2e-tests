@@ -1,6 +1,6 @@
 const supportedBrowsers = require('./supportedBrowsers.js');
 
-const testConfig = require('../config');
+const testConfig = require('../tests/config');
 
 const waitForTimeout = parseInt(process.env.WAIT_FOR_TIMEOUT) || 45000;
 const smartWait = parseInt(process.env.SMART_WAIT) || 30000;
