@@ -34,8 +34,7 @@ exports.config = {
       require: './helpers/JSWait.js'
   },
   Mochawesome: {
-      uniqueScreenshotNames: 'true',
-      fullPageScreenshots: 'true'
+      uniqueScreenshotNames: 'true'
   }
 },
 include: {
@@ -47,6 +46,10 @@ plugins: {
   },
   autoDelay: {
     enabled: testConfig.TestAutoDelayEnabled
+  },
+  screenshotOnFail: {
+    enabled: true,
+    fullPageScreenshots: 'true'
   }
 },
 bootstrap: false,
