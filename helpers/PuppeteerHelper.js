@@ -4,6 +4,8 @@ const Helper = codecept_helper;
 const helperName = 'Puppeteer';
 const testConfig = require('../tests/config');
 
+const {runAccessibility} = require('./accessibility/runner');
+
 class PuppeteerHelper extends Helper {
 
     async clickTab(tabTitle) {
