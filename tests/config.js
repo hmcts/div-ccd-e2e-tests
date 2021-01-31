@@ -3,7 +3,7 @@ module.exports = {
     TestEnv: process.env.RUNNING_ENV || 'aat',
     TestShowBrowserWindow: process.env.SHOW_BROWSER_WINDOW || false,
     TestRetryFeatures: 0,
-    TestRetryScenarios: process.env.RETRY_SCENARIOS || 0,
+    TestRetryScenarios: process.env.RETRY_SCENARIOS || 2,
     TestPathToRun: process.env.E2E_TEST_PATH || 'tests/**/*.js',
     TestOutputDir: process.env.E2E_OUTPUT_DIR || './functional-output/xui',
     TestEnvCWUser: process.env.CCD_CASEWORKER_E2E_EMAIL || '',

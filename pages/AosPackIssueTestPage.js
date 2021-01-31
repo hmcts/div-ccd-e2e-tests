@@ -12,6 +12,7 @@ module.exports = {
 
   async fillFormAndSubmit() {
     await I.waitForElement(this.fields.familyManReference);
+    await I.runAccessibilityTest();
     await I.fillField(this.fields.familyManReference, 'EZ11D81267');
     await I.seeInField(this.fields.petitionersFullName, 'Gary Ford');
     await I.fillField(this.fields.placeOfMarriage, 'United Kingdom');

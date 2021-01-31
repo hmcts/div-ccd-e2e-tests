@@ -14,6 +14,7 @@ module.exports = {
 
   async fillFormAndSubmit() {
     await I.waitForElement(this.fields.marriageDateDay);
+    await I.runAccessibilityTest();
     await I.fillField(this.fields.marriageDateDay, '09');
     await I.fillField(this.fields.marriageDateMonth, '04');
     await I.fillField(this.fields.marriageDateYear, '2011');

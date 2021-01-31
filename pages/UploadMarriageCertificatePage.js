@@ -11,6 +11,7 @@ module.exports = {
 
   async fillFormAndSubmit() {
     await I.waitInUrl('solicitorCreateSolUploadDocs');
+    await I.runAccessibilityTest();
     await I.see('Documents uploaded (Optional)');
     await I.click(this.fields.addNewButton);
     await I.wait(1);

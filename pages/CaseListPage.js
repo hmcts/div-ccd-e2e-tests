@@ -1,3 +1,4 @@
+const {yesorno} = require('../common/constants');
 const I = actor();
 
 module.exports = {
@@ -20,8 +21,9 @@ module.exports = {
 
   async resetFilter() {
     await I.waitForElement(this.selectors.jurisdictionSelect);
+    await I.retry(5).selectOption(this.selectors.jurisdictionSelect, 'Family Divorce');
     await I.waitForElement(this.selectors.caseTypeSelect);
-    await I.retry(2).selectOption(this.selectors.caseTypeSelect, 'Divorce case - v115.00');
+    await I.retry(5).selectOption(this.selectors.caseTypeSelect, 'Divorce case - v115.00');
     await I.waitForElement(this.selectors.caseStateSelect);
     await I.selectOption(this.selectors.caseStateSelect, 'Any');
     await I.waitForElement(this.selectors.rdcSelect);
@@ -30,22 +32,25 @@ module.exports = {
     await I.click('Apply');
   },
 
-  async urgentCaseFilter(urgent,caseNum) {
+  async urgentCaseFilter(urgent, state = 'Any', caseNum) {
     await I.waitForElement(this.selectors.jurisdictionSelect);
+    await I.retry(5).selectOption(this.selectors.jurisdictionSelect, 'Family Divorce');
     await I.waitForElement(this.selectors.caseTypeSelect);
-    await I.retry(2).selectOption(this.selectors.caseTypeSelect, 'Divorce case - v115.00');
+    await I.retry(5).selectOption(this.selectors.caseTypeSelect, 'Divorce case - v115.00');
     await I.waitForElement(this.selectors.caseStateSelect);
-    await I.selectOption(this.selectors.caseStateSelect, 'Any');
+    await I.selectOption(this.selectors.caseStateSelect, state);
     await I.waitForElement(this.selectors.rdcSelect);
     await I.waitForElement(this.selectors.solicitorPaymentMethodSelect);
-    if (urgent === 'yes') {
+    if (urgent === yesorno.Yes) {
       await I.click(this.selectors.urgentFilterYes);
     } else {
       await I.click(this.selectors.urgentFilterNo);
     }
     await I.see('Create case');
     await I.click('Apply');
+    await I.waitForText('Last Modified');
     await I.click('Last Modified');
+    await I.waitForText(caseNum);
     await I.click(caseNum);
   }
 };

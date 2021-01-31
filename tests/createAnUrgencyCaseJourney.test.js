@@ -1,7 +1,6 @@
-const {paymentType} = require('../common/constants');
+const {paymentType, stateDisplayName, yesorno} = require('../common/constants');
 const testconfig = require('./config');
 
-let caseNumber;
 let caseNumberWithHyphen;
 
 
@@ -29,10 +28,8 @@ Scenario('Solicitor create an urgent case', async (I) => {
   await I.solicitorCreateCheckYourAnswerAndSubmit();
   caseNumberWithHyphen = await I.solicitorCaseCreatedAndSubmit();
   caseNumberWithHyphen = caseNumberWithHyphen.replace('#', '');
-  caseNumber = caseNumberWithHyphen.replace(/\D/gi, '');
-  console.log(caseNumber);
   console.log('..................... '+caseNumberWithHyphen+' .............');
-  await I.statementOfTruthAndReconciliationPageFormAndSubmit('yes');
+  await I.statementOfTruthAndReconciliationPageFormAndSubmit(yesorno.Yes);
   await I.casePaymentWithHWFAndSubmissionPageFormAndSubmit();
   await I.caseOrderSummaryPageFormAndSubmit(paymentType.HWF);
   await I.caseApplicationCompletePageFormAndSubmit();
@@ -45,8 +42,7 @@ xScenario('Solicitor able to filter and search urgent case', async (I) => {
   await I.login(testconfig.TestEnvProfUser, testconfig.TestEnvProfPassword);
   await I.wait(1);
   await I.clickCreateList();
-  await I.ShouldBeAbleToFilterAnUrgentCase('yes', caseNumberWithHyphen);
-
+  await I.ShouldBeAbleToFilterAnUrgentCase(yesorno.Yes, stateDisplayName.SOL_AWAIT_PAYMENT_CONFIRM, caseNumberWithHyphen);
 }).retry(testconfig.TestRetryScenarios);
 
 xScenario('Caseworker able to filter and search urgent case', async (I) => {
@@ -54,6 +50,5 @@ xScenario('Caseworker able to filter and search urgent case', async (I) => {
   await I.login(testconfig.TestEnvCWUser, testconfig.TestEnvCWPassword);
   await I.wait(1);
   await I.clickCreateList();
-  await I.ShouldBeAbleToFilterAnUrgentCase('yes', caseNumberWithHyphen);
-
+  await I.ShouldBeAbleToFilterAnUrgentCase(yesorno.Yes, stateDisplayName.SOL_AWAIT_PAYMENT_CONFIRM, caseNumberWithHyphen);
 }).retry(testconfig.TestRetryScenarios);

@@ -46,6 +46,10 @@ plugins: {
   },
   autoDelay: {
     enabled: testConfig.TestAutoDelayEnabled
+  },
+  screenshotOnFail: {
+    enabled: true,
+    fullPageScreenshots: 'true'
   }
 },
 bootstrap: false,

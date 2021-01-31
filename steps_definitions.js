@@ -81,8 +81,8 @@ module.exports = function () {
       return CaseListPage.resetFilter();
     },
 
-    ShouldBeAbleToFilterAnUrgentCase: function (urgent, caseNum) {
-      return CaseListPage.urgentCaseFilter(urgent, caseNum);
+    ShouldBeAbleToFilterAnUrgentCase: function (urgent, state, caseNum) {
+      return CaseListPage.urgentCaseFilter(urgent, state, caseNum);
     },
 
     clickCreateCase: function() {

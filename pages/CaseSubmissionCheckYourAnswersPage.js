@@ -8,6 +8,7 @@ module.exports = {
 
   async fillFormAndSubmit() {
     await I.waitInUrl('solicitorStatementOfTruthPaySubmit/submit');
+    await I.runAccessibilityTest();
     await I.see('Case submission');
     await I.see('Check your answers');
     await I.see('I am duly authorised by the petitioner to sign this statement.');

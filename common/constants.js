@@ -10,6 +10,11 @@ const reasonsForDivorce = {
 
 const signOut = 'Sign out';
 
+const yesorno = {
+    Yes: 'yes',
+    No: 'no'
+};
+
 const paymentType = {
     FEE_ACCOUNT: 'Fee Account',
     HWF: 'Help with fees'
@@ -31,6 +36,10 @@ const states = {
     AWAITING_PRONOUNCEMENT: 'AwaitingPronouncement',
     AWAITING_DA: 'AwaitingDecreeAbsolute',
     DIVORCE_GRANTED: 'DivorceGranted'
+};
+
+const stateDisplayName = {
+    SOL_AWAIT_PAYMENT_CONFIRM : 'Solicitor - Awaiting Payment Confirmation'
 };
 
 const eventDisplayName = {
@@ -71,5 +80,7 @@ module.exports = {
     events,
     signOut,
     paymentType,
-    eventDisplayName
+    eventDisplayName,
+    stateDisplayName,
+    yesorno
 };

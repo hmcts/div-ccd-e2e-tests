@@ -9,6 +9,7 @@ module.exports = {
   },
 
   async fillFormAndSubmit() {
+    await I.runAccessibilityTest();
     await I.waitForElement(this.fields.eventSummary);
     await I.fillField(this.fields.eventSummary, 'This is event summary field');
     await I.fillField(this.fields.eventDescription, 'This is event description field and its optional');

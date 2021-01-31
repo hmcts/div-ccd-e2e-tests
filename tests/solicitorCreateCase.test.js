@@ -1,4 +1,4 @@
-const { paymentType } = require('../common/constants');
+const { paymentType, yesorno } = require('../common/constants');
 const testconfig = require('./config');
 
 let caseNumber;
@@ -28,7 +28,7 @@ xScenario('Solicitor create case and make payment', async (I) => {
   caseNumber = await I.solicitorCaseCreatedAndSubmit();
   caseNumber = caseNumber.replace(/\D/gi, '');
   console.log(caseNumber);
-  await I.statementOfTruthAndReconciliationPageFormAndSubmit('no');
+  await I.statementOfTruthAndReconciliationPageFormAndSubmit(yesorno.No);
   await I.casePaymentWithFeeAccountAndSubmissionPageFormAndSubmit();
   await I.caseOrderSummaryPageFormAndSubmit(paymentType.FEE_ACCOUNT);
   await I.caseApplicationCompletePageFormAndSubmit();
