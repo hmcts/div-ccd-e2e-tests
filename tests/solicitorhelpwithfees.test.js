@@ -1,4 +1,4 @@
-const { eventDisplayName, signOut, paymentType } = require('../common/constants');
+const { eventDisplayName, signOut, paymentType, yesorno } = require('../common/constants');
 const testconfig = require('./config')
 
 const nextStepDropDown = 'select[id="next-step"]'
@@ -30,7 +30,7 @@ Scenario('Solicitor create case and make payment', async (I) => {
   caseNumber = await I.solicitorCaseCreatedAndSubmit();
   caseNumber = caseNumber.replace(/\D/gi, '');
   console.log(caseNumber);
-  await I.statementOfTruthAndReconciliationPageFormAndSubmit('no');
+  await I.statementOfTruthAndReconciliationPageFormAndSubmit(yesorno.No);
   await I.casePaymentWithHWFAndSubmissionPageFormAndSubmit();
   await I.caseOrderSummaryPageFormAndSubmit(paymentType.HWF);
   await I.caseApplicationCompletePageFormAndSubmit();

@@ -1,3 +1,4 @@
+const {yesorno} = require('../common/constants');
 const I = actor();
 
 module.exports = {
@@ -30,15 +31,15 @@ module.exports = {
     await I.click('Apply');
   },
 
-  async urgentCaseFilter(urgent,caseNum) {
+  async urgentCaseFilter(urgent, state = 'Any', caseNum) {
     await I.waitForElement(this.selectors.jurisdictionSelect);
     await I.waitForElement(this.selectors.caseTypeSelect);
     await I.retry(2).selectOption(this.selectors.caseTypeSelect, 'Divorce case - v115.00');
     await I.waitForElement(this.selectors.caseStateSelect);
-    await I.selectOption(this.selectors.caseStateSelect, 'Any');
+    await I.selectOption(this.selectors.caseStateSelect, state);
     await I.waitForElement(this.selectors.rdcSelect);
     await I.waitForElement(this.selectors.solicitorPaymentMethodSelect);
-    if (urgent === 'yes') {
+    if (urgent === yesorno.Yes) {
       await I.click(this.selectors.urgentFilterYes);
     } else {
       await I.click(this.selectors.urgentFilterNo);

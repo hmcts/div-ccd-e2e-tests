@@ -1,3 +1,4 @@
+const {yesorno} = require('../common/constants');
 const I = actor();
 
 module.exports = {
@@ -20,9 +21,9 @@ module.exports = {
   async fillFormAndSubmit(urgent) {
     await I.waitInUrl('solicitorStatementOfTruthPaySubmit/solicitorStatementOfTruthPaySubmitSolStatementOfTruth');
     await I.runAccessibilityTest();
-    if (urgent === 'no') {
+    if (urgent === yesorno.No) {
       await I.click(this.fields.caseUrgentNo);
-    } else if (urgent === 'yes') {
+    } else if (urgent === yesorno.Yes) {
       await I.click(this.fields.caseUrgentYes);
       await I.fillField(this.fields.caseUrgentSupportingInfoTextBox, 'here is the supporting information and instructions for the urgency');
     }
