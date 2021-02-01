@@ -1,6 +1,6 @@
-const supportedBrowsers = require('./supportedBrowsers.js');
+const supportedBrowsers = require('./crossbrowser/supportedBrowsers.js');
 
-const testConfig = require('../tests/config');
+const testConfig = require('./tests/config');
 
 const waitForTimeout = parseInt(process.env.WAIT_FOR_TIMEOUT) || 45000;
 const smartWait = parseInt(process.env.SMART_WAIT) || 30000;
@@ -40,7 +40,7 @@ function getBrowserConfig(browserGroup) {
 
 const setupConfig = {
     'tests': testConfig.TestPathToRun,
-    'output': `${process.cwd()}/${testConfig.TestOutputDir}`,
+    'output': testConfig.TestOutputDir,
     'helpers': {
         WebDriver: {
             url: testConfig.TestUrl,
@@ -54,10 +54,10 @@ const setupConfig = {
             capabilities: {}
         },
         WebDriverHelper: {
-            require: '../helpers/WebDriverHelper.js'
+            require: './helpers/WebDriverHelper.js'
         },
         SauceLabsReportingHelper: {
-            require: '../helpers/SauceLabsReportingHelper.js'
+            require: './helpers/SauceLabsReportingHelper.js'
         },
         Mochawesome: {
             uniqueScreenshotNames: 'true'

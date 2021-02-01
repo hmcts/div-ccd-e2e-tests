@@ -8,7 +8,7 @@
     "test": "TESTS_FOR_ACCESSIBILITY='true' codeceptjs run-multiple parallel --steps --reporter mochawesome",
     "create:type-definitions": "codeceptjs def",
     "lint": "eslint .",
-    "test-crossbrowser-e2e": "NODE_PATH=. codeceptjs run-multiple ${BROWSER_GROUP:-'--all'} -c crossbrowser/saucelabs.conf.js --plugins retryFailedStep --steps --grep '@crossbrowser' --reporter mocha-multi",
+    "test-crossbrowser-e2e": "NODE_PATH=. codeceptjs run-multiple ${BROWSER_GROUP:-'--all'} -c saucelabs.conf.js --plugins retryFailedStep --steps --grep '@crossbrowser' --reporter mocha-multi",
     "test:crossbrowser": "./bin/run-crossbrowser-tests.sh"
   },
   "keywords": [],
