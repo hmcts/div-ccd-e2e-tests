@@ -17,7 +17,7 @@ module.exports = {
   async clickCreateList() {
     await I.waitForText('Case List');
     await I.click('Case List');
-  }
+  },
 
   async selectCase() {
     await I.waitForElement(this.selectors.caseLink, 25);
