@@ -10,10 +10,10 @@ properties([
 @Library("Infrastructure") _
 
 String product = "div"
-String component = "ccd-e2e"
+String component = "ccd-e2e-tests"
 
 def secrets = [
-  'div-aat': [
+  'div-${env}': [
     secret('ccd-e2e-solicitor-email', 'PROF_USER_EMAIL'),
     secret('ccd-e2e-solicitor-password', 'PROF_USER_PASSWORD'),
     secret('ccd-e2e-caseworker-email', 'CCD_CASEWORKER_E2E_EMAIL'),
