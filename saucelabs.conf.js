@@ -78,7 +78,7 @@ const setupConfig = {
     }
   },
   include: {
-    I: './pages/steps_definitions.js'
+    I: './steps_definitions.js'
   },
 
   mocha: {
