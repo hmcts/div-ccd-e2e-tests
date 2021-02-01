@@ -86,11 +86,11 @@ module.exports = function () {
     },
 
     clickCreateCase: function() {
-      return this.click('Create case');
+      return CreateCasePage.clickCreateCase();
     },
 
     clickCreateList: function() {
-      return this.click('Case List');
+      return CaseListPage.clickCreateList();
     },
 
     fillCreateCaseFormAndSubmit() {

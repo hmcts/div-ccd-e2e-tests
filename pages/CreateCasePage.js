@@ -9,6 +9,11 @@ module.exports = {
     submit: 'button[type="submit"]'
   },
 
+  async clickCreateCase() {
+    await I.waitForText('Create case');
+    await I.click('Create case');
+  }
+
   async fillFormAndSubmit() {
     await I.wait(5);
     await I.retry(5).selectOption(this.fields.jurisdiction, 'DIVORCE');
