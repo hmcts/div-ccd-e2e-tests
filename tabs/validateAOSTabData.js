@@ -20,7 +20,7 @@ module.exports = async (reason,verifyContent) => {
   await I.see(firstLetterToCaps(verifyContent.RespContactMethodIsDigital));
   await I.see(labels.aosLetterHolderID);
 
-  if(reasonsForDivorce.ADULTERY == reason) {
+  if(reasonsForDivorce.ADULTERY === reason) {
     await I.see(labels.respDefendDivorce);
     await I.see(verifyContent.RespWillDefendDivorce);
     await I.see(labels.respReasonJurisdiction);
@@ -28,10 +28,10 @@ module.exports = async (reason,verifyContent) => {
     await I.see(labels.respJurisdictionCountry);
     await I.see(verifyContent.RespJurisdictionRespCountryOfResidence);
   }
-  if(reasonsForDivorce.BEHAVIOUR == reason) {
+  if(reasonsForDivorce.BEHAVIOUR === reason) {
     await I.see(labels.respAgreeCosts);
     await I.see(verifyContent.RespAgreeToCosts);
   }
   await I.see(labels.respDueDate);
   await I.see(datechange(30));
-}
+};

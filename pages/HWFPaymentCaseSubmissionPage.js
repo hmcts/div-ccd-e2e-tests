@@ -7,7 +7,7 @@ module.exports = {
   fields: {
     howPaymentMade: 'select[id="SolPaymentHowToPay"]',
     hwfRefNumTitle: '#D8HelpWithFeesReferenceNumber',
-    submit: 'button[type="submit"]',
+    submit: 'button[type="submit"]'
 
   },
 

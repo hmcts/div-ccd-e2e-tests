@@ -19,4 +19,4 @@ module.exports = {
     await I.click(this.fields.submit);
     await I.wait(1);
   }
-}
+};

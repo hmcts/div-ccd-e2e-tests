@@ -9,4 +9,4 @@ module.exports = async (verifyContent) => {
   await I.see(verifyContent.D8PetitionerEmail);
   await I.see(labels.petitionerHomeAddress);
   await I.see(verifyContent.D8DerivedPetitionerHomeAddress);
-}
+};

@@ -22,4 +22,4 @@ module.exports = async (verifyContent) => {
   await I.see(verifyContent.Payments[0].value.PaymentSiteId);
   await I.see(labels.unprocessedPaymentsSection);
   await I.see(labels.processedPaymentsSection);
-}
+};

@@ -1,7 +1,7 @@
 const { eventDisplayName, signOut, paymentType, yesorno } = require('../common/constants');
-const testconfig = require('./config')
+const testconfig = require('./config');
 
-const nextStepDropDown = 'select[id="next-step"]'
+const nextStepDropDown = 'select[id="next-step"]';
 
 let caseNumber='1612027849946935';
 
@@ -37,11 +37,11 @@ Scenario('Solicitor create case and make payment', async (I) => {
   await I.caseCheckYourAnswersPageFormAndSubmit();
   await I.solAwaitingPaymentConfPageFormAndSubmit();
 }).tag('@crossbrowser')
-    .retry(testconfig.TestRetryScenarios);
+  .retry(testconfig.TestRetryScenarios);
 
 Scenario('Solicitor should not see issue, refund events', async (I) => {
   await I.amOnHomePage();
-  await I.login(testconfig.TestEnvProfUser, testconfig.TestEnvProfPassword)
+  await I.login(testconfig.TestEnvProfUser, testconfig.TestEnvProfPassword);
   await I.wait(1);
   await I.amOnPage('/case/DIVORCE/DIVORCE/' + caseNumber);
   await I.waitForElement(nextStepDropDown);
