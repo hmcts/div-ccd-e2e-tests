@@ -16,14 +16,12 @@ module.exports = {
   },
 
   async fillFormAndSubmit() {
-    if (testConfig.TestForCrossBrowser) {
-      await I.wait(20);
-    } else {
-      await I.wait(5);
-    }
-    await I.retry(5).selectOption(this.fields.jurisdiction, 'Family Divorce');
+    await I.waitForText('Family Divorce');
+    await I.retry(2).selectOption(this.fields.jurisdiction, 'Family Divorce');
+    await I.waitForText('Divorce case - v115.00');
     await I.retry(2).selectOption(this.fields.caseType, 'Divorce case - v115.00');
-    await I.retry(2).selectOption(this.fields.event, 'solicitorCreate');
+    await I.waitForText('Appy for a divorce');
+    await I.retry(2).selectOption(this.fields.event, 'Appy for a divorce');
     await I.waitForNavigationToComplete(this.fields.submit);
     await I.wait(1);
   }
