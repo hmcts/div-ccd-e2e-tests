@@ -35,7 +35,8 @@ Scenario('Solicitor create an urgent case', async (I) => {
   await I.caseApplicationCompletePageFormAndSubmit();
   await I.caseCheckYourAnswersPageFormAndSubmit();
   await I.solAwaitingPaymentConfPageFormAndSubmit();
-}).retry(testconfig.TestRetryScenarios);
+}).tag('@crossbrowser')
+  .retry(testconfig.TestRetryScenarios);
 
 xScenario('Solicitor able to filter and search urgent case', async (I) => {
   await I.amOnHomePage();

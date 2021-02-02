@@ -52,7 +52,8 @@ Scenario('Solicitor should not see issue, refund events', async (I) => {
   await I.dontSee(eventDisplayName.TRANSFER_BETWEEN_RDC);
   await I.dontSee(eventDisplayName.TRANSFER_CTSC_TO_RDC);
   await I.click(signOut);
-}).retry(testconfig.TestRetryScenarios);
+}).tag('@crossbrowser')
+  .retry(testconfig.TestRetryScenarios);
 
 Scenario('Caseworker should be able to see issue, refund events and issue aos pack', async (I) => {
   await I.amOnHomePage();
@@ -72,5 +73,6 @@ Scenario('Caseworker should be able to see issue, refund events and issue aos pa
   await I.issueCheckYourAnswersPageFormAndSubmit();
   await I.selectAndSubmitEvent(eventDisplayName.ISSUE_AOS_TO_RESP);
   await I.click(signOut);
-}).retry(testconfig.TestRetryScenarios);
+}).tag('@crossbrowser')
+  .retry(testconfig.TestRetryScenarios);
 
