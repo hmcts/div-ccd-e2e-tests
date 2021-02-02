@@ -1,4 +1,5 @@
 const I = actor();
+const testConfig = require('../tests/config');
 
 module.exports = {
 
@@ -15,7 +16,11 @@ module.exports = {
   },
 
   async fillFormAndSubmit() {
-    await I.wait(5);
+    if (testConfig.TestForCrossBrowser) {
+      await I.wait(20);
+    } else {
+      await I.wait(5);
+    }
     await I.retry(5).selectOption(this.fields.jurisdiction, 'Family Divorce');
     await I.retry(2).selectOption(this.fields.caseType, 'Divorce case - v115.00');
     await I.retry(2).selectOption(this.fields.event, 'solicitorCreate');
