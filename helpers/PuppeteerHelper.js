@@ -23,7 +23,7 @@ class PuppeteerHelper extends Helper {
     const page = this.helpers[helperName].page;
     await page.waitForSelector(locator, {visible: true});
     await page.click(locator);
-}
+  }
 
   async runAccessibilityTest() {
     if (!testConfig.TestForAccessibility) {

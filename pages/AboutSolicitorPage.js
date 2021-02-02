@@ -11,7 +11,7 @@ module.exports = {
     email: '#PetitionerSolicitorEmail',
     solicitorAgree: '#SolicitorAgreeToReceiveEmails-Yes',
     submit: 'button[type="submit"]',
-    OrgNamesText: 'Organisation name and address',
+    OrgNamesText: 'Organisation name and address'
   },
 
   async fillFormAndSubmit() {
