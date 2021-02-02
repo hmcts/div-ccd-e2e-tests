@@ -103,8 +103,17 @@ const setupConfig = {
     }
   },
   multiple: {
+    microsoft: {
+      browsers: getBrowserConfig('microsoft')
+    },
     chrome: {
-      browsers: getBrowserConfig('chrome')
+        browsers: getBrowserConfig('chrome')
+    },
+    firefox: {
+        browsers: getBrowserConfig('firefox')
+    },
+    safari: {
+        browsers: getBrowserConfig('safari')
     }
   },
   name: 'Probate-ExpertUI Cross-Browser Tests'
