@@ -11,7 +11,11 @@ module.exports = {
   async fillFormAndSubmit(paymentMethod) {
     await I.waitForText('Case submission');
     await I.runAccessibilityTest();
-    await I.click(this.fields.submit);
-    await I.wait(60);
+    if (paymentMethod === paymentType.FEE_ACCOUNT) {	
+      await I.see('Your fee account reference: Next case submitted');	
+    } else if (paymentMethod === paymentMethod.HWF) {	
+      await I.see('Help with fee reference: HWF-123-456');	
+    }
+    await I.waitForNavigationToComplete(this.fields.submit);
   }
 };

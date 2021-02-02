@@ -3,7 +3,7 @@ const testconfig = require('./config');
 
 const nextStepDropDown = 'select[id="next-step"]';
 
-let caseNumber='1612027849946935';
+let caseNumber;
 
 Feature('Solicitor create case - help with fees');
 

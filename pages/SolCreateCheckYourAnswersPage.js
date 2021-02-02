@@ -11,7 +11,6 @@ module.exports = {
     await I.runAccessibilityTest();
     await I.see('Check your answers');
     await I.see('Check the information below carefully.');
-    await I.waitForVisible(this.fields.submit);
-    await I.click(this.fields.submit);
+    await I.waitForNavigationToComplete(this.fields.submit);
   }
 };

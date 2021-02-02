@@ -18,6 +18,13 @@ class PuppeteerHelper extends Helper {
     }
   }
 
+
+  async waitForNavigationToComplete(locator) {
+    const page = this.helpers[helperName].page;
+    await page.waitForSelector(locator, {visible: true});
+    await page.click(locator);
+}
+
   async runAccessibilityTest() {
     if (!testConfig.TestForAccessibility) {
       return;

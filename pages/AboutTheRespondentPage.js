@@ -25,6 +25,6 @@ module.exports = {
     // I.click(this.fields.respondentUsingASolicitor); // as respondentUsingASolicitor yes or no has removed now
     await I.fillField(this.fields.respondentServiceAddress, '007 Peter Pan Road , E14 5RT');
     await I.wait(1);
-    await I.click(this.fields.submit);
+    await I.waitForNavigationToComplete(this.fields.submit);
   }
 };

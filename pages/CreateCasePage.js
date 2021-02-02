@@ -19,7 +19,7 @@ module.exports = {
     await I.retry(5).selectOption(this.fields.jurisdiction, 'Family Divorce');
     await I.retry(2).selectOption(this.fields.caseType, 'Divorce case - v115.00');
     await I.retry(2).selectOption(this.fields.event, 'solicitorCreate');
-    await I.click(this.fields.submit);
+    await I.waitForNavigationToComplete(this.fields.submit);
     await I.wait(1);
   }
 };

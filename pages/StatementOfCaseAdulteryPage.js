@@ -13,7 +13,7 @@ module.exports = {
     await I.runAccessibilityTest();
     await I.fillField(this.fields.adulteryDetails, 'My wife and her boyfriends beat me up everytime but I dont cry');
     await I.click(this.fields.secondHandInfo);
-    await I.click(this.fields.submit);
+    await I.waitForNavigationToComplete(this.fields.submit);
     await I.wait(1);
   }
 };

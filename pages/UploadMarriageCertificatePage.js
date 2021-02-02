@@ -14,11 +14,9 @@ module.exports = {
     await I.runAccessibilityTest();
     await I.see('Documents uploaded (Optional)');
     await I.click(this.fields.addNewButton);
-    await I.wait(1);
     await I.attachFile(this.fields.chooseFile, 'data/fileupload.txt');
     await I.fillField(this.fields.fileComment, 'Uploading a dummy file');
-    await I.wait(1);
-    await I.waitForVisible(this.fields.submit);
-    await I.click(this.fields.submit);
+    await I.wait(2);
+    await I.waitForNavigationToComplete(this.fields.submit);
   }
 };

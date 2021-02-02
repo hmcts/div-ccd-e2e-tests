@@ -11,7 +11,7 @@ module.exports = {
     await I.waitInUrl('solicitorCreatelangPref');
     await I.runAccessibilityTest();
     await I.click(this.fields.existingLanguagePreferences);
-    await I.click(this.fields.submit);
+    await I.waitForNavigationToComplete(this.fields.submit);
     await I.wait(1);
   }
 };
