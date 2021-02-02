@@ -20,7 +20,8 @@ module.exports = {
     await I.retry(2).selectOption(this.fields.jurisdiction, 'Family Divorce');
     await I.waitForText('Divorce case - v115.00');
     await I.retry(2).selectOption(this.fields.caseType, 'Divorce case - v115.00');
-    await I.retry(2).selectOption(this.fields.event, 'Appy for a divorce');
+    await I.waitForText('Apply for a divorce');
+    await I.retry(2).selectOption(this.fields.event, 'Apply for a divorce');
     await I.waitForNavigationToComplete(this.fields.submit);
     await I.wait(1);
   }
