@@ -13,15 +13,15 @@ class WebDriverHelper extends Helper {
     const helper = this.helpers.WebDriver;
 
     if (locator) {
-        // must be a button to click
-        await helper.waitForClickable(locator, testConfig.TestTimeToWaitForText);
-        await helper.click(locator);
+      // must be a button to click
+      await helper.waitForClickable(locator, testConfig.TestTimeToWaitForText);
+      await helper.click(locator);
     }
 
     // so for ie11 / selenium webdriver this isn't that reliable,
     // is best combined with JSWaits amOnLoadedPage in next page
     await helper.wait(webDriverWait);
-}
+  }
 
   async clickTab(tabTitle) {
     const helper = this.helpers.WebDriver;
