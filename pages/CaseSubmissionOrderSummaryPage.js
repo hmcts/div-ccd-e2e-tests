@@ -17,6 +17,5 @@ module.exports = {
       await I.see('Help with fee reference: HWF-123-456');
     }
     await I.click(this.fields.submit);
-    await I.wait(1);
   }
 };
