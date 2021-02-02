@@ -39,7 +39,7 @@ Scenario('Solicitor create case and make payment', async (I) => {
 }).tag('@crossbrowser')
   .retry(testconfig.TestRetryScenarios);
 
-Scenario('Solicitor should not see issue, refund events', async (I) => {
+xScenario('Solicitor should not see issue, refund events', async (I) => {
   await I.amOnHomePage();
   await I.login(testconfig.TestEnvProfUser, testconfig.TestEnvProfPassword);
   await I.wait(1);
@@ -52,8 +52,7 @@ Scenario('Solicitor should not see issue, refund events', async (I) => {
   await I.dontSee(eventDisplayName.TRANSFER_BETWEEN_RDC);
   await I.dontSee(eventDisplayName.TRANSFER_CTSC_TO_RDC);
   await I.click(signOut);
-}).tag('@crossbrowser')
-  .retry(testconfig.TestRetryScenarios);
+}).retry(testconfig.TestRetryScenarios);
 
 Scenario('Caseworker should be able to see issue, refund events and issue aos pack', async (I) => {
   await I.amOnHomePage();
@@ -72,7 +71,9 @@ Scenario('Caseworker should be able to see issue, refund events and issue aos pa
   await I.issueFromSubmittedPageFormAndSubmit();
   await I.issueCheckYourAnswersPageFormAndSubmit();
   await I.selectAndSubmitEvent(eventDisplayName.ISSUE_AOS_TO_RESP);
-  await I.click(signOut);
+  await I.selectEvent(eventDisplayName.AOS_STARTED);
+  await I.aosStartedPageFormAndSubmit();
+  await I.aosStartedCheckYourAnswersPageFormAndSubmit();
+  await I.aosReceivedUndefendedMoveToDNFormSubmit();
 }).tag('@crossbrowser')
   .retry(testconfig.TestRetryScenarios);
-

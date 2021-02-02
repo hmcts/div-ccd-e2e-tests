@@ -48,6 +48,8 @@ const eventDisplayName = {
   HWF_APP_ACCEPTED: 'HWF application accepted',
   ISSUE: 'Issue',
   ISSUE_AOS_TO_RESP: 'Issue AOS pack to respondent',
+  AOS_STARTED: 'AOS started',
+  AOS_RECVD_UNDEFENDED: 'AOS Received (undefended)',
   REFUND: 'Refund',
   TRANSFER_BETWEEN_RDC: 'Transfer between RDCs',
   TRANSFER_CTSC_TO_RDC: 'Transfer from CTSC to RDC',

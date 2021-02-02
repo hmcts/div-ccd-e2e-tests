@@ -43,6 +43,12 @@ class WebDriverHelper extends Helper {
       )(el)[0].click();
     }, selector);
   }
+
+  async isMicrosoftEdgeBrowser() {
+    const browserName = await this.helpers.WebDriver.config.browser;
+    
+    return browserName === 'MicrosoftEdge';
+  }
 }
 
 module.exports = WebDriverHelper;

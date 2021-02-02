@@ -1,4 +1,5 @@
 const I = actor();
+const testConfig = require('../tests/config');
 
 module.exports = {
 
@@ -13,9 +14,11 @@ module.exports = {
     await I.waitInUrl('solicitorCreateSolUploadDocs');
     await I.runAccessibilityTest();
     await I.see('Documents uploaded (Optional)');
-    await I.click(this.fields.addNewButton);
-    await I.attachFile(this.fields.chooseFile, 'data/fileupload.txt');
-    await I.fillField(this.fields.fileComment, 'Uploading a dummy file');
+    if (testConfig.TestForCrossBrowser && I.isMicrosoftEdgeBrowser()) {
+      await I.click(this.fields.addNewButton);
+      await I.attachFile(this.fields.chooseFile, 'data/fileupload.txt');
+      await I.fillField(this.fields.fileComment, 'Uploading a dummy file');
+    }
     await I.wait(2);
     await I.waitForNavigationToComplete(this.fields.submit);
   }

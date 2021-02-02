@@ -38,6 +38,7 @@ const AosStartedPage = require('./pages/AosStartedPage');
 const AosStartedCheckYourAnswersPage = require('./pages/AosStartedCheckYourAnswersPage');
 const AosReceivedUndefendedMoveToDN = require('./pages/AosReceivedUndefendedMoveToDN');
 const SelectEventAndSubmit = require('./pages/SelectEventAndSubmit');
+const SelectEvent = require('./pages/SelectEvent');
 const MarriageCertificateDetailsPage = require('./pages/MarriageCertificateDetailsPage');
 const TransferCaseToADifferentRDCsPage = require('./pages/TransferCaseToADifferentRDCsPage');
 const TransferBetweenRDCsPage = require('./pages/TransferBetweenRDCsPage');
@@ -220,6 +221,11 @@ module.exports = function () {
     selectAndSubmitEvent: function(eventName) {
       return SelectEventAndSubmit.fillFormAndSubmit(eventName);
     },
+
+    selectEvent: function(eventName) {
+      return SelectEvent.fillFormAndSubmit(eventName);
+    },
+    
 
     aosStartedPageFormAndSubmit: function() {
       return AosStartedPage.fillFormAndSubmit();
