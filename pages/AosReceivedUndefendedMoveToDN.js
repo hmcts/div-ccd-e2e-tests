@@ -17,10 +17,10 @@ module.exports = {
     await I.waitForNavigationToComplete(this.fields.submit);
     await I.click('#RespConfirmReadPetition-Yes');
     await I.waitForElement(this.fields.selectDNReason);
-    await I.selectOption(this.fields.selectDNReason, 'Undefended divorce with Respondent agreement');
+    await I.retry(2).selectOption(this.fields.selectDNReason, 'Undefended divorce with Respondent agreement');
     await I.waitForNavigationToComplete(this.fields.submit);
-    await I.wait(10);
+    await I.wait(1);
     await I.waitForNavigationToComplete(this.fields.submit);
-    await I.wait(10);
+    await I.wait(1);
   }
 };
