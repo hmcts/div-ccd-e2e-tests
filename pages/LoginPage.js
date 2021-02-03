@@ -11,6 +11,6 @@ module.exports = {
   async submitLogin(email, password) {
     await I.fillField(this.fields.email, email);
     await I.fillField(this.fields.password, password);
-    await I.click(this.fields.submit);
+    await I.waitForNavigationToComplete(this.fields.submit);
   }
 };

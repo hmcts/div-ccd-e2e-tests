@@ -14,4 +14,4 @@ module.exports = async (verifyContent) => {
   await I.see(firstLetterToCaps(verifyContent.D8MarriedInUk));
   await I.see(labels.placeOfMarriage);
   await I.see(verifyContent.D8MarriagePlaceOfMarriage);
-}
+};

@@ -32,10 +32,9 @@ module.exports = {
     await I.click(this.fields.namesAndAddressesOfPersonsQualified);
     await I.click(this.fields.petitionerBelievesFactsTrue);
     await I.click(this.fields.amAuthorisedByPetitionerToSign);
-    await I.wait(1);
     await I.fillField(this.fields.yourName, 'SOLICITORNAME');
     await I.fillField(this.fields.nameOfYourFirm, 'SOLICITOR DIVORCE FIRM');
     await I.fillField(this.fields.additionalComments, 'additional comments');
-    await I.click(this.fields.submit);
+    await I.waitForNavigationToComplete(this.fields.submit);
   }
 };

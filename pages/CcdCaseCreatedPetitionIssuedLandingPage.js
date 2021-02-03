@@ -12,8 +12,7 @@ module.exports = {
     await I.see('Petition issued');
     await I.selectOption(this.fields.selectActionDropDown, 'Issue AOS pack to respondent');
     await I.wait(1);
-    await I.waitForVisible(this.fields.submit);
-    await I.click(this.fields.submit);
+    await I.waitForNavigationToComplete(this.fields.submit);
     await I.wait(1);
   }
 

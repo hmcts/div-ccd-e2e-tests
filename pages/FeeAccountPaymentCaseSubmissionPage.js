@@ -17,7 +17,7 @@ module.exports = {
     await I.runAccessibilityTest();
     await I.click(this.fields.howPaymentMade);
     await I.retry(2).selectOption(this.fields.howPaymentMade, paymentType.FEE_ACCOUNT);
-    await I.click(this.fields.submit);
+    await I.waitForNavigationToComplete(this.fields.submit);
     //await I.fillField(this.fields.enterYourAccountNumber, 'PBA1234908');
 
     //All the pba numbers in the dropdown are not working. So, hardcoding for now.
@@ -26,7 +26,7 @@ module.exports = {
     await I.runAccessibilityTest();
     await I.selectOption(this.fields.selectPbaNumber, 'PBA0072626');
     await I.fillField(this.fields.enterYourReference, 'Next case submitted');
-    await I.click(this.fields.submit);
+    await I.waitForNavigationToComplete(this.fields.submit);
     await I.wait(1);
   }
 };

@@ -8,7 +8,7 @@ const testConfig = require('../tests/config.js');
 const logger = Logger.getLogger('helpers/utils.js');
 
 const env = testConfig.TestEnv;
-const months = ['Jan', 'Feb', 'Mar','Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+const months = ['Jan', 'Feb', 'Mar','Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
 async function getUserToken() {
   logger.info('Getting User Token');
@@ -17,7 +17,7 @@ async function getUserToken() {
   const username = testConfig.TestEnvCWUser;
   const password = testConfig.TestEnvCWPassword;
   const redirectUri = `https://div-pfe-${env}.service.core-compute-${env}.internal/authenticated`;
-  const idamClientSecret = testConfig.TestIdamClientSecret
+  const idamClientSecret = testConfig.TestIdamClientSecret;
 
   const idamBaseUrl = 'https://idam-api.aat.platform.hmcts.net';
 

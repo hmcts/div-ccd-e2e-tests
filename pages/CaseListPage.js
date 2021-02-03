@@ -14,6 +14,11 @@ module.exports = {
     urgentFilterNo: '#SolUrgentCase-No'
   },
 
+  async clickCreateList() {
+    await I.waitForText('Case List');
+    await I.click('Case List');
+  },
+
   async selectCase() {
     await I.waitForElement(this.selectors.caseLink, 25);
     await I.click(this.selectors.caseLink);

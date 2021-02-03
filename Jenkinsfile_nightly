@@ -1,55 +1,51 @@
 #!groovy
 properties([
-        [$class: 'GithubProjectProperty', projectUrlStr: 'https://github.com/hmcts/div-ccd-e2e-tests.git'],
         pipelineTriggers([cron('00 22 * * *')]),
         parameters([
-                string(name: 'RUNNING_ENV', defaultValue: 'aat', description: 'CNP Environment to Run Tests in')
+                string(name: 'RUNNING_ENV', defaultValue: 'aat', description: 'Environment to test'),
+                string(name: 'XUI_URL_TO_TEST', defaultValue: 'https://manage-case.aat.platform.hmcts.net/', description: 'The URL you want to run solicitor tests against'),
         ])
 ])
 
-@Library("Infrastructure")
+@Library("Infrastructure") _
 
-def product = "div"
-def component = "ccd-e2e"
+String product = "div"
+String component = "ccd-e2e-tests"
 
-node {
-    ws('workspace/div-ccd-e2e-tests') {
-        stage('Checkout') {
-            deleteDir()
-            checkout scm
-        }
+def secrets = [
+  'div-${env}': [
+    secret('ccd-e2e-solicitor-email', 'PROF_USER_EMAIL'),
+    secret('ccd-e2e-solicitor-password', 'PROF_USER_PASSWORD'),
+    secret('ccd-e2e-caseworker-email', 'CCD_CASEWORKER_E2E_EMAIL'),
+    secret('ccd-e2e-caseworker-password', 'CCD_CASEWORKER_E2E_PASSWORD'),
+    secret('idam-secret', 'IDAM_CLIENT_SECRET'),
+    secret('ccd-submission-s2s-auth-secret', 'SERVICE_SECRET')
+  ]
+]
 
-        stage('Env Setup') {
-            withSubscription('nonprod') {
-                def az = { cmd -> return sh(script: "env AZURE_CONFIG_DIR=/opt/jenkins/.azure-${env.SUBSCRIPTION_NAME} az ${cmd}", returnStdout: true).trim() }
+static LinkedHashMap<String, Object> secret(String secretName, String envVar) {
+  [ $class: 'AzureKeyVaultSecret',
+    secretType: 'Secret',
+    name: secretName,
+    version: '',
+    envVariable: envVar
+  ]
+}
 
-                env.PROF_USER_EMAIL =  az('keyvault secret show --vault-name div-aat --name ccd-e2e-solicitor-email --query value -o tsv').trim()
-                env.PROF_USER_PASSWORD =  az('keyvault secret show --vault-name div-aat --name ccd-e2e-solicitor-password --query value -o tsv').trim()
-                env.CCD_CASEWORKER_E2E_EMAIL =  az('keyvault secret show --vault-name div-aat --name ccd-e2e-caseworker-email --query value -o tsv').trim()
-                env.CCD_CASEWORKER_E2E_PASSWORD =  az('keyvault secret show --vault-name div-aat --name ccd-e2e-caseworker-password --query value -o tsv').trim()
-                env.IDAM_CLIENT_SECRET =  az('keyvault secret show --vault-name div-aat --name idam-secret --query value -o tsv').trim()
-                env.SERVICE_SECRET =  az('keyvault secret show --vault-name div-aat --name ccd-submission-s2s-auth-secret --query value -o tsv').trim()
-            }
-        }
+withNightlyPipeline("nodejs", product, component) {
+    env.TEST_E2E_URL = params.XUI_URL_TO_TEST
+    env.NODE_ENV = 'ci'
 
-        stage('Journey Tests') {
-            try {
-                sh 'yarn install'
-                sh 'yarn test'
-            }
-            catch (Exception err) {
-                currentBuild.result = 'UNSTABLE'
-                echo "RESULT: ${currentBuild.result}"
-            } finally {
-                archiveArtifacts 'functional-output/**/*'
-            }
+    loadVaultSecrets(secrets)
+    enableCrossBrowserTest(['chrome', 'firefox', 'safari', 'microsoft'])
+    enableFullFunctionalTest(90)
 
-        }
-
-        stage('After run') {
-            echo "finished"
-        }
-
+    after('fullFunctionalTest') {
+        steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'functional-output/**/*'
     }
-    deleteDir()
+
+    after('crossBrowserTest') {
+        steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'functional-output/**/*'
+    }
+
 }

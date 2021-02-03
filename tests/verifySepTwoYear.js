@@ -59,13 +59,13 @@ Scenario('verify all tab fields of PFE, RFE, DN, DA', async function (I) {
   await I.validatePetitionTabData(reasonsForDivorce.SEPTWOYRSDISPLAY, verifyContent);
   await I.validateConfidentialPetitionerTab(verifyContent);
   await I.validateMarriageCertTabData(verifyContent);
-  await I.validateAOSTabData(reasonsForDivorce.SEPTWOYRS, verifyContent);
-  await I.validateDecreeNisiTabData(reasonsForDivorce.SEPTWOYRS, verifyContent);
+  await I.validateAOSTabData(reasonsForDivorce.SEPTWOYRSDISPLAY, verifyContent);
+  await I.validateDecreeNisiTabData(reasonsForDivorce.SEPTWOYRSDISPLAY, verifyContent);
   await I.validateOutcomeOfDNTabData(verifyContent);
   await I.validateDecreeAbsoluteTabData(verifyContent);
-  await I.validateDocumentTabData(reasonsForDivorce.SEPTWOYRS, caseId);
+  await I.validateDocumentTabData(reasonsForDivorce.SEPTWOYRSDISPLAY, caseId);
   await I.validatePaymentTabData(verifyContent);
-  await I.validateLanguageTabData(reasonsForDivorce.SEPTWOYRS, verifyContent);
+  await I.validateLanguageTabData(reasonsForDivorce.SEPTWOYRSDISPLAY, verifyContent);
   await I.click(signOut);
 }).retry(testconfig.TestRetryScenarios);
 

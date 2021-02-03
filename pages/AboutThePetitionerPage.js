@@ -30,6 +30,6 @@ module.exports = {
     await I.fillField(this.fields.petitionerPhoneNumber, '01789029090');
     await I.fillField(this.fields.petitionerEmailAddress, 'JamesStPatrick@power.com');
     await I.selectOption(this.fields.keepPetitionerContactDetails, '2: share');
-    await I.click(this.fields.submit);
+    await I.waitForNavigationToComplete(this.fields.submit);
   }
 };

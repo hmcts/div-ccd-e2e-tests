@@ -17,7 +17,7 @@ module.exports = {
     await I.seeInField(this.fields.petitionersFullName, 'Gary Ford');
     await I.fillField(this.fields.placeOfMarriage, 'United Kingdom');
     await I.waitForElement(this.fields.submit);
-    await I.click(this.fields.submit);
+    await I.waitForNavigationToComplete(this.fields.submit);
     await I.wait(1);
   }
 };

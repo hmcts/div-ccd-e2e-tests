@@ -12,7 +12,7 @@ module.exports = {
     await I.see('Case submission');
     await I.see('Check your answers');
     await I.see('I am duly authorised by the petitioner to sign this statement.');
-    await I.click(this.fields.submit);
+    await I.waitForNavigationToComplete(this.fields.submit);
     await I.wait(1);
   }
 };

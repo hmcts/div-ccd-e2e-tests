@@ -8,4 +8,4 @@ module.exports = async (verifyContent) => {
   await I.see(formatDateToCcdDisplayDate(new Date(verifyContent.DateRespondentEligibleForDA)));
   await I.see(labels.finalDateForDA);
   await I.see(formatDateToCcdDisplayDate(new Date(verifyContent.DateCaseNoLongerEligibleForDA)));
-}
+};

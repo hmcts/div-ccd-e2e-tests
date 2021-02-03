@@ -9,9 +9,14 @@ const CreateCasePage = require('./pages/CreateCasePage');
 const AboutSolicitorPage = require('./pages/AboutSolicitorPage');
 const AboutThePetitionerPage = require('./pages/AboutThePetitionerPage');
 const AboutTheRespondentPage = require('./pages/AboutTheRespondentPage');
+const RespSolicitorRepresented = require('./pages/RespSolicitorRepresented');
 const JurisdictionPage = require('./pages/JurisdictionPage');
 const ReasonForTheDivorcePage = require('./pages/ReasonForTheDivorcePage');
 const StatementOfCaseAdulteryPage = require('./pages/StatementOfCaseAdulteryPage');
+const StatementOfCaseBehaviourPage = require('./pages/StatementOfCaseBehaviourPage');
+const StatementOfCaseDesertionPage = require('./pages/StatementOfCaseDesertionPage');
+const StatementOfCaseSeparationDetail = require('./pages/StatementOfCaseSeparationDetail');
+const LivedApartPage = require('./pages/LivedApartPage');
 const StatementOfCaseAdulterySecPage = require('./pages/StatementOfCaseAdulterySecPage');
 const OtherLegalProceedingsPage = require('./pages/OtherLegalProceedingsPage');
 const FinancialOrdersPage = require('./pages/FinancialOrdersPage');
@@ -38,6 +43,7 @@ const AosStartedPage = require('./pages/AosStartedPage');
 const AosStartedCheckYourAnswersPage = require('./pages/AosStartedCheckYourAnswersPage');
 const AosReceivedUndefendedMoveToDN = require('./pages/AosReceivedUndefendedMoveToDN');
 const SelectEventAndSubmit = require('./pages/SelectEventAndSubmit');
+const SelectEvent = require('./pages/SelectEvent');
 const MarriageCertificateDetailsPage = require('./pages/MarriageCertificateDetailsPage');
 const TransferCaseToADifferentRDCsPage = require('./pages/TransferCaseToADifferentRDCsPage');
 const TransferBetweenRDCsPage = require('./pages/TransferBetweenRDCsPage');
@@ -86,11 +92,11 @@ module.exports = function () {
     },
 
     clickCreateCase: function() {
-      return this.click('Create case');
+      return CreateCasePage.clickCreateCase();
     },
 
     clickCreateList: function() {
-      return this.click('Case List');
+      return CaseListPage.clickCreateList();
     },
 
     fillCreateCaseFormAndSubmit() {
@@ -109,6 +115,10 @@ module.exports = function () {
       return AboutTheRespondentPage.fillFormAndSubmit();
     },
 
+    fillAboutRespSolicitorFormAndSubmit() {
+      return RespSolicitorRepresented.fillFormAndSubmit();
+    },
+
     completeMarriageCertificateDetailsPageAndSubmit: function () {
       return MarriageCertificateDetailsPage.fillFormAndSubmit();
     },
@@ -117,8 +127,8 @@ module.exports = function () {
       return JurisdictionPage.selectLegalActionsAndSubmit();
     },
 
-    selectReasonForTheDivorceQuestionPageAndSubmit: function () {
-      return ReasonForTheDivorcePage.fillFormAndSubmit();
+    selectReasonForTheDivorceQuestionPageAndSubmit: function (reason) {
+      return ReasonForTheDivorcePage.fillFormAndSubmit(reason);
     },
 
     fillAdulteryDetailsFormAndSubmit() {
@@ -127,6 +137,22 @@ module.exports = function () {
 
     fillAdulteryDetailsSecondPageFormAndSubmit() {
       return StatementOfCaseAdulterySecPage.fillFormAndSubmit();
+    },
+
+    fillBehaviourDetailsFormAndSubmit() {
+      return StatementOfCaseBehaviourPage.fillFormAndSubmit();
+    },
+
+    fillDesertionDetailsFormAndSubmit() {
+      return StatementOfCaseDesertionPage.fillFormAndSubmit();
+    },
+
+    fillSeparationDetailsFormAndSubmit() {
+      return StatementOfCaseSeparationDetail.fillFormAndSubmit();
+    },
+  
+    fillLiveApartFormAndSubmit(reason) {
+      return LivedApartPage.fillFormAndSubmit(reason);
     },
 
     otherLegalProceedings: function() {
@@ -220,6 +246,11 @@ module.exports = function () {
     selectAndSubmitEvent: function(eventName) {
       return SelectEventAndSubmit.fillFormAndSubmit(eventName);
     },
+
+    selectEvent: function(eventName) {
+      return SelectEvent.fillFormAndSubmit(eventName);
+    },
+    
 
     aosStartedPageFormAndSubmit: function() {
       return AosStartedPage.fillFormAndSubmit();
