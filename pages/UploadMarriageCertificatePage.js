@@ -15,7 +15,7 @@ module.exports = {
     await I.runAccessibilityTest();
     await I.see('Documents uploaded (Optional)');
     /* eslint-disable no-console */
-    console.log("isMicrosoftEdgeBrowser.......", I.isMicrosoftEdgeBrowser());
+    console.log('isMicrosoftEdgeBrowser.......', I.isMicrosoftEdgeBrowser());
     if (testConfig.TestForCrossBrowser && !I.isMicrosoftEdgeBrowser()) {
       await I.click(this.fields.addNewButton);
       await I.attachFile(this.fields.chooseFile, 'data/fileupload.txt');
