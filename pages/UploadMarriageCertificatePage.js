@@ -14,8 +14,8 @@ module.exports = {
     await I.waitInUrl('solicitorCreateSolUploadDocs');
     await I.runAccessibilityTest();
     await I.see('Documents uploaded (Optional)');
-    const isMicrosoftEdgeBrowser = await I.isMicrosoftEdgeBrowser();
-    if (testConfig.TestForCrossBrowser && !isMicrosoftEdgeBrowser) {
+    const isAttachFileSupportedBrowser = !(await I.isMicrosoftEdgeOrSafariBrowser());
+    if (testConfig.TestForCrossBrowser && isAttachFileSupportedBrowser) {
       await I.click(this.fields.addNewButton);
       await I.attachFile(this.fields.chooseFile, 'data/fileupload.txt');
       await I.fillField(this.fields.fileComment, 'Uploading a dummy file');

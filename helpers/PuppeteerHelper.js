@@ -18,6 +18,11 @@ class PuppeteerHelper extends Helper {
     }
   }
 
+  async isMicrosoftEdgeOrSafariBrowser() {
+    await Promise.resolve(() => {
+      return false;
+    });
+  }
 
   async waitForNavigationToComplete(locator) {
     const page = this.helpers[helperName].page;
