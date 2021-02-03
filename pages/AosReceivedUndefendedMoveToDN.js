@@ -6,7 +6,8 @@ module.exports = {
   fields: {
     selectActionDropDown: 'select[id="next-step"]',
     submit: 'button[type="submit"]',
-    selectDNReason: 'select[id="PermittedDecreeNisiReason"]'
+    selectDNReason: 'select[id="PermittedDecreeNisiReason"]',
+    eventSummary: '#field-trigger-summary'
   },
 
   async fillFormAndSubmit() {
@@ -15,12 +16,12 @@ module.exports = {
     await I.selectOption(this.fields.selectActionDropDown, eventDisplayName.AOS_RECVD_UNDEFENDED);
     await I.wait(1);
     await I.waitForNavigationToComplete(this.fields.submit);
-    await I.click('#RespConfirmReadPetition-Yes');
     await I.waitForElement(this.fields.selectDNReason);
-    await I.retry(2).selectOption(this.fields.selectDNReason, 'Undefended divorce with Respondent agreement');
+    await I.selectOption(this.fields.selectDNReason, 'Undefended divorce with Respondent agreement');
+    await I.click('#RespConfirmReadPetition-Yes');
     await I.waitForNavigationToComplete(this.fields.submit);
-    await I.wait(1);
+    await I.waitForElement(this.fields.eventSummary);
     await I.waitForNavigationToComplete(this.fields.submit);
-    await I.wait(1);
+    await I.wait(2);
   }
 };
