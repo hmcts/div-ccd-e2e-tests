@@ -16,7 +16,7 @@ module.exports = {
   },
 
   async fillFormAndSubmit() {
-    await I.wait(5);
+    await I.wait(20);
     await I.waitForText('Family Divorce');
     await I.retry(5).selectOption(this.fields.jurisdiction, 'Family Divorce');
     await I.retry(5).selectOption(this.fields.caseType, 'Divorce case - v115.00');
