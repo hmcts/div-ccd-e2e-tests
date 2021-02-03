@@ -1,9 +1,9 @@
 const { eventDisplayName, signOut, paymentType, yesorno } = require('../common/constants');
-const testconfig = require('./config')
+const testconfig = require('./config');
 
-const nextStepDropDown = 'select[id="next-step"]'
+const nextStepDropDown = 'select[id="next-step"]';
 
-let caseNumber='1612027849946935';
+let caseNumber;
 
 Feature('Solicitor create case - help with fees');
 
@@ -36,11 +36,12 @@ Scenario('Solicitor create case and make payment', async (I) => {
   await I.caseApplicationCompletePageFormAndSubmit();
   await I.caseCheckYourAnswersPageFormAndSubmit();
   await I.solAwaitingPaymentConfPageFormAndSubmit();
-}).retry(testconfig.TestRetryScenarios);
+}).tag('@crossbrowser')
+  .retry(testconfig.TestRetryScenarios);
 
-Scenario('Solicitor should not see issue, refund events', async (I) => {
+xScenario('Solicitor should not see issue, refund events', async (I) => {
   await I.amOnHomePage();
-  await I.login(testconfig.TestEnvProfUser, testconfig.TestEnvProfPassword)
+  await I.login(testconfig.TestEnvProfUser, testconfig.TestEnvProfPassword);
   await I.wait(1);
   await I.amOnPage('/case/DIVORCE/DIVORCE/' + caseNumber);
   await I.waitForElement(nextStepDropDown);
@@ -70,6 +71,9 @@ Scenario('Caseworker should be able to see issue, refund events and issue aos pa
   await I.issueFromSubmittedPageFormAndSubmit();
   await I.issueCheckYourAnswersPageFormAndSubmit();
   await I.selectAndSubmitEvent(eventDisplayName.ISSUE_AOS_TO_RESP);
-  await I.click(signOut);
-}).retry(testconfig.TestRetryScenarios);
-
+  await I.selectEvent(eventDisplayName.AOS_STARTED);
+  await I.aosStartedPageFormAndSubmit();
+  await I.aosStartedCheckYourAnswersPageFormAndSubmit();
+  await I.aosReceivedUndefendedMoveToDNFormSubmit();
+}).tag('@crossbrowser')
+  .retry(testconfig.TestRetryScenarios);

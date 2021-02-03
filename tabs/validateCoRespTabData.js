@@ -26,4 +26,4 @@ module.exports = async (verifyContent) => {
   await I.see(labels.coRespondentAnswerReceived);
   await I.see(verifyContent.ReceivedAnswerFromCoResp);
   await I.see(labels.coRespondentAnswerReceivedDate);
-}
+};

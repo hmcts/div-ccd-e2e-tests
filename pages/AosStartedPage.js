@@ -20,7 +20,7 @@ module.exports = {
     await I.fillField(this.fields.dateAosReceivedFromRespondentMonth, '12');
     await I.fillField(this.fields.dateAosReceivedFromRespondentYear, '2018');
     await I.waitForElement(this.fields.submit);
-    await I.click(this.fields.submit);
+    await I.waitForNavigationToComplete(this.fields.submit);
     await I.wait(1);
   }
 };

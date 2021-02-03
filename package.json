@@ -5,9 +5,11 @@
   "description": "",
   "scripts": {
     "pretest": "npm run create:type-definitions",
-    "test": "TESTS_FOR_ACCESSIBILITY='true' codeceptjs run-multiple parallel --steps --reporter mochawesome",
+    "test:fullfunctional": "TESTS_FOR_ACCESSIBILITY='true' codeceptjs run-multiple parallel --steps --reporter mochawesome",
     "create:type-definitions": "codeceptjs def",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "test-crossbrowser-e2e": "NODE_PATH=. codeceptjs run-multiple ${BROWSER_GROUP:-'--all'} -c saucelabs.conf.js --plugins retryFailedStep --steps --grep '@crossbrowser' --reporter mocha-multi",
+    "test:crossbrowser": "./bin/run-crossbrowser-tests.sh"
   },
   "keywords": [],
   "author": "",
@@ -19,14 +21,19 @@
     "cross-env": "^5.1.3",
     "otp": "^0.1.3",
     "request": "^2.88.0",
-    "request-promise-native": "^1.0.5"
+    "request-promise-native": "^1.0.9"
   },
   "devDependencies": {
     "codeceptjs": "^2.6.11",
     "eslint": "^4.19.1",
     "eslint-config-google": "^0.9.1",
     "eslint-plugin-mocha": "^5.0.0",
+    "mocha": "^5.2.0",
+    "mocha-jenkins-reporter": "^0.4.5",
+    "mocha-junit-reporter": "^1.23.3",
+    "mocha-multi": "^1.1.3",
     "mochawesome": "^4.1.0",
-    "puppeteer": "^5.4.1"
+    "puppeteer": "^5.4.1",
+    "webdriverio": "^6.11.3"
   }
 }

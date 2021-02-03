@@ -24,48 +24,48 @@ exports.config = {
           '--proxy-server=proxyout.reform.hmcts.net:8080',
           '--proxy-bypass-list=*beta*LB.reform.hmcts.net',
           '--window-size=1440,1400'
-      ]
+        ]
       }
-  },
-  PuppeteerHelper: {
-    'require': './helpers/PuppeteerHelper.js'
-  },
-  JSWait: {
+    },
+    PuppeteerHelper: {
+      'require': './helpers/PuppeteerHelper.js'
+    },
+    JSWait: {
       require: './helpers/JSWait.js'
-  },
-  Mochawesome: {
+    },
+    Mochawesome: {
       uniqueScreenshotNames: 'true'
-  }
-},
-include: {
+    }
+  },
+  include: {
     I: './steps_definitions.js'
-},
-plugins: {
-  retryFailedStep: {
-    enabled: true
   },
-  autoDelay: {
-    enabled: testConfig.TestAutoDelayEnabled
+  plugins: {
+    retryFailedStep: {
+      enabled: true
+    },
+    autoDelay: {
+      enabled: testConfig.TestAutoDelayEnabled
+    },
+    screenshotOnFail: {
+      enabled: true,
+      fullPageScreenshots: 'true'
+    }
   },
-  screenshotOnFail: {
-    enabled: true,
-    fullPageScreenshots: 'true'
-  }
-},
-bootstrap: false,
-multiple: {
-  'parallel': {
+  bootstrap: false,
+  multiple: {
+    'parallel': {
       'chunks': 4
-  }
-},
-mocha: {
-  reporterOptions: {
-    reportDir: testConfig.TestOutputDir,
-    reportName: 'Divorce CCD E2E Tests',
-    inlineAssets: true
-  }
-},
-name: 'div-ccd-e2e-test'
+    }
+  },
+  mocha: {
+    reporterOptions: {
+      reportDir: testConfig.TestOutputDir,
+      reportName: 'Divorce CCD E2E Tests',
+      inlineAssets: true
+    }
+  },
+  name: 'div-ccd-e2e-test'
 };
 
 

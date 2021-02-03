@@ -12,8 +12,7 @@ module.exports = {
     await I.see('Petition submitted');
     await I.selectOption(this.fields.selectActionDropDown, 'Transfer between RDCs');
     await I.wait(1);
-    await I.waitForVisible(this.fields.submit);
-    await I.click(this.fields.submit);
+    await I.waitForNavigationToComplete(this.fields.submit);
     await I.wait(1);
   }
 

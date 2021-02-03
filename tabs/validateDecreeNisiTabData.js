@@ -11,18 +11,18 @@ module.exports = async (reason, verifyContent) => {
   await I.see(formatDateToCcdDisplayDate(new Date(verifyContent.DNApplicationSubmittedDate)));
   await I.see(labels.isEverythingStatedDivPetition);
   await I.see(firstLetterToCaps(verifyContent.statementOfTruthDN));
-  if(reasonsForDivorce.BEHAVIOUR == reason) {
+  if(reasonsForDivorce.BEHAVIOUR === reason) {
     await I.see(labels.isBehaviourStillHapp);
     await I.see(firstLetterToCaps(verifyContent.BehaviourStillHappeningDN));
-  } else if(reasonsForDivorce.DESERTION == reason) {
+  } else if(reasonsForDivorce.DESERTION === reason) {
     await I.see(labels.livedApart);
     await I.see(firstLetterToCaps(verifyContent.DesertionLivedApartSinceEventDN));
   } else if ([reasonsForDivorce.SEPFIVEYRS, reasonsForDivorce.SEPTWOYRS].includes(reason)) {
     await I.see(labels.livedApart);
-    await I.see(firstLetterToCaps(verifyContent.SeparationLivedApartSinceEventDN))
+    await I.see(firstLetterToCaps(verifyContent.SeparationLivedApartSinceEventDN));
   }
   await I.see(labels.petitionerCostAtDN);
   await I.see(labels.claimOriginalAmountText);
   await I.see(labels.petitionerFactsDnStage);
   await I.see(firstLetterToCaps(verifyContent.ConfirmPetitionDN));
-}
+};

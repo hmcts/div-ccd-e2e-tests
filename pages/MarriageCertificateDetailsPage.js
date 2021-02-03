@@ -21,7 +21,7 @@ module.exports = {
     await I.fillField(this.fields.petitionerFullname, 'James St Patrick');
     await I.fillField(this.fields.respondentFullname, 'Tasha St Patrick');
     await I.click(this.fields.didMarriageTakePlaceInUK);
-    await I.click(this.fields.submit);
+    await I.waitForNavigationToComplete(this.fields.submit);
     await I.wait(1);
     await I.waitInUrl('solicitorCreateSolJurisdiction');
   }

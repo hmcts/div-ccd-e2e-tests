@@ -10,7 +10,8 @@ module.exports = {
     phoneNumber: '#PetitionerSolicitorPhone',
     email: '#PetitionerSolicitorEmail',
     solicitorAgree: '#SolicitorAgreeToReceiveEmails-Yes',
-    submit: 'button[type="submit"]'
+    submit: 'button[type="submit"]',
+    OrgNamesText: 'Organisation name and address'
   },
 
   async fillFormAndSubmit() {
@@ -23,7 +24,7 @@ module.exports = {
     await I.fillField(this.fields.phoneNumber, '07712345679');
     await I.fillField(this.fields.email, 'ccdsolicitorcreatecase@pettyfrance.com');
     await I.click(this.fields.solicitorAgree);
-    await I.wait(1);
-    await I.click(this.fields.submit);
+    await I.waitForText(this.fields.OrgNamesText);
+    await I.waitForNavigationToComplete(this.fields.submit);
   }
 };

@@ -12,7 +12,7 @@ module.exports = {
     await I.runAccessibilityTest();
     await I.see('The petitioner has the option to name the person with whom the respondent committed adultery.');
     await I.click(this.fields.namePersonAdulteryCommittedWith);
-    await I.click(this.fields.submit);
+    await I.waitForNavigationToComplete(this.fields.submit);
     await I.wait(1);
   }
 };

@@ -40,7 +40,7 @@ Scenario('Caseworker change DN events', async function (I) {
   await I.selectAndSubmitEvent(eventDisplayName.REFER_TO_LEGAL_ADVSIOR);
   await I.selectAndSubmitEvent(eventDisplayName.ENTITLEMENT_GRANTED);
   await I.selectAndSubmitEvent(eventDisplayName.DN_PRONOUNCED);
-  await I.selectAndSubmitEvent(eventDisplayName.DA_GRANTED)
+  await I.selectAndSubmitEvent(eventDisplayName.DA_GRANTED);
   await I.wait(5);
   await I.click(signOut);
 }).retry(testconfig.TestRetryScenarios);
