@@ -9,6 +9,7 @@ module.exports = {
   },
 
   async fillFormAndSubmit(paymentMethod) {
+    await I.waitInUrl('solicitorStatementOfTruthPaySubmit/solicitorStatementOfTruthPaySubmitSolPaymentSummary');
     await I.waitForText('Case submission');
     await I.runAccessibilityTest();
     if (paymentMethod === paymentType.FEE_ACCOUNT) {	
