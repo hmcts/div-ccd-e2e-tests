@@ -3,7 +3,7 @@ const testconfig = require('./config');
 
 const nextStepDropDown = 'select[id="next-step"]';
 
-let caseNumber;
+let caseNumber='1613132843310655';
 
 Feature('Solicitor create case - help with fees');
 
@@ -16,6 +16,7 @@ Scenario('Solicitor create case and make payment', async (I) => {
   await I.fillAboutSolicitorFormAndSubmit();
   await I.fillAboutThePetitionerFormAndSubmit();
   await I.fillAboutTheRespondentFormAndSubmit();
+  await I.fillAboutRespSolicitorFormAndSubmit();
   await I.completeMarriageCertificateDetailsPageAndSubmit();
   await I.selectJurisdictionQuestionPageAndSubmit();
   await I.selectReasonForTheDivorceQuestionPageAndSubmit();
@@ -75,5 +76,10 @@ Scenario('Caseworker should be able to see issue, refund events and issue aos pa
   await I.aosStartedPageFormAndSubmit();
   await I.aosStartedCheckYourAnswersPageFormAndSubmit();
   await I.aosReceivedUndefendedMoveToDNFormSubmit();
+  await I.selectAndSubmitEvent(eventDisplayName.DN_RECEIVED);
+  await I.selectAndSubmitEvent(eventDisplayName.REFER_TO_LEGAL_ADVSIOR);
+  await I.selectAndSubmitEvent(eventDisplayName.ENTITLEMENT_GRANTED);
+  await I.selectAndSubmitEvent(eventDisplayName.DN_PRONOUNCED);
+  await I.selectAndSubmitEvent(eventDisplayName.DA_GRANTED);
 }).tag('@crossbrowser')
   .retry(testconfig.TestRetryScenarios);

@@ -14,6 +14,7 @@ xScenario('Solicitor create case and make payment', async (I) => {
   await I.fillAboutSolicitorFormAndSubmit();
   await I.fillAboutThePetitionerFormAndSubmit();
   await I.fillAboutTheRespondentFormAndSubmit();
+  await I.fillAboutRespSolicitorFormAndSubmit();
   await I.completeMarriageCertificateDetailsPageAndSubmit();
   await I.selectJurisdictionQuestionPageAndSubmit();
   await I.selectReasonForTheDivorceQuestionPageAndSubmit();

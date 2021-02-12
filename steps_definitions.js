@@ -9,6 +9,7 @@ const CreateCasePage = require('./pages/CreateCasePage');
 const AboutSolicitorPage = require('./pages/AboutSolicitorPage');
 const AboutThePetitionerPage = require('./pages/AboutThePetitionerPage');
 const AboutTheRespondentPage = require('./pages/AboutTheRespondentPage');
+const RespSolicitorRepresented = require('./pages/RespSolicitorRepresented');
 const JurisdictionPage = require('./pages/JurisdictionPage');
 const ReasonForTheDivorcePage = require('./pages/ReasonForTheDivorcePage');
 const StatementOfCaseAdulteryPage = require('./pages/StatementOfCaseAdulteryPage');
@@ -108,6 +109,10 @@ module.exports = function () {
 
     fillAboutTheRespondentFormAndSubmit() {
       return AboutTheRespondentPage.fillFormAndSubmit();
+    },
+
+    fillAboutRespSolicitorFormAndSubmit() {
+      return RespSolicitorRepresented.fillFormAndSubmit();
     },
 
     completeMarriageCertificateDetailsPageAndSubmit: function () {
