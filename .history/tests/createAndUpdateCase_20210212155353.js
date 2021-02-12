@@ -1,4 +1,4 @@
-const { getPfeLoginEmailId, createCaseInCcd, updateCaseInCcd } = require('../helpers/utils');
+const { getPfeLoginEmailIdcreateCaseInCcd, updateCaseInCcd } = require('../helpers/utils');
 const { eventDisplayName, signOut } = require('../common/constants');
 const testconfig = require('./config');
 
@@ -46,9 +46,7 @@ Scenario('Caseworker change DN events', async function (I) {
 }).retry(testconfig.TestRetryScenarios);
 
 
-Scenario('Create User for PFE', async function (I) {
-  const emailID = await getPfeLoginEmailId('divorce_111_02@mailinator.com');
-  const caseId = await createCaseInCcd('data/ccd-basic-data.json');
+Scenario('Create User for PFE ', async function (I) {
+  const caseId = await createCaseInCcd('data/div-BA-2-year-separation-with-consent.json');
   const response = await updateCaseInCcd(caseId, 'hwfApplicationAcceptedfromAwaitingHWFDecision', 'data/ccd-update-data.json');
-
-});
+})

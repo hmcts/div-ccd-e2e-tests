@@ -11,7 +11,7 @@ exports.config = {
       waitForNavigation: ['domcontentloaded'],
       restart: true,
       keepCookies: false,
-      keepBrowserState: false,
+      keepBrowserState: true,
       waitForTimeout: 90000,
       chrome: {
         ignoreHTTPSErrors: true,

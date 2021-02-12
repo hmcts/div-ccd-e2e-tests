@@ -71,7 +71,7 @@ async function getPfeLoginEmailId(testEmail) {
 
   const idamBaseUrl = 'https://idam-api.aat.platform.hmcts.net';
   const idamDetailsPath = '/testing-support/accounts';
-  const createIdamEmail = await request({
+  const createEmail = await request({
     method: 'POST', 
     uri: idamBaseUrl + idamDetailsPath,
     headers: {
@@ -88,9 +88,9 @@ async function getPfeLoginEmailId(testEmail) {
     })
   });
 
-  logger.debug(createIdamEmail);
+  logger.debug(`${testEmail}`);
 
-  return createIdamEmail;
+  return `${testEmail}`;
 }
 
 async function getServiceToken() {

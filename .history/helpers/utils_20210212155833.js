@@ -88,9 +88,9 @@ async function getPfeLoginEmailId(testEmail) {
     })
   });
 
-  logger.debug(createIdamEmail);
+  logger.debug(`${testEmail}`);
 
-  return createIdamEmail;
+  return `${testEmail}`;
 }
 
 async function getServiceToken() {

@@ -90,7 +90,7 @@ async function getPfeLoginEmailId(testEmail) {
 
   logger.debug(createIdamEmail);
 
-  return createIdamEmail;
+  return `createIdamEmail`;
 }
 
 async function getServiceToken() {

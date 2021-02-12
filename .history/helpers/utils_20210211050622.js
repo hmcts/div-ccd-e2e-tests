@@ -66,31 +66,22 @@ async function getUserId(authToken) {
   return JSON.parse(userDetails).id;
 }
 
-async function getPfeLoginEmailId(testEmail) {
-  logger.info('Getting Pfe Login email Id');
+async function getPfeloginId(authToken) {
+  logger.info('Getting Pfe User Id');
 
   const idamBaseUrl = 'https://idam-api.aat.platform.hmcts.net';
+
   const idamDetailsPath = '/testing-support/accounts';
-  const createIdamEmail = await request({
-    method: 'POST', 
+  const userDetails = await request.post({
     uri: idamBaseUrl + idamDetailsPath,
     headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({
-      'email': `${testEmail}`,
-      'forename': 'e2e Automated',
-      'surname': 'PFE Test',
-      'password': 'Testing1234',
-      'roles': [{
-        'code': 'citizen'
-      }]
-    })
+      Authorization: `Bearer ${authToken}`
+    }
   });
 
-  logger.debug(createIdamEmail);
+  logger.debug(JSON.parse(userDetails).id);
 
-  return createIdamEmail;
+  return JSON.parse(userDetails).id;
 }
 
 async function getServiceToken() {
@@ -267,6 +258,5 @@ module.exports = {
   getBaseUrl,
   datechange,
   formatDateToCcdDisplayDate,
-  getPfeLoginEmailId,
   firstLetterToCaps
 };
