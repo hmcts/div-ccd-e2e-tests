@@ -1,11 +1,14 @@
 const reasonsForDivorce = {
-  ADULTERY: 'Adultery',
-  BEHAVIOUR: 'Behaviour',
-  DESERTION: 'Desertion',
+  ADULTERY: 'adultery',
+  BEHAVIOUR: 'unreasonable-behaviour',
+  DESERTION: 'desertion',
   SEPFIVEYRS: 'separation-5-years',
-  SEPFIVEYRSDISPLAY: '5-year separation',
   SEPTWOYRS: 'separation-2-years',
-  SEPTWOYRSDISPLAY: '2-year separation'
+  ADULTERYDISPLAY: 'Adultery',
+  BEHAVIOURDISPLAY: 'Behaviour',
+  DESERTIONDISPLAY: 'Desertion',
+  SEPFIVEYRSDISPLAY: '5-year separation',
+  SEPTWOYRSDISPLAY: '2-year separation (with consent)'
 };
 
 const signOut = 'Sign out';

@@ -7,7 +7,7 @@ module.exports = async (reason, caseId) => {
   await I.see(labels.documentsUploadedPFEStage);
   await I.see(labels.documentsGenerated);
   await I.see(labels.d8petitionText + caseId + labels.documentgeneratedExtension);
-  if(reasonsForDivorce.ADULTERY === reason) {
+  if(reasonsForDivorce.ADULTERYDISPLAY === reason) {
     await I.see(labels.coRespondentaosinvitationText + caseId + labels.documentgeneratedExtension);
   } 
   await I.see(labels.pfeUploadedDoc);

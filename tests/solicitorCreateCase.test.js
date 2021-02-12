@@ -1,5 +1,6 @@
 const { paymentType, yesorno } = require('../common/constants');
 const testconfig = require('./config');
+const { reasonsForDivorce } = require('../common/constants');
 
 let caseNumber;
 
@@ -17,7 +18,7 @@ xScenario('Solicitor create case and make payment', async (I) => {
   await I.fillAboutRespSolicitorFormAndSubmit();
   await I.completeMarriageCertificateDetailsPageAndSubmit();
   await I.selectJurisdictionQuestionPageAndSubmit();
-  await I.selectReasonForTheDivorceQuestionPageAndSubmit();
+  await I.selectReasonForTheDivorceQuestionPageAndSubmit(reasonsForDivorce.ADULTERY);
   await I.fillAdulteryDetailsFormAndSubmit();
   await I.fillAdulteryDetailsSecondPageFormAndSubmit(); 
   await I.otherLegalProceedings();
