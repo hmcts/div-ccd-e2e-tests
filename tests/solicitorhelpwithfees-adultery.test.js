@@ -32,14 +32,14 @@ Scenario('Solicitor create case and make payment and casework updates all events
   await I.solicitorCreateCheckYourAnswerAndSubmit();
   caseNumber = await I.solicitorCaseCreatedAndSubmit();
   caseNumber = caseNumber.replace(/\D/gi, '');
-  console.log('Adultery casenumber is ..', caseNumber);
+  console.log('Adultery case number is ..', caseNumber);
   await I.statementOfTruthAndReconciliationPageFormAndSubmit(yesorno.No);
   await I.casePaymentWithHWFAndSubmissionPageFormAndSubmit();
   await I.caseOrderSummaryPageFormAndSubmit(paymentType.HWF);
   await I.caseApplicationCompletePageFormAndSubmit();
   await I.caseCheckYourAnswersPageFormAndSubmit();
   await I.solAwaitingPaymentConfPageFormAndSubmit();
-  await I.amOnHomePage();
+  await I.wait(5);
   await I.login(testconfig.TestEnvCWUser, testconfig.TestEnvCWPassword);
   await I.wait(0.5);
   await I.amOnPage('/case/DIVORCE/DIVORCE/' + caseNumber);
