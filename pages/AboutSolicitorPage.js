@@ -18,7 +18,7 @@ module.exports = {
     await I.waitForElement(this.fields.solicitorsName);
     await I.runAccessibilityTest();
     await I.retry().fillField(this.fields.solicitorsName, 'PAPA AJASCO');
-    await I.fillField(this.fields.firmName, 'ELEMU GETON');
+    //await I.fillField(this.fields.firmName, 'ELEMU GETON');
     await I.fillField(this.fields.firmDxAddress, '100 Reede Road, RM10 8DU');
     await I.fillField(this.fields.yourReferenceNumber, 'AWS11234');
     await I.fillField(this.fields.phoneNumber, '07712345679');

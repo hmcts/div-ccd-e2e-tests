@@ -44,11 +44,11 @@ module.exports = async (reason, verifyContent) => {
 
   await I.see(labels.wishToApplyForFinancialOrder);
   await I.see( firstLetterToCaps(verifyContent.D8FinancialOrder));
-  if(reasonsForDivorce.ADULTERY === reason) {
+  if(reasonsForDivorce.ADULTERYDISPLAY === reason) {
     await I.see(labels.applyForClaimCosts);
     await I.see(firstLetterToCaps(verifyContent.D8DivorceCostsClaim));
   }
-  if(reasonsForDivorce.BEHAVIOUR === reason) {
+  if(reasonsForDivorce.BEHAVIOURDISPLAY === reason) {
     await I.see(labels.whoTheFinancialOrder);
     await I.see(verifyContent.D8FinancialOrderFor[0]);
     await I.see(labels.applyForClaimCosts);
@@ -64,7 +64,7 @@ module.exports = async (reason, verifyContent) => {
   await I.see(labels.reasonForDivorce);
   await I.see(reason);
 
-  if(reasonsForDivorce.ADULTERY === reason) {
+  if(reasonsForDivorce.ADULTERYDISPLAY === reason) {
     await I.see(labels.adulteryDetails);
     await I.see(verifyContent.D8ReasonForDivorceAdulteryDetails);
     await I.see(labels.nameOfCoRespondent);
@@ -79,10 +79,10 @@ module.exports = async (reason, verifyContent) => {
     await I.see(firstLetterToCaps(verifyContent.D8ReasonForDivorceAdulteryKnowWhere));
     await I.see(labels.detailsOfWhereAdulteryTookPlace);
     await I.see(verifyContent.D8ReasonForDivorceAdulteryWhereDetails);
-  } else if(reasonsForDivorce.BEHAVIOUR === reason) {
+  } else if(reasonsForDivorce.BEHAVIOURDISPLAY === reason) {
     await I.see(labels.behaviourDetails);
     await I.see(verifyContent.D8DerivedStatementOfCase);
-  } else if (reasonsForDivorce.DESERTION === reason) {
+  } else if (reasonsForDivorce.DESERTIONDISPLAY === reason) {
     await I.see(labels.respondentLeaveWithoutAgreement);
     await I.see(verifyContent.D8ReasonForDivorceDesertionAgreed);
     await I.see(labels.desertionDetails);

@@ -9,9 +9,14 @@ const CreateCasePage = require('./pages/CreateCasePage');
 const AboutSolicitorPage = require('./pages/AboutSolicitorPage');
 const AboutThePetitionerPage = require('./pages/AboutThePetitionerPage');
 const AboutTheRespondentPage = require('./pages/AboutTheRespondentPage');
+const RespSolicitorRepresented = require('./pages/RespSolicitorRepresented');
 const JurisdictionPage = require('./pages/JurisdictionPage');
 const ReasonForTheDivorcePage = require('./pages/ReasonForTheDivorcePage');
 const StatementOfCaseAdulteryPage = require('./pages/StatementOfCaseAdulteryPage');
+const StatementOfCaseBehaviourPage = require('./pages/StatementOfCaseBehaviourPage');
+const StatementOfCaseDesertionPage = require('./pages/StatementOfCaseDesertionPage');
+const StatementOfCaseSeparationDetail = require('./pages/StatementOfCaseSeparationDetail');
+const LivedApartPage = require('./pages/LivedApartPage');
 const StatementOfCaseAdulterySecPage = require('./pages/StatementOfCaseAdulterySecPage');
 const OtherLegalProceedingsPage = require('./pages/OtherLegalProceedingsPage');
 const FinancialOrdersPage = require('./pages/FinancialOrdersPage');
@@ -110,6 +115,10 @@ module.exports = function () {
       return AboutTheRespondentPage.fillFormAndSubmit();
     },
 
+    fillAboutRespSolicitorFormAndSubmit() {
+      return RespSolicitorRepresented.fillFormAndSubmit();
+    },
+
     completeMarriageCertificateDetailsPageAndSubmit: function () {
       return MarriageCertificateDetailsPage.fillFormAndSubmit();
     },
@@ -118,8 +127,8 @@ module.exports = function () {
       return JurisdictionPage.selectLegalActionsAndSubmit();
     },
 
-    selectReasonForTheDivorceQuestionPageAndSubmit: function () {
-      return ReasonForTheDivorcePage.fillFormAndSubmit();
+    selectReasonForTheDivorceQuestionPageAndSubmit: function (reason) {
+      return ReasonForTheDivorcePage.fillFormAndSubmit(reason);
     },
 
     fillAdulteryDetailsFormAndSubmit() {
@@ -128,6 +137,22 @@ module.exports = function () {
 
     fillAdulteryDetailsSecondPageFormAndSubmit() {
       return StatementOfCaseAdulterySecPage.fillFormAndSubmit();
+    },
+
+    fillBehaviourDetailsFormAndSubmit() {
+      return StatementOfCaseBehaviourPage.fillFormAndSubmit();
+    },
+
+    fillDesertionDetailsFormAndSubmit() {
+      return StatementOfCaseDesertionPage.fillFormAndSubmit();
+    },
+
+    fillSeparationDetailsFormAndSubmit() {
+      return StatementOfCaseSeparationDetail.fillFormAndSubmit();
+    },
+  
+    fillLiveApartFormAndSubmit(reason) {
+      return LivedApartPage.fillFormAndSubmit(reason);
     },
 
     otherLegalProceedings: function() {

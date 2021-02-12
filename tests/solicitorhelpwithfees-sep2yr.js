@@ -1,11 +1,11 @@
 const { eventDisplayName, signOut, paymentType, yesorno } = require('../common/constants');
 const testconfig = require('./config');
-
+const { reasonsForDivorce } = require('../common/constants');
 const nextStepDropDown = 'select[id="next-step"]';
 
 let caseNumber;
 
-Feature('Solicitor create case - help with fees');
+Feature('Sep-2-Yrs');
 
 Scenario('Solicitor create case and make payment', async (I) => {
   await I.amOnHomePage();
@@ -16,11 +16,12 @@ Scenario('Solicitor create case and make payment', async (I) => {
   await I.fillAboutSolicitorFormAndSubmit();
   await I.fillAboutThePetitionerFormAndSubmit();
   await I.fillAboutTheRespondentFormAndSubmit();
+  await I.fillAboutRespSolicitorFormAndSubmit();
   await I.completeMarriageCertificateDetailsPageAndSubmit();
   await I.selectJurisdictionQuestionPageAndSubmit();
-  await I.selectReasonForTheDivorceQuestionPageAndSubmit();
-  await I.fillAdulteryDetailsFormAndSubmit();
-  await I.fillAdulteryDetailsSecondPageFormAndSubmit(); 
+  await I.selectReasonForTheDivorceQuestionPageAndSubmit(reasonsForDivorce.SEPTWOYRS);
+  await I.fillSeparationDetailsFormAndSubmit();
+  await I.fillLiveApartFormAndSubmit(reasonsForDivorce.SEPFIVEYRS);
   await I.otherLegalProceedings();
   await I.financialOrdersSelectButton();
   await I.claimForCostsSelectButton(),
@@ -29,15 +30,14 @@ Scenario('Solicitor create case and make payment', async (I) => {
   await I.solicitorCreateCheckYourAnswerAndSubmit();
   caseNumber = await I.solicitorCaseCreatedAndSubmit();
   caseNumber = caseNumber.replace(/\D/gi, '');
-  console.log(caseNumber);
+  console.log('Sep 2 yr case number is ...', caseNumber);
   await I.statementOfTruthAndReconciliationPageFormAndSubmit(yesorno.No);
   await I.casePaymentWithHWFAndSubmissionPageFormAndSubmit();
   await I.caseOrderSummaryPageFormAndSubmit(paymentType.HWF);
   await I.caseApplicationCompletePageFormAndSubmit();
   await I.caseCheckYourAnswersPageFormAndSubmit();
   await I.solAwaitingPaymentConfPageFormAndSubmit();
-}).tag('@crossbrowser')
-  .retry(testconfig.TestRetryScenarios);
+}).retry(testconfig.TestRetryScenarios);
 
 xScenario('Solicitor should not see issue, refund events', async (I) => {
   await I.amOnHomePage();
@@ -75,5 +75,9 @@ Scenario('Caseworker should be able to see issue, refund events and issue aos pa
   await I.aosStartedPageFormAndSubmit();
   await I.aosStartedCheckYourAnswersPageFormAndSubmit();
   await I.aosReceivedUndefendedMoveToDNFormSubmit();
-}).tag('@crossbrowser')
-  .retry(testconfig.TestRetryScenarios);
+  await I.selectAndSubmitEvent(eventDisplayName.DN_RECEIVED);
+  await I.selectAndSubmitEvent(eventDisplayName.REFER_TO_LEGAL_ADVSIOR);
+  await I.selectAndSubmitEvent(eventDisplayName.ENTITLEMENT_GRANTED);
+  await I.selectAndSubmitEvent(eventDisplayName.DN_PRONOUNCED);
+  await I.selectAndSubmitEvent(eventDisplayName.DA_GRANTED);
+}).retry(testconfig.TestRetryScenarios);

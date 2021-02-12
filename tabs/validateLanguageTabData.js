@@ -7,16 +7,16 @@ module.exports = async (reason, verifyContent) => {
   await I.clickTab(labels.name);
   await I.see(labels.prefWelsh);
   await I.see(firstLetterToCaps(verifyContent.LanguagePreferenceWelsh));
-  if(reasonsForDivorce.ADULTERY === reason) {
+  if(reasonsForDivorce.ADULTERYDISPLAY === reason) {
     await I.see(labels.adulteryTimeLivedTogetherDetailsDNTrans);
     await I.see(verifyContent.AdulteryTimeLivedTogetherDetailsDNTrans);
-  } else if(reasonsForDivorce.BEHAVIOUR === reason) {
+  } else if(reasonsForDivorce.BEHAVIOURDISPLAY === reason) {
     await I.see(labels.behaviourTimeLivedTogetherDetailsDNTrans);
     await I.see(verifyContent.BehaviourTimeLivedTogetherDetailsDNTrans);
-  } else if (reasonsForDivorce.DESERTION === reason) {
+  } else if (reasonsForDivorce.DESERTIONDISPLAY === reason) {
     await I.see(labels.desertionTimeLivedTogetherDetailsDNTrans);
     await I.see(verifyContent.DesertionTimeLivedTogetherDetailsDNTrans);
-  } else if ([reasonsForDivorce.SEPFIVEYRS, reasonsForDivorce.SEPTWOYRS].includes(reason)) {
+  } else if ([reasonsForDivorce.SEPFIVEYRSDISPLAY, reasonsForDivorce.SEPTWOYRSDISPLAY].includes(reason)) {
     await I.see(labels.separationTimeLivedTogetherDetailsDNTrans);
     await I.see(verifyContent.SeparationTimeLivedTogetherDetailsDNTrans);
   }
