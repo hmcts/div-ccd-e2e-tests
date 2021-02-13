@@ -39,26 +39,7 @@ Scenario('Solicitor create case and make payment', async (I) => {
   await I.caseApplicationCompletePageFormAndSubmit();
   await I.caseCheckYourAnswersPageFormAndSubmit();
   await I.solAwaitingPaymentConfPageFormAndSubmit();
-}).tag('@crossbrowser')
-  .retry(testconfig.TestRetryScenarios);
-
-xScenario('Solicitor should not see issue, refund events', async (I) => {
-  await I.amOnHomePage();
-  await I.login(testconfig.TestEnvProfUser, testconfig.TestEnvProfPassword);
-  await I.wait(1);
-  await I.amOnPage('/case/DIVORCE/DIVORCE/' + caseNumber);
-  await I.waitForElement(nextStepDropDown);
-  await I.click(nextStepDropDown);
-  await I.see(eventDisplayName.UPDATE_LANG);
-  await I.dontSee(eventDisplayName.ISSUE);
-  await I.dontSee(eventDisplayName.REFUND);
-  await I.dontSee(eventDisplayName.TRANSFER_BETWEEN_RDC);
-  await I.dontSee(eventDisplayName.TRANSFER_CTSC_TO_RDC);
-  await I.click(signOut);
-}).retry(testconfig.TestRetryScenarios);
-
-Scenario('Caseworker should be able to see issue, refund events and issue aos pack', async (I) => {
-  await I.amOnHomePage();
+  await I.wait(5);
   await I.login(testconfig.TestEnvCWUser, testconfig.TestEnvCWPassword);
   await I.wait(0.5);
   await I.amOnPage('/case/DIVORCE/DIVORCE/' + caseNumber);
