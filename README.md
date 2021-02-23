@@ -23,8 +23,14 @@ Install dependencies by executing the following command:
 $ yarn install
  ```
 
-### Running the tests
+### Running the experui tests againt aat
 
  ```bash
-$ yarn test
+$ yarn test:fullfunctional
+ ```
+
+### Running the cross browser tests againt aat
+
+ ```bash
+$ yarn test:crossbrowser
  ```
