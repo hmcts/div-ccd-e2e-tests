@@ -1,21 +1,36 @@
 const fs = require('fs');
 const testConfig = require('../tests/config');
 
-function generateAccessibilityReport(reportJson) {
-  consoleReport(reportJson);
-
-  const result = 'var replacejsoncontent = ' + JSON.stringify(reportJson);
-
-  const reportGenerationTime = Date.now();
+function generateAccessibilityReport(reportObj) {
+  consoleReport(reportObj);
 
   const sourceReport = __dirname + '/Report.html';
-  const destReport = testConfig.TestOutputDir + `/a11y-${reportGenerationTime}.html`;
-  const destJson = testConfig.TestOutputDir + `/a11y_output-${reportGenerationTime}.js`;
+  const destReport = testConfig.TestOutputDir + '/a11y.html';
+  const destJson = testConfig.TestOutputDir + '/a11y_output.js';
+  const previouschunkjson = testConfig.TestOutputDir + '/parallelexecution_a11y_result.json';
+  
+  const updatedReportObj = appendPreviousTestResults(reportObj);
+  const result = 'var replacejsoncontent = ' + JSON.stringify(updatedReportObj);
 
   fs.copyFileSync(sourceReport, destReport);
+  fs.writeFileSync(previouschunkjson, JSON.stringify(updatedReportObj));
   fs.writeFileSync(destJson, result);
   copyResources();
 
+}
+
+function appendPreviousTestResults (reportObj) {
+  let previousObj;
+  try {
+    previousObj = fs.readFileSync(testConfig.TestOutputDir + '/parallelexecution_a11y_result.json');
+  } catch (error) {
+    return reportObj;
+  }
+  previousObj = JSON.parse(previousObj);
+  reportObj.passCount+=previousObj.passCount;
+  reportObj.failCount+=previousObj.failCount;
+  reportObj.tests=reportObj.tests.concat(previousObj.tests);
+  return reportObj;
 }
 
 function copyResources() {
