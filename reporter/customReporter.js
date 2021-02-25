@@ -6,9 +6,11 @@ function generateAccessibilityReport(reportJson) {
 
   const result = 'var replacejsoncontent = ' + JSON.stringify(reportJson);
 
+  const reportGenerationTime = Date.now();
+
   const sourceReport = __dirname + '/Report.html';
-  const destReport = testConfig.TestOutputDir + '/a11y.html';
-  const destJson = testConfig.TestOutputDir + '/a11y_output.js';
+  const destReport = testConfig.TestOutputDir + `/a11y-${reportGenerationTime}.html`;
+  const destJson = testConfig.TestOutputDir + `/a11y_output-${reportGenerationTime}.js`;
 
   fs.copyFileSync(sourceReport, destReport);
   fs.writeFileSync(destJson, result);
