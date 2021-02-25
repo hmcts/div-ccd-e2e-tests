@@ -9,7 +9,7 @@ function generateAccessibilityReport(reportObj) {
   const destJson = testConfig.TestOutputDir + '/a11y_output.js';
   const previouschunkjson = testConfig.TestOutputDir + '/parallelexecution_a11y_result.json';
   
-  const updatedReportObj = appendPreviousTestResults(reportObj);
+  const updatedReportObj = appendPreviousParallelExecTestResults(reportObj);
   const result = 'var replacejsoncontent = ' + JSON.stringify(updatedReportObj);
 
   fs.copyFileSync(sourceReport, destReport);
@@ -19,7 +19,7 @@ function generateAccessibilityReport(reportObj) {
 
 }
 
-function appendPreviousTestResults (reportObj) {
+function appendPreviousParallelExecTestResults (reportObj) {
   let previousObj;
   try {
     previousObj = fs.readFileSync(testConfig.TestOutputDir + '/parallelexecution_a11y_result.json');
