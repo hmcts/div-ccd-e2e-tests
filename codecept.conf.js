@@ -2,7 +2,7 @@ const testConfig = require('./tests/config.js');
 
 exports.config = {
   tests: testConfig.TestPathToRun,
-  timeout: 10000,
+  timeout: 100000,
   output: testConfig.TestOutputDir,
   helpers: {
     Puppeteer: {
@@ -11,7 +11,7 @@ exports.config = {
       waitForNavigation: ['domcontentloaded'],
       restart: true,
       keepCookies: false,
-      keepBrowserState: true,
+      keepBrowserState: false,
       waitForTimeout: 90000,
       chrome: {
         ignoreHTTPSErrors: true,
