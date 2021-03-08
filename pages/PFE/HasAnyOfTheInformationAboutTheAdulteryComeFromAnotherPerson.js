@@ -1,0 +1,21 @@
+const I = actor();
+
+module.exports = {
+
+  fields: {
+    notFromAnotherPerson: '#reasonForDivorceAdulterySecondHandInfo_Yes',
+    submit: 'button[type="submit"]'
+  },
+
+  metadata: {
+    url: 'z'
+  },
+
+  async selectNoAndContinue() {
+    await I.waitInUrl(this.metadata.url);
+    await I.runAccessibilityTest();
+    await I.click(this.fields.notFromAnotherPerson);
+    await I.waitForNavigationToComplete(this.fields.submit);
+    await I.wait(1);
+  }
+};

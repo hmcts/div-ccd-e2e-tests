@@ -43,6 +43,19 @@ const WhatIsYourHomeAddressManual = require('./pages/PFE/WhatIsYourHomeAddressMa
 const DoYouWantYourDivorcePapersSentToThisAddress = require('./pages/PFE/DoYouWantYourDivorcePapersSentToThisAddress');
 const DoYouAndYourPartnerLiveAtTheSameAddress = require('./pages/PFE/DoYouAndYourPartnerLiveAtTheSameAddress');
 const IsThisWhereYourPartnersDivorcePapersShouldBeSent = require('./pages/PFE/IsThisWhereYourPartnersDivorcePapersShouldBeSent');
+const ChooseAReasonForYourDivorce = require('./pages/PFE/ChooseAReasonForYourDivorce');
+const DoYouWantToNameThePersonYouBelieveYourPartnerCommittedAdulteryWith = require('./pages/PFE/DoYouWantToNameThePersonYouBelieveYourPartnerCommittedAdulteryWith');
+const DoYouKnowWhereTheAdulteryTookPlace = require('./pages/PFE/DoYouKnowWhereTheAdulteryTookPlace');
+const DoYouKnowWhenTheAdulteryTookPlace = require('./pages/PFE/DoYouKnowWhenTheAdulteryTookPlace');
+const YourAccountOfTheAdultery = require('./pages/PFE/YourAccountOfTheAdultery');
+const HasAnyOfTheInformationAboutTheAdulteryComeFromAnotherPerson = require('./pages/PFE/HasAnyOfTheInformationAboutTheAdulteryComeFromAnotherPerson');
+const OtherCourtCasesRelatedToYourMarriagePropertyOrChildren = require('./pages/PFE/OtherCourtCasesRelatedToYourMarriagePropertyOrChildren');
+const DividingYourMoneyAndProperty = require('./pages/PFE/DividingYourMoneyAndProperty');
+const ApplyingForFinancialOrder = require('./pages/PFE/ApplyingForFinancialOrder');
+const DoYouWantToApplyToClaimYourDivorceCosts = require('./pages/PFE/DoYouWantToApplyToClaimYourDivorceCosts');
+const UploadYourDocuments = require('./pages/PFE/UploadYourDocuments');
+const EqualityAndDiversityQuestions = require('./pages/PFE/EqualityAndDiversityQuestions');
+const CheckYourAnswers = require('./pages/PFE/CheckYourAnswers');
 
 const SolCreateCheckYourAnswersPage = require('./pages/SolCreateCheckYourAnswersPage');
 const SolCaseCreatedPage = require('./pages/SolCaseCreatedPage');
@@ -281,7 +294,59 @@ module.exports = function () {
     },
 
     wantTheirPapersSentToThisAddress: function() {
-      return IsThisWhereYourPartnersDivorcePapersShouldBeSent.selectYesAndContinue()
+      return IsThisWhereYourPartnersDivorcePapersShouldBeSent.selectYesAndContinue();
+    },
+
+    selectAdulteryForTheReasonForDivorce: function() {
+      return ChooseAReasonForYourDivorce.selectAdulteryAndContinue();
+    },
+
+    doNotWantToNameThePersonMyPartnerCommittedAdulteryWith: function() {
+      return DoYouWantToNameThePersonYouBelieveYourPartnerCommittedAdulteryWith.selectNoAndContinue();
+    },
+
+    doNotKnowWhereTheAdulteryTookPlace: function() {
+      return DoYouKnowWhereTheAdulteryTookPlace.selectNoAndContinue();
+    },
+
+    doNotKnowWhenTheAdulteryTookPlace: function() {
+      return DoYouKnowWhenTheAdulteryTookPlace.selectNoAndContinue();
+    },
+
+    enterMyAccountOfTheAdultery: function() {
+      return YourAccountOfTheAdultery.enterInformationAndContinue();
+    },
+
+    stateInformationHasCameFromPartner: function() {
+      return HasAnyOfTheInformationAboutTheAdulteryComeFromAnotherPerson.selectNoAndContinue();
+    },
+
+    haveNoOtherCourtCasesRelatedToMarriagePropertyOrChildren: function() {
+      return OtherCourtCasesRelatedToYourMarriagePropertyOrChildren.selectNoAndContinue();
+    },
+
+    applyForFinancialOrderForMyself: function() {
+      return DividingYourMoneyAndProperty.applyForFinancialOrderForPetitioner();
+    },
+
+    continueToApplyForAFinancialOrder: function() {
+      return ApplyingForFinancialOrder.selectContinue();
+    },
+
+    applyToClaimDivorceCosts: function() {
+      return DoYouWantToApplyToClaimYourDivorceCosts.selectYesAndContinue();
+    },
+
+    continueWithoutUploadingDocuments: function() {
+      return UploadYourDocuments.selectContinue();
+    },
+
+    doNotWantToAnswerAdditionalQuestions: function() {
+      return EqualityAndDiversityQuestions.selectContinue();
+    },
+
+    checkMyAnswers: function() {
+      return CheckYourAnswers.signFormAndSubmit();
     },
 
     solicitorCreateCheckYourAnswerAndSubmit: function() {
