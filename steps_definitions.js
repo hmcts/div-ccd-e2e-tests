@@ -28,6 +28,7 @@ const DoYouHaveAnAddressForYourHusbandOrWife = require('./pages/PFE/DoYouHaveAnA
 const DoYouHaveYourMarriageCertificate = require('./pages/PFE/DoYouHaveYourMarriageCertificate');
 const ContinueToSettlingFinance = require('./pages/PFE/ContinueToSettlingFinance');
 const DoYouWantHelpPayingYourFees = require('./pages/PFE/DoYouWantHelpPayingYourFees');
+const WhoAreYouDivorcing = require('./pages/PFE/WhoAreYouDivorcing');
 const SolCreateCheckYourAnswersPage = require('./pages/SolCreateCheckYourAnswersPage');
 const SolCaseCreatedPage = require('./pages/SolCaseCreatedPage');
 const StatementOfTruthAndRecPage = require('./pages/StatementOfTruthAndRecPage');
@@ -180,7 +181,7 @@ module.exports = function () {
       return SolCreateLanguagePrefPage.fillFormAndSubmit();
     },
 
-    stateThatMarriageBrokenDown: function() {
+    stateThatMarriageHasBrokenDown: function() {
       return HasMarriageBrokenDownPage.fillFormAndSubmit();
     },
 
@@ -202,6 +203,14 @@ module.exports = function () {
 
     doNeedHelpWithFees: function() {
       return DoYouWantHelpPayingYourFees.selectYesAndContinue();
+    },
+
+    amDivorcingMyWife: function() {
+      return WhoAreYouDivorcing.selectWifeAndContinue();
+    },
+
+    amDivorcingMyHusband: function() {
+      return WhoAreYouDivorcing.selectHusbandAndContinue();
     },
 
     solicitorCreateCheckYourAnswerAndSubmit: function() {

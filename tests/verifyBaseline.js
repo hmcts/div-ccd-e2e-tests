@@ -19,10 +19,11 @@ describe('E2E Baseline tests for core functionality', () => {
     await I.amOnHomePage();
     await I.login(testconfig.TestEnvProfUser, testconfig.TestEnvProfPassword);
     await I.languagePreferenceSelection();
-    await I.stateThatMarriageBrokenDown();
+    await I.stateThatMarriageHasBrokenDown();
     await I.haveAnAddressForPartner();
     await I.haveMarriageCertificate();
     await I.continueSettlingFinances();
     await I.dontNeedHelpWithFees();
+    await I.amDivorcingMyWife();
   });
 });
