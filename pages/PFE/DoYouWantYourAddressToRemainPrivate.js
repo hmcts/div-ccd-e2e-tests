@@ -16,14 +16,14 @@ module.exports = {
     await I.waitInUrl(this.metadata.url);
     await I.runAccessibilityTest();
     await I.click(this.fields.iDontNeedMyAddressKeptPrivate);
-    await I.waitForNavigationToComplete(this.fields.selectContinue);
+    await I.waitForNavigationToComplete(this.fields.submit);
     await I.wait(1);
   },
   async selectKeepMyAddressPrivateAndContinue() {
     await I.waitInUrl(this.metadata.url);
     await I.runAccessibilityTest();
     await I.click(this.fields.keepMyAddressPrivate);
-    await I.waitForNavigationToComplete(this.fields.selectContinue);
+    await I.waitForNavigationToComplete(this.fields.submit);
     await I.wait(1);
   }
 };

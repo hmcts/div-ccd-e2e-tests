@@ -27,5 +27,6 @@ describe('E2E Baseline tests for core functionality', () => {
     await I.enterBothPartiesNames();
     await I.enterNamesDisplayedOnTheMarriageCertificate();
     await I.haveNotChangedMyNameSinceIGotMarried();
+    await I.agreeToEmailNotifcations();
   });
 });

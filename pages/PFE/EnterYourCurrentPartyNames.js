@@ -21,7 +21,7 @@ module.exports = {
     await I.fillField(this.fields.petitionerLastName, 'Petitioneir');
     await I.fillField(this.fields.respondentFirstName, 'Remmie');
     await I.fillField(this.fields.respondentLastName, 'Respondentie');
-    await I.waitForNavigationToComplete(this.fields.selectContinue);
+    await I.waitForNavigationToComplete(this.fields.submit);
     await I.wait(1);
   }
 };

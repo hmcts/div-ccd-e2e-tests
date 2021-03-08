@@ -12,14 +12,14 @@ module.exports = {
     await I.waitInUrl('need-help');
     await I.runAccessibilityTest();
     await I.click(this.fields.wantHelpPayingFees);
-    await I.waitForNavigationToComplete(this.fields.selectContinue);
+    await I.waitForNavigationToComplete(this.fields.submit);
     await I.wait(1);
   },
   async selectNoAndContinue() {
     await I.waitInUrl('need-help');
     await I.runAccessibilityTest();
     await I.click(this.fields.dontWantHelpPayingFees);
-    await I.waitForNavigationToComplete(this.fields.selectContinue);
+    await I.waitForNavigationToComplete(this.fields.submit);
     await I.wait(1);
   }
 };

@@ -3,18 +3,18 @@ const I = actor();
 module.exports = {
 
   fields: {
-    confidentThatConnectionIsRight: '#jurisdictionConfidentLegal_Yes',
+    agreeToReceiveEmails: '#petitionerConsent',
     submit: 'button[type="submit"]'
   },
 
   metadata: {
-    url: 'interstitial'
+    url: 'petitioner-respondent/contact-details'
   },
 
-  async selectConfidentSelectionIsRightAndContinue() {
+  async selectYesAndContinue() {
     await I.waitInUrl(this.metadata.url);
     await I.runAccessibilityTest();
-    await I.click(this.fields.confidentThatConnectionIsRight);
+    await I.click(this.fields.agreeToReceiveEmails);
     await I.waitForNavigationToComplete(this.fields.submit);
     await I.wait(1);
   }

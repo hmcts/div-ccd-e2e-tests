@@ -37,6 +37,7 @@ const DoYouWantYourAddressToRemainPrivate = require('./pages/PFE/DoYouWantYourAd
 const EnterYourCurrentPartyNames = require('./pages/PFE/EnterYourCurrentPartyNames');
 const HowAreYourNamesDisplayedOnTheMarriageCertificate = require('./pages/PFE/HowAreYourNamesDisplayedOnTheMarriageCertificate');
 const HaveYouChangedYourNameSinceYouGotMarried = require('./pages/PFE/HaveYouChangedYourNameSinceYouGotMarried');
+const HowTheCourtWillContactYou = require('./pages/PFE/HowTheCourtWillContactYou');
 
 const SolCreateCheckYourAnswersPage = require('./pages/SolCreateCheckYourAnswersPage');
 const SolCaseCreatedPage = require('./pages/SolCaseCreatedPage');
@@ -252,6 +253,10 @@ module.exports = function () {
 
     haveNotChangedMyNameSinceIGotMarried: function() {
       return HaveYouChangedYourNameSinceYouGotMarried.selectNoAndContinue();
+    },
+
+    agreeToEmailNotifcations: function() {
+      return HowTheCourtWillContactYou.agreeToEmailNotifcations();
     },
 
     solicitorCreateCheckYourAnswerAndSubmit: function() {

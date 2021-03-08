@@ -16,14 +16,14 @@ module.exports = {
     await I.waitInUrl(this.metadata.url);
     await I.runAccessibilityTest();
     await I.click(this.fields.divorcingMyHusband);
-    await I.waitForNavigationToComplete(this.fields.selectContinue);
+    await I.waitForNavigationToComplete(this.fields.submit);
     await I.wait(1);
   },
   async selectWifeAndContinue() {
     await I.waitInUrl(this.metadata.url);
     await I.runAccessibilityTest();
     await I.click(this.fields.divorcingMyWife);
-    await I.waitForNavigationToComplete(this.fields.selectContinue);
+    await I.waitForNavigationToComplete(this.fields.submit);
     await I.wait(1);
   }
 };

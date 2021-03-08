@@ -17,7 +17,7 @@ module.exports = {
     await I.runAccessibilityTest();
     await I.click(this.fields.petitionerIsMainlyBasedInEnglandOrWales);
     await I.click(this.fields.respondentIsMainlyBasedInEnglandOrWales);
-    await I.waitForNavigationToComplete(this.fields.selectContinue);
+    await I.waitForNavigationToComplete(this.fields.submit);
     await I.wait(1);
   }
 };
