@@ -3,8 +3,7 @@ const I = actor();
 module.exports = {
 
   fields: {
-    x: '#x',
-    y: '#y',
+    yesUseThisAddress: '#respondentCorrespondenceUseHomeAddress_Yes',
     submit: 'button[type="submit"]'
   },
 
@@ -15,14 +14,7 @@ module.exports = {
   async selectYesAndContinue() {
     await I.waitInUrl(this.metadata.url);
     await I.runAccessibilityTest();
-    await I.click(this.fields.x);
-    await I.waitForNavigationToComplete(this.fields.submit);
-    await I.wait(1);
-  },
-  async selectNoAndContinue() {
-    await I.waitInUrl(this.metadata.url);
-    await I.runAccessibilityTest();
-    await I.click(this.fields.y);
+    await I.click(this.fields.yesUseThisAddress);
     await I.waitForNavigationToComplete(this.fields.submit);
     await I.wait(1);
   }

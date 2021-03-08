@@ -3,18 +3,18 @@ const I = actor();
 module.exports = {
 
   fields: {
-    agreeToReceiveEmails: '#petitionerConsent',
+    deliverToThisAddress: '#petitionerCorrespondenceUseHomeAddress_Yes',
     submit: 'button[type="submit"]'
   },
 
   metadata: {
-    url: 'petitioner-respondent/contact-details'
+    url: 'petitioner-respondent/petitioner-correspondence/use-home-address'
   },
 
-  async selectAgreeToReceiveEmailsAndContinue() {
+  async selectDeliverToThisAddressAndContinue() {
     await I.waitInUrl(this.metadata.url);
     await I.runAccessibilityTest();
-    await I.click(this.fields.agreeToReceiveEmails);
+    await I.click(this.fields.deliverToThisAddress);
     await I.waitForNavigationToComplete(this.fields.submit);
     await I.wait(1);
   }

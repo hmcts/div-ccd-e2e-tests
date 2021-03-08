@@ -27,6 +27,11 @@ describe('E2E Baseline tests for core functionality', () => {
     await I.enterBothPartiesNames();
     await I.enterNamesDisplayedOnTheMarriageCertificate();
     await I.haveNotChangedMyNameSinceIGotMarried();
-    await I.agreeToEmailNotifcations();
+    await I.agreeToEmailNotifications();
+    await I.canNotEnterUkPostcode();
+    await I.enterHomeAddressManually();
+    await I.wantMyPaperDeliverToThisAddress();
+    await I.stateThatWeLiveAtTheSameAddress();
+    await I.wantTheirPapersSentToThisAddress();
   });
 });

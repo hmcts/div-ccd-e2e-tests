@@ -3,18 +3,18 @@ const I = actor();
 module.exports = {
 
   fields: {
-    agreeToReceiveEmails: '#petitionerConsent',
+    enterPostcodeManually: '#addressManual',
     submit: 'button[type="submit"]'
   },
 
   metadata: {
-    url: 'petitioner-respondent/contact-details'
+    url: 'petitioner-respondent/address/manual'
   },
 
-  async selectAgreeToReceiveEmailsAndContinue() {
+  async enterPostcodeManually() {
     await I.waitInUrl(this.metadata.url);
     await I.runAccessibilityTest();
-    await I.click(this.fields.agreeToReceiveEmails);
+    await I.fillField(this.fields.enterPostcodeManually, '64 Zoo Lane, Neverland Street, SW1A 1AA');
     await I.waitForNavigationToComplete(this.fields.submit);
     await I.wait(1);
   }

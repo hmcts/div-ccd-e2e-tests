@@ -3,18 +3,19 @@ const I = actor();
 module.exports = {
 
   fields: {
-    agreeToReceiveEmails: '#petitionerConsent',
+    liveTogether: '#livingArrangementsLiveTogether_Yes',
+    liveApart: '#livingArrangementsLiveTogether_No',
     submit: 'button[type="submit"]'
   },
 
   metadata: {
-    url: 'petitioner-respondent/contact-details'
+    url: 'petitioner-respondent/live-together'
   },
 
-  async selectAgreeToReceiveEmailsAndContinue() {
+  async selectLiveTogetherAndContinue() {
     await I.waitInUrl(this.metadata.url);
     await I.runAccessibilityTest();
-    await I.click(this.fields.agreeToReceiveEmails);
+    await I.click(this.fields.liveTogether);
     await I.waitForNavigationToComplete(this.fields.submit);
     await I.wait(1);
   }

@@ -38,6 +38,11 @@ const EnterYourCurrentPartyNames = require('./pages/PFE/EnterYourCurrentPartyNam
 const HowAreYourNamesDisplayedOnTheMarriageCertificate = require('./pages/PFE/HowAreYourNamesDisplayedOnTheMarriageCertificate');
 const HaveYouChangedYourNameSinceYouGotMarried = require('./pages/PFE/HaveYouChangedYourNameSinceYouGotMarried');
 const HowTheCourtWillContactYou = require('./pages/PFE/HowTheCourtWillContactYou');
+const WhatIsYourHomeAddress = require('./pages/PFE/WhatIsYourHomeAddress');
+const WhatIsYourHomeAddressManual = require('./pages/PFE/WhatIsYourHomeAddressManual');
+const DoYouWantYourDivorcePapersSentToThisAddress = require('./pages/PFE/DoYouWantYourDivorcePapersSentToThisAddress');
+const DoYouAndYourPartnerLiveAtTheSameAddress = require('./pages/PFE/DoYouAndYourPartnerLiveAtTheSameAddress');
+const IsThisWhereYourPartnersDivorcePapersShouldBeSent = require('./pages/PFE/IsThisWhereYourPartnersDivorcePapersShouldBeSent');
 
 const SolCreateCheckYourAnswersPage = require('./pages/SolCreateCheckYourAnswersPage');
 const SolCaseCreatedPage = require('./pages/SolCaseCreatedPage');
@@ -255,8 +260,28 @@ module.exports = function () {
       return HaveYouChangedYourNameSinceYouGotMarried.selectNoAndContinue();
     },
 
-    agreeToEmailNotifcations: function() {
-      return HowTheCourtWillContactYou.agreeToEmailNotifcations();
+    agreeToEmailNotifications: function() {
+      return HowTheCourtWillContactYou.selectAgreeToReceiveEmailsAndContinue();
+    },
+
+    canNotEnterUkPostcode: function() {
+      return WhatIsYourHomeAddress.selectICantEnterUkPostcode();
+    },
+
+    enterHomeAddressManually: function() {
+      return WhatIsYourHomeAddressManual.enterPostcodeManually();
+    },
+
+    wantMyPaperDeliverToThisAddress: function() {
+      return DoYouWantYourDivorcePapersSentToThisAddress.selectDeliverToThisAddressAndContinue();
+    },
+
+    stateThatWeLiveAtTheSameAddress: function() {
+      return DoYouAndYourPartnerLiveAtTheSameAddress.selectLiveTogetherAndContinue();
+    },
+
+    wantTheirPapersSentToThisAddress: function() {
+      return IsThisWhereYourPartnersDivorcePapersShouldBeSent.selectYesAndContinue()
     },
 
     solicitorCreateCheckYourAnswerAndSubmit: function() {
