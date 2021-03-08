@@ -8,7 +8,7 @@ module.exports = {
   },
 
   metadata: {
-    url: 'z'
+    url: 'respondent-correspondence/use-home-address'
   },
 
   async selectYesAndContinue() {

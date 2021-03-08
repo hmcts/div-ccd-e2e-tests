@@ -7,8 +7,13 @@ module.exports = {
     submit: 'button[type="submit"]'
   },
 
+  metadata: {
+    url: 'respondent-address'
+  },
+
+
   async selectYesAndSubmit() {
-    await I.waitInUrl('respondent-address');
+    await I.waitInUrl(this.metadata.url);
     await I.runAccessibilityTest();
     await I.click(this.fields.hasPartnersAddress);
     await I.waitForNavigationToComplete(this.fields.submit);

@@ -7,8 +7,12 @@ module.exports = {
     submit: 'button[type="submit"]'
   },
 
+  metadata: {
+    url: 'financial/advice'
+  },
+
   async selectYesAndSubmit() {
-    await I.waitInUrl('marriage-certificate');
+    await I.waitInUrl(this.metadata.url);
     await I.runAccessibilityTest();
     await I.click(this.fields.hasPartnersAddress);
     await I.waitForNavigationToComplete(this.fields.submit);

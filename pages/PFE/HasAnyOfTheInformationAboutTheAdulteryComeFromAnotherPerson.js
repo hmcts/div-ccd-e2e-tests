@@ -8,7 +8,7 @@ module.exports = {
   },
 
   metadata: {
-    url: 'z'
+    url: 'adultery/second-hand-information'
   },
 
   async selectNoAndContinue() {
