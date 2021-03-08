@@ -1,0 +1,21 @@
+const I = actor();
+
+module.exports = {
+
+  fields: {
+    haveNotChangedName: '#petitionerNameDifferentToMarriageCertificate_No',
+    submit: 'button[type="submit"]'
+  },
+
+  metadata: {
+    url: 'changed-name'
+  },
+
+  async selectNoAndContinue() {
+    await I.waitInUrl(this.metadata.url);
+    await I.runAccessibilityTest();
+    await I.click(this.fields.haveNotChangedName);
+    await I.waitForNavigationToComplete(this.fields.selectContinue);
+    await I.wait(1);
+  }
+};
