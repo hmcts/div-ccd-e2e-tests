@@ -23,6 +23,9 @@ const FinancialOrdersPage = require('./pages/FinancialOrdersPage');
 const ClaimForCostsPage = require('./pages/ClaimForCostsPage');
 const UploadMarriageCertificatePage = require('./pages/UploadMarriageCertificatePage');
 const SolCreateLanguagePrefPage = require('./pages/SolCreateLanguagePrefPage');
+const HasMarriageBrokenDownPage = require('./pages/PFE/HasMarriageBrokenDownPage');
+const DoYouHaveAnAddressForYourHusbandOrWife = require('./pages/PFE/DoYouHaveAnAddressForYourHusbandOrWife');
+const DoYouHaveYourMarriageCertificate = require('./pages/PFE/DoYouHaveYourMarriageCertificate');
 const SolCreateCheckYourAnswersPage = require('./pages/SolCreateCheckYourAnswersPage');
 const SolCaseCreatedPage = require('./pages/SolCaseCreatedPage');
 const StatementOfTruthAndRecPage = require('./pages/StatementOfTruthAndRecPage');
@@ -150,7 +153,7 @@ module.exports = function () {
     fillSeparationDetailsFormAndSubmit() {
       return StatementOfCaseSeparationDetail.fillFormAndSubmit();
     },
-  
+
     fillLiveApartFormAndSubmit(reason) {
       return LivedApartPage.fillFormAndSubmit(reason);
     },
@@ -173,6 +176,18 @@ module.exports = function () {
 
     languagePreferenceSelection: function() {
       return SolCreateLanguagePrefPage.fillFormAndSubmit();
+    },
+
+    hasMarriageBrokenDown: function() {
+      return HasMarriageBrokenDownPage.fillFormAndSubmit();
+    },
+
+    haveAnAddressForPartner: function() {
+      return DoYouHaveAnAddressForYourHusbandOrWife.selectYesAndSubmit();
+    },
+
+    haveMarriageCertificate: function() {
+      return DoYouHaveYourMarriageCertificate.selectYesAndSubmit();
     },
 
     solicitorCreateCheckYourAnswerAndSubmit: function() {
@@ -242,7 +257,7 @@ module.exports = function () {
     aosReceivedUndefendedMoveToDNFormSubmit: function() {
       return AosReceivedUndefendedMoveToDN.fillFormAndSubmit();
     },
-    
+
     selectAndSubmitEvent: function(eventName) {
       return SelectEventAndSubmit.fillFormAndSubmit(eventName);
     },
@@ -250,7 +265,7 @@ module.exports = function () {
     selectEvent: function(eventName) {
       return SelectEvent.fillFormAndSubmit(eventName);
     },
-    
+
 
     aosStartedPageFormAndSubmit: function() {
       return AosStartedPage.fillFormAndSubmit();
@@ -295,11 +310,11 @@ module.exports = function () {
     validateDecreeNisiTabData: function(reason,verifyContent) {
       return validateDecreeNisiTabData(reason,verifyContent);
     },
-    
+
     validateConfidentialPetitionerTab: function(verifyContent) {
       return validateConfidentialPetitionerTab(verifyContent);
     },
-    
+
     validateOutcomeOfDNTabData: function(verifyContent) {
       return validateOutcomeOfDNTabData(verifyContent);
     },
