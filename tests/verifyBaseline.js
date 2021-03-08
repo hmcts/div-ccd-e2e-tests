@@ -2,12 +2,6 @@ const { createCaseInCcd, updateCaseInCcd } = require('../helpers/utils');
 const {states, events } = require('../common/constants');
 const assert = require('assert');
 
-const verifyState = (eventResponse, state) => {
-  assert.strictEqual(JSON.parse(eventResponse).state, state);
-};
-
-let caseId;
-
 describe('E2E Baseline tests for core functionality', () => {
 
   /**
@@ -25,5 +19,13 @@ describe('E2E Baseline tests for core functionality', () => {
     await I.continueSettlingFinances();
     await I.dontNeedHelpWithFees();
     await I.amDivorcingMyWife();
+    await I.gotMarriedTwoYearsAgo();
+    await I.gotMarriedInTheUk();
+    await I.stateBothPartiesAreMainlyInEnglandAndWales();
+    await I.amConfidentSelectionIsRight();
+    await I.dontNeedMyAddressKeptPrivate();
+    await I.enterBothPartiesNames();
+    await I.enterNamesDisplayedOnTheMarriageCertificate();
+    await I.haveNotChangedMyNameSinceIGotMarried();
   });
 });

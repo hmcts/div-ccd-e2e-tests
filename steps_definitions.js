@@ -29,6 +29,15 @@ const DoYouHaveYourMarriageCertificate = require('./pages/PFE/DoYouHaveYourMarri
 const ContinueToSettlingFinance = require('./pages/PFE/ContinueToSettlingFinance');
 const DoYouWantHelpPayingYourFees = require('./pages/PFE/DoYouWantHelpPayingYourFees');
 const WhoAreYouDivorcing = require('./pages/PFE/WhoAreYouDivorcing');
+const WhenDidYouGetMarried = require('./pages/PFE/WhenDidYouGetMarried');
+const YouCanUseEnglishOrWelshCourts = require('./pages/PFE/YouCanUseEnglishOrWelshCourts');
+const DidYouGetMarriedInTheUK = require('./pages/PFE/DidYouGetMarriedInTheUK');
+const CheckIfYouCanGetADivorceInEnglandAndWales = require('./pages/PFE/CheckIfYouCanGetADivorceInEnglandAndWales');
+const DoYouWantYourAddressToRemainPrivate = require('./pages/PFE/DoYouWantYourAddressToRemainPrivate');
+const EnterYourCurrentPartyNames = require('./pages/PFE/EnterYourCurrentPartyNames');
+const HowAreYourNamesDisplayedOnTheMarriageCertificate = require('./pages/PFE/HowAreYourNamesDisplayedOnTheMarriageCertificate');
+const HaveYouChangedYourNameSinceYouGotMarried = require('./pages/PFE/HaveYouChangedYourNameSinceYouGotMarried');
+
 const SolCreateCheckYourAnswersPage = require('./pages/SolCreateCheckYourAnswersPage');
 const SolCaseCreatedPage = require('./pages/SolCaseCreatedPage');
 const StatementOfTruthAndRecPage = require('./pages/StatementOfTruthAndRecPage');
@@ -211,6 +220,38 @@ module.exports = function () {
 
     amDivorcingMyHusband: function() {
       return WhoAreYouDivorcing.selectHusbandAndContinue();
+    },
+
+    gotMarriedTwoYearsAgo: function() {
+      return WhenDidYouGetMarried.enterTwoYearsAgoAndContinue();
+    },
+
+    gotMarriedInTheUk: function() {
+      return DidYouGetMarriedInTheUK.selectMarriedInUKAndContinue();
+    },
+
+    stateBothPartiesAreMainlyInEnglandAndWales: function() {
+      return CheckIfYouCanGetADivorceInEnglandAndWales.selectBothPartiesAreMainlyBasedInEnglandOrWalesAndContinue();
+    },
+
+    amConfidentSelectionIsRight: function() {
+      return YouCanUseEnglishOrWelshCourts.selectConfidentSelectionIsRightAndContinue();
+    },
+
+    dontNeedMyAddressKeptPrivate: function() {
+      return DoYouWantYourAddressToRemainPrivate.selectIDontNeedMyAddressKeptPrivateAndContinue();
+    },
+
+    enterBothPartiesNames: function() {
+      return EnterYourCurrentPartyNames.enterPetitionerAndRespondentNamesAndContinue();
+    },
+
+    enterNamesDisplayedOnTheMarriageCertificate: function() {
+      return HowAreYourNamesDisplayedOnTheMarriageCertificate.enterBothPartiesNames();
+    },
+
+    haveNotChangedMyNameSinceIGotMarried: function() {
+      return HaveYouChangedYourNameSinceYouGotMarried.selectNoAndContinue();
     },
 
     solicitorCreateCheckYourAnswerAndSubmit: function() {
