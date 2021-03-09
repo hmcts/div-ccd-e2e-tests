@@ -4,7 +4,7 @@ module.exports = {
 
   fields: {
     haveNotChangedName: '#petitionerNameDifferentToMarriageCertificate_No',
-    submit: 'button[type="submit"]'
+    submit: 'input[type="submit"]'
   },
 
   metadata: {

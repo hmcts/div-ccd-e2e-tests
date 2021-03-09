@@ -4,7 +4,7 @@ module.exports = {
 
   fields: {
     applyForFinancialOrder: '#financialOrder_Yes',
-    submit: 'button[type="submit"]'
+    submit: 'input[type="submit"]'
   },
 
   dropdown: {

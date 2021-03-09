@@ -5,7 +5,7 @@ module.exports = {
   fields: {
     petitionerIsMainlyBasedInEnglandOrWales: '#jurisdictionPetitionerResidence_Yes',
     respondentIsMainlyBasedInEnglandOrWales: '#jurisdictionRespondentResidence_Yes',
-    submit: 'button[type="submit"]'
+    submit: 'input[type="submit"]'
   },
 
   metadata: {

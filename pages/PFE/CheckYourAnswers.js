@@ -4,7 +4,7 @@ module.exports = {
 
   fields: {
     confirmStatementOfTruth: 'select[id="confirmPrayer"]',
-    submit: 'button[type="submit"]'
+    submit: 'input[type="submit"]'
   },
 
   metadata: {

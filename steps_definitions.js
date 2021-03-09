@@ -83,6 +83,7 @@ const DoYouWantToApplyToClaimYourDivorceCosts = require('./pages/PFE/DoYouWantTo
 const UploadYourDocuments = require('./pages/PFE/UploadYourDocuments');
 const EqualityAndDiversityQuestions = require('./pages/PFE/EqualityAndDiversityQuestions');
 const CheckYourAnswers = require('./pages/PFE/CheckYourAnswers');
+const PFELanguagePreferencePage = require('./pages/PFE/PFELanguagePreferencePage');
 
 const validatePetitionTabData = require ('./tabs/validatePetitionTabData');
 const validateConfidentialPetitionerTab = require ('./tabs/validateConfidentialPetitionerTab');
@@ -104,6 +105,10 @@ module.exports = function () {
     // It is recommended to place a general 'login' function here.
     amOnHomePage: function () {
       return this.amOnPage('');
+    },
+
+    amOnPetitionerFrontendPage: function () {
+      return this.amOnPage('https://petitioner-frontend-aks.aat.platform.hmcts.net/');
     },
 
     login: function (email, password) {
@@ -208,6 +213,10 @@ module.exports = function () {
 
     languagePreferenceSelection: function() {
       return SolCreateLanguagePrefPage.fillFormAndSubmit();
+    },
+
+    selectEnglishAsPreferredLanguage: function() {
+      return PFELanguagePreferencePage.selectEnglishAsLanguageAndSubmit();
     },
 
     stateThatMarriageHasBrokenDown: function() {

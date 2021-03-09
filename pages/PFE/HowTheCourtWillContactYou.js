@@ -4,7 +4,7 @@ module.exports = {
 
   fields: {
     agreeToReceiveEmails: '#petitionerConsent',
-    submit: 'button[type="submit"]'
+    submit: 'input[type="submit"]'
   },
 
   metadata: {

@@ -4,7 +4,7 @@ module.exports = {
 
   fields: {
     notFromAnotherPerson: '#reasonForDivorceAdulterySecondHandInfo_Yes',
-    submit: 'button[type="submit"]'
+    submit: 'input[type="submit"]'
   },
 
   metadata: {

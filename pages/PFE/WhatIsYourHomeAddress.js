@@ -4,7 +4,7 @@ module.exports = {
 
   fields: {
     enterPostcodeManually: '#enter-manual',
-    submit: 'button[type="submit"]'
+    submit: 'input[type="submit"]'
   },
 
   metadata: {

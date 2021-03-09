@@ -7,7 +7,7 @@ module.exports = {
     petitionerLastName: '#petitionerLastName',
     respondentLastName: '#respondentFirstName',
     respondentFirstName: '#respondentLastName',
-    submit: 'button[type="submit"]'
+    submit: 'input[type="submit"]'
   },
 
   metadata: {

@@ -5,7 +5,7 @@ module.exports = {
   fields: {
     divorcingMyHusband: '#divorceWho_husband',
     divorcingMyWife: '#divorceWho_wife',
-    submit: 'button[type="submit"]'
+    submit: 'input[type="submit"]'
   },
 
   metadata: {

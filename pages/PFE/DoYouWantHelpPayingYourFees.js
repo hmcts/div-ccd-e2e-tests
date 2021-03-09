@@ -5,7 +5,7 @@ module.exports = {
   fields: {
     wantHelpPayingFees: '#helpWithFeesNeedHelp_Yes',
     dontWantHelpPayingFees: '#helpWithFeesNeedHelp_No',
-    submit: 'button[type="submit"]'
+    submit: 'input[type="submit"]'
   },
 
   metadata: {

@@ -4,11 +4,11 @@ module.exports = {
 
   fields: {
     hasMarriageCertificate: '#screenHasMarriageCert_Yes',
-    submit: 'button[type="submit"]'
+    submit: 'input[type="submit"]'
   },
 
   metadata: {
-    url: 'financial/advice'
+    url: 'screening-questions/marriage-certificate'
   },
 
   async selectYesAndSubmit() {

@@ -5,7 +5,7 @@ module.exports = {
   fields: {
     iDontNeedMyAddressKeptPrivate: '#petitionerContactDetailsConfidential_share',
     keepMyAddressPrivate : '#petitionerContactDetailsConfidential_keep',
-    submit: 'button[type="submit"]'
+    submit: 'input[type="submit"]'
   },
 
   metadata: {

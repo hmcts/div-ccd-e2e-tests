@@ -4,7 +4,7 @@ module.exports = {
 
   fields: {
     deliverToThisAddress: '#petitionerCorrespondenceUseHomeAddress_Yes',
-    submit: 'button[type="submit"]'
+    submit: 'input[type="submit"]'
   },
 
   metadata: {

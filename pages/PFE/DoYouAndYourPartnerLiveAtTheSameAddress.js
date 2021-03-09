@@ -5,7 +5,7 @@ module.exports = {
   fields: {
     liveTogether: '#livingArrangementsLiveTogether_Yes',
     liveApart: '#livingArrangementsLiveTogether_No',
-    submit: 'button[type="submit"]'
+    submit: 'input[type="submit"]'
   },
 
   metadata: {

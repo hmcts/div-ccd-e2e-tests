@@ -6,7 +6,7 @@ module.exports = {
     marriageDateDay: '#marriageDateDay',
     marriageDateMonth: '#marriageDateMonth',
     marriageDateYear: '#marriageDateYear',
-    submit: 'button[type="submit"]'
+    submit: 'input[type="submit"]'
   },
 
   metadata: {
