@@ -6,8 +6,10 @@ const testconfig = require('./config');
 Feature('E2E Baseline tests for core functionality');
 
 Scenario.only('AC 1 should allow petitioner to create an adultery case, claims costs and pay with credit card', async function (I) {
+  console.log('Step 1');
   await I.amOnHomePage();
-  await I.login(testconfig.TestEnvProfUser, testconfig.TestEnvProfPassword);
+  console.log('Step 2');
+  await I.login(testconfig.TestEnvCWUser, testconfig.TestEnvCWPassword);
   await I.languagePreferenceSelection();
   await I.stateThatMarriageHasBrokenDown();
   await I.haveAnAddressForPartner();
