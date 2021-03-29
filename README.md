@@ -1,10 +1,10 @@
 # div-ccd-e2e-tests
+
 Divorce CCD journey tests
 
 ## Purpose
 
 This service is to help people to run End2End Journey Tests for Divorce Solicitor Journeys.
-
 
 ## Getting Started
 
@@ -23,13 +23,13 @@ Install dependencies by executing the following command:
 $ yarn install
  ```
 
-### Running the experui tests againt aat
+### Running the expertui tests against aat
 
  ```bash
 $ yarn test:fullfunctional
  ```
 
-### Running the cross browser tests againt aat
+### Running the cross browser tests against aat
 
  ```bash
 $ yarn test:crossbrowser
