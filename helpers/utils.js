@@ -1,7 +1,7 @@
 const { Logger } = require('@hmcts/nodejs-logging');
 const requestModule = require('request-promise-native');
-const request = requestModule.defaults({ 'proxy': 'http://proxyout.reform.hmcts.net:8080' });
-// const request = requestModule.defaults();
+const request = requestModule.defaults();
+
 const fs = require('fs');
 const testConfig = require('../tests/config.js');
 
