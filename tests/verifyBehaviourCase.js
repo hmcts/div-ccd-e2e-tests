@@ -49,7 +49,7 @@ Scenario.skip('Execute events for end to end flow of PFE, RFE,  DN , DA', async 
   verifyState(daGranted, states.DIVORCE_GRANTED);
 }).retry(testconfig.RetryScenarios);
 
-Scenario('verify all tab fields of PFE, RFE, DN, DA', async function (I) {
+Scenario.skip('verify all tab fields of PFE, RFE, DN, DA', async function (I) {
   await I.amOnHomePage();
   await I.login(testconfig.TestEnvCWUser, testconfig.TestEnvCWPassword);
   await I.wait(1);
