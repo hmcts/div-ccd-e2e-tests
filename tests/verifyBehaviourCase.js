@@ -12,7 +12,7 @@ let caseId;
 
 Feature('Verify Behaviour Case ');
 
-Scenario('Execute events for end to end flow of PFE, RFE,  DN , DA', async function (I) {
+Scenario.skip('Execute events for end to end flow of PFE, RFE,  DN , DA', async function (I) {
   caseId = await createCaseInCcd('data/ccdBehaviourUnDefendedCase.json');
 
   const submitted = await updateCaseInCcd(caseId, events.HWF_ACCEPT_AWAIT_DECISION);

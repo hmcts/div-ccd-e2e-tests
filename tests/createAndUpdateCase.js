@@ -29,7 +29,7 @@ Scenario('Create and Update as well as caseworker change AOS states', async func
   await I.click(signOut);
 }).retry(testconfig.TestRetryScenarios);
 
-Scenario('Caseworker change DN events', async function (I) {
+Scenario.skip('Caseworker change DN events', async function (I) {
   await I.amOnHomePage();
   await I.login(testconfig.TestEnvCWUser, testconfig.TestEnvCWPassword);
   await I.shouldBeOnCaseListPage();
