@@ -22,7 +22,7 @@ Scenario.skip('Solicitor create case and make payment', async (I) => {
   await I.completeMarriageCertificateDetailsPageAndSubmit();
   await I.selectJurisdictionQuestionPageAndSubmit();
   await I.selectReasonForTheDivorceQuestionPageAndSubmit(reasonsForDivorce.BEHAVIOUR);
-  await I.fillBehaviourDetailsFormAndSubmit(); 
+  await I.fillBehaviourDetailsFormAndSubmit();
   await I.otherLegalProceedings();
   await I.financialOrdersSelectButton();
   await I.claimForCostsSelectButton(),
@@ -79,6 +79,7 @@ Scenario.skip('Caseworker should be able to see issue, refund events and issue a
   await I.selectAndSubmitEvent(eventDisplayName.DN_RECEIVED);
   await I.selectAndSubmitEvent(eventDisplayName.REFER_TO_LEGAL_ADVSIOR);
   await I.selectAndSubmitEvent(eventDisplayName.ENTITLEMENT_GRANTED);
-  await I.selectAndSubmitEvent(eventDisplayName.DN_PRONOUNCED);
+  await I.selectAndSubmitEvent(eventDisplayName.DN_PRONOUNCED_BY_BULK);
+  await I.selectAndSubmitEvent(eventDisplayName.MAKE_ELIGIBLE_FOR_DA);
   await I.selectAndSubmitEvent(eventDisplayName.DA_GRANTED);
 }).retry(testconfig.TestRetryScenarios);

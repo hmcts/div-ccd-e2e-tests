@@ -12,7 +12,7 @@ let caseId;
 
 Feature('Verify Behaviour Case ');
 
-Scenario.skip('Execute events for end to end flow of PFE, RFE,  DN , DA', async function (I) {
+Scenario('Execute events for end to end flow of PFE, RFE,  DN , DA', async function (I) {
   caseId = await createCaseInCcd('data/ccdBehaviourUnDefendedCase.json');
 
   const submitted = await updateCaseInCcd(caseId, events.HWF_ACCEPT_AWAIT_DECISION);
@@ -42,14 +42,17 @@ Scenario.skip('Execute events for end to end flow of PFE, RFE,  DN , DA', async 
   const entitlementGranted = await updateCaseInCcd(caseId, events.ENTITLEMENT_GRANTED);
   verifyState(entitlementGranted, states.AWAITING_PRONOUNCEMENT);
 
-  const awaitingDecreeAbsolute = await updateCaseInCcd(caseId, events.DN_PRONOUNCED);
+  const dnPronounced = await updateCaseInCcd(caseId, events.DN_PRONOUNCED_BY_BULK);
+  verifyState(dnPronounced, states.DN_PRONOUNCED);
+
+  const awaitingDecreeAbsolute = await updateCaseInCcd(caseId, events.MAKE_ELIGIBLE_FOR_DA);
   verifyState(awaitingDecreeAbsolute, states.AWAITING_DA);
 
   const daGranted = await updateCaseInCcd(caseId, events.DA_GRANTED);
   verifyState(daGranted, states.DIVORCE_GRANTED);
 }).retry(testconfig.RetryScenarios);
 
-Scenario.skip('verify all tab fields of PFE, RFE, DN, DA', async function (I) {
+Scenario('verify all tab fields of PFE, RFE, DN, DA', async function (I) {
   await I.amOnHomePage();
   await I.login(testconfig.TestEnvCWUser, testconfig.TestEnvCWPassword);
   await I.wait(1);
