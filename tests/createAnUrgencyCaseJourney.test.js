@@ -8,7 +8,7 @@ let caseNumberWithHyphen;
 
 Feature('create an urgent case journey');
 
-Scenario.skip('Solicitor create an urgent case', async (I) => {
+Scenario('Solicitor create an urgent case', async (I) => {
   await I.amOnHomePage();
   await I.login(testconfig.TestEnvProfUser, testconfig.TestEnvProfPassword);
   await I.clickCreateCase();

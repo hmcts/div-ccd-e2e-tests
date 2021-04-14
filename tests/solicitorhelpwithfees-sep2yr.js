@@ -7,7 +7,7 @@ let caseNumber;
 
 Feature('Sep-2-Yrs');
 
-Scenario.skip('Solicitor create case and make payment', async (I) => {
+Scenario('Solicitor create case and make payment', async (I) => {
   await I.amOnHomePage();
   await I.login(testconfig.TestEnvProfUser, testconfig.TestEnvProfPassword);
   await I.clickCreateCase();
@@ -54,7 +54,7 @@ xScenario('Solicitor should not see issue, refund events', async (I) => {
   await I.click(signOut);
 }).retry(testconfig.TestRetryScenarios);
 
-Scenario.skip('Caseworker should be able to see issue, refund events and issue aos pack', async (I) => {
+Scenario('Caseworker should be able to see issue, refund events and issue aos pack', async (I) => {
   await I.amOnHomePage();
   await I.login(testconfig.TestEnvCWUser, testconfig.TestEnvCWPassword);
   await I.wait(0.5);
@@ -78,6 +78,7 @@ Scenario.skip('Caseworker should be able to see issue, refund events and issue a
   await I.selectAndSubmitEvent(eventDisplayName.DN_RECEIVED);
   await I.selectAndSubmitEvent(eventDisplayName.REFER_TO_LEGAL_ADVSIOR);
   await I.selectAndSubmitEvent(eventDisplayName.ENTITLEMENT_GRANTED);
-  await I.selectAndSubmitEvent(eventDisplayName.DN_PRONOUNCED);
+  await I.selectAndSubmitEvent(eventDisplayName.DN_PRONOUNCED_BY_BULK);
+  await I.selectAndSubmitEvent(eventDisplayName.MAKE_ELIGIBLE_FOR_DA);
   await I.selectAndSubmitEvent(eventDisplayName.DA_GRANTED);
 }).retry(testconfig.TestRetryScenarios);

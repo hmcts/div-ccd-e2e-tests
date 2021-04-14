@@ -11,7 +11,11 @@ module.exports = {
     email: '#PetitionerSolicitorEmail',
     solicitorAgree: '#SolicitorAgreeToReceiveEmails-Yes',
     submit: 'button[type="submit"]',
-    OrgNamesText: 'Organisation name and address'
+    OrgNamesText: 'Organisation name and address',
+    OrgSearchBar: '#search-org-text',
+    OrgResultTable: '#organisation-table',
+    OrgSelectLink: 'a[title="Select the organisation DivPetitionerSolicitorFirm"]'
+
   },
 
   async fillFormAndSubmit() {
@@ -25,6 +29,10 @@ module.exports = {
     await I.fillField(this.fields.email, 'ccdsolicitorcreatecase@pettyfrance.com');
     await I.click(this.fields.solicitorAgree);
     await I.waitForText(this.fields.OrgNamesText);
+    await I.fillField(this.fields.OrgSearchBar, 'DivPetitionerSolicitorFirm');
+    await I.waitForElement(this.fields.OrgResultTable);
+    await I.see('Select');
+    await I.click('Select');
     await I.waitForNavigationToComplete(this.fields.submit);
   }
 };
