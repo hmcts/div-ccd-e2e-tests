@@ -361,7 +361,7 @@
     "DnOutcomeCase": "Yes",
     "DateRespondentEligibleForDA": "2020-02-15",
     "DNApprovalDate": "2020-04-03",
-    "DateCaseNoLongerEligibleForDA": "2021-01-01",
+    "DateCaseNoLongerEligibleForDA": "2020-10-03",
     "CostsDifferentDetailsTrans": "petitioner wants to claim this costs",
     "PreviousCaseId": {"CaseReference": "1515766541805208"}
 }
