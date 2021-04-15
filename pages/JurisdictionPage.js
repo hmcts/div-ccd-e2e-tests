@@ -3,7 +3,7 @@ const I = actor();
 module.exports = {
 
   fields: {
-    legalConnections: '#D8JurisdictionConnection-A',
+    legalConnections: '#D8JurisdictionConnectionNewPolicy-A',
     submit: 'button[type="submit"]'
   },
 

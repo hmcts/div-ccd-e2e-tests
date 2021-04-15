@@ -38,7 +38,8 @@ const states = {
   AWAITING_CONSIDERATION: 'AwaitingConsideration',
   AWAITING_PRONOUNCEMENT: 'AwaitingPronouncement',
   AWAITING_DA: 'AwaitingDecreeAbsolute',
-  DIVORCE_GRANTED: 'DivorceGranted'
+  DIVORCE_GRANTED: 'DivorceGranted',
+  DN_PRONOUNCED: 'DNPronounced'
 };
 
 const stateDisplayName = {
@@ -59,7 +60,8 @@ const eventDisplayName = {
   DN_RECEIVED: 'DN application received',
   REFER_TO_LEGAL_ADVSIOR: 'Refer to legal advisor',
   ENTITLEMENT_GRANTED: 'Entitlement granted',
-  DN_PRONOUNCED: 'DN Pronounced',
+  DN_PRONOUNCED_BY_BULK: 'DN Pronounced by Bulk',
+  MAKE_ELIGIBLE_FOR_DA: 'Make eligible for DA (Pet)',
   DA_GRANTED: 'DA Granted'
 };
 
@@ -73,10 +75,11 @@ const events = {
   DN_RECEIVED:'dnReceived',
   REFER_TO_LEGAL_ADVSIOR: 'refertoLegalAdvisor',
   ENTITLEMENT_GRANTED: 'entitlementGranted',
-  DN_PRONOUNCED: 'dnPronounced',
+  DN_PRONOUNCED_BY_BULK: 'dnPronouncedBulk',
   DA_GRANTED:'daGranted',
   CO_RESP_ANSWER_RECVD_AOS: 'coRespAnswerReceivedAOS',
-  CO_RESP_AOS_RECEIVED_STARTED: 'co-RespAOSReceivedStarted'
+  CO_RESP_AOS_RECEIVED_STARTED: 'co-RespAOSReceivedStarted',
+  MAKE_ELIGIBLE_FOR_DA: 'MakeEligibleForDA_Petitioner'
 };
 
 module.exports = {

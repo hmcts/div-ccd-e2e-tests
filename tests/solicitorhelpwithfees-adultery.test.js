@@ -9,7 +9,7 @@ let caseNumber;
 
 Feature('Adultery');
 
-Scenario.skip('Solicitor create case and make payment', async (I) => {
+Scenario('Solicitor create case and make payment', async (I) => {
   await I.amOnHomePage();
   await I.login(testconfig.TestEnvProfUser, testconfig.TestEnvProfPassword);
   await I.clickCreateCase();
@@ -23,7 +23,7 @@ Scenario.skip('Solicitor create case and make payment', async (I) => {
   await I.selectJurisdictionQuestionPageAndSubmit();
   await I.selectReasonForTheDivorceQuestionPageAndSubmit(reasonsForDivorce.ADULTERY);
   await I.fillAdulteryDetailsFormAndSubmit();
-  await I.fillAdulteryDetailsSecondPageFormAndSubmit(); 
+  await I.fillAdulteryDetailsSecondPageFormAndSubmit();
   await I.otherLegalProceedings();
   await I.financialOrdersSelectButton();
   await I.claimForCostsSelectButton(),
@@ -62,7 +62,8 @@ Scenario.skip('Solicitor create case and make payment', async (I) => {
   await I.selectAndSubmitEvent(eventDisplayName.DN_RECEIVED);
   await I.selectAndSubmitEvent(eventDisplayName.REFER_TO_LEGAL_ADVSIOR);
   await I.selectAndSubmitEvent(eventDisplayName.ENTITLEMENT_GRANTED);
-  await I.selectAndSubmitEvent(eventDisplayName.DN_PRONOUNCED);
+  await I.selectAndSubmitEvent(eventDisplayName.DN_PRONOUNCED_BY_BULK);
+  await I.selectAndSubmitEvent(eventDisplayName.MAKE_ELIGIBLE_FOR_DA);
   await I.selectAndSubmitEvent(eventDisplayName.DA_GRANTED);
 }).tag('@crossbrowser')
   .retry(testconfig.TestRetryScenarios);

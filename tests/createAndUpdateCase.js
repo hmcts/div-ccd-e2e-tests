@@ -29,7 +29,7 @@ Scenario('Create and Update as well as caseworker change AOS states', async func
   await I.click(signOut);
 }).retry(testconfig.TestRetryScenarios);
 
-Scenario.skip('Caseworker change DN events', async function (I) {
+Scenario('Caseworker change DN events', async function (I) {
   await I.amOnHomePage();
   await I.login(testconfig.TestEnvCWUser, testconfig.TestEnvCWPassword);
   await I.shouldBeOnCaseListPage();
@@ -39,7 +39,8 @@ Scenario.skip('Caseworker change DN events', async function (I) {
   await I.selectAndSubmitEvent(eventDisplayName.DN_RECEIVED);
   await I.selectAndSubmitEvent(eventDisplayName.REFER_TO_LEGAL_ADVSIOR);
   await I.selectAndSubmitEvent(eventDisplayName.ENTITLEMENT_GRANTED);
-  await I.selectAndSubmitEvent(eventDisplayName.DN_PRONOUNCED);
+  await I.selectAndSubmitEvent(eventDisplayName.DN_PRONOUNCED_BY_BULK);
+  await I.selectAndSubmitEvent(eventDisplayName.MAKE_ELIGIBLE_FOR_DA);
   await I.selectAndSubmitEvent(eventDisplayName.DA_GRANTED);
   await I.wait(5);
   await I.click(signOut);
