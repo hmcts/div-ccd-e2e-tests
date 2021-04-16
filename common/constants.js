@@ -61,6 +61,7 @@ const eventDisplayName = {
   REFER_TO_LEGAL_ADVSIOR: 'Refer to legal advisor',
   ENTITLEMENT_GRANTED: 'Entitlement granted',
   DN_PRONOUNCED_BY_BULK: 'DN Pronounced by Bulk',
+  TEST_EVENT_FOR_DA_DATA: 'Data required for DA',
   MAKE_ELIGIBLE_FOR_DA: 'Make eligible for DA (Pet)',
   DA_GRANTED: 'DA Granted'
 };

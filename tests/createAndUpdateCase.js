@@ -40,6 +40,7 @@ Scenario('Caseworker change DN events', async function (I) {
   await I.selectAndSubmitEvent(eventDisplayName.REFER_TO_LEGAL_ADVSIOR);
   await I.selectAndSubmitEvent(eventDisplayName.ENTITLEMENT_GRANTED);
   await I.selectAndSubmitEvent(eventDisplayName.DN_PRONOUNCED_BY_BULK);
+  await I.setTestDataForDA();
   await I.selectAndSubmitEvent(eventDisplayName.MAKE_ELIGIBLE_FOR_DA);
   await I.selectAndSubmitEvent(eventDisplayName.DA_GRANTED);
   await I.wait(5);
