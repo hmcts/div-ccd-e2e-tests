@@ -16,7 +16,6 @@ exports.config = {
       chrome: {
         ignoreHTTPSErrors: true,
         args: [
-          '--headless',
           '--disable-gpu',
           '--no-sandbox',
           '--allow-running-insecure-content',
