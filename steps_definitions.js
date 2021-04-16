@@ -42,7 +42,7 @@ const IssueAosPackToRespondentLandingPage = require('./pages/IssueAosPackToRespo
 const AosStartedPage = require('./pages/AosStartedPage');
 const AosStartedCheckYourAnswersPage = require('./pages/AosStartedCheckYourAnswersPage');
 const AosReceivedUndefendedMoveToDN = require('./pages/AosReceivedUndefendedMoveToDN');
-const SetTestDataForDa = require('./pages/SetTestDataForDa');
+const SetTestDataForDA = require('./pages/SetTestDataForDA');
 const SelectEventAndSubmit = require('./pages/SelectEventAndSubmit');
 const SelectEvent = require('./pages/SelectEvent');
 const MarriageCertificateDetailsPage = require('./pages/MarriageCertificateDetailsPage');
@@ -245,7 +245,7 @@ module.exports = function () {
     },
 
     setTestDataForDA: function() {
-      return SetTestDataForDa.fillFormAndSubmit();
+      return SetTestDataForDA.fillFormAndSubmit();
     },
     
     selectAndSubmitEvent: function(eventName) {
