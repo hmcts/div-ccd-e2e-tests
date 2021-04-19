@@ -12,7 +12,7 @@ let caseId;
 
 Feature('Verify Adultery case defended by both Resp and Co Resp ');
 
-Scenario('Execute events for end to end flow PFE, RFE, Co-RESP, DN , DA', async function (I) {
+Scenario('Execute events for end to end flow PFE, RFE, Co-RESP, DN, DA and verify all tab fields', async function (I) {
   caseId = await createCaseInCcd('data/ccdAdulteryRespondentCorespondentDefendedCase.json');
 
   const submitted = await updateCaseInCcd(caseId, events.HWF_ACCEPT_AWAIT_DECISION);
@@ -56,11 +56,8 @@ Scenario('Execute events for end to end flow PFE, RFE, Co-RESP, DN , DA', async 
 
   const daGranted = await updateCaseInCcd(caseId, events.DA_GRANTED);
   verifyState(daGranted, states.DIVORCE_GRANTED);
-}).retry(testconfig.RetryScenarios);
 
-Scenario('verify all tab fields PFE, RFE, DN, DA', async function (I) {
-  await I.amOnHomePage();
-  await I.login(testconfig.TestEnvCWUser, testconfig.TestEnvCWPassword);
+  // verify all tab fields PFE, RFE, DN, DA
   await I.wait(1);
   await I.amOnPage('/case/DIVORCE/DIVORCE/' + caseId);
   await I.wait(1);
