@@ -52,7 +52,7 @@ Scenario('Solicitor create case and make payment', async (I) => {
   await I.click(signOut);
 }).retry(testconfig.TestRetryScenarios);
 
-Scenario('Caseworker should be able to see issue, refund events and issue aos pack', async (I) => {
+xScenario('Caseworker should be able to see issue, refund events and issue aos pack', async (I) => {
   await I.amOnHomePage();
   await I.login(testconfig.TestEnvCWUser, testconfig.TestEnvCWPassword);
   await I.wait(0.5);
