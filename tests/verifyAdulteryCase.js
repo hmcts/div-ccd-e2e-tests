@@ -1,6 +1,5 @@
 const { createCaseInCcd, updateCaseInCcd } = require('../helpers/utils');
-const verifyContent = require('../data/ccdAdulteryRespondentCorespondentDefendedCase.json');
-const { reasonsForDivorce, signOut, states, events } = require('../common/constants');
+const { states, events } = require('../common/constants');
 const assert = require('assert');
 const testconfig = require('./config');
 
@@ -56,20 +55,4 @@ Scenario('Execute events for end to end flow PFE, RFE, Co-RESP, DN, DA and verif
 
   const daGranted = await updateCaseInCcd(caseId, events.DA_GRANTED);
   verifyState(daGranted, states.DIVORCE_GRANTED);
-
-  // verify all tab fields PFE, RFE, DN, DA
-  await I.wait(1);
-  await I.amOnPage('/case/DIVORCE/DIVORCE/' + caseId);
-  await I.wait(1);
-  await I.validatePetitionTabData(reasonsForDivorce.ADULTERYDISPLAY, verifyContent);
-  await I.validateMarriageCertTabData(verifyContent);
-  await I.validateAOSTabData(reasonsForDivorce.ADULTERYDISPLAY, verifyContent);
-  await I.validateCoRespTabData(verifyContent);
-  await I.validateDecreeNisiTabData(reasonsForDivorce.ADULTERYDISPLAY, verifyContent);
-  await I.validateOutcomeOfDNTabData(verifyContent);
-  await I.validateDecreeAbsoluteTabData(verifyContent);
-  await I.validateDocumentTabData(reasonsForDivorce.ADULTERYDISPLAY, caseId);
-  await I.validatePaymentTabData(verifyContent);
-  await I.validateLanguageTabData(reasonsForDivorce.ADULTERYDISPLAY, verifyContent);
-  await I.click(signOut);
 }).retry(testconfig.TestRetryScenarios);

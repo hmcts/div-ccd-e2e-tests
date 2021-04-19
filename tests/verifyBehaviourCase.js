@@ -1,6 +1,5 @@
 const { createCaseInCcd, updateCaseInCcd } = require('../helpers/utils');
-const verifyContent = require('../data/ccdBehaviourUnDefendedCase.json');
-const { reasonsForDivorce, signOut, states, events } = require('../common/constants');
+const { states, events } = require('../common/constants');
 const assert = require('assert');
 const testconfig = require('./config');
 
@@ -50,20 +49,4 @@ Scenario('Execute events for end to end flow of PFE, RFE, DN, DA and verify all 
 
   const daGranted = await updateCaseInCcd(caseId, events.DA_GRANTED);
   verifyState(daGranted, states.DIVORCE_GRANTED);
-
-  // verify tabs
-  await I.wait(1);
-  await I.amOnPage('/case/DIVORCE/DIVORCE/' + caseId);
-  await I.wait(1);
-  await I.validatePetitionTabData(reasonsForDivorce.BEHAVIOURDISPLAY, verifyContent);
-  await I.validateConfidentialPetitionerTab(verifyContent);
-  await I.validateMarriageCertTabData(verifyContent);
-  await I.validateAOSTabData(reasonsForDivorce.BEHAVIOURDISPLAY, verifyContent);
-  await I.validateDecreeNisiTabData(reasonsForDivorce.BEHAVIOURDISPLAY, verifyContent);
-  await I.validateOutcomeOfDNTabData(verifyContent);
-  await I.validateDecreeAbsoluteTabData(verifyContent);
-  await I.validateDocumentTabData(reasonsForDivorce.BEHAVIOURDISPLAY, caseId);
-  await I.validatePaymentTabData(verifyContent);
-  await I.validateLanguageTabData(reasonsForDivorce.BEHAVIOURDISPLAY, verifyContent);
-  I.click(signOut);
 }).retry(testconfig.RetryScenarios);
