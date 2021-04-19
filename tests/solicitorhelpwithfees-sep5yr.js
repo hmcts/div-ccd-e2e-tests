@@ -38,12 +38,8 @@ Scenario('Solicitor create case and make payment', async (I) => {
   await I.caseApplicationCompletePageFormAndSubmit();
   await I.caseCheckYourAnswersPageFormAndSubmit();
   await I.solAwaitingPaymentConfPageFormAndSubmit();
-}).retry(testconfig.TestRetryScenarios);
 
-xScenario('Solicitor should not see issue, refund events', async (I) => {
-  await I.amOnHomePage();
-  await I.login(testconfig.TestEnvProfUser, testconfig.TestEnvProfPassword);
-  await I.wait(1);
+  // Solicitor should not see issue, refund events
   await I.amOnPage('/case/DIVORCE/DIVORCE/' + caseNumber);
   await I.waitForElement(nextStepDropDown);
   await I.click(nextStepDropDown);
