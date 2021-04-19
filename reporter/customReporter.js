@@ -8,7 +8,7 @@ function generateAccessibilityReport(reportObj) {
   const destReport = testConfig.TestOutputDir + '/a11y.html';
   const destJson = testConfig.TestOutputDir + '/a11y_output.js';
   const previouschunkjson = testConfig.TestOutputDir + '/parallelexecution_a11y_result.json';
-  
+
   const updatedReportObj = appendPreviousParallelExecTestResults(reportObj);
   const result = 'var replacejsoncontent = ' + JSON.stringify(updatedReportObj);
 
@@ -55,7 +55,7 @@ function consoleReport(reportjson) {
   /* eslint-disable no-console */
   console.log('\t Total tests : ' + reportjson.tests.length);
   console.log('\t Passed tests : ' + reportjson.passCount);
-  console.log('\t Failed tests : ' + reportjson.passCount);
+  console.log('\t Failed tests : ' + reportjson.failCount);
 }
 /* eslint-enable no-unused-vars */
 
