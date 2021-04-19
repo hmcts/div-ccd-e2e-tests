@@ -4,7 +4,7 @@ const I = actor();
 module.exports = {
 
   selectors: {
-    caseLink: 'table tr:nth-last-child(1) a[href^="/case/DIVORCE/DIVORCE/"]',
+    caseLink: 'table tr:nth-last-child(1) a[href^="/cases/case-details/"]',
     jurisdictionSelect: '#wb-jurisdiction',
     caseTypeSelect: '#wb-case-type',
     caseStateSelect: '#wb-case-state',

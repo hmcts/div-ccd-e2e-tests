@@ -6,7 +6,7 @@ const { reasonsForDivorce } = require('../common/constants');
 let caseNumberWithHyphen;
 
 
-Feature('create an urgent case journey');
+Feature.only('create an urgent case journey');
 
 Scenario('Solicitor create an urgent case', async (I) => {
   await I.amOnHomePage();
@@ -38,12 +38,7 @@ Scenario('Solicitor create an urgent case', async (I) => {
   await I.caseApplicationCompletePageFormAndSubmit();
   await I.caseCheckYourAnswersPageFormAndSubmit();
   await I.solAwaitingPaymentConfPageFormAndSubmit();
-}).retry(testconfig.TestRetryScenarios);
 
-xScenario('Solicitor able to filter and search urgent case', async (I) => {
-  await I.amOnHomePage();
-  await I.login(testconfig.TestEnvProfUser, testconfig.TestEnvProfPassword);
-  await I.wait(1);
   await I.clickCreateList();
   await I.ShouldBeAbleToFilterAnUrgentCase(
     yesorno.Yes,
