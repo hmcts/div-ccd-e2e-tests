@@ -46,15 +46,3 @@ Scenario('Solicitor create an urgent case', async (I) => {
     caseNumberWithHyphen
   );
 }).retry(testconfig.TestRetryScenarios);
-
-xScenario('Caseworker able to filter and search urgent case', async (I) => {
-  await I.amOnHomePage();
-  await I.login(testconfig.TestEnvCWUser, testconfig.TestEnvCWPassword);
-  await I.wait(1);
-  await I.clickCreateList();
-  await I.ShouldBeAbleToFilterAnUrgentCase(
-    yesorno.Yes,
-    stateDisplayName.SOL_AWAIT_PAYMENT_CONFIRM,
-    caseNumberWithHyphen
-  );
-}).retry(testconfig.TestRetryScenarios);

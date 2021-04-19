@@ -42,7 +42,7 @@ Scenario('Solicitor create case and make payment', async (I) => {
   await I.wait(5);
   await I.login(testconfig.TestEnvCWUser, testconfig.TestEnvCWPassword);
   await I.wait(0.5);
-  await I.amOnPage('/case/DIVORCE/DIVORCE/' + caseNumber);
+  await I.amOnPage('/case/case-details/' + caseNumber);
   await I.selectAndSubmitEvent(eventDisplayName.HWF_APP_ACCEPTED);
   await I.waitForElement(nextStepDropDown);
   await I.click(nextStepDropDown);
