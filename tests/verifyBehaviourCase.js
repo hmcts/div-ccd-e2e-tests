@@ -12,7 +12,7 @@ let caseId;
 
 Feature('Verify Behaviour Case ');
 
-Scenario('Execute events for end to end flow of PFE, RFE,  DN , DA', async function (I) {
+Scenario('Execute events for end to end flow of PFE, RFE, DN, DA and verify all tab fields', async function (I) {
   caseId = await createCaseInCcd('data/ccdBehaviourUnDefendedCase.json');
 
   const submitted = await updateCaseInCcd(caseId, events.HWF_ACCEPT_AWAIT_DECISION);
@@ -50,11 +50,8 @@ Scenario('Execute events for end to end flow of PFE, RFE,  DN , DA', async funct
 
   const daGranted = await updateCaseInCcd(caseId, events.DA_GRANTED);
   verifyState(daGranted, states.DIVORCE_GRANTED);
-}).retry(testconfig.RetryScenarios);
 
-Scenario.only('verify all tab fields of PFE, RFE, DN, DA', async function (I) {
-  await I.amOnHomePage();
-  await I.login(testconfig.TestEnvCWUser, testconfig.TestEnvCWPassword);
+  // verify tabs
   await I.wait(1);
   await I.amOnPage('/case/DIVORCE/DIVORCE/' + caseId);
   await I.wait(1);
