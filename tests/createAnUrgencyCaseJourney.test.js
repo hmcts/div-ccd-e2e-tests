@@ -5,8 +5,7 @@ const { reasonsForDivorce } = require('../common/constants');
 
 let caseNumberWithHyphen;
 
-
-Feature.only('create an urgent case journey');
+Feature('create an urgent case journey');
 
 Scenario('Solicitor create an urgent case', async (I) => {
   await I.amOnHomePage();
