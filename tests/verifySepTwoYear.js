@@ -53,24 +53,23 @@ Scenario('Execute events for end to end flow of PFE, RFE, DN , DA', async functi
   verifyState(daGranted, states.DIVORCE_GRANTED);
 
   // verify all tab fields of PFE, RFE, DN, DA
-  await I.amOnHomePage();
-  await I.login(testconfig.TestEnvCWUser, testconfig.TestEnvCWPassword);
-  await I.wait(1);
-  await I.amOnPage('/case/case-details/' + caseId);
-  await I.wait(1);
-  await I.validatePetitionTabData(reasonsForDivorce.SEPTWOYRSDISPLAY, verifyContent);
-  await I.validateConfidentialPetitionerTab(verifyContent);
-  await I.validateMarriageCertTabData(verifyContent);
-  await I.validateAOSTabData(reasonsForDivorce.SEPTWOYRSDISPLAY, verifyContent);
-  await I.validateDecreeNisiTabData(reasonsForDivorce.SEPTWOYRSDISPLAY, verifyContent);
-  await I.validateOutcomeOfDNTabData(verifyContent);
-  await I.validateDecreeAbsoluteTabData(verifyContent);
-  await I.validateDocumentTabData(reasonsForDivorce.SEPTWOYRSDISPLAY, caseId);
-  await I.validatePaymentTabData(verifyContent);
-  await I.validateLanguageTabData(reasonsForDivorce.SEPTWOYRSDISPLAY, verifyContent);
-  await I.click(signOut);
+  // await I.amOnHomePage();
+  // await I.login(testconfig.TestEnvCWUser, testconfig.TestEnvCWPassword);
+  // await I.wait(1);
+  // await I.amOnPage('/case/case-details/' + caseId);
+  // await I.wait(1);
+  // await I.validatePetitionTabData(reasonsForDivorce.SEPTWOYRSDISPLAY, verifyContent);
+  // await I.validateConfidentialPetitionerTab(verifyContent);
+  // await I.validateMarriageCertTabData(verifyContent);
+  // await I.validateAOSTabData(reasonsForDivorce.SEPTWOYRSDISPLAY, verifyContent);
+  // await I.validateDecreeNisiTabData(reasonsForDivorce.SEPTWOYRSDISPLAY, verifyContent);
+  // await I.validateOutcomeOfDNTabData(verifyContent);
+  // await I.validateDecreeAbsoluteTabData(verifyContent);
+  // await I.validateDocumentTabData(reasonsForDivorce.SEPTWOYRSDISPLAY, caseId);
+  // await I.validatePaymentTabData(verifyContent);
+  // await I.validateLanguageTabData(reasonsForDivorce.SEPTWOYRSDISPLAY, verifyContent);
+  // await I.click(signOut);
 }).retry(testconfig.TestRetryScenarios);
-
 
 Scenario('Case creation should fail with invalid fixed list data', async function (I) {
   let caseResponse;
