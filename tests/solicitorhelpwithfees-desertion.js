@@ -37,42 +37,44 @@ Scenario('Solicitor create case and make payment', async (I) => {
   await I.caseOrderSummaryPageFormAndSubmit(paymentType.HWF);
   await I.caseApplicationCompletePageFormAndSubmit();
   await I.caseCheckYourAnswersPageFormAndSubmit();
-  await I.solAwaitingPaymentConfPageFormAndSubmit();
+  // await I.solAwaitingPaymentConfPageFormAndSubmit();
 
   // Solicitor should not see issue, refund events
   await I.wait(1);
-  await I.amOnPage('/case/DIVORCE/DIVORCE/' + caseNumber);
+  await I.amOnPage('/cases/case-details/' + caseNumber);
   await I.waitForElement(nextStepDropDown);
   await I.click(nextStepDropDown);
   await I.see(eventDisplayName.UPDATE_LANG);
+  await I.see(eventDisplayName.UPDATE_CONTACT_DETAILS);
   await I.dontSee(eventDisplayName.ISSUE);
   await I.dontSee(eventDisplayName.REFUND);
   await I.dontSee(eventDisplayName.TRANSFER_BETWEEN_RDC);
   await I.dontSee(eventDisplayName.TRANSFER_CTSC_TO_RDC);
-
-  // solicitor checks
-  await I.amOnPage('/case/DIVORCE/DIVORCE/' + caseNumber);
-  await I.see(eventDisplayName.UPDATE_LANG);
-  await I.see(eventDisplayName.ISSUE);
-  await I.see(eventDisplayName.REFUND);
-  await I.see(eventDisplayName.TRANSFER_BETWEEN_RDC);
-  await I.see(eventDisplayName.TRANSFER_CTSC_TO_RDC);
+  await I.wait(1);
+  await I.click(signOut);
+  await I.wait(1);
 
   // caseworker
-  await I.issueFromSubmittedPageFormAndSubmit();
-  await I.issueCheckYourAnswersPageFormAndSubmit();
-  await I.selectAndSubmitEvent(eventDisplayName.ISSUE_AOS_TO_RESP);
-  await I.selectEvent(eventDisplayName.AOS_STARTED);
-  await I.aosStartedPageFormAndSubmit();
-  await I.aosStartedCheckYourAnswersPageFormAndSubmit();
-  await I.aosReceivedUndefendedMoveToDNFormSubmit();
-  await I.selectAndSubmitEvent(eventDisplayName.DN_RECEIVED);
-  await I.selectAndSubmitEvent(eventDisplayName.REFER_TO_LEGAL_ADVSIOR);
-  await I.selectAndSubmitEvent(eventDisplayName.ENTITLEMENT_GRANTED);
-  await I.selectAndSubmitEvent(eventDisplayName.DN_PRONOUNCED_BY_BULK);
-  await I.setTestDataForDA();
-  await I.selectAndSubmitEvent(eventDisplayName.MAKE_ELIGIBLE_FOR_DA);
-  await I.selectAndSubmitEvent(eventDisplayName.DA_GRANTED);
-
-  await I.click(signOut);
+  // await I.amOnHomePage();
+  // await I.wait(1);
+  // await I.login(testconfig.TestEnvCWUser, testconfig.TestEnvCWPassword);
+  // await I.wait(1);
+  // await I.amOnPage('/cases/case-details/' + caseNumber);
+  // await I.wait(1);
+  // await I.awaitingPetitionerFormAndSubmit();
+  // await I.issueFromSubmittedPageFormAndSubmit();
+  // await I.issueCheckYourAnswersPageFormAndSubmit();
+  // await I.selectAndSubmitEvent(eventDisplayName.ISSUE_AOS_TO_RESP);
+  // await I.selectEvent(eventDisplayName.AOS_STARTED);
+  // await I.aosStartedPageFormAndSubmit();
+  // await I.aosStartedCheckYourAnswersPageFormAndSubmit();
+  // await I.aosReceivedUndefendedMoveToDNFormSubmit();
+  // await I.selectAndSubmitEvent(eventDisplayName.DN_RECEIVED);
+  // await I.selectAndSubmitEvent(eventDisplayName.REFER_TO_LEGAL_ADVSIOR);
+  // await I.selectAndSubmitEvent(eventDisplayName.ENTITLEMENT_GRANTED);
+  // await I.selectAndSubmitEvent(eventDisplayName.DN_PRONOUNCED_BY_BULK);
+  // await I.setTestDataForDA();
+  // await I.selectAndSubmitEvent(eventDisplayName.MAKE_ELIGIBLE_FOR_DA);
+  // await I.selectAndSubmitEvent(eventDisplayName.DA_GRANTED);
+  // await I.click(signOut);
 }).retry(testconfig.TestRetryScenarios);

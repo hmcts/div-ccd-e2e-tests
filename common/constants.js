@@ -19,7 +19,7 @@ const yesorno = {
 };
 
 const paymentType = {
-  FEE_ACCOUNT: 'Fee Account',
+  FEE_ACCOUNT: 'Fee account',
   HWF: 'Help with fees'
 };
 
@@ -48,6 +48,7 @@ const stateDisplayName = {
 
 const eventDisplayName = {
   UPDATE_LANG: 'Update Language',
+  UPDATE_CONTACT_DETAILS: 'Update contact details',
   PAYMENT_MADE: 'Payment made',
   HWF_APP_ACCEPTED: 'HWF application accepted',
   ISSUE: 'Issue',
