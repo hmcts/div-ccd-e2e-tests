@@ -7,7 +7,7 @@ let caseNumber;
 Feature('Solicitor create case - with fee account');
 
 //Skipping fee payment as PBA number id deleted for this user. Once PBA is set again the test can be uncommented
-xScenario('Solicitor create case and make payment', async (I) => {
+Scenario('Solicitor create case and make payment', async (I) => {
   await I.amOnHomePage();
   await I.login(testconfig.TestEnvProfUser, testconfig.TestEnvProfPassword);
   await I.clickCreateCase();

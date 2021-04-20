@@ -33,6 +33,7 @@ const CaseSubmissionAppCompletePage = require('./pages/CaseSubmissionAppComplete
 const CaseSubmissionCheckYourAnswersPage = require('./pages/CaseSubmissionCheckYourAnswersPage');
 const SolAwaitingPaymentConfirmationPage = require('./pages/SolAwaitingPaymentConfirmationPage');
 const CcdCaseCreatedLandingPage = require('./pages/CcdCaseCreatedLandingPage');
+const AwaitingPetitionerPage = require('./pages/AwaitingPetitionerPage');
 const IssuePage = require('./pages/IssuePage');
 const IssueCheckYourAnswersPage = require('./pages/IssueCheckYourAnswersPage');
 const CcdCaseCreatedPetitionIssuedLandingPage = require('./pages/CcdCaseCreatedPetitionIssuedLandingPage');
@@ -151,7 +152,7 @@ module.exports = function () {
     fillSeparationDetailsFormAndSubmit() {
       return StatementOfCaseSeparationDetail.fillFormAndSubmit();
     },
-  
+
     fillLiveApartFormAndSubmit(reason) {
       return LivedApartPage.fillFormAndSubmit(reason);
     },
@@ -216,6 +217,10 @@ module.exports = function () {
       return CcdCaseCreatedLandingPage.fillFormAndSubmit();
     },
 
+    awaitingPetitionerFormAndSubmit: function () {
+      return AwaitingPetitionerPage.fillFormAndSubmit();
+    },
+
     issueFromSubmittedPageFormAndSubmit: function() {
       return IssuePage.fillFormAndSubmit();
     },
@@ -247,7 +252,7 @@ module.exports = function () {
     setTestDataForDA: function() {
       return SetTestDataForDA.fillFormAndSubmit();
     },
-    
+
     selectAndSubmitEvent: function(eventName) {
       return SelectEventAndSubmit.fillFormAndSubmit(eventName);
     },
@@ -255,7 +260,7 @@ module.exports = function () {
     selectEvent: function(eventName) {
       return SelectEvent.fillFormAndSubmit(eventName);
     },
-    
+
 
     aosStartedPageFormAndSubmit: function() {
       return AosStartedPage.fillFormAndSubmit();
@@ -300,11 +305,11 @@ module.exports = function () {
     validateDecreeNisiTabData: function(reason,verifyContent) {
       return validateDecreeNisiTabData(reason,verifyContent);
     },
-    
+
     validateConfidentialPetitionerTab: function(verifyContent) {
       return validateConfidentialPetitionerTab(verifyContent);
     },
-    
+
     validateOutcomeOfDNTabData: function(verifyContent) {
       return validateOutcomeOfDNTabData(verifyContent);
     },
