@@ -38,9 +38,10 @@ Scenario('Solicitor create an urgent case', async (I) => {
   await I.caseApplicationCompletePageFormAndSubmit();
   await I.caseCheckYourAnswersPageFormAndSubmit();
   await I.solAwaitingPaymentConfPageFormAndSubmit();
+  await solicitorShouldBeAbleToFilterAndSearch(I);
 }).retry(testconfig.TestRetryScenarios);
 
-xScenario('Solicitor able to filter and search urgent case', async (I) => {
+async function solicitorShouldBeAbleToFilterAndSearch(I) {
   await I.amOnHomePage();
   await I.login(testconfig.TestEnvProfUser, testconfig.TestEnvProfPassword);
   await I.wait(1);
@@ -50,7 +51,9 @@ xScenario('Solicitor able to filter and search urgent case', async (I) => {
     stateDisplayName.SOL_AWAIT_PAYMENT_CONFIRM,
     caseNumberWithHyphen
   );
-}).retry(testconfig.TestRetryScenarios);
+
+  await I.click(signOut);
+}
 
 xScenario('Caseworker able to filter and search urgent case', async (I) => {
   await I.amOnHomePage();
