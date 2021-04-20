@@ -24,7 +24,7 @@ Scenario('Solicitor create case and make payment', async (I) => {
   await I.fillLiveApartFormAndSubmit(reasonsForDivorce.SEPFIVEYRS);
   await I.otherLegalProceedings();
   await I.financialOrdersSelectButton();
-  await I.claimForCostsSelectButton(),
+  await I.claimForCostsSelectButton();
   await I.uploadTheMarriageCertificateOptional();
   await I.languagePreferenceSelection();
   await I.solicitorCreateCheckYourAnswerAndSubmit();
@@ -51,7 +51,7 @@ Scenario('Solicitor create case and make payment', async (I) => {
   await I.click(signOut);
 }).retry(testconfig.TestRetryScenarios);
 
-xScenario('Caseworker should be able to see issue, refund events and issue aos pack', async (I) => {
+async function caseworkerShouldBeAbleToSeeIssueRefundAndIssueAosPack (I) {
   await I.amOnHomePage();
   await I.login(testconfig.TestEnvCWUser, testconfig.TestEnvCWPassword);
   await I.wait(0.5);
@@ -79,4 +79,4 @@ xScenario('Caseworker should be able to see issue, refund events and issue aos p
   await I.setTestDataForDA();
   await I.selectAndSubmitEvent(eventDisplayName.MAKE_ELIGIBLE_FOR_DA);
   await I.selectAndSubmitEvent(eventDisplayName.DA_GRANTED);
-}).retry(testconfig.TestRetryScenarios);
+}

@@ -35,5 +35,8 @@
     "mochawesome": "^4.1.0",
     "puppeteer": "^5.4.1",
     "webdriverio": "^6.11.3"
+  },
+  "resolutions": {
+    "axios": ">=0.21.1"
   }
 }

@@ -20,10 +20,10 @@ xScenario('Solicitor create case and make payment', async (I) => {
   await I.selectJurisdictionQuestionPageAndSubmit();
   await I.selectReasonForTheDivorceQuestionPageAndSubmit(reasonsForDivorce.ADULTERY);
   await I.fillAdulteryDetailsFormAndSubmit();
-  await I.fillAdulteryDetailsSecondPageFormAndSubmit(); 
+  await I.fillAdulteryDetailsSecondPageFormAndSubmit();
   await I.otherLegalProceedings();
   await I.financialOrdersSelectButton();
-  await I.claimForCostsSelectButton(),
+  await I.claimForCostsSelectButton();
   await I.uploadTheMarriageCertificateOptional();
   await I.languagePreferenceSelection();
   await I.solicitorCreateCheckYourAnswerAndSubmit();

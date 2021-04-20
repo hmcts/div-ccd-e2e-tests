@@ -25,7 +25,7 @@ Scenario('Solicitor create case and make payment', async (I) => {
   await I.fillLiveApartFormAndSubmit(reasonsForDivorce.DESERTION);
   await I.otherLegalProceedings();
   await I.financialOrdersSelectButton();
-  await I.claimForCostsSelectButton(),
+  await I.claimForCostsSelectButton();
   await I.uploadTheMarriageCertificateOptional();
   await I.languagePreferenceSelection();
   await I.solicitorCreateCheckYourAnswerAndSubmit();
@@ -49,23 +49,16 @@ Scenario('Solicitor create case and make payment', async (I) => {
   await I.dontSee(eventDisplayName.REFUND);
   await I.dontSee(eventDisplayName.TRANSFER_BETWEEN_RDC);
   await I.dontSee(eventDisplayName.TRANSFER_CTSC_TO_RDC);
-  await I.click(signOut);
-}).retry(testconfig.TestRetryScenarios);
 
-xScenario('Caseworker should be able to see issue, refund events and issue aos pack', async (I) => {
-  await I.amOnHomePage();
-  await I.login(testconfig.TestEnvCWUser, testconfig.TestEnvCWPassword);
-  await I.wait(0.5);
+  // solicitor checks
   await I.amOnPage('/case/DIVORCE/DIVORCE/' + caseNumber);
-  await I.selectAndSubmitEvent(eventDisplayName.HWF_APP_ACCEPTED);
-  await I.waitForElement(nextStepDropDown);
-  await I.click(nextStepDropDown);
-  await I.wait(0.5);
   await I.see(eventDisplayName.UPDATE_LANG);
   await I.see(eventDisplayName.ISSUE);
   await I.see(eventDisplayName.REFUND);
   await I.see(eventDisplayName.TRANSFER_BETWEEN_RDC);
   await I.see(eventDisplayName.TRANSFER_CTSC_TO_RDC);
+
+  // caseworker
   await I.issueFromSubmittedPageFormAndSubmit();
   await I.issueCheckYourAnswersPageFormAndSubmit();
   await I.selectAndSubmitEvent(eventDisplayName.ISSUE_AOS_TO_RESP);
@@ -80,4 +73,6 @@ xScenario('Caseworker should be able to see issue, refund events and issue aos p
   await I.setTestDataForDA();
   await I.selectAndSubmitEvent(eventDisplayName.MAKE_ELIGIBLE_FOR_DA);
   await I.selectAndSubmitEvent(eventDisplayName.DA_GRANTED);
+
+  await I.click(signOut);
 }).retry(testconfig.TestRetryScenarios);
