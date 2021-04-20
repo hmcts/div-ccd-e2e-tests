@@ -25,7 +25,7 @@ Scenario('Solicitor create case and make payment', async (I) => {
   await I.fillBehaviourDetailsFormAndSubmit();
   await I.otherLegalProceedings();
   await I.financialOrdersSelectButton();
-  await I.claimForCostsSelectButton(),
+  await I.claimForCostsSelectButton();
   await I.uploadTheMarriageCertificateOptional();
   await I.languagePreferenceSelection();
   await I.solicitorCreateCheckYourAnswerAndSubmit();

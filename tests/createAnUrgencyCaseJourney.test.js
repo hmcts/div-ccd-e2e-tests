@@ -25,7 +25,7 @@ Scenario('Solicitor create an urgent case', async (I) => {
   await I.fillAdulteryDetailsSecondPageFormAndSubmit();
   await I.otherLegalProceedings();
   await I.financialOrdersSelectButton();
-  await I.claimForCostsSelectButton(),
+  await I.claimForCostsSelectButton();
   await I.uploadTheMarriageCertificateOptional();
   await I.languagePreferenceSelection();
   await I.solicitorCreateCheckYourAnswerAndSubmit();
