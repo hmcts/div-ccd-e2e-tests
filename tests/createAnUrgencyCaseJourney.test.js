@@ -39,9 +39,8 @@ Scenario('Solicitor create an urgent case', async (I) => {
   await I.caseCheckYourAnswersPageFormAndSubmit();
   await I.solAwaitingPaymentConfPageFormAndSubmit();
 
-  await solicitorShouldBeAbleToFilterAndSearch(I);
-
-  await caseWorkerShouldBeAbleToFilterAndSearch(I);
+  // await solicitorShouldBeAbleToFilterAndSearch(I);
+  // await caseWorkerShouldBeAbleToFilterAndSearch(I);
 }).retry(testconfig.TestRetryScenarios);
 
 async function solicitorShouldBeAbleToFilterAndSearch(I) {
