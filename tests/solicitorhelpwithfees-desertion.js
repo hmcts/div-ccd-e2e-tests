@@ -8,7 +8,7 @@ let caseNumber;
 
 Feature('Desertion');
 
-Scenario('Solicitor create case and make payment', async (I) => {
+Scenario('Desertion Solicitor create case and make payment', async (I) => {
   await I.amOnHomePage();
   await I.login(testconfig.TestEnvProfUser, testconfig.TestEnvProfPassword);
   await I.clickCreateCase();
@@ -37,7 +37,6 @@ Scenario('Solicitor create case and make payment', async (I) => {
   await I.caseOrderSummaryPageFormAndSubmit(paymentType.HWF);
   await I.caseApplicationCompletePageFormAndSubmit();
   await I.caseCheckYourAnswersPageFormAndSubmit();
-  // await I.solAwaitingPaymentConfPageFormAndSubmit();
 
   // Solicitor should not see issue, refund events
   await I.wait(1);
@@ -52,29 +51,33 @@ Scenario('Solicitor create case and make payment', async (I) => {
   await I.dontSee(eventDisplayName.TRANSFER_CTSC_TO_RDC);
   await I.wait(1);
   await I.click(signOut);
-  await I.wait(1);
 
   // caseworker
-  // await I.amOnHomePage();
-  // await I.wait(1);
-  // await I.login(testconfig.TestEnvCWUser, testconfig.TestEnvCWPassword);
-  // await I.wait(1);
-  // await I.amOnPage('/cases/case-details/' + caseNumber);
-  // await I.wait(1);
-  // await I.awaitingPetitionerFormAndSubmit();
-  // await I.issueFromSubmittedPageFormAndSubmit();
-  // await I.issueCheckYourAnswersPageFormAndSubmit();
-  // await I.selectAndSubmitEvent(eventDisplayName.ISSUE_AOS_TO_RESP);
-  // await I.selectEvent(eventDisplayName.AOS_STARTED);
-  // await I.aosStartedPageFormAndSubmit();
-  // await I.aosStartedCheckYourAnswersPageFormAndSubmit();
-  // await I.aosReceivedUndefendedMoveToDNFormSubmit();
-  // await I.selectAndSubmitEvent(eventDisplayName.DN_RECEIVED);
-  // await I.selectAndSubmitEvent(eventDisplayName.REFER_TO_LEGAL_ADVSIOR);
-  // await I.selectAndSubmitEvent(eventDisplayName.ENTITLEMENT_GRANTED);
-  // await I.selectAndSubmitEvent(eventDisplayName.DN_PRONOUNCED_BY_BULK);
-  // await I.setTestDataForDA();
-  // await I.selectAndSubmitEvent(eventDisplayName.MAKE_ELIGIBLE_FOR_DA);
-  // await I.selectAndSubmitEvent(eventDisplayName.DA_GRANTED);
-  // await I.click(signOut);
+  await caseworkerJourney(I);
+
 }).retry(testconfig.TestRetryScenarios);
+
+async function caseworkerJourney(I) {
+  await I.wait(5);
+  await I.amOnHomePage();
+  await I.login(testconfig.TestEnvCWUser, testconfig.TestEnvCWPassword);
+  await I.wait(1);
+  await I.amOnPage('/cases/case-details/' + caseNumber);
+  await I.wait(1);
+  await I.awaitingPetitionerFormAndSubmit();
+  await I.issueFromSubmittedPageFormAndSubmit();
+  await I.issueCheckYourAnswersPageFormAndSubmit();
+  await I.selectAndSubmitEvent(eventDisplayName.ISSUE_AOS_TO_RESP);
+  await I.selectEvent(eventDisplayName.AOS_STARTED);
+  await I.aosStartedPageFormAndSubmit();
+  await I.aosStartedCheckYourAnswersPageFormAndSubmit();
+  await I.aosReceivedUndefendedMoveToDNFormSubmit();
+  await I.selectAndSubmitEvent(eventDisplayName.DN_RECEIVED);
+  await I.selectAndSubmitEvent(eventDisplayName.REFER_TO_LEGAL_ADVSIOR);
+  await I.selectAndSubmitEvent(eventDisplayName.ENTITLEMENT_GRANTED);
+  await I.selectAndSubmitEvent(eventDisplayName.DN_PRONOUNCED_BY_BULK);
+  await I.setTestDataForDA();
+  await I.selectAndSubmitEvent(eventDisplayName.MAKE_ELIGIBLE_FOR_DA);
+  await I.selectAndSubmitEvent(eventDisplayName.DA_GRANTED);
+  await I.click(signOut);
+}
