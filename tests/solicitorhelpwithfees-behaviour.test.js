@@ -17,7 +17,7 @@ Scenario('Solicitor create case and make payment', async (I) => {
   await I.fillCreateCaseFormAndSubmit();
   await I.fillAboutSolicitorFormAndSubmit();
   await I.fillAboutThePetitionerFormAndSubmit();
-  await I.fillAboutTheRespondentFormAndSubmit();
+  await I.fillAboutRepresentedRespSolicitorFormAndSubmit();
   await I.fillAboutRespSolicitorFormAndSubmit();
   await I.completeMarriageCertificateDetailsPageAndSubmit();
   await I.selectJurisdictionQuestionPageAndSubmit();

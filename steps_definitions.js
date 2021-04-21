@@ -121,6 +121,10 @@ module.exports = function () {
       return RespSolicitorRepresented.fillFormAndSubmit();
     },
 
+    fillAboutRepresentedRespSolicitorFormAndSubmit() {
+      return RespSolicitorRepresented.fillFormForRepresentedRespondentAndSubmit();
+    },
+
     completeMarriageCertificateDetailsPageAndSubmit: function () {
       return MarriageCertificateDetailsPage.fillFormAndSubmit();
     },
