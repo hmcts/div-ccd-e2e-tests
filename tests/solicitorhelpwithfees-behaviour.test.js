@@ -18,7 +18,7 @@ Scenario('Solicitor create case and make payment', async (I) => {
   await I.fillAboutSolicitorFormAndSubmit();
   await I.fillAboutThePetitionerFormAndSubmit();
   await I.fillAboutTheRespondentFormAndSubmit();
-  await I.fillAboutRespSolicitorFormAndSubmit();
+  await I.fillAboutRepresentedRespSolicitorFormAndSubmit();
   await I.completeMarriageCertificateDetailsPageAndSubmit();
   await I.selectJurisdictionQuestionPageAndSubmit();
   await I.selectReasonForTheDivorceQuestionPageAndSubmit(reasonsForDivorce.BEHAVIOUR);
@@ -41,7 +41,7 @@ Scenario('Solicitor create case and make payment', async (I) => {
 
   // Solicitor should not see issue, refund events
   await I.wait(1);
-  await I.amOnPage('/case/DIVORCE/DIVORCE/' + caseNumber);
+  await I.amOnPage('cases/case-details/' + caseNumber);
   await I.waitForElement(nextStepDropDown);
   await I.click(nextStepDropDown);
   await I.see(eventDisplayName.UPDATE_LANG);
