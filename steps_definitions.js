@@ -50,6 +50,9 @@ const MarriageCertificateDetailsPage = require('./pages/MarriageCertificateDetai
 const TransferCaseToADifferentRDCsPage = require('./pages/TransferCaseToADifferentRDCsPage');
 const TransferBetweenRDCsPage = require('./pages/TransferBetweenRDCsPage');
 const TransferToRDCLandingPage = require('./pages/TransferToRDCLandingPage');
+const ServiceApplicationReceivedPage = require('./pages/ServiceApplicationReceivedPage');
+const ConfirmServicePaymentPage = require('./pages/ConfirmServicePaymentPage');
+const IssueBailiffPackPage = require('./pages/IssueBailiffPackPage');
 
 const validatePetitionTabData = require ('./tabs/validatePetitionTabData');
 const validateConfidentialPetitionerTab = require ('./tabs/validateConfidentialPetitionerTab');
@@ -265,7 +268,6 @@ module.exports = function () {
       return SelectEvent.fillFormAndSubmit(eventName);
     },
 
-
     aosStartedPageFormAndSubmit: function() {
       return AosStartedPage.fillFormAndSubmit();
     },
@@ -284,6 +286,18 @@ module.exports = function () {
 
     caseCreatedCTSCServiceCentrePageFormAndSubmit: function() {
       return TransferToRDCLandingPage.fillFormAndSubmit();
+    },
+
+    serviceApplicationReceivedPageFormAndSubmit: function(serviceApplicationType) {
+      return ServiceApplicationReceivedPage.fillFormAndSubmit(serviceApplicationType);
+    },
+
+    confirmServicePaymentPageFormAndSubmit: function () {
+      return ConfirmServicePaymentPage.fillFormAndSubmit();
+    },
+
+    issueBailiffPackPageFormAndSubmit: function() {
+      return IssueBailiffPackPage.fillFormAndSubmit();
     },
 
     validatePetitionTabData: function(reason,verifyContent) {

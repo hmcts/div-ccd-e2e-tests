@@ -84,6 +84,12 @@ const events = {
   MAKE_ELIGIBLE_FOR_DA: 'MakeEligibleForDA_Petitioner'
 };
 
+const serviceApplicationType = {
+  BAILIFF_APPLICATION: 'Bailiff application',
+  DISPENSED_WITH_SERVICE: 'Dispensed with service',
+  DEEMED_AS_SERVED: 'Deemed as served'
+};
+
 module.exports = {
   reasonsForDivorce,
   states,
@@ -92,5 +98,6 @@ module.exports = {
   paymentType,
   eventDisplayName,
   stateDisplayName,
-  yesorno
+  yesorno,
+  serviceApplicationType
 };
