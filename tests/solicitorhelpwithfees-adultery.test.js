@@ -1,9 +1,8 @@
-const { eventDisplayName, signOut, paymentType, yesorno } = require('../common/constants');
-const testconfig = require('./config');
+const { paymentType, yesorno } = require('../common/constants');
+const testConfig = require('./config');
+const {signOut, serviceApplicationType} = require('../common/constants');
 
 const { reasonsForDivorce } = require('../common/constants');
-
-const nextStepDropDown = 'select[id="next-step"]';
 
 let caseNumber;
 
@@ -11,7 +10,7 @@ Feature('Adultery');
 
 Scenario('Solicitor create case and make payment', async (I) => {
   await I.amOnHomePage();
-  await I.login(testconfig.TestEnvProfUser, testconfig.TestEnvProfPassword);
+  await I.login(testConfig.TestEnvProfUser, testConfig.TestEnvProfPassword);
   await I.clickCreateCase();
   await I.wait(1);
   await I.fillCreateCaseFormAndSubmit();
@@ -39,5 +38,20 @@ Scenario('Solicitor create case and make payment', async (I) => {
   await I.caseApplicationCompletePageFormAndSubmit();
   await I.caseCheckYourAnswersPageFormAndSubmit();
   await I.solAwaitingPaymentConfPageFormAndSubmit();
+
+  // bailiff
+  await I.wait(5);
+  await I.amOnHomePage();
+  await I.wait(1);
+  await I.login(testConfig.TestEnvCWUser, testConfig.TestEnvCWPassword);
+  await I.wait(5);
+  await I.amOnPage('cases/case-details/' + caseNumber);
+  await I.wait(1);
+
+  await I.awaitingPetitionerFormAndSubmit();
+  await I.serviceApplicationReceivedPageFormAndSubmit(serviceApplicationType.BAILIFF_APPLICATION);
+  await I.confirmServicePaymentPageFormAndSubmit();
+  await I.issueBailiffPackPageFormAndSubmit();
+  await I.click(signOut);
 }).tag('@crossbrowser')
-  .retry(testconfig.TestRetryScenarios);
+  .retry(testConfig.TestRetryScenarios);
