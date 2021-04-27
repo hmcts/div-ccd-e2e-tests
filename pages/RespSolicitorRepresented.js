@@ -34,6 +34,7 @@ module.exports = {
     await I.waitInUrl('solicitorCreateRespondentServiceDetails');
     await I.runAccessibilityTest();
     await I.click(this.fields.solicitorRepresented);
+    await I.wait(1);
 
     await I.fillField(this.fields.respondentSolicitorName, 'MAMA AJASCO');
     await I.fillField(this.fields.respondentSolicitorReference, 'AWS11236');
