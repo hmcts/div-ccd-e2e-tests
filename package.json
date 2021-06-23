@@ -5,7 +5,7 @@
   "description": "",
   "scripts": {
     "pretest": "npm run create:type-definitions",
-    "test:fullfunctional": "TESTS_FOR_ACCESSIBILITY='true' codeceptjs run-multiple parallel --steps --reporter mochawesome",
+    "test:fullfunctional": "TESTS_FOR_ACCESSIBILITY='false' codeceptjs run-multiple parallel --steps --reporter mochawesome",
     "create:type-definitions": "codeceptjs def",
     "lint": "eslint .",
     "test-crossbrowser-e2e": "NODE_PATH=. codeceptjs run-multiple ${BROWSER_GROUP:-'--all'} -c saucelabs.conf.js --plugins retryFailedStep --steps --grep '@crossbrowser' --reporter mocha-multi",
