@@ -5,7 +5,7 @@ module.exports = {
   fields: {
     desertionDetails: '#D8ReasonForDivorceDesertionDetails',
     submit: 'button[type="submit"]',
-    desertionAgreedNo: '#D8ReasonForDivorceDesertionAgreed-No',
+    desertionAgreedNo: '#D8ReasonForDivorceDesertionAgreed_No',
     reasonForDivorceDesertionDateDay: '#D8ReasonForDivorceDesertionDate-day',
     reasonForDivorceDesertionDateMonth: '#D8ReasonForDivorceDesertionDate-month',
     reasonForDivorceDesertionDateYear: '#D8ReasonForDivorceDesertionDate-year'

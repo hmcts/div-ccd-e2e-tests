@@ -5,8 +5,8 @@ const { reasonsForDivorce } = require('../common/constants');
 module.exports = {
 
   fields: {
-    d8LivedApartSinceDesertion: '#D8LivedApartSinceDesertion-Yes',
-    d8LivedApartSinceSeparation:'#D8LivedApartSinceSeparation-Yes',
+    d8LivedApartSinceDesertion: '#D8LivedApartSinceDesertion_Yes',
+    d8LivedApartSinceSeparation:'#D8LivedApartSinceSeparation_Yes',
     submit: 'button[type="submit"]'
   },
 
