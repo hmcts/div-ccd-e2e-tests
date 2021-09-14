@@ -3,7 +3,7 @@ const I = actor();
 module.exports = {
 
   fields: {
-    namePersonAdulteryCommittedWith: '#D8ReasonForDivorceAdulteryWishToName-No',
+    namePersonAdulteryCommittedWith: '#D8ReasonForDivorceAdulteryWishToName_No',
     submit: 'button[type="submit"]'
   },
 

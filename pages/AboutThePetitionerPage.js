@@ -5,15 +5,15 @@ module.exports = {
   fields: {
     firstName: '#D8PetitionerFirstName',
     lastName: '#D8PetitionerLastName',
-    petitionerChangedName: '#D8PetitionerNameDifferentToMarriageCert-No',
+    petitionerChangedName: '#D8PetitionerNameDifferentToMarriageCert_No',
     whoIsPetitionerDivorcing: '#D8DivorceWho',
     petitionerGender: '#D8InferredPetitionerGender',
-    petitionerRespondentSameSex: '#D8MarriageIsSameSexCouple-No',
+    petitionerRespondentSameSex: '#D8MarriageIsSameSexCouple_No',
     petitionerHomeAddress: '#D8DerivedPetitionerHomeAddress',
     petitionerPhoneNumber: '#D8PetitionerPhoneNumber',
     petitionerEmailAddress: '#D8PetitionerEmail',
     keepPetitionerContactDetails: '#D8PetitionerContactDetailsConfidential',
-    petitionerEmailAddress: '#D8PetitionerEmail',
+    //petitionerEmailAddress: '#D8PetitionerEmail',
     submit: 'button[type="submit"]'
   },
 

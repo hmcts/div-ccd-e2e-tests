@@ -10,8 +10,8 @@ module.exports = {
     caseStateSelect: '#wb-case-state',
     rdcSelect: '#D8DivorceUnit',
     solicitorPaymentMethodSelect: '#SolPaymentHowToPay',
-    urgentFilterYes: '#SolUrgentCase-Yes',
-    urgentFilterNo: '#SolUrgentCase-No'
+    urgentFilterYes: '#SolUrgentCase_Yes',
+    urgentFilterNo: '#SolUrgentCase_No'
   },
 
   async clickCreateList() {

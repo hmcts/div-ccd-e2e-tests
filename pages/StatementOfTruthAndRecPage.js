@@ -4,13 +4,13 @@ const I = actor();
 module.exports = {
 
   fields: {
-    caseUrgentYes: '#SolUrgentCase-Yes',
-    caseUrgentNo: '#SolUrgentCase-No',
+    caseUrgentYes: '#SolUrgentCase_Yes',
+    caseUrgentNo: '#SolUrgentCase_No',
     caseUrgentSupportingInfoTextBox: '#SolUrgentCaseSupportingInformation',
-    reconciliationWithThePetitioner: '#SolStatementOfReconciliationCertify-Yes',
-    namesAndAddressesOfPersonsQualified: '#SolStatementOfReconciliationDiscussed-Yes',
-    petitionerBelievesFactsTrue: '#D8StatementOfTruth-Yes',
-    amAuthorisedByPetitionerToSign: '#solSignStatementofTruth-Yes',
+    reconciliationWithThePetitioner: '#SolStatementOfReconciliationCertify_Yes',
+    namesAndAddressesOfPersonsQualified: '#SolStatementOfReconciliationDiscussed_Yes',
+    petitionerBelievesFactsTrue: '#D8StatementOfTruth_Yes',
+    amAuthorisedByPetitionerToSign: '#solSignStatementofTruth_Yes',
     yourName: '#SolStatementOfReconciliationName',
     nameOfYourFirm: '#SolStatementOfReconciliationFirm',
     howToServeRespondent:'#SolServiceMethod-courtService',

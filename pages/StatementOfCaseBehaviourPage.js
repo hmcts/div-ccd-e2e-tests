@@ -5,7 +5,7 @@ module.exports = {
   fields: {
     behaviourDetails: '#D8ReasonForDivorceBehaviourDetails',
     submit: 'button[type="submit"]',
-    secondHandInfo: '#D8ReasonForDivorceAdulteryAnyInfo2ndHand-No'
+    secondHandInfo: '#D8ReasonForDivorceAdulteryAnyInfo2ndHand_No'
   },
 
   async fillFormAndSubmit() {
