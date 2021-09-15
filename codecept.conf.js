@@ -7,7 +7,7 @@ exports.config = {
   helpers: {
     Puppeteer: {
       url: testConfig.TestUrl,
-      show: testConfig.TestShowBrowserWindow,
+      show: true,
       waitForNavigation: ['domcontentloaded'],
       restart: true,
       keepCookies: false,
@@ -17,7 +17,6 @@ exports.config = {
       chrome: {
         ignoreHTTPSErrors: true,
         args: [
-          '--headless',
           '--disable-gpu',
           '--no-sandbox',
           '--allow-running-insecure-content',
