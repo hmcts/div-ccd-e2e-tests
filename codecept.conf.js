@@ -12,6 +12,7 @@ exports.config = {
       restart: true,
       keepCookies: false,
       keepBrowserState: false,
+      smartWait: 5000,
       waitForTimeout: 90000,
       chrome: {
         ignoreHTTPSErrors: true,
