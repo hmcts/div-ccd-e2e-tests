@@ -7,7 +7,7 @@ exports.config = {
   helpers: {
     Puppeteer: {
       url: testConfig.TestUrl,
-      show: false,
+      show: testConfig.TestShowBrowserWindow,
       waitForNavigation: ['domcontentloaded'],
       restart: true,
       keepCookies: false,
