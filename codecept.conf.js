@@ -2,6 +2,7 @@ const testConfig = require('./tests/config.js');
 
 exports.config = {
   tests: testConfig.TestPathToRun,
+
   timeout: 10000,
   output: testConfig.TestOutputDir,
   helpers: {
@@ -9,11 +10,14 @@ exports.config = {
       url: testConfig.TestUrl,
       show: testConfig.TestShowBrowserWindow,
       waitForNavigation: ['domcontentloaded'],
+      waitForAction:500,
       restart: true,
       keepCookies: false,
       keepBrowserState: false,
       smartWait: 50000,
-      waitForTimeout: 90000,
+      //waitForTimeout: 90000,
+      waitForTimeout: 120000,
+      getPageTimeout: 120000,
       chrome: {
         ignoreHTTPSErrors: true,
         args: [
