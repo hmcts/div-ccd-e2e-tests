@@ -47,14 +47,14 @@ class WebDriverHelper extends Helper {
 
   async isSafariBrowser() {
     const browserName = await this.helpers.WebDriver.config.browser;
-    
+
     return browserName === 'safari';
   }
 
   async isMicrosoftEdgeOrSafariBrowser() {
     const browserName = await this.helpers.WebDriver.config.browser;
 
-    return browserName === 'MicrosoftEdge' || browserName === 'safari';
+    return browserName === 'microsoft' || browserName === 'safari';
   }
 }
 
