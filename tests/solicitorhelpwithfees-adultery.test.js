@@ -43,8 +43,6 @@ Scenario('Solicitor create case and make payment', async (I) => {
   // login as caseworker
   // bailiff
   await I.wait(5);
-  await I.amOnHomePage();
-  await I.wait(5);
   await I.login(testConfig.TestEnvCWUser, testConfig.TestEnvCWPassword);
   await I.wait(5);
   await I.amOnPage('cases/case-details/' + caseNumber);
