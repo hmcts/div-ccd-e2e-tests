@@ -10,8 +10,7 @@ const defaultSauceOptions = {
   accessKey: process.env.SAUCE_ACCESS_KEY,
   acceptSslCerts: true,
   windowSize: '1600x900',
-  tags: ['div_expertui'],
-  remoteFileUpload: false
+  tags: ['div_expertui']
 };
 
 function merge (intoObject, fromObject) {
