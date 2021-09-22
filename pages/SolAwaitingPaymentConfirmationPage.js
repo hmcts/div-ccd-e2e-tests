@@ -11,8 +11,8 @@ module.exports = {
   },
 
   async checkPageAndSignOut() {
-    await I.waitForElement(signOut, 30);
-    await I.click(signOut);
+    await I.waitForText('Sign out');
+    await I.click('Sign out');
     await I.waitForElement(this.fields.email, 30);
   }
 };
