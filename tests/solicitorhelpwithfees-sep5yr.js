@@ -37,7 +37,7 @@ Scenario('Solicitor create case and make payment', async (I) => {
   await I.caseOrderSummaryPageFormAndSubmit(paymentType.HWF);
   await I.caseApplicationCompletePageFormAndSubmit();
   await I.caseCheckYourAnswersPageFormAndSubmit();
-  await I.solAwaitingPaymentConfPageFormAndSubmit();
+  // await I.solAwaitingPaymentConfPageFormAndSubmit();
 
   // Solicitor should not see issue, refund events
   await I.amOnPage('cases/case-details/' + caseNumber);
@@ -49,4 +49,4 @@ Scenario('Solicitor create case and make payment', async (I) => {
   await I.dontSee(eventDisplayName.TRANSFER_BETWEEN_RDC);
   await I.dontSee(eventDisplayName.TRANSFER_CTSC_TO_RDC);
   await I.click(signOut);
-}).retry(testconfig.TestRetryScenarios);
+}).retry(testconfig.TestRetryScenarios).tag('@now');
