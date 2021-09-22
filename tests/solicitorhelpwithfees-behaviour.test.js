@@ -43,7 +43,7 @@ Scenario('Solicitor create case and make payment', async (I) => {
   await I.wait(1);
   await I.amOnPage('cases/case-details/' + caseNumber);
   await I.wait(5);
-  await I.waitForElement(nextStepDropDown);
+  await I.waitForElement(nextStepDropDown, 30);
   await I.click(nextStepDropDown);
   await I.see(eventDisplayName.UPDATE_LANG);
   await I.dontSee(eventDisplayName.ISSUE);
