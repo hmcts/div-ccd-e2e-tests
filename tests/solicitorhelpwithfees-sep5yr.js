@@ -49,4 +49,4 @@ Scenario('Solicitor create case and make payment', async (I) => {
   await I.dontSee(eventDisplayName.TRANSFER_BETWEEN_RDC);
   await I.dontSee(eventDisplayName.TRANSFER_CTSC_TO_RDC);
   await I.click(signOut);
-}).retry(testconfig.TestRetryScenarios).tag('@now');
+}).retry(testconfig.TestRetryScenarios)
