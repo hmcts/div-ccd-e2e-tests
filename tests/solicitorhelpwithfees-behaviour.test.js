@@ -37,10 +37,9 @@ Scenario('Solicitor create case and make payment', async (I) => {
   await I.caseOrderSummaryPageFormAndSubmit(paymentType.HWF);
   await I.caseApplicationCompletePageFormAndSubmit();
   await I.caseCheckYourAnswersPageFormAndSubmit();
-  await I.solAwaitingPaymentConfPageFormAndSubmit();
 
   // Solicitor should not see issue, refund events
-  await I.wait(1);
+  await I.wait(5);
   await I.amOnPage('cases/case-details/' + caseNumber);
   await I.wait(5);
   await I.waitForElement(nextStepDropDown, 30);

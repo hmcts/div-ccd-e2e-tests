@@ -36,7 +36,6 @@ Scenario('Solicitor create case and make payment', async (I) => {
   await I.caseOrderSummaryPageFormAndSubmit(paymentType.HWF);
   await I.caseApplicationCompletePageFormAndSubmit();
   await I.caseCheckYourAnswersPageFormAndSubmit();
-  await I.solAwaitingPaymentConfPageFormAndSubmit();
 
   // Solicitor should not see issue, refund events
   await I.wait(5);
