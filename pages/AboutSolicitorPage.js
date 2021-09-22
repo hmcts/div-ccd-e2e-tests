@@ -35,4 +35,3 @@ module.exports = {
     await I.waitForNavigationToComplete(this.fields.submit);
   }
 };
-

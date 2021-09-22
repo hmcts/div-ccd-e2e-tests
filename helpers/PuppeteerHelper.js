@@ -26,9 +26,9 @@ class PuppeteerHelper extends Helper {
   }
 
   async isMicrosoftEdgeOrSafariBrowser() {
-    const browserName = await this.helpers.WebDriver.config.browser;
-
-    return browserName === 'microsoft' || browserName === 'safari';
+    await Promise.resolve(() => {
+      return false;
+    });
   }
 
   async waitForNavigationToComplete(locator) {

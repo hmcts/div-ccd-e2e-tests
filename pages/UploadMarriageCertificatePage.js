@@ -14,6 +14,9 @@ module.exports = {
     await I.waitInUrl('solicitorCreateSolUploadDocs');
     await I.runAccessibilityTest();
     await I.see('Documents uploaded (Optional)');
+
+    // The below code was causing XB tests to fail as it hadn't been implemented correctly. WIP.
+
     // const isAttachFileSupportedBrowser = !(await I.isMicrosoftEdgeOrSafariBrowser());
     // if (testConfig.TestForCrossBrowser && isAttachFileSupportedBrowser) {
     //   await I.click(this.fields.addNewButton);

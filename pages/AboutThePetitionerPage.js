@@ -13,7 +13,6 @@ module.exports = {
     petitionerPhoneNumber: '#D8PetitionerPhoneNumber',
     petitionerEmailAddress: '#D8PetitionerEmail',
     keepPetitionerContactDetails: '#D8PetitionerContactDetailsConfidential',
-    //petitionerEmailAddress: '#D8PetitionerEmail',
     submit: 'button[type="submit"]'
   },
 
