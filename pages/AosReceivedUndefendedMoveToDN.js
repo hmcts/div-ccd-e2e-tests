@@ -2,14 +2,14 @@ const I = actor();
 const {eventDisplayName} = require('../common/constants');
 
 module.exports = {
-  
+
   fields: {
     selectActionDropDown: 'select[id="next-step"]',
     submit: 'button[type="submit"]',
     selectDNReason: 'select[id="PermittedDecreeNisiReason"]',
     selectDNReasonLabel: 'Reason for AwaitingDecreeNisi?',
     eventSummary: '#field-trigger-summary',
-    respConfirmReadYes: '#RespConfirmReadPetition-Yes',
+    respConfirmReadYes: '#RespConfirmReadPetition_Yes',
     DNReasonValue: 'Undefended divorce with Respondent agreement'
   },
 

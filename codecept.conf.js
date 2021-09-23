@@ -12,11 +12,13 @@ exports.config = {
       restart: true,
       keepCookies: false,
       keepBrowserState: false,
+      smartWait: 50000,
       waitForTimeout: 90000,
       chrome: {
         ignoreHTTPSErrors: true,
         args: [
           '--headless',
+          '--smartwait',
           '--disable-gpu',
           '--no-sandbox',
           '--allow-running-insecure-content',

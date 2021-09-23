@@ -4,7 +4,7 @@ module.exports = {
 
   fields: {
     respondentsEmailAddress: '#RespEmailAddress',
-    aosReceivedFromRespondent: '#ReceivedAOSfromResp-Yes',
+    aosReceivedFromRespondent: '#ReceivedAOSfromResp_Yes',
     dateAosReceivedFromRespondentDay: '#ReceivedAOSfromRespDate-day',
     dateAosReceivedFromRespondentMonth: '#ReceivedAOSfromRespDate-month',
     dateAosReceivedFromRespondentYear: '#ReceivedAOSfromRespDate-year',

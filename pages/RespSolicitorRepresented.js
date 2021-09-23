@@ -3,8 +3,8 @@ const I = actor();
 module.exports = {
 
   fields: {
-    solicitorNotRepresented: '#respondentSolicitorRepresented-No',
-    solicitorRepresented: '#respondentSolicitorRepresented-Yes',
+    solicitorNotRepresented: '#respondentSolicitorRepresented_No',
+    solicitorRepresented: '#respondentSolicitorRepresented_Yes',
     respondentHomeAddress: '#D8DerivedRespondentHomeAddress',
     respondentServiceAddress:'#D8DerivedRespondentCorrespondenceAddr',
     respondentSolicitorName: '#D8RespondentSolicitorName',
@@ -12,8 +12,8 @@ module.exports = {
     respondentSolicitorPhoneNumber: '#D8RespondentSolicitorPhone',
     respondentSolicitorEmail: '#D8RespondentSolicitorEmail',
     respondentSolicitorAddress: '#D8DerivedRespondentSolicitorAddr',
-    isDigitalRespondentCase: '#RespSolDigital-Yes',
-    isNotDigitalRespondentCase: '#RespSolDigital-No',
+    isDigitalRespondentCase: '#RespSolDigital_Yes',
+    isNotDigitalRespondentCase: '#RespSolDigital_No',
     orgNamesText: 'Organisation name and address',
     orgSearchBar: '#search-org-text',
     orgResultTable: '#organisation-table',

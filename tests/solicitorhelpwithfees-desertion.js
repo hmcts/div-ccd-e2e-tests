@@ -51,7 +51,6 @@ Scenario('Solicitor create case and make payment', async (I) => {
   await I.dontSee(eventDisplayName.TRANSFER_CTSC_TO_RDC);
   await I.wait(1);
   await I.click(signOut);
-
   // caseworker
   await caseworkerJourney(I);
 
@@ -61,7 +60,7 @@ async function caseworkerJourney(I) {
   await I.wait(5);
   await I.amOnHomePage();
   await I.login(testconfig.TestEnvCWUser, testconfig.TestEnvCWPassword);
-  await I.wait(1);
+  await I.wait(5);
   await I.amOnPage('/cases/case-details/' + caseNumber);
   await I.wait(1);
   await I.awaitingPetitionerFormAndSubmit();

@@ -3,7 +3,7 @@ const I = actor();
 module.exports = {
 
   fields: {
-    existingLanguagePreferences: '#LanguagePreferenceWelsh-No',
+    existingLanguagePreferences: '#LanguagePreferenceWelsh_No',
     submit: 'button[type="submit"]'
   },
 

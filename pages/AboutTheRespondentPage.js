@@ -5,10 +5,10 @@ module.exports = {
   fields: {
     firstName: '#D8RespondentFirstName',
     lastName: '#D8RespondentLastName',
-    respondentChangedName: '#D8RespondentNameAsOnMarriageCertificate-No',
+    respondentChangedName: '#D8RespondentNameAsOnMarriageCertificate_No',
     respondentGender: '#D8InferredRespondentGender',
-    wishToEffectServiceOnRespondent: '#PetitionerSolicitorToEffectService-Yes',
-    respondentUsingASolicitor: '#D8RespondentCorrespondenceSendToSol-No',
+    wishToEffectServiceOnRespondent: '#PetitionerSolicitorToEffectService_Yes',
+    respondentUsingASolicitor: '#D8RespondentCorrespondenceSendToSol_No',
     respondentServiceAddress: '#D8DerivedRespondentCorrespondenceAddr',
     submit: 'button[type="submit"]'
   },

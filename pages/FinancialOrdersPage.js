@@ -3,7 +3,7 @@ const I = actor();
 module.exports = {
 
   fields: {
-    petitionerApplyForFinancialOrder: '#D8FinancialOrder-No',
+    petitionerApplyForFinancialOrder: '#D8FinancialOrder_No',
     submit: 'button[type="submit"]'
   },
 

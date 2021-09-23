@@ -9,7 +9,7 @@ module.exports = {
     yourReferenceNumber: '#D8SolicitorReference',
     phoneNumber: '#PetitionerSolicitorPhone',
     email: '#PetitionerSolicitorEmail',
-    solicitorAgree: '#SolicitorAgreeToReceiveEmails-Yes',
+    solicitorAgree: '#SolicitorAgreeToReceiveEmails_Yes',
     submit: 'button[type="submit"]',
     OrgNamesText: 'Organisation name and address',
     OrgSearchBar: '#search-org-text',

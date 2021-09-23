@@ -55,9 +55,9 @@ Scenario('Execute events for end to end flow of PFE, RFE, DN , DA', async functi
   // verify all tab fields of PFE, RFE, DN, DA
   await I.amOnHomePage();
   await I.login(testconfig.TestEnvCWUser, testconfig.TestEnvCWPassword);
-  await I.wait(1);
+  await I.wait(5);
   await I.amOnPage('/case/DIVORCE/DIVORCE/' + caseId);
-  await I.wait(1);
+  await I.wait(5);
   await I.validatePetitionTabData(reasonsForDivorce.DESERTIONDISPLAY, verifyContent);
   await I.validateConfidentialPetitionerTab(verifyContent);
   await I.validateMarriageCertTabData(verifyContent);

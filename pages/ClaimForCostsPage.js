@@ -3,7 +3,7 @@ const I = actor();
 module.exports = {
 
   fields: {
-    petitionerWantsToClaimCosts: '#D8DivorceCostsClaim-No',
+    petitionerWantsToClaimCosts: '#D8DivorceCostsClaim_No',
     submit: 'button[type="submit"]'
   },
 

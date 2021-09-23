@@ -38,15 +38,12 @@ Scenario('Solicitor create case and make payment', async (I) => {
   await I.caseApplicationCompletePageFormAndSubmit();
   await I.caseCheckYourAnswersPageFormAndSubmit();
   await I.solAwaitingPaymentConfPageFormAndSubmit();
-
+  // login as caseworker
   // bailiff
-  await I.wait(5);
-  await I.amOnHomePage();
-  await I.wait(1);
   await I.login(testConfig.TestEnvCWUser, testConfig.TestEnvCWPassword);
   await I.wait(5);
   await I.amOnPage('cases/case-details/' + caseNumber);
-  await I.wait(1);
+  await I.wait(5);
 
   await I.awaitingPetitionerFormAndSubmit();
   await I.serviceApplicationReceivedPageFormAndSubmit(serviceApplicationType.BAILIFF_APPLICATION);
