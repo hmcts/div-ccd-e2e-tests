@@ -9,7 +9,7 @@ module.exports = {
   },
 
   async fillFormAndSubmit() {
-    await I.waitInUrl('solicitorCreateSolSOCAdultery1');
+    await I.waitForElement(this.fields.adulteryDetails);
     await I.runAccessibilityTest();
     await I.fillField(this.fields.adulteryDetails, 'My wife and her boyfriends beat me up everytime but I dont cry');
     await I.click(this.fields.secondHandInfo);
