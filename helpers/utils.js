@@ -10,6 +10,7 @@ const logger = Logger.getLogger('helpers/utils.js');
 const env = testConfig.TestEnv;
 const testUrl = testConfig.TestUrl;
 const idamBaseUrl = `https://idam-api.${env}.platform.hmcts.net` || testConfig.IdamBaseUrl;
+const ccdApiUrl = `http://ccd-data-store-api-${env}.service.core-compute-${env}.internal`;
 
 const months = ['Jan', 'Feb', 'Mar','Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
@@ -113,7 +114,7 @@ async function createCaseAndFetchResponse(dataLocation = 'data/ccd-basic-data.js
 
   logger.info('Creating Case');
 
-  const ccdApiUrl = `http://ccd-data-store-api-${env}.service.core-compute-${env}.internal`;
+  
   const ccdStartCasePath = `/caseworkers/${userId}/jurisdictions/DIVORCE/case-types/DIVORCE/event-triggers/hwfCreate/token`;
   const ccdSaveCasePath = `/caseworkers/${userId}/jurisdictions/DIVORCE/case-types/DIVORCE/cases`;
 
@@ -128,7 +129,7 @@ async function createCaseAndFetchResponse(dataLocation = 'data/ccd-basic-data.js
   };
 
   const startCaseResponse = await request(startCaseOptions);
-  console.log(startCaseResponse);
+  // console.log(startCaseResponse);
 
   const eventToken = JSON.parse(startCaseResponse).token;
 
@@ -168,7 +169,6 @@ async function updateCaseInCcd(caseId, eventId, dataLocation = 'data/ccd-update-
 
   logger.info('Updating case with id %s and event %s', caseId, eventId);
 
-  const ccdApiUrl = `http://ccd-data-store-api-${env}.service.core-compute-${env}.internal`;
   const ccdStartEventPath = `/caseworkers/${userId}/jurisdictions/DIVORCE/case-types/DIVORCE/cases/${caseId}/event-triggers/${eventId}/token`;
   const ccdSaveEventPath = `/caseworkers/${userId}/jurisdictions/DIVORCE/case-types/DIVORCE/cases/${caseId}/events`;
 
