@@ -4,6 +4,7 @@ properties([
         parameters([
                 string(name: 'RUNNING_ENV', defaultValue: 'aat', description: 'Environment to test'),
                 string(name: 'XUI_URL_TO_TEST', defaultValue: 'https://manage-case.aat.platform.hmcts.net/', description: 'The URL you want to run solicitor tests against'),
+                string(name: 'IDAM_BASE_URL', defaultValue: 'https://idam-api.aat.platform.hmcts.net', description: 'The Idam URL you want to run againts'),
         ])
 ])
 
@@ -34,6 +35,7 @@ static LinkedHashMap<String, Object> secret(String secretName, String envVar) {
 
 withNightlyPipeline("nodejs", product, component) {
     env.TEST_E2E_URL = params.XUI_URL_TO_TEST
+    env.RUNNING_ENV = params.RUNNING_ENV
     env.NODE_ENV = 'ci'
 
     loadVaultSecrets(secrets)

@@ -8,6 +8,9 @@ const testConfig = require('../tests/config.js');
 const logger = Logger.getLogger('helpers/utils.js');
 
 const env = testConfig.TestEnv;
+const testUrl = testConfig.TestUrl;
+const idamBaseUrl = `https://idam-api.${env}.platform.hmcts.net` || testConfig.IdamBaseUrl;
+
 const months = ['Jan', 'Feb', 'Mar','Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
 async function getUserToken() {
@@ -18,9 +21,6 @@ async function getUserToken() {
   const password = testConfig.TestEnvCWPassword;
   const redirectUri = `https://div-pfe-${env}.service.core-compute-${env}.internal/authenticated`;
   const idamClientSecret = testConfig.TestIdamClientSecret;
-
-  const idamBaseUrl = 'https://idam-api.aat.platform.hmcts.net';
-
   const idamCodePath = `/oauth2/authorize?response_type=code&client_id=divorce&redirect_uri=${redirectUri}`;
 
   const codeResponse = await request.post({
@@ -51,7 +51,7 @@ async function getUserToken() {
 async function getUserId(authToken) {
   logger.info('Getting User Id');
 
-  const idamBaseUrl = 'https://idam-api.aat.platform.hmcts.net';
+  
 
   const idamDetailsPath = '/details';
   const userDetails = await request.get({
@@ -212,8 +212,9 @@ async function updateCaseInCcd(caseId, eventId, dataLocation = 'data/ccd-update-
 
   return saveEventResponse;
 }
+
 const getBaseUrl = () => {
-  return 'manage-case.aat.platform.hmcts.net';
+  return testUrl;
 };
 
 function firstLetterToCaps(value){
