@@ -31,9 +31,9 @@
       "id": "3798450e-ee81-4319-a9f7-280b6f8d1b81",
       "value": {
         "DocumentLink": {
-          "document_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/bf643aa2-aa8b-4591-8f78-d8f29d4508d0",
+          "document_url": "{{dm-store-url}}/documents/bf643aa2-aa8b-4591-8f78-d8f29d4508d0",
           "document_filename": "Image.png",
-          "document_binary_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/bf643aa2-aa8b-4591-8f78-d8f29d4508d0/binary"
+          "document_binary_url": "{{dm-store-url}}/documents/bf643aa2-aa8b-4591-8f78-d8f29d4508d0/binary"
         },
         "DocumentType": "other",
         "DocumentComment": "",
@@ -46,9 +46,9 @@
       "id": "753b9de1-375b-47db-957f-0405bc220b9e",
       "value": {
         "DocumentLink": {
-          "document_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/b3d96065-8b9d-4913-a5fe-dc8f41122b8e",
+          "document_url": "{{dm-store-url}}/documents/b3d96065-8b9d-4913-a5fe-dc8f41122b8e",
           "document_filename": "JPEG image.jpeg",
-          "document_binary_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/b3d96065-8b9d-4913-a5fe-dc8f41122b8e/binary"
+          "document_binary_url": "{{dm-store-url}}/documents/b3d96065-8b9d-4913-a5fe-dc8f41122b8e/binary"
         },
         "DocumentType": "other",
         "DocumentComment": "",
@@ -123,9 +123,9 @@
       "id": "05dc9267-6f2a-4ab6-867d-78b78503defc",
       "value": {
         "DocumentLink": {
-          "document_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/078164ef-6a3c-43bc-abf3-632a8abcb121",
+          "document_url": "{{dm-store-url}}/documents/078164ef-6a3c-43bc-abf3-632a8abcb121",
           "document_filename": "d8petition1545300878484074.pdf",
-          "document_binary_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/078164ef-6a3c-43bc-abf3-632a8abcb121/binary"
+          "document_binary_url": "{{dm-store-url}}/documents/078164ef-6a3c-43bc-abf3-632a8abcb121/binary"
         },
         "DocumentType": "petition",
         "DocumentComment": null,
@@ -138,9 +138,9 @@
       "id": "874e2de3-f6fe-4051-b4ef-3a1cb3998613",
       "value": {
         "DocumentLink": {
-          "document_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/751c500e-b47d-494f-82b1-bb282f9f3bdc",
+          "document_url": "{{dm-store-url}}/documents/751c500e-b47d-494f-82b1-bb282f9f3bdc",
           "document_filename": "aosinvitation1545300878484074.pdf",
-          "document_binary_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/751c500e-b47d-494f-82b1-bb282f9f3bdc/binary"
+          "document_binary_url": "{{dm-store-url}}/documents/751c500e-b47d-494f-82b1-bb282f9f3bdc/binary"
         },
         "DocumentType": "aos",
         "DocumentComment": null,
@@ -185,9 +185,9 @@
       "id": "7d783d06-7752-44b0-a2fe-2b6c3c058746",
       "value": {
         "DocumentLink": {
-          "document_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/53ff5748-bed1-4149-8c69-b10b6d222a1f",
+          "document_url": "{{dm-store-url}}/documents/53ff5748-bed1-4149-8c69-b10b6d222a1f",
           "document_filename": "image.jpg",
-          "document_binary_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/53ff5748-bed1-4149-8c69-b10b6d222a1f/binary"
+          "document_binary_url": "{{dm-store-url}}/documents/53ff5748-bed1-4149-8c69-b10b6d222a1f/binary"
         },
         "DocumentType": "other",
         "DocumentComment": "",
@@ -200,9 +200,9 @@
       "id": "56cdddf1-7c48-42d3-b1df-ad8bc8dc0bf7",
       "value": {
         "DocumentLink": {
-          "document_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/d2c65e0f-566e-41cb-b1e3-ef7c7c1e7665",
+          "document_url": "{{dm-store-url}}/documents/d2c65e0f-566e-41cb-b1e3-ef7c7c1e7665",
           "document_filename": "9B9045BC-CBFA-4B0A-8019-E7EC45E2DBCE.jpeg",
-          "document_binary_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/d2c65e0f-566e-41cb-b1e3-ef7c7c1e7665/binary"
+          "document_binary_url": "{{dm-store-url}}/documents/d2c65e0f-566e-41cb-b1e3-ef7c7c1e7665/binary"
         },
         "DocumentType": "other",
         "DocumentComment": "",
@@ -215,9 +215,9 @@
       "id": "502bc825-21a9-4c72-8fbd-21116ba6630e",
       "value": {
         "DocumentLink": {
-          "document_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/f6320cd7-9803-4122-9e37-9f79f5ed2086",
+          "document_url": "{{dm-store-url}}/documents/f6320cd7-9803-4122-9e37-9f79f5ed2086",
           "document_filename": "Image.png",
-          "document_binary_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/f6320cd7-9803-4122-9e37-9f79f5ed2086/binary"
+          "document_binary_url": "{{dm-store-url}}/documents/f6320cd7-9803-4122-9e37-9f79f5ed2086/binary"
         },
         "DocumentType": "other",
         "DocumentComment": "",
