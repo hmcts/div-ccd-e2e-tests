@@ -6,7 +6,7 @@ let caseNumber;
 
 Feature('Solicitor create case - with fee account');
 
-Scenario('Solicitor create case and make payment', async (I) => {
+Scenario('Solicitor create case and make payment', async ({I}) => {
   await I.amOnHomePage();
   await I.login(testconfig.TestEnvProfUser, testconfig.TestEnvProfPassword);
   await I.clickCreateCase();

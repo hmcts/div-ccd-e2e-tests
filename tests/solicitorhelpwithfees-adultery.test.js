@@ -8,7 +8,7 @@ let caseNumber;
 
 Feature('Adultery');
 
-Scenario('Solicitor create case and make payment', async (I) => {
+Scenario('Solicitor create case and make payment', async ({I}) => {
   await I.amOnHomePage();
   await I.login(testConfig.TestEnvProfUser, testConfig.TestEnvProfPassword);
   await I.clickCreateCase();

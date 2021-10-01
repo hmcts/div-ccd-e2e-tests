@@ -6,7 +6,7 @@ let caseId;
 
 Feature('Testing CCD Create and Update as well as Caseworker change AOS States');
 
-Scenario('Create and Update as well as caseworker change AOS states', async function (I) {
+Scenario('Create and Update as well as caseworker change AOS states', async function ({I}) {
   caseId = await createCaseInCcd('data/ccd-basic-data.json');
   await updateCaseInCcd(caseId, 'hwfApplicationAcceptedfromAwaitingHWFDecision', 'data/ccd-update-data.json');
 
@@ -29,7 +29,7 @@ Scenario('Create and Update as well as caseworker change AOS states', async func
   await I.click(signOut);
 }).retry(testconfig.TestRetryScenarios);
 
-Scenario('Caseworker change DN events', async function (I) {
+Scenario('Caseworker change DN events', async function ({I}) {
   await I.amOnHomePage();
   await I.login(testconfig.TestEnvCWUser, testconfig.TestEnvCWPassword);
   await I.shouldBeOnCaseListPage();
