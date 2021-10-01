@@ -4,7 +4,7 @@ const testconfig = require('./config');
 
 Feature('Verify Amended Case ');
 
-Scenario('Create linked case and verify tab', async function (I) {
+Scenario('Create linked case and verify tab', async function ({I}) {
   const caseId = await createCaseInCcd('data/ccdLinkedCase.json');
   await I.amOnHomePage();
   await I.login(testconfig.TestEnvCWUser, testconfig.TestEnvCWPassword);
