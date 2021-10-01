@@ -9,7 +9,8 @@
     "create:type-definitions": "codeceptjs def",
     "lint": "eslint .",
     "test-crossbrowser-e2e": "NODE_PATH=. codeceptjs run-multiple ${BROWSER_GROUP:-'--all'} -c saucelabs.conf.js --plugins retryFailedStep --steps --grep '@crossbrowser' --reporter mocha-multi",
-    "test:crossbrowser": "./bin/run-crossbrowser-tests.sh"
+    "test:crossbrowser": "./bin/run-crossbrowser-tests.sh",
+    "test-e2e-standalone": "SHOW_BROWSER_WINDOW=yes NODE_PATH=. E2E_AUTO_DELAY_ENABLED=true node ./node_modules/codeceptjs/bin/codecept.js run tests/createAndUpdateCase.js  -c ./ --steps"
   },
   "keywords": [],
   "author": "",
