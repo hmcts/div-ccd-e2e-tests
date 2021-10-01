@@ -1,5 +1,5 @@
 module.exports = {
-  TestUrl: process.env.TEST_E2E_URL || 'http://manage-case.demo.platform.hmcts.net/',
+  TestUrl: process.env.TEST_E2E_URL || 'http://manage-case.demo.platform.hmcts.net',
   TestEnv: process.env.RUNNING_ENV || 'demo',
   TestShowBrowserWindow: process.env.SHOW_BROWSER_WINDOW || false,
   TestRetryFeatures: 0,

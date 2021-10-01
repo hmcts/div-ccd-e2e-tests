@@ -20,6 +20,8 @@ async function getUserToken() {
   // Setup Details
   const username = testConfig.TestEnvCWUser;
   const password = testConfig.TestEnvCWPassword;
+  console.log('user name=> ', username);
+  console.log('password=>', password);
   const redirectUri = `https://div-pfe-${env}.service.core-compute-${env}.internal/authenticated`;
   const idamClientSecret = testConfig.TestIdamClientSecret;
 
@@ -38,6 +40,7 @@ async function getUserToken() {
   const code = JSON.parse(codeResponse).code;
 
   const idamAuthPath = `/oauth2/token?grant_type=authorization_code&client_id=divorce&client_secret=${idamClientSecret}&redirect_uri=${redirectUri}&code=${code}`;
+  console.log('idamAuthPath=> ', idamAuthPath);
   const authTokenResponse = await request.post({
     uri: idamBaseUrl + idamAuthPath,
     headers: {
