@@ -50,4 +50,5 @@ Scenario('Solicitor create case and make payment', async (I) => {
   await I.confirmServicePaymentPageFormAndSubmit();
   await I.issueBailiffPackPageFormAndSubmit();
   await I.click(signOut);
-}).retry(testConfig.TestRetryScenarios);
+}).tag('@crossbrowser')
+  .retry(testConfig.TestRetryScenarios);
