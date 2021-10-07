@@ -10,7 +10,7 @@ const logger = Logger.getLogger('helpers/utils.js');
 const env = testConfig.TestEnv;
 const idamBaseUrl = `https://idam-api.${env}.platform.hmcts.net` || testConfig.IdamBaseUrl;
 const ccdApiUrl = `http://ccd-data-store-api-${env}.service.core-compute-${env}.internal`;
-const dmStoreUrl = `http://dm-store-${env}.service.core-compute-${env}.internal`;
+const redirectUri = `https://div-pfe-${env}.service.core-compute-${env}.internal/authenticated`;
 
 const months = ['Jan', 'Feb', 'Mar','Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
@@ -20,9 +20,7 @@ async function getUserToken() {
   // Setup Details
   const username = testConfig.TestEnvCWUser;
   const password = testConfig.TestEnvCWPassword;
-  console.log('user name=> ', username);
-  console.log('password=>', password);
-  const redirectUri = `https://div-pfe-${env}.service.core-compute-${env}.internal/authenticated`;
+  
   const idamClientSecret = testConfig.TestIdamClientSecret;
 
   const idamCodePath = `/oauth2/authorize?response_type=code&client_id=divorce&redirect_uri=${redirectUri}`;
@@ -40,7 +38,6 @@ async function getUserToken() {
   const code = JSON.parse(codeResponse).code;
 
   const idamAuthPath = `/oauth2/token?grant_type=authorization_code&client_id=divorce&client_secret=${idamClientSecret}&redirect_uri=${redirectUri}&code=${code}`;
-  console.log('idamAuthPath=> ', idamAuthPath);
   const authTokenResponse = await request.post({
     uri: idamBaseUrl + idamAuthPath,
     headers: {
@@ -131,7 +128,6 @@ async function createCaseAndFetchResponse(dataLocation = 'data/ccd-basic-data.js
   };
 
   const startCaseResponse = await request(startCaseOptions);
-  console.log('------- startCaseResponse: ', startCaseResponse);
 
   const eventToken = JSON.parse(startCaseResponse).token;
 
@@ -146,8 +142,8 @@ async function createCaseAndFetchResponse(dataLocation = 'data/ccd-basic-data.js
     'event_token': eventToken
   };
 
-  const saveBodyString = (JSON.stringify(saveBody)).replace(/{{dm-store-url}}/g, dmStoreUrl);
-  console.log('save body string => ', saveBodyString);
+  const saveBodyString = updateDocumentUploadedData(JSON.stringify(saveBody));
+  console.log('---------- save body string => ', saveBodyString);
 
   const saveCaseOptions = {
     method: 'POST',
@@ -162,6 +158,7 @@ async function createCaseAndFetchResponse(dataLocation = 'data/ccd-basic-data.js
   const saveCaseResponse =  await request(saveCaseOptions).catch(error => {
     console.log(error);
   });
+  console.log('------saveCaseResponse: ', saveCaseResponse);
   return saveCaseResponse;
 }
 
@@ -202,8 +199,8 @@ async function updateCaseInCcd(caseId, eventId, dataLocation = 'data/ccd-update-
     'event_token': eventToken
   };
 
-  const saveBodyString = (JSON.stringify(saveBody)).replace(/{{dm-store-url}}/g, dmStoreUrl);
-  console.log('save body string => ', saveBodyString);
+  const saveBodyString = updateDocumentUploadedData(JSON.stringify(saveBody));
+  console.log('-------------------------- save body string => ', saveBodyString);
 
   const saveEventOptions = {
     method: 'POST',
@@ -216,7 +213,9 @@ async function updateCaseInCcd(caseId, eventId, dataLocation = 'data/ccd-update-
     body: saveBodyString
   };
 
-  const saveEventResponse = await request(saveEventOptions);
+  const saveEventResponse = await request(saveEventOptions).catch(error => {
+    console.log(error);
+  });;
 
   return saveEventResponse;
 }
@@ -240,6 +239,18 @@ function formatDateToCcdDisplayDate(givenDate = new Date()) {
   let formattedDate = givenDate.getDate() + ' ' + months[givenDate.getMonth()] + ' ' + givenDate.getFullYear();
   return formattedDate;
 };
+
+function updateDocumentUploadedData(data){
+
+  console.log('ORIGINAL DATA ====> ', data);
+  var documentUploadedData = JSON.parse(fs.readFileSync(`data/documents-uploaded-${env}.json`));
+  data = data.replace(/"{{document-uploaded-1}}"/g, JSON.stringify(documentUploadedData.documentUploaded[0]));
+  
+  console.log('CONVERTED STRING DATA ====> ', data);
+  const jsondata = JSON.parse(data);
+  console.log('CONVERTED DATA JSON => ', jsondata);
+  return data;
+}
 
 module.exports = {
   createCaseInCcd,

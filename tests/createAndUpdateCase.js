@@ -10,6 +10,7 @@ Scenario('Create and Update as well as caseworker change AOS states', async func
   caseId = await createCaseInCcd('data/ccd-basic-data.json');
   await updateCaseInCcd(caseId, 'hwfApplicationAcceptedfromAwaitingHWFDecision', 'data/ccd-update-data.json');
 
+  console.log('====== CASE ID ===> ', caseId);
   await I.amOnHomePage();
   await I.login(testconfig.TestEnvCWUser, testconfig.TestEnvCWPassword);
   await I.shouldBeOnCaseListPage();
@@ -27,7 +28,8 @@ Scenario('Create and Update as well as caseworker change AOS states', async func
   await I.aosStartedPageFormAndSubmit();
   await I.aosStartedCheckYourAnswersPageFormAndSubmit();
   await I.click(signOut);
-}).retry(testconfig.TestRetryScenarios);
+}).tag('@crossbrowser')
+  .retry(testconfig.TestRetryScenarios);
 
 Scenario('Caseworker change DN events', async function (I) {
   await I.amOnHomePage();

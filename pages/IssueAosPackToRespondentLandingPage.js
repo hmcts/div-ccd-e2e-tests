@@ -36,7 +36,7 @@ module.exports = {
     await I.wait(1);
     await I.see('Documents uploaded 1');
     await I.see('Document Url');
-    await I.see('Screenshot 2018-11-01 at 12.13.40.png');
+    await I.see('image.png');
     await I.see('Documents generated 1');
     await I.see('Documents generated 2');
     await I.wait(1);

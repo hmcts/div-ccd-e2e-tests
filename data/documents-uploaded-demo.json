@@ -1,0 +1,19 @@
+{
+    "documentUploaded":[
+        {
+            "id": "e27eb0d8-9e9d-400d-a3f5-1addb346f9c0",
+            "value": {
+                "DocumentLink": {
+                    "document_url": "http://dm-store-demo.service.core-compute-demo.internal/documents/a8b59b32-50ed-40b6-a370-4f25f5d487c5",
+                    "document_filename": "image.png",
+                    "document_binary_url": "http://dm-store-demo.service.core-compute-demo.internal/documents/a8b59b32-50ed-40b6-a370-4f25f5d487c5/binary"
+                },
+                "DocumentType": "other",
+                "DocumentComment": null,
+                "DocumentFileName": null,
+                "DocumentDateAdded": null,
+                "DocumentEmailContent": null
+            }
+        }
+    ]
+}

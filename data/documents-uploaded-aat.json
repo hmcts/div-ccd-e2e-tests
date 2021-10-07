@@ -1,0 +1,49 @@
+{
+    "documentUploaded":[
+        {
+            "id": "1eccefcf-166d-4784-988a-254b1663e504",
+            "value": {
+                "DocumentLink": {
+                    "document_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/2e04786d-21c3-4d9d-b587-882813f88cd6",
+                    "document_filename": "image1.png",
+                    "document_binary_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/2e04786d-21c3-4d9d-b587-882813f88cd6/binary"
+                },
+                "DocumentType": "other",
+                "DocumentComment": null,
+                "DocumentFileName": null,
+                "DocumentDateAdded": null,
+                "DocumentEmailContent": null
+            }
+        },
+        {
+            "id": "3776890c-59c8-47cb-95b9-3d83b80c7c28",
+            "value": {
+                "DocumentLink": {
+                    "document_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/a1adce96-ada7-4fde-8c04-3ce91f360353",
+                    "document_filename": "image2.png",
+                    "document_binary_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/a1adce96-ada7-4fde-8c04-3ce91f360353/binary"
+                },
+                "DocumentType": "other",
+                "DocumentComment": null,
+                "DocumentFileName": null,
+                "DocumentDateAdded": null,
+                "DocumentEmailContent": null
+            }
+        },
+        {
+            "id": "da2bff68-699f-43ca-bcc9-fe7251db99f3",
+            "value": {
+                "DocumentLink": {
+                    "document_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/ff192aa1-b739-4f40-b371-3139c76105d6",
+                    "document_filename": "image3.png",
+                    "document_binary_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/ff192aa1-b739-4f40-b371-3139c76105d6/binary"
+                },
+                "DocumentType": "other",
+                "DocumentComment": null,
+                "DocumentFileName": null,
+                "DocumentDateAdded": null,
+                "DocumentEmailContent": null
+            }
+        }
+    ]
+}
