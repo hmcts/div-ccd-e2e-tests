@@ -1,6 +1,21 @@
 {
     "documentUploaded":[
         {
+            "id": "1c1bbb1d-c1cb-4a08-b25a-acda5b0dad2a",
+            "value": {
+                "DocumentLink": {
+                    "document_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/9678946c-5233-4d5c-b1de-c06695bab604",
+                    "document_filename": "image.png",
+                    "document_binary_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/9678946c-5233-4d5c-b1de-c06695bab604/binary"
+                },
+                "DocumentType": "other",
+                "DocumentComment": null,
+                "DocumentFileName": null,
+                "DocumentDateAdded": null,
+                "DocumentEmailContent": null
+            }
+        },
+        {
             "id": "1eccefcf-166d-4784-988a-254b1663e504",
             "value": {
                 "DocumentLink": {
