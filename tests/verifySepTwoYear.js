@@ -13,7 +13,7 @@ let caseId;
 
 Feature('Verify Separation-2-yr Case ');
 
-Scenario('Execute events for end to end flow of PFE, RFE, DN , DA', async function (I) {
+Scenario('Execute events for end to end flow of PFE, RFE, DN , DA', async function ({I}) {
   caseId = await createCaseInCcd('data/ccdSepTwoYrs.json');
 
   const submitted = await updateCaseInCcd(caseId, events.HWF_ACCEPT_AWAIT_DECISION);
@@ -72,7 +72,7 @@ Scenario('Execute events for end to end flow of PFE, RFE, DN , DA', async functi
 }).retry(testconfig.TestRetryScenarios);
 
 
-Scenario('Case creation should fail with invalid fixed list data', async function (I) {
+Scenario('Case creation should fail with invalid fixed list data', async function ({I}) {
   let caseResponse;
   await createCaseAndFetchResponse('data/ccdInvalidSepTwoYrs.json').catch(error => {
     caseResponse = error;

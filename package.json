@@ -10,7 +10,10 @@
     "lint": "eslint .",
     "test-crossbrowser-e2e": "NODE_PATH=. codeceptjs run-multiple ${BROWSER_GROUP:-'--all'} -c saucelabs.conf.js --plugins retryFailedStep --steps --grep '@crossbrowser' --reporter mocha-multi",
     "test:crossbrowser": "./bin/run-crossbrowser-tests.sh",
-    "test-e2e-standalone": "SHOW_BROWSER_WINDOW=yes NODE_PATH=. E2E_AUTO_DELAY_ENABLED=true node ./node_modules/codeceptjs/bin/codecept.js run tests/createAndUpdateCase.js  -c ./ --steps"
+    "test-e2e-standalone": "SHOW_BROWSER_WINDOW=yes NODE_PATH=. E2E_AUTO_DELAY_ENABLED=true node ./node_modules/codeceptjs/bin/codecept.js run tests/createAndUpdateCase.js  -c ./ --steps",
+    "test-e2e-create-and-update": "SHOW_BROWSER_WINDOW=yes NODE_PATH=. E2E_AUTO_DELAY_ENABLED=true node ./node_modules/codeceptjs/bin/codecept.js run tests/createAndUpdateCase.js  -c ./ --steps",
+    "test-e2e-create-and-urgency-case": "SHOW_BROWSER_WINDOW=yes NODE_PATH=. E2E_AUTO_DELAY_ENABLED=true node ./node_modules/codeceptjs/bin/codecept.js run tests/createAnUrgencyCaseJourney.test.js  -c ./ --steps",
+    "test-e2e-solicitor-create-case": "SHOW_BROWSER_WINDOW=yes NODE_PATH=. E2E_AUTO_DELAY_ENABLED=true node ./node_modules/codeceptjs/bin/codecept.js run tests/solicitorCreateCase.test.js  -c ./ --steps"
   },
   "keywords": [],
   "author": "",
@@ -25,15 +28,15 @@
     "request-promise-native": "^1.0.9"
   },
   "devDependencies": {
-    "codeceptjs": "^2.6.11",
-    "eslint": "^4.19.1",
+    "codeceptjs": "^3.1.3",
+    "eslint": "^7.32.0",
     "eslint-config-google": "^0.9.1",
     "eslint-plugin-mocha": "^5.0.0",
-    "mocha": "^5.2.0",
+    "mocha": "^9.1.2",
     "mocha-jenkins-reporter": "^0.4.5",
     "mocha-junit-reporter": "^1.23.3",
     "mocha-multi": "^1.1.3",
-    "mochawesome": "^4.1.0",
+    "mochawesome": "^6.3.1",
     "puppeteer": "^5.4.1",
     "webdriverio": "^6.11.3"
   },

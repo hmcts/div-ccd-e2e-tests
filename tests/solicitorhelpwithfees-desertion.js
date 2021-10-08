@@ -8,7 +8,7 @@ let caseNumber;
 
 Feature('Desertion');
 
-Scenario('Solicitor create case and make payment', async (I) => {
+Scenario('Solicitor create case and make payment', async ({I}) => {
   await I.amOnHomePage();
   await I.login(testconfig.TestEnvProfUser, testconfig.TestEnvProfPassword);
   await I.clickCreateCase();
@@ -52,11 +52,11 @@ Scenario('Solicitor create case and make payment', async (I) => {
   await I.wait(1);
   await I.click(signOut);
   // caseworker
-  await caseworkerJourney(I);
+  await caseworkerJourney({I});
 
 }).retry(testconfig.TestRetryScenarios);
 
-async function caseworkerJourney(I) {
+async function caseworkerJourney({I}) {
   await I.wait(5);
   await I.amOnHomePage();
   await I.login(testconfig.TestEnvCWUser, testconfig.TestEnvCWPassword);

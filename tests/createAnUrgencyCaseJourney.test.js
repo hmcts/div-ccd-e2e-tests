@@ -8,7 +8,7 @@ let caseNumberWithHyphen;
 
 Feature('create an urgent case journey');
 
-Scenario('Solicitor create an urgent case', async (I) => {
+Scenario('Solicitor create an urgent case', async ({I}) => {
   await I.amOnHomePage();
   await I.login(testconfig.TestEnvProfUser, testconfig.TestEnvProfPassword);
   await I.clickCreateCase();
@@ -39,11 +39,11 @@ Scenario('Solicitor create an urgent case', async (I) => {
   await I.caseCheckYourAnswersPageFormAndSubmit();
   await I.solAwaitingPaymentConfPageFormAndSubmit();
 
-  // await solicitorShouldBeAbleToFilterAndSearch(I);
-  // await caseWorkerShouldBeAbleToFilterAndSearch(I);
+  // await solicitorShouldBeAbleToFilterAndSearch({I});
+  // await caseWorkerShouldBeAbleToFilterAndSearch({I});
 }).retry(testconfig.TestRetryScenarios);
 
-async function solicitorShouldBeAbleToFilterAndSearch(I) {
+async function solicitorShouldBeAbleToFilterAndSearch({I}) {
   await I.amOnHomePage();
   await I.login(testconfig.TestEnvProfUser, testconfig.TestEnvProfPassword);
   await I.wait(1);
@@ -57,7 +57,7 @@ async function solicitorShouldBeAbleToFilterAndSearch(I) {
   await I.click(signOut);
 }
 
-async function caseWorkerShouldBeAbleToFilterAndSearch(I) {
+async function caseWorkerShouldBeAbleToFilterAndSearch({I}) {
   await I.amOnHomePage();
   await I.login(testconfig.TestEnvCWUser, testconfig.TestEnvCWPassword);
   await I.wait(1);

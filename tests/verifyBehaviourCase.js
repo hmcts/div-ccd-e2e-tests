@@ -11,7 +11,7 @@ let caseId;
 
 Feature('Verify Behaviour Case ');
 
-Scenario('Execute events for end to end flow of PFE, RFE, DN, DA and verify all tab fields', async function (I) {
+Scenario('Execute events for end to end flow of PFE, RFE, DN, DA and verify all tab fields', async function ({I}) {
   caseId = await createCaseInCcd('data/ccdBehaviourUnDefendedCase.json');
 
   const submitted = await updateCaseInCcd(caseId, events.HWF_ACCEPT_AWAIT_DECISION);
