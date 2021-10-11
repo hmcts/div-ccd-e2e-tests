@@ -4,8 +4,6 @@ properties([
         parameters([
                 string(name: 'RUNNING_ENV', defaultValue: 'aat', description: 'Environment to test'),
                 string(name: 'XUI_URL_TO_TEST', defaultValue: 'https://manage-case.aat.platform.hmcts.net/', description: 'The URL you want to run solicitor tests against'),
-                string(name: 'PROF_USER_EMAIL', defaultValue: 'divorce_as_petitioner_solicitor_01@mailinator.com', description: 'Solicitor user account email'),
-                string(name: 'PROF_USER_PASSWORD', defaultValue: 'Testing1234', description: 'Solicitor user account password'),
         ])
 ])
 
@@ -17,6 +15,17 @@ String component = "ccd-e2e-tests"
 def secrets = [
   'div-${env}': [
     secret('ccd-e2e-solicitor-email', 'PROF_USER_EMAIL'),
+    secret('ccd-e2e-solicitor-password', 'PROF_USER_PASSWORD'),
+    secret('ccd-e2e-caseworker-email', 'CCD_CASEWORKER_E2E_EMAIL'),
+    secret('ccd-e2e-caseworker-password', 'CCD_CASEWORKER_E2E_PASSWORD'),
+    secret('idam-secret', 'IDAM_CLIENT_SECRET'),
+    secret('ccd-submission-s2s-auth-secret', 'SERVICE_SECRET')
+  ]
+]
+
+def secretsDemo = [
+  'div-${env}': [
+    secret('ccd-e2e-solicitor-email-demo', 'PROF_USER_EMAIL'),
     secret('ccd-e2e-solicitor-password', 'PROF_USER_PASSWORD'),
     secret('ccd-e2e-caseworker-email', 'CCD_CASEWORKER_E2E_EMAIL'),
     secret('ccd-e2e-caseworker-password', 'CCD_CASEWORKER_E2E_PASSWORD'),
@@ -39,11 +48,8 @@ withNightlyPipeline("nodejs", product, component) {
     env.NODE_ENV = 'ci'
     env.RUNNING_ENV = params.RUNNING_ENV
     
-    loadVaultSecrets(secrets)
-    
-    env.PROF_USER_EMAIL = params.PROF_USER_EMAIL
-    env.PROF_USER_PASSWORD = params.PROF_USER_PASSWORD
-    
+    loadVaultSecrets(env.RUNNING_ENV=='demo'? secretsDemo: secrets)
+
     enableCrossBrowserTest(['microsoft', 'firefox', 'safari'], 90)
     enableFullFunctionalTest(90)
 
