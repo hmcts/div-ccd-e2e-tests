@@ -40,10 +40,10 @@ withNightlyPipeline("nodejs", product, component) {
     env.RUNNING_ENV = params.RUNNING_ENV
     
     loadVaultSecrets(secrets)
-    if(env.RUNNING_ENV == 'demo'){
-      env.PROF_USER_EMAIL = params.PROF_USER_EMAIL
-      env.PROF_USER_PASSWORD = params.PROF_USER_PASSWORD
-    }
+    
+    env.PROF_USER_EMAIL = params.PROF_USER_EMAIL
+    env.PROF_USER_PASSWORD = params.PROF_USER_PASSWORD
+    
     enableCrossBrowserTest(['microsoft', 'firefox', 'safari'], 90)
     enableFullFunctionalTest(90)
 
