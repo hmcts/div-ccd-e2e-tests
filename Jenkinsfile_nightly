@@ -38,10 +38,12 @@ withNightlyPipeline("nodejs", product, component) {
     env.TEST_E2E_URL = params.XUI_URL_TO_TEST
     env.NODE_ENV = 'ci'
     env.RUNNING_ENV = params.RUNNING_ENV
-    env.PROF_USER_EMAIL = params.PROF_USER_EMAIL
-    env.PROF_USER_PASSWORD = params.PROF_USER_PASSWORD
-
+    
     loadVaultSecrets(secrets)
+    if(env.RUNNING_ENV == 'demo'){
+      env.PROF_USER_EMAIL = params.PROF_USER_EMAIL
+      env.PROF_USER_PASSWORD = params.PROF_USER_PASSWORD
+    }
     enableCrossBrowserTest(['microsoft', 'firefox', 'safari'], 90)
     enableFullFunctionalTest(90)
 
