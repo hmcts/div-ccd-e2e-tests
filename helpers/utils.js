@@ -11,6 +11,7 @@ const env = testConfig.TestEnv;
 const idamBaseUrl = `https://idam-api.${env}.platform.hmcts.net` || testConfig.IdamBaseUrl;
 const ccdApiUrl = `http://ccd-data-store-api-${env}.service.core-compute-${env}.internal`;
 const redirectUri = `https://div-pfe-${env}.service.core-compute-${env}.internal/authenticated`;
+const s2sBaseUrl = `http://rpe-service-auth-provider-${env}.service.core-compute-${env}.internal`;
 
 const months = ['Jan', 'Feb', 'Mar','Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
@@ -72,7 +73,7 @@ async function getServiceToken() {
 
   const serviceSecret = testConfig.TestS2SAuthSecret;
 
-  const s2sBaseUrl = `http://rpe-service-auth-provider-${env}.service.core-compute-${env}.internal`;
+  
   const s2sAuthPath = '/lease';
   const oneTimePassword = require('otp')({
     secret: serviceSecret
@@ -112,7 +113,7 @@ async function createCaseAndFetchResponse(dataLocation = 'data/ccd-basic-data.js
 
   const serviceToken = await getServiceToken();
 
-  logger.info('Creating Case');
+  logger.info('Creating Case', ccdApiUrl);
 
   const ccdStartCasePath = `/caseworkers/${userId}/jurisdictions/DIVORCE/case-types/DIVORCE/event-triggers/hwfCreate/token`;
   const ccdSaveCasePath = `/caseworkers/${userId}/jurisdictions/DIVORCE/case-types/DIVORCE/cases`;
@@ -143,7 +144,6 @@ async function createCaseAndFetchResponse(dataLocation = 'data/ccd-basic-data.js
   };
 
   const saveBodyString = updateDocumentUploadedData(JSON.stringify(saveBody));
-  console.log('---------- save body string => ', saveBodyString);
 
   const saveCaseOptions = {
     method: 'POST',
@@ -155,10 +155,7 @@ async function createCaseAndFetchResponse(dataLocation = 'data/ccd-basic-data.js
     },
     body: saveBodyString
   };
-  const saveCaseResponse =  await request(saveCaseOptions).catch(error => {
-    console.log(error);
-  });
-  console.log('------saveCaseResponse: ', saveCaseResponse);
+  const saveCaseResponse =  await request(saveCaseOptions);
   return saveCaseResponse;
 }
 
@@ -200,7 +197,6 @@ async function updateCaseInCcd(caseId, eventId, dataLocation = 'data/ccd-update-
   };
 
   const saveBodyString = updateDocumentUploadedData(JSON.stringify(saveBody));
-  console.log('-------------------------- save body string => ', saveBodyString);
 
   const saveEventOptions = {
     method: 'POST',
@@ -241,19 +237,18 @@ function formatDateToCcdDisplayDate(givenDate = new Date()) {
 };
 
 function updateDocumentUploadedData(data){
+  var documentUploadedData = JSON.parse(fs.readFileSync(`data/documents-binary-${env}.json`));
+  
+  for(let i=0; i < documentUploadedData.documentUploaded.length; i++){
+    const regex = new RegExp(`"{{document-uploaded-${i+1}}}"`,'g');
+    data = data.replace(regex, JSON.stringify(documentUploadedData.documentUploaded[i]));
+  }
 
-  console.log('ORIGINAL DATA ====> ', data);
-  var documentUploadedData = JSON.parse(fs.readFileSync(`data/documents-uploaded-${env}.json`));
-  data = data.replace(/"{{document-uploaded-1}}"/g, JSON.stringify(documentUploadedData.documentUploaded[0]));
+  for(let i=0; i < documentUploadedData.documentGenenerated.length; i++){
+    const regex = new RegExp(`"{{document-generated-${i+1}}}"`,'g');
+    data = data.replace(regex, JSON.stringify(documentUploadedData.documentGenenerated[i]));
+  }
 
-  // for(let i; i < documentUploadedData.documentUploaded.length(); i++){
-  //   const regex = new RegExp(`"{{document-uploaded-${i+1}}}"`,'g');
-  //   data = data.replace(regex, JSON.stringify(documentUploadedData.documentUploaded[0]));
-  // }
- 
-  console.log('CONVERTED STRING DATA ====> ', data);
-  const jsondata = JSON.parse(data);
-  console.log('CONVERTED DATA JSON => ', jsondata);
   return data;
 }
 

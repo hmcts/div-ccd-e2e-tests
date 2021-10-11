@@ -1,0 +1,126 @@
+{
+    "documentUploaded":[
+        {
+            "id": "6e33382f-e2a2-4f0a-99cc-cc5fd4b28cb0",
+            "value": {
+                "DocumentLink": {
+                    "document_url": "http://dm-store-demo.service.core-compute-demo.internal/documents/ff1cdb20-5329-4085-ac01-ea568b5b6c3f",
+                    "document_filename": "image.png",
+                    "document_binary_url": "http://dm-store-demo.service.core-compute-demo.internal/documents/ff1cdb20-5329-4085-ac01-ea568b5b6c3f/binary"
+                },
+                "DocumentType": "other",
+                "DocumentComment": null,
+                "DocumentFileName": null,
+                "DocumentDateAdded": null,
+                "DocumentEmailContent": null
+            }
+        },
+        {
+            "id": "e27eb0d8-9e9d-400d-a3f5-1addb346f9c0",
+            "value": {
+                "DocumentLink": {
+                    "document_url": "http://dm-store-demo.service.core-compute-demo.internal/documents/9fd4c1b7-dd4f-48e3-a63f-ae5fc9bd73f4",
+                    "document_filename": "image1.png",
+                    "document_binary_url": "http://dm-store-demo.service.core-compute-demo.internal/documents/9fd4c1b7-dd4f-48e3-a63f-ae5fc9bd73f4/binary"
+                },
+                "DocumentType": "other",
+                "DocumentComment": null,
+                "DocumentFileName": null,
+                "DocumentDateAdded": null,
+                "DocumentEmailContent": null
+            }
+        },
+        {
+            "id": "a2a8886a-49e4-4553-81e6-ad9f04f853c6",
+            "value": {
+                "DocumentLink": {
+                    "document_url": "http://dm-store-demo.service.core-compute-demo.internal/documents/a349cf72-0f00-4e39-9307-fdee68cbc580",
+                    "document_filename": "image2.png",
+                    "document_binary_url": "http://dm-store-demo.service.core-compute-demo.internal/documents/a349cf72-0f00-4e39-9307-fdee68cbc580/binary"
+                },
+                "DocumentType": "other",
+                "DocumentComment": null,
+                "DocumentFileName": null,
+                "DocumentDateAdded": null,
+                "DocumentEmailContent": null
+            }
+        },
+        {
+            "id": "5ddf25c0-bf3e-45f2-b2c1-d7467f943aa7",
+            "value": {
+                "DocumentLink": {
+                    "document_url": "http://dm-store-demo.service.core-compute-demo.internal/documents/f3fabd54-d6e7-4f3c-a392-530a0fbda3e3",
+                    "document_filename": "image3.png",
+                    "document_binary_url": "http://dm-store-demo.service.core-compute-demo.internal/documents/f3fabd54-d6e7-4f3c-a392-530a0fbda3e3/binary"
+                },
+                "DocumentType": "other",
+                "DocumentComment": null,
+                "DocumentFileName": null,
+                "DocumentDateAdded": null,
+                "DocumentEmailContent": null
+            }
+        }
+    ],
+    "documentGenenerated": [
+        {
+            "id": "97b5e48d-3044-472f-ab32-baa4894602bb",
+            "value": {
+                "DocumentLink": {
+                    "document_url": "http://dm-store-demo.service.core-compute-demo.internal/documents/2e6839c6-dbf8-4940-a0ef-f6be47593f53",
+                    "document_filename": "d8petition1633945980865835.pdf",
+                    "document_binary_url": "http://dm-store-demo.service.core-compute-demo.internal/documents/2e6839c6-dbf8-4940-a0ef-f6be47593f53/binary"
+                },
+                "DocumentType": "petition",
+                "DocumentComment": null,
+                "DocumentFileName": "d8petition1633945980865835",
+                "DocumentDateAdded": null,
+                "DocumentEmailContent": null
+            }
+        },
+        {
+            "id": "ecc80db4-aaa2-476e-bae9-f272263b34b1",
+            "value": {
+                "DocumentLink": {
+                    "document_url": "http://dm-store-demo.service.core-compute-demo.internal/documents/5b2b76c5-fdf1-4ecb-b6d6-4bf226120774",
+                    "document_filename": "aosinvitation1633945980865835.pdf",
+                    "document_binary_url": "http://dm-store-demo.service.core-compute-demo.internal/documents/5b2b76c5-fdf1-4ecb-b6d6-4bf226120774/binary"
+                },
+                "DocumentType": "aos",
+                "DocumentComment": null,
+                "DocumentFileName": "aosinvitation1633945980865835",
+                "DocumentDateAdded": null,
+                "DocumentEmailContent": null
+            }
+        },
+        {
+            "id": "301ca9e8-2196-473a-aebf-dfa24d2e32ae",
+            "value": {
+                "DocumentLink": {
+                    "document_url": "http://dm-store-demo.service.core-compute-demo.internal/documents/0700b958-b140-4612-8a56-fbeb724db594",
+                    "document_filename": "respondentAnswers.pdf",
+                    "document_binary_url": "http://dm-store-demo.service.core-compute-demo.internal/documents/0700b958-b140-4612-8a56-fbeb724db594/binary"
+                },
+                "DocumentType": "respondentAnswers",
+                "DocumentComment": null,
+                "DocumentFileName": "respondentAnswers",
+                "DocumentDateAdded": null,
+                "DocumentEmailContent": null
+            }
+        },
+        {
+            "id": "dcb523dd-37b8-4ad4-82af-20eda4981c9b",
+            "value": {
+                "DocumentLink": {
+                    "document_url": "http://dm-store-demo.service.core-compute-demo.internal/documents/a203eb2b-b2eb-4403-b6eb-5e8033b1bfed",
+                    "document_filename": "dnAnswers.pdf",
+                    "document_binary_url": "http://dm-store-demo.service.core-compute-demo.internal/documents/a203eb2b-b2eb-4403-b6eb-5e8033b1bfed/binary"
+                },
+                "DocumentType": "dnAnswers",
+                "DocumentComment": null,
+                "DocumentFileName": "dnAnswers",
+                "DocumentDateAdded": null,
+                "DocumentEmailContent": null
+            }
+        }
+    ]
+}

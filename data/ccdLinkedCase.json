@@ -29,37 +29,9 @@
     "D8ScreenHasMarriageCert": "YES",
     "BehaviourLivedApartSinceEventDN": null,
     "DocumentsUploadedDN": [
-        {
-          "id": "3798450e-ee81-4319-a9f7-280b6f8d1b81",
-          "value": {
-            "DocumentLink": {
-              "document_url": "{{dm-store-url}}/documents/bf643aa2-aa8b-4591-8f78-d8f29d4508d0",
-              "document_filename": "Image.png",
-              "document_binary_url": "{{dm-store-url}}/documents/bf643aa2-aa8b-4591-8f78-d8f29d4508d0/binary"
-            },
-            "DocumentType": "other",
-            "DocumentComment": "",
-            "DocumentFileName": "Image.png",
-            "DocumentDateAdded": null,
-            "DocumentEmailContent": ""
-          }
-        },
-        {
-          "id": "753b9de1-375b-47db-957f-0405bc220b9e",
-          "value": {
-            "DocumentLink": {
-              "document_url": "{{dm-store-url}}/documents/b3d96065-8b9d-4913-a5fe-dc8f41122b8e",
-              "document_filename": "JPEG image.jpeg",
-              "document_binary_url": "{{dm-store-url}}/documents/b3d96065-8b9d-4913-a5fe-dc8f41122b8e/binary"
-            },
-            "DocumentType": "other",
-            "DocumentComment": "",
-            "DocumentFileName": "JPEG image.jpeg",
-            "DocumentDateAdded": null,
-            "DocumentEmailContent": ""
-          }
-        }
-      ],
+      "{{document-uploaded-1}}",
+      "{{document-uploaded-2}}"
+    ],
     "D8DivorceClaimFrom": [
       "respondent"
     ],
@@ -204,66 +176,10 @@
     "D8ReasonForDivorceSeperationDate": "2011-01-09",
     "D8PetitionerCorrespondenceUseHomeAddress": "YES",
     "D8DocumentsGenerated": [
-      {
-        "id": "3ef966f7-9007-4cde-b34e-f3e1344bf0b2",
-        "value": {
-          "DocumentLink": {
-            "document_url": "{{dm-store-url}}/documents/371df823-7dc9-4d2c-b57c-038a62f79973",
-            "document_filename": "d8petition1606021772010239.pdf",
-            "document_binary_url": "{{dm-store-url}}/documents/371df823-7dc9-4d2c-b57c-038a62f79973/binary"
-          },
-          "DocumentType": "petition",
-          "DocumentComment": null,
-          "DocumentFileName": "d8petition1606021772010239",
-          "DocumentDateAdded": null,
-          "DocumentEmailContent": null
-        }
-      },
-      {
-        "id": "77c73580-b570-4f5e-97e9-50ee960698fe",
-        "value": {
-          "DocumentLink": {
-            "document_url": "{{dm-store-url}}/documents/0d40773a-cae9-4671-a4c1-97c16778d421",
-            "document_filename": "aosinvitation1606021772010239.pdf",
-            "document_binary_url": "{{dm-store-url}}/documents/0d40773a-cae9-4671-a4c1-97c16778d421/binary"
-          },
-          "DocumentType": "aos",
-          "DocumentComment": null,
-          "DocumentFileName": "aosinvitation1606021772010239",
-          "DocumentDateAdded": null,
-          "DocumentEmailContent": null
-        }
-      },
-      {
-        "id": "3235be2d-6510-4eed-a9ff-65f93c52afcb",
-        "value": {
-          "DocumentLink": {
-            "document_url": "{{dm-store-url}}/documents/950d2757-fe52-41b1-8c95-70e3b20bb16f",
-            "document_filename": "respondentAnswers.pdf",
-            "document_binary_url": "{{dm-store-url}}/documents/950d2757-fe52-41b1-8c95-70e3b20bb16f/binary"
-          },
-          "DocumentType": "respondentAnswers",
-          "DocumentComment": null,
-          "DocumentFileName": "respondentAnswers",
-          "DocumentDateAdded": null,
-          "DocumentEmailContent": null
-        }
-      },
-      {
-        "id": "9c29056d-456c-4a6d-b3f1-988f36eecc3c",
-        "value": {
-          "DocumentLink": {
-            "document_url": "{{dm-store-url}}/documents/3987c32b-ac63-4a4e-bc54-c3c31eb983ce",
-            "document_filename": "dnAnswers.pdf",
-            "document_binary_url": "{{dm-store-url}}/documents/3987c32b-ac63-4a4e-bc54-c3c31eb983ce/binary"
-          },
-          "DocumentType": "dnAnswers",
-          "DocumentComment": null,
-          "DocumentFileName": "dnAnswers",
-          "DocumentDateAdded": null,
-          "DocumentEmailContent": null
-        }
-      }
+      "{{document-generated-1}}",
+      "{{document-generated-2}}",
+      "{{document-generated-3}}",
+      "{{document-generated-4}}"
     ],
     "CostsDifferentDetailsTransLang": null,
     "ReceivedAOSfromResp": "Yes",
@@ -289,52 +205,10 @@
     "D8ReasonForDivorceShowUnreasonableBehavi": "YES",
    
     "D8DocumentsUploaded": [
-        {
-          "id": "7d783d06-7752-44b0-a2fe-2b6c3c058746",
-          "value": {
-            "DocumentLink": {
-              "document_url": "{{dm-store-url}}/documents/53ff5748-bed1-4149-8c69-b10b6d222a1f",
-              "document_filename": "image.jpg",
-              "document_binary_url": "{{dm-store-url}}/documents/53ff5748-bed1-4149-8c69-b10b6d222a1f/binary"
-            },
-            "DocumentType": "other",
-            "DocumentComment": "",
-            "DocumentFileName": "image.jpg",
-            "DocumentDateAdded": "2019-05-07",
-            "DocumentEmailContent": ""
-          }
-        },
-        {
-          "id": "56cdddf1-7c48-42d3-b1df-ad8bc8dc0bf7",
-          "value": {
-            "DocumentLink": {
-              "document_url": "{{dm-store-url}}/documents/d2c65e0f-566e-41cb-b1e3-ef7c7c1e7665",
-              "document_filename": "9B9045BC-CBFA-4B0A-8019-E7EC45E2DBCE.jpeg",
-              "document_binary_url": "{{dm-store-url}}/documents/d2c65e0f-566e-41cb-b1e3-ef7c7c1e7665/binary"
-            },
-            "DocumentType": "other",
-            "DocumentComment": "",
-            "DocumentFileName": "9B9045BC-CBFA-4B0A-8019-E7EC45E2DBCE.jpeg",
-            "DocumentDateAdded": "2019-05-07",
-            "DocumentEmailContent": ""
-          }
-        },
-        {
-          "id": "502bc825-21a9-4c72-8fbd-21116ba6630e",
-          "value": {
-            "DocumentLink": {
-              "document_url": "{{dm-store-url}}/documents/f6320cd7-9803-4122-9e37-9f79f5ed2086",
-              "document_filename": "Image.png",
-              "document_binary_url": "{{dm-store-url}}/documents/f6320cd7-9803-4122-9e37-9f79f5ed2086/binary"
-            },
-            "DocumentType": "other",
-            "DocumentComment": "",
-            "DocumentFileName": "Image.png",
-            "DocumentDateAdded": "2019-05-07",
-            "DocumentEmailContent": ""
-          }
-        }
-      ],
+      "{{document-uploaded-1}}",
+      "{{document-uploaded-2}}",
+      "{{document-uploaded-3}}"
+    ],
     "PetitionChangedYesNoDN": "YES",
     "ConfirmPetitionDN": null,
     "D8JurisdictionPetitionerResidence": "YES",

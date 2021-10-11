@@ -27,8 +27,7 @@ Scenario('Create and Update as well as caseworker change AOS states', async func
   await I.aosStartedPageFormAndSubmit();
   await I.aosStartedCheckYourAnswersPageFormAndSubmit();
   await I.click(signOut);
-}).tag('@crossbrowser')
-  .retry(testconfig.TestRetryScenarios);
+}).retry(testconfig.TestRetryScenarios);
 
 Scenario('Caseworker change DN events', async function ({I}) {
   await I.amOnHomePage();

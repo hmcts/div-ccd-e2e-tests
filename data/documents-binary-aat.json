@@ -1,0 +1,126 @@
+{
+    "documentUploaded":[
+        {
+            "id": "1c1bbb1d-c1cb-4a08-b25a-acda5b0dad2a",
+            "value": {
+                "DocumentLink": {
+                    "document_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/9678946c-5233-4d5c-b1de-c06695bab604",
+                    "document_filename": "image.png",
+                    "document_binary_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/9678946c-5233-4d5c-b1de-c06695bab604/binary"
+                },
+                "DocumentType": "other",
+                "DocumentComment": null,
+                "DocumentFileName": null,
+                "DocumentDateAdded": null,
+                "DocumentEmailContent": null
+            }
+        },
+        {
+            "id": "1eccefcf-166d-4784-988a-254b1663e504",
+            "value": {
+                "DocumentLink": {
+                    "document_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/2e04786d-21c3-4d9d-b587-882813f88cd6",
+                    "document_filename": "image1.png",
+                    "document_binary_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/2e04786d-21c3-4d9d-b587-882813f88cd6/binary"
+                },
+                "DocumentType": "other",
+                "DocumentComment": null,
+                "DocumentFileName": null,
+                "DocumentDateAdded": null,
+                "DocumentEmailContent": null
+            }
+        },
+        {
+            "id": "3776890c-59c8-47cb-95b9-3d83b80c7c28",
+            "value": {
+                "DocumentLink": {
+                    "document_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/a1adce96-ada7-4fde-8c04-3ce91f360353",
+                    "document_filename": "image2.png",
+                    "document_binary_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/a1adce96-ada7-4fde-8c04-3ce91f360353/binary"
+                },
+                "DocumentType": "other",
+                "DocumentComment": null,
+                "DocumentFileName": null,
+                "DocumentDateAdded": null,
+                "DocumentEmailContent": null
+            }
+        },
+        {
+            "id": "da2bff68-699f-43ca-bcc9-fe7251db99f3",
+            "value": {
+                "DocumentLink": {
+                    "document_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/ff192aa1-b739-4f40-b371-3139c76105d6",
+                    "document_filename": "image3.png",
+                    "document_binary_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/ff192aa1-b739-4f40-b371-3139c76105d6/binary"
+                },
+                "DocumentType": "other",
+                "DocumentComment": null,
+                "DocumentFileName": null,
+                "DocumentDateAdded": null,
+                "DocumentEmailContent": null
+            }
+        }
+    ],
+    "documentGenenerated": [
+        {
+            "id": "e1a4484a-7d5f-45c9-975c-fb61d4daca93",
+            "value": {
+                "DocumentLink": {
+                    "document_url": "{http://dm-store-aat.service.core-compute-aat.internal/documents/6c3ab0cd-bec7-4c3e-93f3-42b19f8bf71e",
+                    "document_filename": "d8petition1554810422260612.pdf",
+                    "document_binary_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/6c3ab0cd-bec7-4c3e-93f3-42b19f8bf71e/binary"
+                },
+                "DocumentType": "petition",
+                "DocumentComment": null,
+                "DocumentFileName": "d8petition1554810422260612",
+                "DocumentDateAdded": null,
+                "DocumentEmailContent": null
+            }
+        },
+        {
+            "id": "ab491aae-a5c6-47dc-b8b0-27d5df23d32e",
+            "value": {
+                "DocumentLink": {
+                    "document_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/18e433a5-082c-47d6-9670-d03728035a63",
+                    "document_filename": "aosinvitation1554810422260612.pdf",
+                    "document_binary_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/18e433a5-082c-47d6-9670-d03728035a63/binary"
+                },
+                "DocumentType": "aos",
+                "DocumentComment": null,
+                "DocumentFileName": "aosinvitation1554810422260612",
+                "DocumentDateAdded": null,
+                "DocumentEmailContent": null
+            }
+        },
+        {
+            "id": "91ddb315-e144-4b22-86e7-2934e0d25d0a",
+            "value": {
+                "DocumentLink": {
+                    "document_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/30a4be7e-43c5-44c1-be87-9a925f33653e",
+                    "document_filename": "co-respondentaosinvitation1554810422260612.pdf",
+                    "document_binary_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/30a4be7e-43c5-44c1-be87-9a925f33653e/binary"
+                },
+                "DocumentType": "aoscr",
+                "DocumentComment": null,
+                "DocumentFileName": "co-respondentaosinvitation1554810422260612",
+                "DocumentDateAdded": null,
+                "DocumentEmailContent": null
+            }
+        },
+        {
+            "id": "9c29056d-456c-4a6d-b3f1-988f36eecc3c",
+            "value": {
+              "DocumentLink": {
+                "document_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/3987c32b-ac63-4a4e-bc54-c3c31eb983ce",
+                "document_filename": "dnAnswers.pdf",
+                "document_binary_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/3987c32b-ac63-4a4e-bc54-c3c31eb983ce/binary"
+              },
+              "DocumentType": "dnAnswers",
+              "DocumentComment": null,
+              "DocumentFileName": "dnAnswers",
+              "DocumentDateAdded": null,
+              "DocumentEmailContent": null
+            }
+          }
+    ]
+}
