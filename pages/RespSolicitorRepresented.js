@@ -1,4 +1,6 @@
 const I = actor();
+const { demoVariables, aatVariables } = require('../common/constants');
+const testConfig = require('../tests/config');
 
 module.exports = {
 
@@ -31,6 +33,8 @@ module.exports = {
   },
 
   async fillFormForRepresentedRespondentAndSubmit() {
+    const variables = testConfig.TestEnv === 'demo'? demoVariables: aatVariables;
+
     await I.waitInUrl('solicitorCreateRespondentServiceDetails');
     await I.runAccessibilityTest();
     await I.click(this.fields.solicitorRepresented);
@@ -44,7 +48,7 @@ module.exports = {
     await I.click(this.fields.isDigitalRespondentCase);
 
     await I.waitForText(this.fields.orgNamesText);
-    await I.fillField(this.fields.orgSearchBar, 'Divorce-AAT-2');
+    await I.fillField(this.fields.orgSearchBar, variables.respondentSolicitorFirm);
     await I.waitForElement(this.fields.orgResultTable);
     await I.see('Select');
     await I.click('Select');

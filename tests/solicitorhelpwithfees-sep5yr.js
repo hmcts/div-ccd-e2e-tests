@@ -39,7 +39,7 @@ Scenario('Solicitor create case and make payment', async ({I}) => {
   await I.caseCheckYourAnswersPageFormAndSubmit();
 
   // Solicitor should not see issue, refund events
-  await I.amOnPage('cases/case-details/' + caseNumber);
+  await I.amOnPage('/cases/case-details/' + caseNumber);
   await I.waitForElement(nextStepDropDown);
   await I.click(nextStepDropDown);
   await I.see(eventDisplayName.UPDATE_LANG);

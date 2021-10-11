@@ -245,7 +245,12 @@ function updateDocumentUploadedData(data){
   console.log('ORIGINAL DATA ====> ', data);
   var documentUploadedData = JSON.parse(fs.readFileSync(`data/documents-uploaded-${env}.json`));
   data = data.replace(/"{{document-uploaded-1}}"/g, JSON.stringify(documentUploadedData.documentUploaded[0]));
-  
+
+  // for(let i; i < documentUploadedData.documentUploaded.length(); i++){
+  //   const regex = new RegExp(`"{{document-uploaded-${i+1}}}"`,'g');
+  //   data = data.replace(regex, JSON.stringify(documentUploadedData.documentUploaded[0]));
+  // }
+ 
   console.log('CONVERTED STRING DATA ====> ', data);
   const jsondata = JSON.parse(data);
   console.log('CONVERTED DATA JSON => ', jsondata);

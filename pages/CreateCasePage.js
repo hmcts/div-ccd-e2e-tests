@@ -1,5 +1,6 @@
 const I = actor();
 const testConfig = require('../tests/config');
+const { demoVariables, aatVariables } = require('../common/constants');
 
 module.exports = {
 
@@ -21,8 +22,11 @@ module.exports = {
     } else {
       await I.wait(5);
     }
-    await I.waitForText('Family Divorce');
-    await I.retry(5).selectOption(this.fields.jurisdiction, 'Family Divorce');
+
+    const variables = testConfig.TestEnv === 'demo'? demoVariables: aatVariables;
+
+    await I.waitForText(variables.familyDivorceText);
+    await I.retry(5).selectOption(this.fields.jurisdiction, variables.familyDivorceText);
     await I.retry(5).selectOption(this.fields.caseType, 'Divorce case - v115.00');
     await I.waitForText('Apply for a divorce');
     await I.retry(5).selectOption(this.fields.event, 'Apply for a divorce');

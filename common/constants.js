@@ -90,6 +90,18 @@ const serviceApplicationType = {
   DEEMED_AS_SERVED: 'Deemed as served'
 };
 
+const demoVariables = {
+  familyDivorceText: 'Family Divorce - v104-26.1',
+  solicitorPBANumber : 'PBA0088487',
+  respondentSolicitorFirm: 'DivRespondentSolicitorFirmDemo'
+};
+
+const aatVariables = {
+  familyDivorceText: 'Family Divorce',
+  solicitorPBANumber : 'PBA0077051',
+  respondentSolicitorFirm: 'Divorce-AAT-2'
+};
+
 module.exports = {
   reasonsForDivorce,
   states,
@@ -99,5 +111,7 @@ module.exports = {
   eventDisplayName,
   stateDisplayName,
   yesorno,
-  serviceApplicationType
+  serviceApplicationType,
+  demoVariables,
+  aatVariables
 };
