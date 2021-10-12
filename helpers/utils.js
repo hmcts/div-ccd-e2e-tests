@@ -8,7 +8,7 @@ const testConfig = require('../tests/config.js');
 const logger = Logger.getLogger('helpers/utils.js');
 
 const env = testConfig.TestEnv;
-const idamBaseUrl = `https://idam-api.${env}.platform.hmcts.net` || testConfig.IdamBaseUrl;
+const idamBaseUrl = `https://idam-api.${env}.platform.hmcts.net`;
 const ccdApiUrl = `http://ccd-data-store-api-${env}.service.core-compute-${env}.internal`;
 const redirectUri = `https://div-pfe-${env}.service.core-compute-${env}.internal/authenticated`;
 const s2sBaseUrl = `http://rpe-service-auth-provider-${env}.service.core-compute-${env}.internal`;
@@ -113,7 +113,7 @@ async function createCaseAndFetchResponse(dataLocation = 'data/ccd-basic-data.js
 
   const serviceToken = await getServiceToken();
 
-  logger.info('Creating Case', ccdApiUrl);
+  logger.info('Creating Case');
 
   const ccdStartCasePath = `/caseworkers/${userId}/jurisdictions/DIVORCE/case-types/DIVORCE/event-triggers/hwfCreate/token`;
   const ccdSaveCasePath = `/caseworkers/${userId}/jurisdictions/DIVORCE/case-types/DIVORCE/cases`;
