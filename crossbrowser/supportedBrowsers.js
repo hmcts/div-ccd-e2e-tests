@@ -19,8 +19,7 @@ const supportedBrowsers = {
       browserVersion: 'latest',
       'sauce:options': {
         name: 'DIV CCD E2E Tests - XUI: MAC_SAFARI',
-        seleniumVersion: '3.141.59',
-        screenResolution: '1400x1050'
+        seleniumVersion: '3.141.59'
       }
     }
   },
