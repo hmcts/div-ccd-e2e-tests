@@ -9,7 +9,7 @@ const supportedBrowsers = {
       browserVersion: 'latest',
       'sauce:options': {
         name: 'DIV CCD E2E Tests - XUI: Edge_Win10',
-        screenResolution: '2360x1770'
+        screenResolution: '2560x1600'
       }
     }
   },
@@ -32,7 +32,7 @@ const supportedBrowsers = {
       browserVersion: 'latest',
       'sauce:options': {
         name: 'DIV CCD E2E Tests - XUI: WIN_CHROME_LATEST',
-        screenResolution: '2360x1770'
+        screenResolution: '2560x1600'
       }
     },
     chrome_mac_latest: {
@@ -61,7 +61,7 @@ const supportedBrowsers = {
       browserVersion: 'latest',
       'sauce:options': {
         name: 'DIV CCD E2E Tests - XUI: MAC_FIREFOX_LATEST',
-        screenResolution: '2560x1600'
+        screenResolution: '2360x1770'
       }
     }
   }
