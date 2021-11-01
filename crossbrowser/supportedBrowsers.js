@@ -8,7 +8,8 @@ const supportedBrowsers = {
       platformName: LATEST_WINDOWS,
       browserVersion: 'latest',
       'sauce:options': {
-        name: 'DIV CCD E2E Tests - XUI: Edge_Win10'
+        name: 'DIV CCD E2E Tests - XUI: Edge_Win10',
+        screenResolution: '2560x1600'
       }
     }
   },
@@ -20,7 +21,7 @@ const supportedBrowsers = {
       'sauce:options': {
         name: 'DIV CCD E2E Tests - XUI: MAC_SAFARI',
         seleniumVersion: '3.141.59',
-        screenResolution: '1400x1050'
+        screenResolution: '2360x1770'
       }
     }
   },
@@ -30,7 +31,8 @@ const supportedBrowsers = {
       platformName: LATEST_WINDOWS,
       browserVersion: 'latest',
       'sauce:options': {
-        name: 'DIV CCD E2E Tests - XUI: WIN_CHROME_LATEST'
+        name: 'DIV CCD E2E Tests - XUI: WIN_CHROME_LATEST',
+        screenResolution: '2560x1600'
       }
     },
     chrome_mac_latest: {
@@ -38,7 +40,8 @@ const supportedBrowsers = {
       platformName: LATEST_MAC,
       browserVersion: 'latest',
       'sauce:options': {
-        name: 'DIV CCD E2E Tests - XUI: MAC_CHROME_LATEST'
+        name: 'DIV CCD E2E Tests - XUI: MAC_CHROME_LATEST',
+        screenResolution: '2360x1770'
       }
     }
   },
@@ -48,7 +51,8 @@ const supportedBrowsers = {
       platformName: LATEST_WINDOWS,
       browserVersion: 'latest',
       'sauce:options': {
-        name: 'DIV CCD E2E Tests - XUI: WIN_FIREFOX_LATEST'
+        name: 'DIV CCD E2E Tests - XUI: WIN_FIREFOX_LATEST',
+        screenResolution: '2560x1600'
       }
     },
     firefox_mac_latest: {
@@ -56,7 +60,8 @@ const supportedBrowsers = {
       platformName: LATEST_MAC,
       browserVersion: 'latest',
       'sauce:options': {
-        name: 'DIV CCD E2E Tests - XUI: MAC_FIREFOX_LATEST'
+        name: 'DIV CCD E2E Tests - XUI: MAC_FIREFOX_LATEST',
+        screenResolution: '2360x1770'
       }
     }
   }

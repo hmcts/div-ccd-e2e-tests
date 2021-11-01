@@ -9,7 +9,6 @@ const defaultSauceOptions = {
   username: process.env.SAUCE_USERNAME,
   accessKey: process.env.SAUCE_ACCESS_KEY,
   acceptSslCerts: true,
-  windowSize: '1600x900',
   tags: ['div_expertui']
 };
 
