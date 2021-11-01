@@ -17,7 +17,7 @@ exports.config = {
       chrome: {
         ignoreHTTPSErrors: true,
         args: [
-          // '--headless',
+          '--headless',
           '--smartwait',
           '--disable-gpu',
           '--no-sandbox',
