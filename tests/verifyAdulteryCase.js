@@ -7,6 +7,8 @@ const verifyState = (eventResponse, state) => {
   assert.strictEqual(JSON.parse(eventResponse).state, state);
 };
 
+// dummy commit
+
 let caseId;
 
 Feature('Verify Adultery case defended by both Resp and Co Resp ');
