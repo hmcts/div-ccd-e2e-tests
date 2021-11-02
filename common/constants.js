@@ -93,13 +93,15 @@ const serviceApplicationType = {
 const demoVariables = {
   familyDivorceText: 'Family Divorce - v104-26.1',
   solicitorPBANumber : 'PBA0088487',
-  respondentSolicitorFirm: 'DivRespondentSolicitorFirmDemo'
+  respondentSolicitorFirm: 'DivRespondentSolicitorFirmDemo',
+  solicitorStatementOfTruthPaySubmitUrl: 'solicitorStatementOfTruthPaySubmit/solicitorStatementOfTruthPaySubmitSolPayAccount'
 };
 
 const aatVariables = {
   familyDivorceText: 'Family Divorce',
   solicitorPBANumber : 'PBA0077051',
-  respondentSolicitorFirm: 'Divorce-AAT-2'
+  respondentSolicitorFirm: 'Divorce-AAT-2',
+  solicitorStatementOfTruthPaySubmitUrl: 'solicitorStatementOfTruthPaySubmit/solicitorStatementOfTruthPaySubmitSolPaymentSummary'
 };
 
 module.exports = {
