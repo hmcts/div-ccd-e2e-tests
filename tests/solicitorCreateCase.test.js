@@ -26,7 +26,7 @@ Scenario('Solicitor create case and make payment', async ({I}) => {
   await I.uploadTheMarriageCertificateOptional();
   await I.languagePreferenceSelection();
   await I.solicitorCreateCheckYourAnswerAndSubmit();
-  caseNumber = await I.solicitorCaseCreatedAndSubmit();
+  caseNumber = await I.solicitorCaseCreatedAndSubmit(true);
   caseNumber = caseNumber.replace(/\D/gi, '');
   console.log(caseNumber);
   await I.statementOfTruthAndReconciliationPageFormAndSubmit(yesorno.No);

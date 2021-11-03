@@ -188,8 +188,8 @@ module.exports = function () {
       return SolCreateCheckYourAnswersPage.fillFormAndSubmit();
     },
 
-    solicitorCaseCreatedAndSubmit: function() {
-      return SolCaseCreatedPage.fillFormAndSubmit();
+    solicitorCaseCreatedAndSubmit: function(isFeeAccount) {
+      return SolCaseCreatedPage.fillFormAndSubmit(isFeeAccount);
     },
 
     statementOfTruthAndReconciliationPageFormAndSubmit: function (urgent) {
