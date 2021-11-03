@@ -94,7 +94,7 @@ const demoVariables = {
   familyDivorceText: 'Family Divorce - v104-26.1',
   solicitorPBANumber : 'PBA0088487',
   respondentSolicitorFirm: 'DivRespondentSolicitorFirmDemo',
-  solicitorStatementOfTruthPaySubmitUrl: 'solicitorStatementOfTruthPaySubmit/solicitorStatementOfTruthPaySubmitSolPaymentSummary'
+  solicitorStatementOfTruthPaySubmitUrl: 'solicitorStatementOfTruthPaySubmit/solicitorStatementOfTruthPaySubmitSolPayAccount'
 };
 
 const aatVariables = {

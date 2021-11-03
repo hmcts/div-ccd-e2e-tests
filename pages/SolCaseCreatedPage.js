@@ -10,11 +10,11 @@ module.exports = {
     submit: 'button[type="submit"]'
   },
 
-  async fillFormAndSubmit(isFeeAccount) {
+  async fillFormAndSubmit() {
     await I.waitForElement(this.fields.selectActionDropDown);
     await I.selectOption(this.fields.selectActionDropDown, 'Case submission');
     await I.waitForNavigationToComplete(this.fields.submit);
-    const displayField = isFeeAccount && testConfig.TestEnv === 'demo'? this.fields.caseNumberDisplayDemo: this.fields.caseNumberDisplay;
+    const displayField = testConfig.TestEnv === 'demo'? this.fields.caseNumberDisplayDemo: this.fields.caseNumberDisplay;
     await I.waitForElement(displayField);
     const display = await I.grabTextFrom(displayField);
     await I.wait(1);

@@ -12,7 +12,7 @@ module.exports = {
   },
 
   async fillFormAndSubmit(paymentMethod) {
-    const variables = testConfig.TestEnv === 'demo'? demoVariables: aatVariables;
+    const variables = paymentMethod === paymentType.FEE_ACCOUNT && testConfig.TestEnv === 'demo'? demoVariables: aatVariables;
     await I.waitInUrl(variables.solicitorStatementOfTruthPaySubmitUrl);
     await I.waitForText('Case submission');
     await I.runAccessibilityTest();
