@@ -11,6 +11,7 @@ module.exports = {
   },
 
   async fillFormAndSubmit() {
+    await I.wait(5);
     await I.waitForElement(this.fields.selectActionDropDown);
     await I.selectOption(this.fields.selectActionDropDown, 'Case submission');
     await I.waitForNavigationToComplete(this.fields.submit);
@@ -21,4 +22,4 @@ module.exports = {
     return display;
   }
 
-};
+};x
