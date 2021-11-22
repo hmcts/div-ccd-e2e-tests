@@ -8,6 +8,11 @@ const testConfig = require('../tests/config.js');
 const logger = Logger.getLogger('helpers/utils.js');
 
 const env = testConfig.TestEnv;
+const idamBaseUrl = `https://idam-api.${env}.platform.hmcts.net`;
+const ccdApiUrl = `http://ccd-data-store-api-${env}.service.core-compute-${env}.internal`;
+const redirectUri = `https://div-pfe-${env}.service.core-compute-${env}.internal/authenticated`;
+const s2sBaseUrl = `http://rpe-service-auth-provider-${env}.service.core-compute-${env}.internal`;
+
 const months = ['Jan', 'Feb', 'Mar','Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
 async function getUserToken() {
@@ -16,10 +21,8 @@ async function getUserToken() {
   // Setup Details
   const username = testConfig.TestEnvCWUser;
   const password = testConfig.TestEnvCWPassword;
-  const redirectUri = `https://div-pfe-${env}.service.core-compute-${env}.internal/authenticated`;
+  
   const idamClientSecret = testConfig.TestIdamClientSecret;
-
-  const idamBaseUrl = 'https://idam-api.aat.platform.hmcts.net';
 
   const idamCodePath = `/oauth2/authorize?response_type=code&client_id=divorce&redirect_uri=${redirectUri}`;
 
@@ -51,7 +54,6 @@ async function getUserToken() {
 async function getUserId(authToken) {
   logger.info('Getting User Id');
 
-  const idamBaseUrl = 'https://idam-api.aat.platform.hmcts.net';
 
   const idamDetailsPath = '/details';
   const userDetails = await request.get({
@@ -71,7 +73,7 @@ async function getServiceToken() {
 
   const serviceSecret = testConfig.TestS2SAuthSecret;
 
-  const s2sBaseUrl = `http://rpe-service-auth-provider-${env}.service.core-compute-${env}.internal`;
+  
   const s2sAuthPath = '/lease';
   const oneTimePassword = require('otp')({
     secret: serviceSecret
@@ -113,7 +115,6 @@ async function createCaseAndFetchResponse(dataLocation = 'data/ccd-basic-data.js
 
   logger.info('Creating Case');
 
-  const ccdApiUrl = `http://ccd-data-store-api-${env}.service.core-compute-${env}.internal`;
   const ccdStartCasePath = `/caseworkers/${userId}/jurisdictions/DIVORCE/case-types/DIVORCE/event-triggers/hwfCreate/token`;
   const ccdSaveCasePath = `/caseworkers/${userId}/jurisdictions/DIVORCE/case-types/DIVORCE/cases`;
 
@@ -128,7 +129,6 @@ async function createCaseAndFetchResponse(dataLocation = 'data/ccd-basic-data.js
   };
 
   const startCaseResponse = await request(startCaseOptions);
-  console.log(startCaseResponse);
 
   const eventToken = JSON.parse(startCaseResponse).token;
 
@@ -143,6 +143,8 @@ async function createCaseAndFetchResponse(dataLocation = 'data/ccd-basic-data.js
     'event_token': eventToken
   };
 
+  const saveBodyString = updateDocumentUploadedData(JSON.stringify(saveBody));
+
   const saveCaseOptions = {
     method: 'POST',
     uri: ccdApiUrl + ccdSaveCasePath,
@@ -151,15 +153,13 @@ async function createCaseAndFetchResponse(dataLocation = 'data/ccd-basic-data.js
       'ServiceAuthorization': `Bearer ${serviceToken}`,
       'Content-Type': 'application/json'
     },
-    body: JSON.stringify(saveBody)
+    body: saveBodyString
   };
-
   const saveCaseResponse =  await request(saveCaseOptions);
   return saveCaseResponse;
 }
 
 async function updateCaseInCcd(caseId, eventId, dataLocation = 'data/ccd-update-data.json') {
-
   const authToken = await getUserToken();
 
   const userId = await getUserId(authToken);
@@ -168,7 +168,6 @@ async function updateCaseInCcd(caseId, eventId, dataLocation = 'data/ccd-update-
 
   logger.info('Updating case with id %s and event %s', caseId, eventId);
 
-  const ccdApiUrl = `http://ccd-data-store-api-${env}.service.core-compute-${env}.internal`;
   const ccdStartEventPath = `/caseworkers/${userId}/jurisdictions/DIVORCE/case-types/DIVORCE/cases/${caseId}/event-triggers/${eventId}/token`;
   const ccdSaveEventPath = `/caseworkers/${userId}/jurisdictions/DIVORCE/case-types/DIVORCE/cases/${caseId}/events`;
 
@@ -197,6 +196,8 @@ async function updateCaseInCcd(caseId, eventId, dataLocation = 'data/ccd-update-
     'event_token': eventToken
   };
 
+  const saveBodyString = updateDocumentUploadedData(JSON.stringify(saveBody));
+
   const saveEventOptions = {
     method: 'POST',
     uri: ccdApiUrl + ccdSaveEventPath,
@@ -205,15 +206,17 @@ async function updateCaseInCcd(caseId, eventId, dataLocation = 'data/ccd-update-
       'ServiceAuthorization': `Bearer ${serviceToken}`,
       'Content-Type': 'application/json'
     },
-    body: JSON.stringify(saveBody)
+    body: saveBodyString
   };
 
-  const saveEventResponse = await request(saveEventOptions);
+  const saveEventResponse = await request(saveEventOptions).catch(error => {
+    console.log(error);
+  });;
 
   return saveEventResponse;
 }
 const getBaseUrl = () => {
-  return 'manage-case.aat.platform.hmcts.net';
+  return testConfig.TestUrl;
 };
 
 function firstLetterToCaps(value){
@@ -232,6 +235,22 @@ function formatDateToCcdDisplayDate(givenDate = new Date()) {
   let formattedDate = givenDate.getDate() + ' ' + months[givenDate.getMonth()] + ' ' + givenDate.getFullYear();
   return formattedDate;
 };
+
+function updateDocumentUploadedData(data){
+  var documentUploadedData = JSON.parse(fs.readFileSync(`data/documents-binary-${env}.json`));
+  
+  for(let i=0; i < documentUploadedData.documentUploaded.length; i++){
+    const regex = new RegExp(`"{{document-uploaded-${i+1}}}"`,'g');
+    data = data.replace(regex, JSON.stringify(documentUploadedData.documentUploaded[i]));
+  }
+
+  for(let i=0; i < documentUploadedData.documentGenenerated.length; i++){
+    const regex = new RegExp(`"{{document-generated-${i+1}}}"`,'g');
+    data = data.replace(regex, JSON.stringify(documentUploadedData.documentGenenerated[i]));
+  }
+
+  return data;
+}
 
 module.exports = {
   createCaseInCcd,

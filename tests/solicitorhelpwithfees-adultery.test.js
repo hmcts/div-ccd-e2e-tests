@@ -8,7 +8,7 @@ let caseNumber;
 
 Feature('Adultery');
 
-Scenario('Solicitor create case and make payment', async (I) => {
+Scenario('Solicitor create case and make payment', async ({I}) => {
   await I.amOnHomePage();
   await I.login(testConfig.TestEnvProfUser, testConfig.TestEnvProfPassword);
   await I.clickCreateCase();
@@ -42,7 +42,7 @@ Scenario('Solicitor create case and make payment', async (I) => {
   // bailiff
   await I.login(testConfig.TestEnvCWUser, testConfig.TestEnvCWPassword);
   await I.wait(5);
-  await I.amOnPage('cases/case-details/' + caseNumber);
+  await I.amOnPage('/cases/case-details/' + caseNumber);
   await I.wait(5);
 
   await I.awaitingPetitionerFormAndSubmit();

@@ -7,7 +7,7 @@ let caseNumber;
 
 Feature('Sep-2-Yrs');
 
-Scenario('Solicitor create case and make payment', async (I) => {
+Scenario('Solicitor create case and make payment', async ({I}) => {
   await I.amOnHomePage();
   await I.login(testconfig.TestEnvProfUser, testconfig.TestEnvProfPassword);
   await I.clickCreateCase();
@@ -39,7 +39,7 @@ Scenario('Solicitor create case and make payment', async (I) => {
 
   // Solicitor should not see issue, refund events
   await I.wait(5);
-  await I.amOnPage('cases/case-details/' + caseNumber);
+  await I.amOnPage('/cases/case-details/' + caseNumber);
   await I.wait(5);
   await I.waitForElement(nextStepDropDown);
   await I.click(nextStepDropDown);

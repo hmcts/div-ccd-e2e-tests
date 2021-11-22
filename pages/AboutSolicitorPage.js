@@ -31,7 +31,8 @@ module.exports = {
     await I.fillField(this.fields.OrgSearchBar, 'DivPetitionerSolicitorFirm');
     await I.waitForElement(this.fields.OrgResultTable);
     await I.see('Select');
-    await I.click('Select');
+    // choosing last organisation because demo has a list of 3 and only last selection will work
+    await I.click(locate('a').withText('Select').last());
     await I.waitForNavigationToComplete(this.fields.submit);
   }
 };

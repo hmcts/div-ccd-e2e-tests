@@ -1,3 +1,6 @@
+const testConfig = require('../tests/config');
+const { demoVariables, aatVariables } = require('../common/constants');
+
 const I = actor();
 
 const { paymentType } = require('../common/constants');
@@ -9,7 +12,8 @@ module.exports = {
   },
 
   async fillFormAndSubmit(paymentMethod) {
-    await I.waitInUrl('solicitorStatementOfTruthPaySubmit/solicitorStatementOfTruthPaySubmitSolPaymentSummary');
+    const variables = paymentMethod === paymentType.FEE_ACCOUNT && testConfig.TestEnv === 'demo'? demoVariables: aatVariables;
+    await I.waitInUrl(variables.solicitorStatementOfTruthPaySubmitUrl);
     await I.waitForText('Case submission');
     await I.runAccessibilityTest();
     if (paymentMethod === paymentType.FEE_ACCOUNT) {	

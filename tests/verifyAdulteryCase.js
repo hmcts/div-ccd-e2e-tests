@@ -11,9 +11,8 @@ let caseId;
 
 Feature('Verify Adultery case defended by both Resp and Co Resp ');
 
-Scenario('Execute events for end to end flow PFE, RFE, Co-RESP, DN, DA and verify all tab fields', async function (I) {
+Scenario('Execute events for end to end flow PFE, RFE, Co-RESP, DN, DA and verify all tab fields', async function ({I}) {
   caseId = await createCaseInCcd('data/ccdAdulteryRespondentCorespondentDefendedCase.json');
-
   const submitted = await updateCaseInCcd(caseId, events.HWF_ACCEPT_AWAIT_DECISION);
   verifyState(submitted, states.SUBMITTTED);
 
