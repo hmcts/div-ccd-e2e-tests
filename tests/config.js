@@ -1,7 +1,7 @@
 module.exports = {
-  TestUrl: process.env.TEST_E2E_URL || 'https://xui-webapp-pr-1168.service.core-compute-preview.internal/',
+  TestUrl: process.env.TEST_E2E_URL || 'http://manage-case.aat.platform.hmcts.net/',
   TestEnv: process.env.RUNNING_ENV || 'aat',
-  TestShowBrowserWindow: process.env.SHOW_BROWSER_WINDOW || true,
+  TestShowBrowserWindow: process.env.SHOW_BROWSER_WINDOW || false,
   TestRetryFeatures: 0,
   TestRetryScenarios: process.env.RETRY_SCENARIOS || 2,
   TestPathToRun: process.env.E2E_TEST_PATH || 'tests/**/*.js',
