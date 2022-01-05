@@ -25,7 +25,8 @@
     "test-e2e-verify-desertion-case": "SHOW_BROWSER_WINDOW=yes NODE_PATH=. E2E_AUTO_DELAY_ENABLED=true node ./node_modules/codeceptjs/bin/codecept.js run tests/verifyDesertionCase.js  -c ./ --steps",
     "test-e2e-verify-linked-case": "SHOW_BROWSER_WINDOW=yes NODE_PATH=. E2E_AUTO_DELAY_ENABLED=true node ./node_modules/codeceptjs/bin/codecept.js run tests/verifyLinkedCase.js  -c ./ --steps",
     "test-e2e-verify-sep-five-year-case": "SHOW_BROWSER_WINDOW=yes NODE_PATH=. E2E_AUTO_DELAY_ENABLED=true node ./node_modules/codeceptjs/bin/codecept.js run tests/verifySepFiveYear.js  -c ./ --steps",
-    "test-e2e-verify-sep-two-year-case": "SHOW_BROWSER_WINDOW=yes NODE_PATH=. E2E_AUTO_DELAY_ENABLED=true node ./node_modules/codeceptjs/bin/codecept.js run tests/verifySepTwoYear.js  -c ./ --steps"
+    "test-e2e-verify-sep-two-year-case": "SHOW_BROWSER_WINDOW=yes NODE_PATH=. E2E_AUTO_DELAY_ENABLED=true node ./node_modules/codeceptjs/bin/codecept.js run tests/verifySepTwoYear.js  -c ./ --steps",
+    "create-solicitor-case-preview": "codeceptjs run tests/solicitorCreateCase.test.js"
   },
   "keywords": [],
   "author": "",
