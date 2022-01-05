@@ -47,5 +47,5 @@ To avoid having to manually create new solicitor cases. It creates a generic cas
 
 2. Run:
  ```bash
-$ yarn test:crossbrowser
+$ yarn create-solicitor-case-preview
  ```
