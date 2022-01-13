@@ -8,8 +8,11 @@ Feature('Solicitor create case - with fee account');
 
 Scenario('Solicitor create case and make payment', async ({I}) => {
   await I.amOnHomePage();
+  // I.wait(10);
+  //pause();
+  // console.log("user" + testconfig.TestEnvProfUser+ testconfig.TestEnvProfPassword);
   await I.login(testconfig.TestEnvProfUser, testconfig.TestEnvProfPassword);
-  console.log("Logged in...");
+  //console.log('Logged in...');
   await I.clickCreateCase();
   await I.fillCreateCaseFormAndSubmit();
   await I.fillAboutSolicitorFormAndSubmit();
@@ -21,7 +24,7 @@ Scenario('Solicitor create case and make payment', async ({I}) => {
   await I.selectReasonForTheDivorceQuestionPageAndSubmit(reasonsForDivorce.ADULTERY);
   await I.fillAdulteryDetailsFormAndSubmit();
   await I.fillAdulteryDetailsSecondPageFormAndSubmit();
-  console.log("Halfway...");
+  // console.log("Halfway...");
   await I.otherLegalProceedings();
   await I.financialOrdersSelectButton();
   await I.claimForCostsSelectButton();
@@ -30,12 +33,12 @@ Scenario('Solicitor create case and make payment', async ({I}) => {
   await I.solicitorCreateCheckYourAnswerAndSubmit();
   caseNumber = await I.solicitorCaseCreatedAndSubmit(true);
   caseNumber = caseNumber.replace(/\D/gi, '');
-  console.log(caseNumber);
+  // console.log(caseNumber);
   await I.statementOfTruthAndReconciliationPageFormAndSubmit(yesorno.No);
   await I.casePaymentWithFeeAccountAndSubmissionPageFormAndSubmit();
   await I.caseOrderSummaryPageFormAndSubmit(paymentType.FEE_ACCOUNT);
   await I.caseApplicationCompletePageFormAndSubmit();
   await I.caseCheckYourAnswersPageFormAndSubmit();
-  console.log("Nearly done...");
+  // console.log("Nearly done...");
   await I.solAwaitingPaymentConfPageFormAndSubmit();
 }).retry(testconfig.TestRetryScenarios);
