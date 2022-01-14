@@ -6,11 +6,11 @@ module.exports = {
   fields: {
     selectActionDropDown: 'select[id="next-step"]',
     submit: 'button[type="submit"]',
-    selectDNReason: 'select[id="PermittedDecreeNisiReason"]',
+    selectDNReason: 'select[id="RespWillDefendDivorce"]',
     selectDNReasonLabel: 'Reason for AwaitingDecreeNisi?',
     eventSummary: '#field-trigger-summary',
     respConfirmReadYes: '#RespConfirmReadPetition_Yes',
-    DNReasonValue: 'Undefended divorce with Respondent agreement'
+    DNReasonValue: '1: No'
   },
 
   async fillFormAndSubmit() {

@@ -5,7 +5,8 @@
   "description": "",
   "scripts": {
     "pretest": "npm run create:type-definitions",
-    "test:fullfunctional": "TESTS_FOR_ACCESSIBILITY='true' codeceptjs run-multiple parallel --steps --reporter mochawesome",
+    "test:fullfunctional": " codeceptjs run tests/solicitorhelpwithfees-desertion.js --steps --reporter mochawesome",
+      "test:localSingleTest":" node ./node_modules/codeceptjs/bin/codecept.js run tests/createAnUrgencyCaseJourney.test.js  --steps --reporter mochawesome" ,
     "test:fullfunctional-onefile": "TESTS_FOR_ACCESSIBILITY='true' codeceptjs run tests/solicitorCreateCase.test.js  -c ./ --steps --reporter mochawesome",
     "create:type-definitions": "codeceptjs def",
     "lint": "eslint .",
@@ -36,6 +37,7 @@
     "html_codesniffer": "^2.5.1",
     "@hmcts/nodejs-logging": "^3.0.2",
     "cross-env": "^5.2.1",
+
     "otp": "^0.1.3",
     "request": "^2.88.2",
     "request-promise-native": "^1.0.9"
