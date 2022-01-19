@@ -20,7 +20,7 @@ module.exports = {
     await I.wait(1);
     await I.waitForNavigationToComplete(this.fields.submit);
     const isSafariBrowser = await I.isSafariBrowser();
-    if (isSafariBrowser) {
+    /* if (isSafariBrowser) {
       await I.waitForClickable(this.fields.selectDNReason);
       await I.wait(5);
     } else {
@@ -28,7 +28,7 @@ module.exports = {
     }
     await I.retry(2).selectOption(this.fields.selectDNReasonLabel, this.fields.DNReasonValue);
     await I.wait(1);
-    await I.click(this.fields.respConfirmReadYes);
+    await I.click(this.fields.respConfirmReadYes);*/
     await I.waitForNavigationToComplete(this.fields.submit);
     await I.waitForElement(this.fields.eventSummary);
     await I.waitForNavigationToComplete(this.fields.submit);
