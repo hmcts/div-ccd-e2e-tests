@@ -39,7 +39,7 @@
     "otp": "^0.1.3",
     "request": "^2.88.2",
     "request-promise-native": "^1.0.9",
-      "moment": "^2.29.2 "
+      "moment": "^2.29.2"
   },
   "devDependencies": {
     "codeceptjs": "^3.1.3",
@@ -55,6 +55,8 @@
     "webdriverio": "^6.11.3"
   },
   "resolutions": {
-    "axios": ">=0.21.1"
+    "axios": ">=0.21.1",
+      "moment": "^2.29.2",
+      "async": "^3.2.2"
   }
 }
