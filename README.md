@@ -2,7 +2,6 @@
 
 Divorce CCD journey tests
 
-
 ## Purpose
 
 This service is to help people to run End2End Journey Tests for Divorce Solicitor Journeys.
