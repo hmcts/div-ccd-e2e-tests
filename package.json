@@ -59,7 +59,7 @@
     "axios": ">=0.21.1",
     "async": ">=3.2.2",
     "json-schema": ">=0.4.0",
-    "ansi-regex": ">=4.1.1",
+    "ansi-regex": "4.1.1",
     "moment": ">=2.29.4",
     "node-fetch": ">=2.6.7",
     "follow-redirects": ">=1.14.7",
