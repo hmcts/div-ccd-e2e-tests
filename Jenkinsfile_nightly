@@ -47,12 +47,12 @@ withNightlyPipeline("nodejs", product, component) {
     env.TEST_E2E_URL = params.XUI_URL_TO_TEST
     env.NODE_ENV = 'ci'
     env.RUNNING_ENV = params.RUNNING_ENV
-    
+
     loadVaultSecrets(env.RUNNING_ENV=='demo'? secretsDemo: secrets)
     enableCrossBrowserTest(90)
     enableFullFunctionalTest(90)
 
-    after('fullFunctionalTest') {
+    afterSuccess('fullFunctionalTest') {
         steps.archiveArtifacts allowEmptyArchive: true, artifacts: 'functional-output/**/*'
     }
 }
