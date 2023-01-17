@@ -53,7 +53,7 @@
     "mocha-multi": "^1.1.3",
     "mochawesome": "^6.3.1",
     "puppeteer": "^5.4.1",
-    "webdriverio": "^6.11.3"
+    "webdriverio": "^6.12.1"
   },
   "resolutions": {
     "axios": ">=0.21.1",
