@@ -56,19 +56,21 @@
     "webdriverio": "^6.12.1"
   },
   "resolutions": {
-    "axios": ">=0.21.1",
-    "async": ">=3.2.2",
-    "json-schema": ">=0.4.0",
-    "ansi-regex": "4.1.1",
-    "moment": ">=2.29.4",
+    "axios": "^0.21.1",
+    "async": "^3.2.2",
+    "json-schema": "^0.4.0",
+    "ansi-regex": "^4.1.1",
+    "moment": "^2.29.4",
     "node-fetch": "^3.2.10",
-    "follow-redirects": ">=1.14.7",
-    "minimist": ">=1.2.6",
+    "follow-redirects": "^1.14.7",
+    "minimist": "^1.2.6",
     "validator": "^13.7.0",
     "got": "^11.8.5",
     "minimatch": "^3.0.5",
     "qs": "^6.5.3",
     "nanoid": "^3.1.31",
-    "flat": "^5.0.1"
+    "flat": "^5.0.1",
+    "ua-parser-js": "^0.7.33",
+    "http-cache-semantics": "^4.1.1"
   }
 }
